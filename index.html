@@ -1,62 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kangnam Kim - AI Engineer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kangnam Kim's Resume</title>
+  <style>
+    /* 전체 폰트 및 레이아웃 설정 */
+    body {
+      font-family: 'Times New Roman', serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    /* 최대 폭 지정 및 가운데 정렬 */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* 헤더 */
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    header h1 {
+      margin-bottom: 5px;
+    }
+    .contact-info a {
+      margin: 0 5px;
+      text-decoration: none;
+      color: #007BFF;
+    }
+
+    /* 섹션 레이아웃 */
+    section {
+      margin-bottom: 30px;
+    }
+    section h2 {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+
+    /* 목록 설정 */
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    ul li {
+      margin-bottom: 10px;
+    }
+    /* 하위 목록(프로젝트 목록)은 불릿 표시 */
+    ul li ul {
+      list-style-type: disc;
+      margin-left: 20px;
+      margin-top: 5px;
+    }
+
+    /* 회사, 학교 정보 스타일 */
+    .company-name,
+    .school-name {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .department {
+      font-style: italic;
+      font-size: 0.9rem;
+    }
+    .position {
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    .date-range {
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    /* 프로젝트 이름 */
+    .project-name {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    /* 지역 표시 */
+    .location {
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    /* 경력 등 flex 레이아웃 */
+    .experience-item,
+    .education-item {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+    .top-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .second-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 5px;
+    }
+  </style>
 </head>
 <body>
-    <header class="bg-dark text-white text-center py-5">
-        <h1>Kangnam Kim</h1>
-        <p>AI Engineer | Deep Learning & AI Research Specialist</p>
-        <p><a href="mailto:kkangnam7654@gmail.com" class="text-warning">kkangnam7654@gmail.com</a> | <a href="https://github.com/kangnam7654" class="text-warning">GitHub</a> | <a href="https://linkedin.com/in/kangnam7654" class="text-warning">LinkedIn</a></p>
+  <div class="container">
+    <!-- 헤더 -->
+    <header>
+      <h1>Kangnam Kim</h1>
+      <p>Seoul, Republic of Korea</p>
+      <div class="contact-info">
+        <a href="mailto:kkangnam7654@gmail.com">kkangnam7654@gmail.com</a> |
+        <a href="tel:+821052307653">+82 10-5230-7653</a> |
+        <a href="https://github.com/kangnam7654" target="_blank">GitHub</a> |
+        <a href="https://linkedin.com/in/kangnam7654" target="_blank">LinkedIn</a>
+      </div>
     </header>
 
-    <main class="container my-5">
-        <section id="about" class="mb-5">
-            <h2>About Me</h2>
-            <p>AI Engineer with 3+ years of experience in deep learning and AI research, specializing in computer vision, TTS, and recommendation systems. Proficient in PyTorch and Microsoft Azure ML.</p>
-        </section>
+    <!-- Professional Summary -->
+    <section>
+      <h2>Professional Summary</h2>
+      <p>
+        AI Engineer with over three years of experience in deep learning and AI research, focusing on practical solutions in computer vision, text-to-speech (TTS), and recommendation systems. Skilled in building and deploying AI models using PyTorch, PyTorch Lightning, and Microsoft Azure ML. Motivated to explore new methods and contribute to robust, real-world AI applications.
+      </p>
+    </section>
 
-        <section id="experience" class="mb-5">
-            <h2>Experience</h2>
+    <!-- Experience -->
+    <section>
+      <h2>Experience</h2>
+      <article class="experience-item">
+        <div class="top-line">
+          <span class="company-name">Creverse</span>
+          <span class="date-range">April 2024 - Present</span>
+        </div>
+        <div class="second-line">
+          <span class="department">AI Biz Team, Nesto CV Division</span>
+          <span class="location">Seoul, Republic of Korea</span>
+        </div>
+        <span class="position">AI Engineer</span>
+        <ul>
+          <li>
+            <span class="project-name">i-Learning | Released</span>
             <ul>
-                <li><strong>Creverse (AI Engineer)</strong> - Developed face detection and gesture recognition models deployed via MS Azure ML.</li>
-                <li><strong>Netmarble F&C (AI Researcher)</strong> - Built GAN-based models for character creation and motion tracking systems using MediaPipe.</li>
-                <li><strong>Coconut Silo (AI Engineer)</strong> - Created anomaly detection systems and fine-tuned object detection models using YOLOv5.</li>
+              <li><strong>Face Recognition:</strong> Developed a face detection model to automatically evaluate students' presentation videos; deployed using Microsoft Azure ML.</li>
+              <li><strong>Gesture Recognition:</strong> Developed a gesture recognition model to identify hand gestures in students' presentation videos; deployed using Microsoft Azure ML.</li>
             </ul>
-        </section>
-
-        <section id="skills" class="mb-5">
-            <h2>Skills</h2>
+          </li>
+          <li>
+            <span class="project-name">April Alpha | In Development</span>
             <ul>
-                <li>Programming: Python, C++</li>
-                <li>Frameworks: PyTorch, PyTorch Lightning</li>
-                <li>Cloud: Microsoft Azure</li>
-                <li>Libraries: OpenCV, NumPy</li>
-                <li>Game Engines: Unreal Engine</li>
+              <li><strong>Text To Speech:</strong> Researched and fine-tuned a text-to-speech system for providing audio feedback.</li>
+              <li><strong>Hybrid Search:</strong> Researched search techniques to reduce token usage in LLM-based systems.</li>
             </ul>
-        </section>
+          </li>
+        </ul>
+      </article>
 
-        <section id="education" class="mb-5">
-            <h2>Education</h2>
+      <article class="experience-item">
+        <div class="top-line">
+          <span class="company-name">Netmarble F&amp;C (MetaverseWorld Subsidiary)</span>
+          <span class="date-range">October 2022 - January 2024</span>
+        </div>
+        <div class="second-line">
+          <span class="department">R&amp;D Team, Metaworld Development Part</span>
+          <span class="location">Seoul, Republic of Korea</span>
+        </div>
+        <span class="position">AI Researcher, AI Engineer</span>
+        <ul>
+          <li>
+            <span class="project-name">GrandCross: Metaworld | Unreleased</span>
             <ul>
-                <li><strong>Sogang University</strong> - Master&#39;s in Data Science & AI (GPA: 3.72/4.3)</li>
-                <li><strong>Sejong University</strong> - Bachelor&#39;s in Physics</li>
+              <li><strong>Image Regression:</strong> Developed models to create characters resembling users using GAN (Generative Adversarial Network) and style transfer techniques.</li>
+              <li><strong>Pose Estimation:</strong> Built a motion tracking system for game characters using Google MediaPipe.</li>
             </ul>
-        </section>
+          </li>
+        </ul>
+      </article>
 
-        <section id="contact" class="mb-5">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:kkangnam7654@gmail.com">kkangnam7654@gmail.com</a></p>
-            <p>GitHub: <a href="https://github.com/kangnam7654">github.com/kangnam7654</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/kangnam7654">linkedin.com/in/kangnam7654</a></p>
-        </section>
-    </main>
+      <article class="experience-item">
+        <div class="top-line">
+          <span class="company-name">Coconut Silo</span>
+          <span class="date-range">June 2021 - April 2022</span>
+        </div>
+        <div class="second-line">
+          <span class="department">CTO Division</span>
+          <span class="location">Seoul, Republic of Korea</span>
+        </div>
+        <span class="position">AI Engineer</span>
+        <ul>
+          <li>
+            <span class="project-name">Government Voucher Projects (SI)</span>
+            <ul>
+              <li><strong>Anomaly Detection:</strong> Created an anomaly detection system for metal printers by measuring vector distances to identify anomalies.</li>
+              <li><strong>Pose Estimation:</strong> Labeled ship radar data and fine-tuned an object detection model (YOLOv5).</li>
+              <li><strong>BERT Recommender System (Content-Based Filtering):</strong> Built a content-based recommendation system that vectorized product descriptions for recommendations.</li>
+            </ul>
+          </li>
+        </ul>
+      </article>
+    </section>
 
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2025 Kangnam Kim. All rights reserved.</p>
-    </footer>
+    <!-- Education -->
+    <section>
+      <h2>Education</h2>
+      <article class="education-item">
+        <div class="top-line">
+          <span class="school-name">Sogang University Graduate School of AI &amp; SW</span>
+          <span class="location">Seoul, Republic of Korea</span>
+        </div>
+        <strong style="font-size: 0.9rem;">Master's in Data Science &amp; AI (March 2023 - Present)</strong><br />
+        <em>Received Academic Excellence Scholarship (Fall 2023)</em>
+      </article>
+
+      <article class="education-item">
+        <div class="top-line">
+          <span class="school-name">Sejong University</span>
+          <span class="location">Seoul, Republic of Korea</span>
+        </div>
+        <strong style="font-size: 0.9rem;">Bachelor of Science in Physics (March 2011 - February 2019)</strong>
+      </article>
+    </section>
+
+    <!-- Skills -->
+    <section>
+      <h2>Skills</h2>
+      <ul>
+        <li><strong>Programming:</strong> Python (Intermediate, 3+ years), C++ (Basic, 1 year)</li>
+        <li><strong>Frameworks &amp; Tools:</strong> : PyTorch & PyTorch Lightning (Intermediate, 3+ years), Docker (Basic, 1+ years), Nvidia Triton (Basic, 1 year)</li>
+        <li><strong>Cloud Services:</strong> Microsoft Azure (Basic, 1 year)</li>
+        <li><strong>Mathematics:</strong>  Statistics (Basic, 3+ years), Calculus (Basic, 4+ years), Linear Algebra (Basic, 3+ years)</li>
+        <li><strong>Libraries:</strong> OpenCV, NumPy, polars, pandas (Intermediate, 3+ years)</li>
+        <li><strong>Operating Systems:</strong> Windows, MacOS, Linux (Basic, 3+ years)</li>
+        <li><strong>Game Engines:</strong> Unreal Engine (Basic, 1 year)</li>
+      </ul>
+    </section>
+
+    <!-- Certifications & Courses -->
+    <section>
+      <h2>Certifications &amp; Courses</h2>
+      <ul>
+        <li><strong>AICE (AI Certificate for Everyone)</strong>, KT (November 2022)</li>
+        <li><strong>Advanced Learning Algorithms</strong>, Coursera (September 2022)</li>
+        <li><strong>Supervised Machine Learning: Regression and Classification</strong>, Coursera (July 2022)</li>
+        <li><strong>ADsP (Advanced Data Analytics Semi-Professional)</strong>, Korea Data Agency (June 2022)</li>
+      </ul>
+    </section>
+  </div>
 </body>
 </html>
