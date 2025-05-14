@@ -1,259 +1,1966 @@
 <html>
+
 <head>
-<meta content="text/html; charset=UTF-8" http-equiv="content-type">
-<style type="text/css">
-@import url(https://themes.googleusercontent.com/fonts/css?kit=MdkLunaJDM8LEDc1LlU9zDt0jZqdUG2xqTUcCtI89eLOfsfM6rvuuu7h1pY3r_-A);
-/* 기본 줄간격 정의 */
-body, p, li, td {
-  line-height: 1.5;
-}
-/* 문단 사이 여백 추가 */
-p {
-  margin-bottom: 0.5em;
-}
-/* 테이블 셀 패딩 증가 */
-table td {
-  padding: 8pt 5pt 8pt 5pt !important;
-}
-/* 중앙 정렬을 위한 스타일 추가 */
-body {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  background-color: #f5f5f5; /* 배경색 추가로 화면 경계 구분 */
-}
-.doc-content {
-  max-width: 800px !important; /* 콘텐츠 최대 너비를 더 작게 조정 */
-  width: 95%;
-  margin: 0 auto;
-  box-sizing: border-box;
-  background-color: #ffffff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-/* 테이블 최대 너비 엄격히 제한 */
-.c36 {
-  margin-left: auto !important;
-  margin-right: auto !important;
-  width: 100% !important;
-  max-width: 800px !important; /* 테이블 최대 너비 명시적 설정 */
-  table-layout: fixed !important; /* 테이블 레이아웃 고정 */
-}
-/* 테이블 내 콘텐츠 칼럼 너비 확장 */
-.c19, .c25, .c7 {
-  width: 100% !important;
-  box-sizing: border-box !important; /* 박스 모델이 패딩과 테두리를 포함하도록 */
-  word-wrap: break-word !important; /* 텍스트가 넘치지 않도록 */
-}
-.c37 {
-  padding: 50pt 30pt 50pt 30pt !important;
-  max-width: 800px !important; /* 본문 최대 너비 명시적 제한 */
-}
-/* 테이블 셀 반응형 너비 조정 */
-.c41, .c17 {
-  width: 20% !important;
-  max-width: 160px !important; /* 최대 너비 지정 */
-}
-.c35, .c12 {
-  width: 80% !important;
-  max-width: 640px !important; /* 최대 너비 지정 */
-}
-/* 모바일 대응을 위한 미디어 쿼리 추가 */
-@media screen and (max-width: 768px) {
-  .doc-content {
-    width: 100%;
-    padding: 20pt 15pt !important;
-  }
-  .c37 {
-    padding: 30pt 15pt 30pt 15pt !important;
-  }
-  .c41, .c17 {
-    width: 30% !important; /* 모바일에서는 좀 더 넓게 */
-  }
-  .c35, .c12 {
-    width: 70% !important;
-  }
-}
-/* 기존 CSS 유지 */
-ul.lst-kix_ca801xthou7n-3{list-style-type:none}ul.lst-kix_ca801xthou7n-4{list-style-type:none}ul.lst-kix_ca801xthou7n-5{list-style-type:none}ul.lst-kix_ca801xthou7n-6{list-style-type:none}ul.lst-kix_ca801xthou7n-7{list-style-type:none}ul.lst-kix_ca801xthou7n-8{list-style-type:none}.lst-kix_o9wh3atyxqoa-0>li:before{content:"-  "}.lst-kix_o9wh3atyxqoa-5>li:before{content:"-  "}ul.lst-kix_f0twgew1dwvb-0{list-style-type:none}ul.lst-kix_f0twgew1dwvb-1{list-style-type:none}.lst-kix_o9wh3atyxqoa-3>li:before{content:"-  "}ul.lst-kix_f0twgew1dwvb-2{list-style-type:none}ul.lst-kix_f0twgew1dwvb-3{list-style-type:none}.lst-kix_o9wh3atyxqoa-4>li:before{content:"-  "}ul.lst-kix_f0twgew1dwvb-4{list-style-type:none}ul.lst-kix_f0twgew1dwvb-5{list-style-type:none}.lst-kix_o9wh3atyxqoa-1>li:before{content:"-  "}ul.lst-kix_f0twgew1dwvb-6{list-style-type:none}ul.lst-kix_f0twgew1dwvb-7{list-style-type:none}ul.lst-kix_f0twgew1dwvb-8{list-style-type:none}ul.lst-kix_ca801xthou7n-0{list-style-type:none}.lst-kix_o9wh3atyxqoa-2>li:before{content:"-  "}ul.lst-kix_ca801xthou7n-1{list-style-type:none}ul.lst-kix_ca801xthou7n-2{list-style-type:none}ul.lst-kix_k4cuyt1bpp9v-0{list-style-type:none}.lst-kix_62hscnxr884v-7>li:before{content:"\0025cb   "}ul.lst-kix_k4cuyt1bpp9v-4{list-style-type:none}ul.lst-kix_k4cuyt1bpp9v-3{list-style-type:none}ul.lst-kix_k4cuyt1bpp9v-2{list-style-type:none}.lst-kix_62hscnxr884v-6>li:before{content:"\0025cf   "}ul.lst-kix_k4cuyt1bpp9v-1{list-style-type:none}.lst-kix_7k3lbbyokens-0>li:before{content:"\0025cf   "}ul.lst-kix_k4cuyt1bpp9v-8{list-style-type:none}ul.lst-kix_k4cuyt1bpp9v-7{list-style-type:none}ul.lst-kix_k4cuyt1bpp9v-6{list-style-type:none}ul.lst-kix_k4cuyt1bpp9v-5{list-style-type:none}.lst-kix_7k3lbbyokens-1>li:before{content:"\0025cb   "}.lst-kix_7k3lbbyokens-3>li:before{content:"\0025cf   "}.lst-kix_o9wh3atyxqoa-6>li:before{content:"-  "}.lst-kix_7k3lbbyokens-2>li:before{content:"\0025a0   "}.lst-kix_62hscnxr884v-8>li:before{content:"\0025a0   "}.lst-kix_eqi39e5pcyab-0>li:before{content:"\0025cf   "}.lst-kix_o9wh3atyxqoa-7>li:before{content:"-  "}.lst-kix_o9wh3atyxqoa-8>li:before{content:"-  "}.lst-kix_eqi39e5pcyab-3>li:before{content:"\0025cf   "}.lst-kix_eqi39e5pcyab-2>li:before{content:"\0025a0   "}.lst-kix_eqi39e5pcyab-1>li:before{content:"\0025cb   "}.lst-kix_ca801xthou7n-5>li:before{content:"\0025a0   "}.lst-kix_ca801xthou7n-4>li:before{content:"\0025cb   "}.lst-kix_ca801xthou7n-6>li:before{content:"\0025cf   "}ul.lst-kix_ucn32gza98p1-1{list-style-type:none}.lst-kix_ca801xthou7n-1>li:before{content:"\0025cb   "}ul.lst-kix_ucn32gza98p1-0{list-style-type:none}.lst-kix_ca801xthou7n-0>li:before{content:"\0025cf   "}.lst-kix_ca801xthou7n-8>li:before{content:"\0025a0   "}.lst-kix_t2r1kvusbz6c-4>li:before{content:"\0025cb   "}.lst-kix_ca801xthou7n-7>li:before{content:"\0025cb   "}.lst-kix_t2r1kvusbz6c-3>li:before{content:"\0025cf   "}.lst-kix_nsgwrn58pxun-1>li:before{content:"\0025cb   "}ul.lst-kix_ucn32gza98p1-8{list-style-type:none}ul.lst-kix_ucn32gza98p1-7{list-style-type:none}ul.lst-kix_ucn32gza98p1-6{list-style-type:none}.lst-kix_t2r1kvusbz6c-0>li:before{content:"\0025cf   "}.lst-kix_t2r1kvusbz6c-2>li:before{content:"\0025a0   "}.lst-kix_7k3lbbyokens-5>li:before{content:"\0025a0   "}.lst-kix_7k3lbbyokens-7>li:before{content:"\0025cb   "}ul.lst-kix_ucn32gza98p1-5{list-style-type:none}.lst-kix_nsgwrn58pxun-3>li:before{content:"\0025cf   "}ul.lst-kix_ucn32gza98p1-4{list-style-type:none}ul.lst-kix_ucn32gza98p1-3{list-style-type:none}.lst-kix_nsgwrn58pxun-0>li:before{content:"\0025cf   "}.lst-kix_nsgwrn58pxun-4>li:before{content:"\0025cb   "}ul.lst-kix_ucn32gza98p1-2{list-style-type:none}.lst-kix_t2r1kvusbz6c-1>li:before{content:"\0025cb   "}.lst-kix_7k3lbbyokens-4>li:before{content:"\0025cb   "}.lst-kix_7k3lbbyokens-8>li:before{content:"\0025a0   "}.lst-kix_nsgwrn58pxun-2>li:before{content:"\0025a0   "}.lst-kix_7k3lbbyokens-6>li:before{content:"\0025cf   "}ul.lst-kix_nsgwrn58pxun-5{list-style-type:none}ul.lst-kix_nsgwrn58pxun-4{list-style-type:none}ul.lst-kix_nsgwrn58pxun-7{list-style-type:none}ul.lst-kix_nsgwrn58pxun-6{list-style-type:none}.lst-kix_k4cuyt1bpp9v-8>li:before{content:"-  "}ul.lst-kix_nsgwrn58pxun-8{list-style-type:none}.lst-kix_k4cuyt1bpp9v-5>li:before{content:"-  "}.lst-kix_k4cuyt1bpp9v-6>li:before{content:"-  "}ul.lst-kix_nsgwrn58pxun-1{list-style-type:none}.lst-kix_k4cuyt1bpp9v-7>li:before{content:"-  "}ul.lst-kix_nsgwrn58pxun-0{list-style-type:none}ul.lst-kix_nsgwrn58pxun-3{list-style-type:none}ul.lst-kix_nsgwrn58pxun-2{list-style-type:none}.lst-kix_k4cuyt1bpp9v-1>li:before{content:"-  "}.lst-kix_k4cuyt1bpp9v-2>li:before{content:"-  "}.lst-kix_k4cuyt1bpp9v-0>li:before{content:"-  "}.lst-kix_k4cuyt1bpp9v-4>li:before{content:"-  "}ul.lst-kix_h00fyh7ioccj-8{list-style-type:none}ul.lst-kix_h00fyh7ioccj-7{list-style-type:none}.lst-kix_ca801xthou7n-2>li:before{content:"\0025a0   "}.lst-kix_ca801xthou7n-3>li:before{content:"\0025cf   "}.lst-kix_k4cuyt1bpp9v-3>li:before{content:"-  "}ul.lst-kix_eqi39e5pcyab-8{list-style-type:none}ul.lst-kix_wgij0cuk02z7-8{list-style-type:none}ul.lst-kix_eqi39e5pcyab-7{list-style-type:none}ul.lst-kix_eqi39e5pcyab-6{list-style-type:none}ul.lst-kix_eqi39e5pcyab-5{list-style-type:none}ul.lst-kix_eqi39e5pcyab-0{list-style-type:none}ul.lst-kix_h00fyh7ioccj-6{list-style-type:none}ul.lst-kix_h00fyh7ioccj-5{list-style-type:none}ul.lst-kix_h00fyh7ioccj-4{list-style-type:none}ul.lst-kix_h00fyh7ioccj-3{list-style-type:none}ul.lst-kix_eqi39e5pcyab-4{list-style-type:none}ul.lst-kix_h00fyh7ioccj-2{list-style-type:none}ul.lst-kix_eqi39e5pcyab-3{list-style-type:none}ul.lst-kix_h00fyh7ioccj-1{list-style-type:none}ul.lst-kix_eqi39e5pcyab-2{list-style-type:none}ul.lst-kix_h00fyh7ioccj-0{list-style-type:none}ul.lst-kix_eqi39e5pcyab-1{list-style-type:none}.lst-kix_f0twgew1dwvb-8>li:before{content:"\0025a0   "}.lst-kix_f0twgew1dwvb-6>li:before{content:"\0025cf   "}.lst-kix_f0twgew1dwvb-2>li:before{content:"\0025a0   "}.lst-kix_nsgwrn58pxun-7>li:before{content:"\0025cb   "}.lst-kix_f0twgew1dwvb-0>li:before{content:"\0025cf   "}.lst-kix_f0twgew1dwvb-4>li:before{content:"\0025cb   "}.lst-kix_ucn32gza98p1-0>li:before{content:"\0025cf   "}.lst-kix_nsgwrn58pxun-5>li:before{content:"\0025a0   "}ul.lst-kix_wgij0cuk02z7-1{list-style-type:none}ul.lst-kix_wgij0cuk02z7-0{list-style-type:none}ul.lst-kix_wgij0cuk02z7-3{list-style-type:none}.lst-kix_t2r1kvusbz6c-6>li:before{content:"\0025cf   "}ul.lst-kix_wgij0cuk02z7-2{list-style-type:none}ul.lst-kix_wgij0cuk02z7-5{list-style-type:none}ul.lst-kix_wgij0cuk02z7-4{list-style-type:none}ul.lst-kix_wgij0cuk02z7-7{list-style-type:none}ul.lst-kix_wgij0cuk02z7-6{list-style-type:none}ul.lst-kix_a1qwh5faudd7-3{list-style-type:none}ul.lst-kix_a1qwh5faudd7-4{list-style-type:none}.lst-kix_eqi39e5pcyab-6>li:before{content:"\0025cf   "}.lst-kix_eqi39e5pcyab-8>li:before{content:"\0025a0   "}ul.lst-kix_a1qwh5faudd7-1{list-style-type:none}.lst-kix_t2r1kvusbz6c-8>li:before{content:"\0025a0   "}ul.lst-kix_a1qwh5faudd7-2{list-style-type:none}ul.lst-kix_a1qwh5faudd7-7{list-style-type:none}ul.lst-kix_a1qwh5faudd7-8{list-style-type:none}ul.lst-kix_a1qwh5faudd7-5{list-style-type:none}ul.lst-kix_a1qwh5faudd7-6{list-style-type:none}.lst-kix_eqi39e5pcyab-4>li:before{content:"\0025cb   "}.lst-kix_h00fyh7ioccj-0>li:before{content:"\0025cf   "}.lst-kix_h00fyh7ioccj-2>li:before{content:"\0025a0   "}.lst-kix_wgij0cuk02z7-2>li:before{content:"\0025a0   "}.lst-kix_62hscnxr884v-3>li:before{content:"\0025cf   "}.lst-kix_62hscnxr884v-5>li:before{content:"\0025a0   "}.lst-kix_ucn32gza98p1-2>li:before{content:"\0025cf   "}.lst-kix_wgij0cuk02z7-0>li:before{content:"\0025cf   "}.lst-kix_h00fyh7ioccj-8>li:before{content:"\0025a0   "}.lst-kix_ucn32gza98p1-4>li:before{content:"\0025cf   "}ul.lst-kix_t2r1kvusbz6c-6{list-style-type:none}ul.lst-kix_t2r1kvusbz6c-7{list-style-type:none}ul.lst-kix_t2r1kvusbz6c-8{list-style-type:none}.lst-kix_h00fyh7ioccj-4>li:before{content:"\0025cb   "}.lst-kix_62hscnxr884v-1>li:before{content:"\0025cb   "}.lst-kix_ucn32gza98p1-6>li:before{content:"\0025cf   "}ul.lst-kix_t2r1kvusbz6c-0{list-style-type:none}ul.lst-kix_t2r1kvusbz6c-1{list-style-type:none}ul.lst-kix_t2r1kvusbz6c-2{list-style-type:none}ul.lst-kix_t2r1kvusbz6c-3{list-style-type:none}ul.lst-kix_t2r1kvusbz6c-4{list-style-type:none}.lst-kix_ucn32gza98p1-8>li:before{content:"\0025cf   "}ul.lst-kix_t2r1kvusbz6c-5{list-style-type:none}.lst-kix_h00fyh7ioccj-6>li:before{content:"\0025cf   "}ul.lst-kix_a1qwh5faudd7-0{list-style-type:none}.lst-kix_88mfa53r1zac-1>li:before{content:"\0025cb   "}.lst-kix_88mfa53r1zac-2>li:before{content:"\0025a0   "}.lst-kix_88mfa53r1zac-0>li:before{content:"\0025cf   "}.lst-kix_a1qwh5faudd7-7>li:before{content:"\0025cb   "}.lst-kix_a1qwh5faudd7-8>li:before{content:"\0025a0   "}.lst-kix_a1qwh5faudd7-5>li:before{content:"\0025a0   "}.lst-kix_a1qwh5faudd7-6>li:before{content:"\0025cf   "}.lst-kix_wgij0cuk02z7-6>li:before{content:"\0025cf   "}.lst-kix_wgij0cuk02z7-5>li:before{content:"\0025a0   "}.lst-kix_wgij0cuk02z7-4>li:before{content:"\0025cb   "}.lst-kix_a1qwh5faudd7-0>li:before{content:"\0025cf   "}.lst-kix_a1qwh5faudd7-1>li:before{content:"\0025cb   "}.lst-kix_a1qwh5faudd7-2>li:before{content:"\0025a0   "}.lst-kix_a1qwh5faudd7-3>li:before{content:"\0025cf   "}.lst-kix_a1qwh5faudd7-4>li:before{content:"\0025cb   "}.lst-kix_wgij0cuk02z7-7>li:before{content:"\0025cb   "}.lst-kix_wgij0cuk02z7-8>li:before{content:"\0025a0   "}ul.lst-kix_88mfa53r1zac-1{list-style-type:none}ul.lst-kix_88mfa53r1zac-0{list-style-type:none}ul.lst-kix_88mfa53r1zac-5{list-style-type:none}ul.lst-kix_88mfa53r1zac-4{list-style-type:none}ul.lst-kix_88mfa53r1zac-3{list-style-type:none}ul.lst-kix_88mfa53r1zac-2{list-style-type:none}ul.lst-kix_88mfa53r1zac-8{list-style-type:none}ul.lst-kix_88mfa53r1zac-7{list-style-type:none}ul.lst-kix_88mfa53r1zac-6{list-style-type:none}.lst-kix_88mfa53r1zac-7>li:before{content:"\0025cb   "}.lst-kix_88mfa53r1zac-6>li:before{content:"\0025cf   "}ul.lst-kix_62hscnxr884v-2{list-style-type:none}ul.lst-kix_62hscnxr884v-1{list-style-type:none}ul.lst-kix_62hscnxr884v-0{list-style-type:none}.lst-kix_88mfa53r1zac-3>li:before{content:"\0025cf   "}.lst-kix_88mfa53r1zac-5>li:before{content:"\0025a0   "}.lst-kix_88mfa53r1zac-4>li:before{content:"\0025cb   "}ul.lst-kix_62hscnxr884v-8{list-style-type:none}ul.lst-kix_62hscnxr884v-7{list-style-type:none}ul.lst-kix_62hscnxr884v-6{list-style-type:none}ul.lst-kix_62hscnxr884v-5{list-style-type:none}ul.lst-kix_62hscnxr884v-4{list-style-type:none}ul.lst-kix_62hscnxr884v-3{list-style-type:none}.lst-kix_88mfa53r1zac-8>li:before{content:"\0025a0   "}.lst-kix_f0twgew1dwvb-5>li:before{content:"\0025a0   "}.lst-kix_f0twgew1dwvb-7>li:before{content:"\0025cb   "}.lst-kix_f0twgew1dwvb-1>li:before{content:"\0025cb   "}.lst-kix_nsgwrn58pxun-8>li:before{content:"\0025a0   "}.lst-kix_f0twgew1dwvb-3>li:before{content:"\0025cf   "}.lst-kix_nsgwrn58pxun-6>li:before{content:"\0025cf   "}ul.lst-kix_o9wh3atyxqoa-8{list-style-type:none}ul.lst-kix_7k3lbbyokens-3{list-style-type:none}ul.lst-kix_7k3lbbyokens-4{list-style-type:none}ul.lst-kix_7k3lbbyokens-5{list-style-type:none}ul.lst-kix_7k3lbbyokens-6{list-style-type:none}ul.lst-kix_7k3lbbyokens-0{list-style-type:none}ul.lst-kix_7k3lbbyokens-1{list-style-type:none}.lst-kix_t2r1kvusbz6c-5>li:before{content:"\0025a0   "}ul.lst-kix_7k3lbbyokens-2{list-style-type:none}ul.lst-kix_7k3lbbyokens-7{list-style-type:none}ul.lst-kix_7k3lbbyokens-8{list-style-type:none}.lst-kix_t2r1kvusbz6c-7>li:before{content:"\0025cb   "}.lst-kix_eqi39e5pcyab-7>li:before{content:"\0025cb   "}.lst-kix_eqi39e5pcyab-5>li:before{content:"\0025a0   "}ul.lst-kix_o9wh3atyxqoa-7{list-style-type:none}.lst-kix_h00fyh7ioccj-1>li:before{content:"\0025cb   "}ul.lst-kix_o9wh3atyxqoa-6{list-style-type:none}ul.lst-kix_o9wh3atyxqoa-5{list-style-type:none}ul.lst-kix_o9wh3atyxqoa-4{list-style-type:none}.lst-kix_wgij0cuk02z7-1>li:before{content:"\0025cb   "}.lst-kix_wgij0cuk02z7-3>li:before{content:"\0025cf   "}ul.lst-kix_o9wh3atyxqoa-3{list-style-type:none}ul.lst-kix_o9wh3atyxqoa-2{list-style-type:none}ul.lst-kix_o9wh3atyxqoa-1{list-style-type:none}.lst-kix_62hscnxr884v-2>li:before{content:"\0025a0   "}ul.lst-kix_o9wh3atyxqoa-0{list-style-type:none}.lst-kix_ucn32gza98p1-1>li:before{content:"\0025cf   "}.lst-kix_62hscnxr884v-4>li:before{content:"\0025cb   "}.lst-kix_ucn32gza98p1-3>li:before{content:"\0025cf   "}.lst-kix_ucn32gza98p1-5>li:before{content:"\0025cf   "}.lst-kix_h00fyh7ioccj-5>li:before{content:"\0025a0   "}.lst-kix_ucn32gza98p1-7>li:before{content:"\0025cf   "}.lst-kix_h00fyh7ioccj-3>li:before{content:"\0025cf   "}.lst-kix_62hscnxr884v-0>li:before{content:"\0025cf   "}.lst-kix_h00fyh7ioccj-7>li:before{content:"\0025cb   "}ol{margin:0;padding:0}table td,table th{padding:0}.c19{border-right-style:solid;padding:8pt 5pt 8pt 5pt !important;border-bottom-color:#000000;border-top-width:1pt;border-right-width:0pt;border-left-color:#000000;vertical-align:top;border-right-color:#000000;border-left-width:0pt;border-top-style:solid;border-left-style:solid;border-bottom-width:0pt;width:493.5pt;border-top-color:#000000;border-bottom-style:solid}.c27{border-right-style:solid;padding:8pt 5pt 8pt 5pt !important;border-bottom-color:#000000;border-top-width:0pt;border-right-width:0pt;border-left-color:#000000;vertical-align:top;border-right-color:#000000;border-left-width:0pt;border-top-style:solid;border-left-style:solid;border-bottom-width:1pt;width:54.8pt;border-top-color:#000000;border-bottom-style:solid}.c3{border-right-style:solid;padding:8pt 5pt 8pt 5pt !important;border-bottom-color:#000000;border-top-width:1pt;border-right-width:0pt;border-left-color:#000000;vertical-align:top;border-right-color:#000000;border-left-width:0pt;border-top-style:solid;border-left-style:solid;border-bottom-width:0pt;width:70.5pt;border-top-color:#000000;border-bottom-style:solid}.c9{border-right-style:solid;padding:8pt 5pt 8pt 5pt !important;border-bottom-color:#000000;border-top-width:0pt;border-right-width:0pt;border-left-color:#000000;vertical-align:top;border-right-color:#000000;border-left-width:0pt;border-top-style:solid;border-left-style:solid;border-bottom-width:0pt;width:70.5pt;border-top-color:#000000;border-bottom-style:solid}.c5{border-right-style:solid;padding:8pt 5pt 8pt 5pt !important;border-bottom-color:#000000;border-top-width:0pt;border-right-width:0pt;border-left-color:#000000;vertical-align:top;border-right-color:#000000;border-left-width:0pt;border-top-style:solid;border-left-style:solid;border-bottom-width:1pt;width:70.5pt;border-top-color:#000000;border-bottom-style:solid}.c25{border-right-style:solid;padding:8pt 5pt 8pt 5pt !important;border-bottom-color:#000000;border-top-width:0pt;border-right-width:0pt;border-left-color:#000000;vertical-align:top;border-right-color:#000000;border-left-width:0pt;border-top-style:solid;border-left-style:solid;border-bottom-width:0pt;width:493.5pt;border-top-color:#000000;border-bottom-style:solid}.c12{border-right-style:solid;padding:8pt 5pt 8pt 5pt !important;border-bottom-color:#000000;border-top-width:0pt;border-right-width:0pt;border-left-color:#000000;vertical-align:top;border-right-color:#000000;border-left-width:0pt;border-top-style:solid;border-left-style:solid;border-bottom-width:0pt;width:407.2pt;border-top-color:#000000;border-bottom-style:solid}.c7{border-right-style:solid;padding:8pt 5pt 8pt 5pt !important;border-bottom-color:#000000;border-top-width:0pt;border-right-width:0pt;border-left-color:#000000;vertical-align:top;border-right-color:#000000;border-left-width:0pt;border-top-style:solid;border-left-style:solid;border-bottom-width:1pt;width:493.5pt;border-top-color:#000000;border-bottom-style:solid}.c22{border-right-style:solid;padding:8pt 5pt 8pt 5pt !important;border-bottom-color:#000000;border-top-width:1pt;border-right-width:0pt;border-left-color:#000000;vertical-align:top;border-right-color:#000000;border-left-width:0pt;border-top-style:solid;border-left-style:solid;border-bottom-width:0pt;width:54.8pt;border-top-color:#000000;border-bottom-style:solid}.c17{border-right-style:solid;padding:8pt 5pt 8pt 5pt !important;border-bottom-color:#000000;border-top-width:0pt;border-right-width:0pt;border-left-color:#000000;vertical-align:top;border-right-color:#000000;border-left-width:0pt;border-top-style:solid;border-left-style:solid;border-bottom-width:0pt;width:86.2pt;border-top-color:#000000;border-bottom-style:solid}.c41{border-right-style:solid;padding:8pt 5pt 8pt 5pt !important;border-bottom-color:#000000;border-top-width:1pt;border-right-width:0pt;border-left-color:#000000;vertical-align:top;border-right-color:#000000;border-left-width:0pt;border-top-style:solid;border-left-style:solid;border-bottom-width:0pt;width:86.2pt;border-top-color:#000000;border-bottom-style:solid}.c35{border-right-style:solid;padding:8pt 5pt 8pt 5pt !important;border-bottom-color:#000000;border-top-width:1pt;border-right-width:0pt;border-left-color:#000000;vertical-align:top;border-right-color:#000000;border-left-width:0pt;border-top-style:solid;border-left-style:solid;border-bottom-width:0pt;width:407.2pt;border-top-color:#000000;border-bottom-style:solid}.c10{border-right-style:solid;padding:8pt 5pt 8pt 5pt !important;border-bottom-color:#000000;border-top-width:0pt;border-right-width:0pt;border-left-color:#000000;vertical-align:top;border-right-color:#000000;border-left-width:0pt;border-top-style:solid;border-left-style:solid;border-bottom-width:0pt;width:54.8pt;border-top-color:#000000;border-bottom-style:solid}.c1{color:#000000;font-weight:400;text-decoration:none;vertical-align:baseline;font-size:10pt;font-family:"Noto Sans KR";font-style:normal;line-height:1.5;}.c0{padding-top:0pt;padding-bottom:0pt;line-height:1.5;orphans:2;widows:2;text-align:left;height:11pt}.c29{color:#000000;font-weight:400;text-decoration:none;vertical-align:baseline;font-size:9pt;font-family:"Noto Sans KR";font-style:normal;line-height:1.5;}.c26{color:#000000;font-weight:700;text-decoration:none;vertical-align:baseline;font-size:18pt;font-family:"Noto Sans KR";font-style:normal}.c31{color:#000000;font-weight:400;text-decoration:none;vertical-align:baseline;font-size:11pt;font-family:"Arial";font-style:normal;line-height:1.5;}.c6{color:#000000;font-weight:700;text-decoration:none;vertical-align:baseline;font-size:12pt;font-family:"Noto Sans KR";font-style:normal}.c8{color:#000000;font-weight:400;text-decoration:none;vertical-align:baseline;font-size:11pt;font-family:"Noto Sans KR";font-style:normal;line-height:1.5;}.c18{color:#000000;font-weight:700;text-decoration:none;vertical-align:baseline;font-size:6pt;font-family:"Noto Sans KR";font-style:normal}.c30{color:#000000;font-weight:700;text-decoration:none;vertical-align:baseline;font-size:20pt;font-family:"Noto Sans KR";font-style:normal}.c2{color:#000000;font-weight:400;text-decoration:none;vertical-align:baseline;font-size:9pt;font-family:"Noto Sans KR";font-style:italic}.c13{color:#000000;font-weight:700;text-decoration:none;vertical-align:baseline;font-size:14pt;font-family:"Noto Sans KR";font-style:normal}.c33{color:#000000;font-weight:400;text-decoration:none;vertical-align:baseline;font-size:1pt;font-family:"Noto Sans KR";font-style:normal}.c4{padding-top:0pt;padding-bottom:0pt;line-height:1.5;orphans:2;widows:2;text-align:left}.c23{padding-top:0pt;padding-bottom:0pt;line-height:1.5;orphans:2;widows:2;text-align:left}.c28{padding-top:0pt;padding-bottom:0pt;line-height:1.5;orphans:2;widows:2;text-align:center}.c36{border-spacing:0;border-collapse:collapse;margin-right:auto}.c38{color:#000000;text-decoration:none;vertical-align:baseline;font-style:normal}.c32{color:#000000;text-decoration:none;vertical-align:baseline;font-style:italic}.c24{-webkit-text-decoration-skip:none;color:#1155cc;text-decoration:underline;text-decoration-skip-ink:none}.c40{font-size:9pt;font-weight:400;font-family:"Noto Sans KR";line-height:1.5;}.c37{background-color:#ffffff;max-width:451.3pt;padding:66.3pt 72pt 72pt 72pt}.c34{font-size:16pt;font-weight:700;font-family:"Noto Sans KR";line-height:1.5;}.c14{font-size:10pt;font-weight:400;font-family:"Noto Sans KR";line-height:1.5;}.c16{color:inherit;text-decoration:inherit}.c39{height:19.6pt}.c42{height:26pt}.c21{height:21pt}.c20{height:12.9pt}.c15{height:24pt}.c11{height:11pt}.title{padding-top:0pt;color:#000000;font-size:26pt;padding-bottom:3pt;font-family:"Arial";line-height:1.5;page-break-after:avoid;orphans:2;widows:2;text-align:left}.subtitle{padding-top:0pt;color:#666666;font-size:15pt;padding-bottom:16pt;font-family:"Arial";line-height:1.5;page-break-after:avoid;orphans:2;widows:2;text-align:left}li{color:#000000;font-size:11pt;font-family:"Arial";line-height:1.5;}p{margin:0;color:#000000;font-size:11pt;font-family:"Arial";line-height:1.5;margin-bottom:0.5em;}h1{padding-top:20pt;color:#000000;font-size:20pt;padding-bottom:6pt;font-family:"Arial";line-height:1.5;page-break-after:avoid;orphans:2;widows:2;text-align:left}h2{padding-top:18pt;color:#000000;font-size:16pt;padding-bottom:6pt;font-family:"Arial";line-height:1.5;page-break-after:avoid;orphans:2;widows:2;text-align:left}h3{padding-top:16pt;color:#434343;font-size:14pt;padding-bottom:4pt;font-family:"Arial";line-height:1.5;page-break-after:avoid;orphans:2;widows:2;text-align:left}h4{padding-top:14pt;color:#666666;font-size:12pt;padding-bottom:4pt;font-family:"Arial";line-height:1.5;page-break-after:avoid;orphans:2;widows:2;text-align:left}h5{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.5;page-break-after:avoid;orphans:2;widows:2;text-align:left}h6{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.5;page-break-after:avoid;font-style:italic;orphans:2;widows:2;text-align:left}
-</style>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <style type="text/css">
+        @import url(https://themes.googleusercontent.com/fonts/css?kit=MdkLunaJDM8LEDc1LlU9zDt0jZqdUG2xqTUcCtI89eLOfsfM6rvuuu7h1pY3r_-A);
+
+ㅍ        /* 기본 줄간격 정의 */
+        body,
+        p,
+        li,
+        td {
+            line-height: 1.5;
+        }
+
+        /* 문단 사이 여백 추가 */
+        p {
+            margin-bottom: 0.5em;
+        }
+
+        /* 테이블 셀 패딩 증가 */
+        table td {
+            padding: 8pt 5pt 8pt 5pt !important;
+        }
+
+        /* 중앙 정렬을 위한 스타일 추가 */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            /* 배경색 추가로 화면 경계 구분 */
+        }
+
+        .doc-content {
+            max-width: 800px !important;
+            /* 콘텐츠 최대 너비를 더 작게 조정 */
+            width: 95%;
+            margin: 0 auto;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 66.3pt 72pt 72pt 72pt;
+        }
+
+        /* 테이블 최대 너비 엄격히 제한 */
+        .c40 {
+            margin-left: auto !important;
+            margin-right: auto !important;
+            width: 100% !important;
+            max-width: 800px !important;
+            /* 테이블 최대 너비 명시적 설정 */
+            table-layout: fixed !important;
+            /* 테이블 레이아웃 고정 */
+        }
+
+        /* 테이블 내 콘텐츠 칼럼 너비 확장 */
+        .c19,
+        .c25,
+        .c7 {
+            width: 100% !important;
+            box-sizing: border-box !important;
+            /* 박스 모델이 패딩과 테두리를 포함하도록 */
+            word-wrap: break-word !important;
+            /* 텍스트가 넘치지 않도록 */
+        }
+
+        /* 테이블 셀 반응형 너비 조정 */
+        .c20,
+        .c19 {
+            width: 20% !important;
+            max-width: 160px !important;
+            /* 최대 너비 지정 */
+        }
+
+        .c44,
+        .c27 {
+            width: 80% !important;
+            max-width: 640px !important;
+            /* 최대 너비 지정 */
+        }
+
+        /* 모바일 대응을 위한 미디어 쿼리 추가 */
+        @media screen and (max-width: 768px) {
+            .doc-content {
+                width: 100%;
+                padding: 20pt 15pt !important;
+            }
+
+            .c20,
+            .c19 {
+                width: 30% !important;
+                /* 모바일에서는 좀 더 넓게 */
+            }
+
+            .c44,
+            .c27 {
+                width: 70% !important;
+            }
+        }
+
+        /* 기존 CSS 스타일 */
+        ul.lst-kix_ca801xthou7n-3 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_ca801xthou7n-4 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_ca801xthou7n-5 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_ca801xthou7n-6 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_ca801xthou7n-7 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_ca801xthou7n-8 {
+            list-style-type: none
+        }
+
+        .lst-kix_o9wh3atyxqoa-0>li:before {
+            content: "-  "
+        }
+
+        .lst-kix_o9wh3atyxqoa-5>li:before {
+            content: "-  "
+        }
+
+        ul.lst-kix_f0twgew1dwvb-0 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_f0twgew1dwvb-1 {
+            list-style-type: none
+        }
+
+        .lst-kix_o9wh3atyxqoa-3>li:before {
+            content: "-  "
+        }
+
+        ul.lst-kix_f0twgew1dwvb-2 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_f0twgew1dwvb-3 {
+            list-style-type: none
+        }
+
+        .lst-kix_o9wh3atyxqoa-4>li:before {
+            content: "-  "
+        }
+
+        ul.lst-kix_f0twgew1dwvb-4 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_f0twgew1dwvb-5 {
+            list-style-type: none
+        }
+
+        .lst-kix_o9wh3atyxqoa-1>li:before {
+            content: "-  "
+        }
+
+        ul.lst-kix_f0twgew1dwvb-6 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_f0twgew1dwvb-7 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_f0twgew1dwvb-8 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_ca801xthou7n-0 {
+            list-style-type: none
+        }
+
+        .lst-kix_o9wh3atyxqoa-2>li:before {
+            content: "-  "
+        }
+
+        ul.lst-kix_ca801xthou7n-1 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_ca801xthou7n-2 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_k4cuyt1bpp9v-0 {
+            list-style-type: none
+        }
+
+        .lst-kix_62hscnxr884v-7>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_ipe553tlw532-8>li:before {
+            content: "-  "
+        }
+
+        ul.lst-kix_k4cuyt1bpp9v-4 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_k4cuyt1bpp9v-3 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_k4cuyt1bpp9v-2 {
+            list-style-type: none
+        }
+
+        .lst-kix_62hscnxr884v-6>li:before {
+            content: "\0025cf   "
+        }
+
+        ul.lst-kix_k4cuyt1bpp9v-1 {
+            list-style-type: none
+        }
+
+        .lst-kix_7k3lbbyokens-0>li:before {
+            content: "\0025cf   "
+        }
+
+        ul.lst-kix_k4cuyt1bpp9v-8 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_k4cuyt1bpp9v-7 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_k4cuyt1bpp9v-6 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_k4cuyt1bpp9v-5 {
+            list-style-type: none
+        }
+
+        .lst-kix_7k3lbbyokens-1>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_7k3lbbyokens-3>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_o9wh3atyxqoa-6>li:before {
+            content: "-  "
+        }
+
+        .lst-kix_7k3lbbyokens-2>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_62hscnxr884v-8>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_eqi39e5pcyab-0>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_o9wh3atyxqoa-7>li:before {
+            content: "-  "
+        }
+
+        .lst-kix_o9wh3atyxqoa-8>li:before {
+            content: "-  "
+        }
+
+        .lst-kix_eqi39e5pcyab-3>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_eqi39e5pcyab-2>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_eqi39e5pcyab-1>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_ca801xthou7n-5>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_ca801xthou7n-4>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_ca801xthou7n-6>li:before {
+            content: "\0025cf   "
+        }
+
+        ul.lst-kix_ucn32gza98p1-1 {
+            list-style-type: none
+        }
+
+        .lst-kix_ca801xthou7n-1>li:before {
+            content: "\0025cb   "
+        }
+
+        ul.lst-kix_ucn32gza98p1-0 {
+            list-style-type: none
+        }
+
+        .lst-kix_ca801xthou7n-0>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_ca801xthou7n-8>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_t2r1kvusbz6c-4>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_ca801xthou7n-7>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_t2r1kvusbz6c-3>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_nsgwrn58pxun-1>li:before {
+            content: "\0025cb   "
+        }
+
+        ul.lst-kix_ucn32gza98p1-8 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_ucn32gza98p1-7 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_ucn32gza98p1-6 {
+            list-style-type: none
+        }
+
+        .lst-kix_t2r1kvusbz6c-0>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_t2r1kvusbz6c-2>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_7k3lbbyokens-5>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_7k3lbbyokens-7>li:before {
+            content: "\0025cb   "
+        }
+
+        ul.lst-kix_ucn32gza98p1-5 {
+            list-style-type: none
+        }
+
+        .lst-kix_nsgwrn58pxun-3>li:before {
+            content: "\0025cf   "
+        }
+
+        ul.lst-kix_ucn32gza98p1-4 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_ucn32gza98p1-3 {
+            list-style-type: none
+        }
+
+        .lst-kix_nsgwrn58pxun-0>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_nsgwrn58pxun-4>li:before {
+            content: "\0025cb   "
+        }
+
+        ul.lst-kix_ucn32gza98p1-2 {
+            list-style-type: none
+        }
+
+        .lst-kix_t2r1kvusbz6c-1>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_7k3lbbyokens-4>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_7k3lbbyokens-8>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_ipe553tlw532-6>li:before {
+            content: "-  "
+        }
+
+        .lst-kix_ipe553tlw532-7>li:before {
+            content: "-  "
+        }
+
+        .lst-kix_nsgwrn58pxun-2>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_7k3lbbyokens-6>li:before {
+            content: "\0025cf   "
+        }
+
+        ul.lst-kix_nsgwrn58pxun-5 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_nsgwrn58pxun-4 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_nsgwrn58pxun-7 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_nsgwrn58pxun-6 {
+            list-style-type: none
+        }
+
+        .lst-kix_k4cuyt1bpp9v-8>li:before {
+            content: "-  "
+        }
+
+        ul.lst-kix_nsgwrn58pxun-8 {
+            list-style-type: none
+        }
+
+        .lst-kix_ipe553tlw532-5>li:before {
+            content: "-  "
+        }
+
+        .lst-kix_k4cuyt1bpp9v-5>li:before {
+            content: "-  "
+        }
+
+        .lst-kix_k4cuyt1bpp9v-6>li:before {
+            content: "-  "
+        }
+
+        .lst-kix_ipe553tlw532-4>li:before {
+            content: "-  "
+        }
+
+        .lst-kix_ipe553tlw532-3>li:before {
+            content: "-  "
+        }
+
+        ul.lst-kix_nsgwrn58pxun-1 {
+            list-style-type: none
+        }
+
+        .lst-kix_k4cuyt1bpp9v-7>li:before {
+            content: "-  "
+        }
+
+        ul.lst-kix_nsgwrn58pxun-0 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_nsgwrn58pxun-3 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_nsgwrn58pxun-2 {
+            list-style-type: none
+        }
+
+        .lst-kix_ipe553tlw532-1>li:before {
+            content: "-  "
+        }
+
+        .lst-kix_k4cuyt1bpp9v-1>li:before {
+            content: "-  "
+        }
+
+        .lst-kix_k4cuyt1bpp9v-2>li:before {
+            content: "-  "
+        }
+
+        .lst-kix_ipe553tlw532-0>li:before {
+            content: "-  "
+        }
+
+        .lst-kix_ipe553tlw532-2>li:before {
+            content: "-  "
+        }
+
+        .lst-kix_k4cuyt1bpp9v-0>li:before {
+            content: "-  "
+        }
+
+        .lst-kix_k4cuyt1bpp9v-4>li:before {
+            content: "-  "
+        }
+
+        ul.lst-kix_h00fyh7ioccj-8 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_h00fyh7ioccj-7 {
+            list-style-type: none
+        }
+
+        .lst-kix_ca801xthou7n-2>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_ca801xthou7n-3>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_k4cuyt1bpp9v-3>li:before {
+            content: "-  "
+        }
+
+        ul.lst-kix_eqi39e5pcyab-8 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_wgij0cuk02z7-8 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_eqi39e5pcyab-7 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_eqi39e5pcyab-6 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_eqi39e5pcyab-5 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_eqi39e5pcyab-0 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_h00fyh7ioccj-6 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_h00fyh7ioccj-5 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_h00fyh7ioccj-4 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_h00fyh7ioccj-3 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_eqi39e5pcyab-4 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_h00fyh7ioccj-2 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_eqi39e5pcyab-3 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_h00fyh7ioccj-1 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_eqi39e5pcyab-2 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_h00fyh7ioccj-0 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_eqi39e5pcyab-1 {
+            list-style-type: none
+        }
+
+        .lst-kix_f0twgew1dwvb-8>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_f0twgew1dwvb-6>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_f0twgew1dwvb-2>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_nsgwrn58pxun-7>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_f0twgew1dwvb-0>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_f0twgew1dwvb-4>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_ucn32gza98p1-0>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_nsgwrn58pxun-5>li:before {
+            content: "\0025a0   "
+        }
+
+        ul.lst-kix_wgij0cuk02z7-1 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_wgij0cuk02z7-0 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_wgij0cuk02z7-3 {
+            list-style-type: none
+        }
+
+        .lst-kix_t2r1kvusbz6c-6>li:before {
+            content: "\0025cf   "
+        }
+
+        ul.lst-kix_wgij0cuk02z7-2 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_wgij0cuk02z7-5 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_wgij0cuk02z7-4 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_wgij0cuk02z7-7 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_wgij0cuk02z7-6 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_a1qwh5faudd7-3 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_a1qwh5faudd7-4 {
+            list-style-type: none
+        }
+
+        .lst-kix_eqi39e5pcyab-6>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_eqi39e5pcyab-8>li:before {
+            content: "\0025a0   "
+        }
+
+        ul.lst-kix_a1qwh5faudd7-1 {
+            list-style-type: none
+        }
+
+        .lst-kix_t2r1kvusbz6c-8>li:before {
+            content: "\0025a0   "
+        }
+
+        ul.lst-kix_a1qwh5faudd7-2 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_a1qwh5faudd7-7 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_a1qwh5faudd7-8 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_a1qwh5faudd7-5 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_a1qwh5faudd7-6 {
+            list-style-type: none
+        }
+
+        .lst-kix_eqi39e5pcyab-4>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_h00fyh7ioccj-0>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_h00fyh7ioccj-2>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_wgij0cuk02z7-2>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_62hscnxr884v-3>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_62hscnxr884v-5>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_ucn32gza98p1-2>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_wgij0cuk02z7-0>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_h00fyh7ioccj-8>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_ucn32gza98p1-4>li:before {
+            content: "\0025cf   "
+        }
+
+        ul.lst-kix_t2r1kvusbz6c-6 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_t2r1kvusbz6c-7 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_t2r1kvusbz6c-8 {
+            list-style-type: none
+        }
+
+        .lst-kix_h00fyh7ioccj-4>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_62hscnxr884v-1>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_ucn32gza98p1-6>li:before {
+            content: "\0025cf   "
+        }
+
+        ul.lst-kix_t2r1kvusbz6c-0 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_t2r1kvusbz6c-1 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_t2r1kvusbz6c-2 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_t2r1kvusbz6c-3 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_t2r1kvusbz6c-4 {
+            list-style-type: none
+        }
+
+        .lst-kix_ucn32gza98p1-8>li:before {
+            content: "\0025cf   "
+        }
+
+        ul.lst-kix_t2r1kvusbz6c-5 {
+            list-style-type: none
+        }
+
+        .lst-kix_h00fyh7ioccj-6>li:before {
+            content: "\0025cf   "
+        }
+
+        ul.lst-kix_a1qwh5faudd7-0 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_ipe553tlw532-4 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_ipe553tlw532-3 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_ipe553tlw532-6 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_ipe553tlw532-5 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_ipe553tlw532-0 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_ipe553tlw532-2 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_ipe553tlw532-1 {
+            list-style-type: none
+        }
+
+        .lst-kix_88mfa53r1zac-1>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_88mfa53r1zac-2>li:before {
+            content: "\0025a0   "
+        }
+
+        ul.lst-kix_ipe553tlw532-8 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_ipe553tlw532-7 {
+            list-style-type: none
+        }
+
+        .lst-kix_88mfa53r1zac-0>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_a1qwh5faudd7-7>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_a1qwh5faudd7-8>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_a1qwh5faudd7-5>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_a1qwh5faudd7-6>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_wgij0cuk02z7-6>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_wgij0cuk02z7-5>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_wgij0cuk02z7-4>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_a1qwh5faudd7-0>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_a1qwh5faudd7-1>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_a1qwh5faudd7-2>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_a1qwh5faudd7-3>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_a1qwh5faudd7-4>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_wgij0cuk02z7-7>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_wgij0cuk02z7-8>li:before {
+            content: "\0025a0   "
+        }
+
+        ul.lst-kix_88mfa53r1zac-1 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_88mfa53r1zac-0 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_88mfa53r1zac-5 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_88mfa53r1zac-4 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_88mfa53r1zac-3 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_88mfa53r1zac-2 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_88mfa53r1zac-8 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_88mfa53r1zac-7 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_88mfa53r1zac-6 {
+            list-style-type: none
+        }
+
+        .lst-kix_88mfa53r1zac-7>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_88mfa53r1zac-6>li:before {
+            content: "\0025cf   "
+        }
+
+        ul.lst-kix_62hscnxr884v-2 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_62hscnxr884v-1 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_62hscnxr884v-0 {
+            list-style-type: none
+        }
+
+        .lst-kix_88mfa53r1zac-3>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_88mfa53r1zac-5>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_88mfa53r1zac-4>li:before {
+            content: "\0025cb   "
+        }
+
+        ul.lst-kix_62hscnxr884v-8 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_62hscnxr884v-7 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_62hscnxr884v-6 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_62hscnxr884v-5 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_62hscnxr884v-4 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_62hscnxr884v-3 {
+            list-style-type: none
+        }
+
+        .lst-kix_88mfa53r1zac-8>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_f0twgew1dwvb-5>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_f0twgew1dwvb-7>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_f0twgew1dwvb-1>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_nsgwrn58pxun-8>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_f0twgew1dwvb-3>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_nsgwrn58pxun-6>li:before {
+            content: "\0025cf   "
+        }
+
+        ul.lst-kix_o9wh3atyxqoa-8 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_7k3lbbyokens-3 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_7k3lbbyokens-4 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_7k3lbbyokens-5 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_7k3lbbyokens-6 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_7k3lbbyokens-0 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_7k3lbbyokens-1 {
+            list-style-type: none
+        }
+
+        .lst-kix_t2r1kvusbz6c-5>li:before {
+            content: "\0025a0   "
+        }
+
+        ul.lst-kix_7k3lbbyokens-2 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_7k3lbbyokens-7 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_7k3lbbyokens-8 {
+            list-style-type: none
+        }
+
+        .lst-kix_t2r1kvusbz6c-7>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_eqi39e5pcyab-7>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_eqi39e5pcyab-5>li:before {
+            content: "\0025a0   "
+        }
+
+        ul.lst-kix_o9wh3atyxqoa-7 {
+            list-style-type: none
+        }
+
+        .lst-kix_h00fyh7ioccj-1>li:before {
+            content: "\0025cb   "
+        }
+
+        ul.lst-kix_o9wh3atyxqoa-6 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_o9wh3atyxqoa-5 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_o9wh3atyxqoa-4 {
+            list-style-type: none
+        }
+
+        .lst-kix_wgij0cuk02z7-1>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_wgij0cuk02z7-3>li:before {
+            content: "\0025cf   "
+        }
+
+        ul.lst-kix_o9wh3atyxqoa-3 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_o9wh3atyxqoa-2 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_o9wh3atyxqoa-1 {
+            list-style-type: none
+        }
+
+        .lst-kix_62hscnxr884v-2>li:before {
+            content: "\0025a0   "
+        }
+
+        ul.lst-kix_o9wh3atyxqoa-0 {
+            list-style-type: none
+        }
+
+        .lst-kix_ucn32gza98p1-1>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_62hscnxr884v-4>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_ucn32gza98p1-3>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_ucn32gza98p1-5>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_h00fyh7ioccj-5>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_ucn32gza98p1-7>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_h00fyh7ioccj-3>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_62hscnxr884v-0>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_h00fyh7ioccj-7>li:before {
+            content: "\0025cb   "
+        }
+
+        ol {
+            margin: 0;
+            padding: 0
+        }
+
+        table td,
+        table th {
+            padding: 0
+        }
+
+        .c44 {
+            border-right-style: solid;
+            padding: 5pt 5pt 5pt 5pt;
+            border-bottom-color: #000000;
+            border-top-width: 1pt;
+            border-right-width: 0pt;
+            border-left-color: #000000;
+            vertical-align: top;
+            border-right-color: #000000;
+            border-left-width: 0pt;
+            border-top-style: solid;
+            border-left-style: solid;
+            border-bottom-width: 0pt;
+            width: 407.2pt;
+            border-top-color: #000000;
+            border-bottom-style: solid
+        }
+
+        .c21 {
+            border-right-style: solid;
+            padding: 5pt 5pt 5pt 5pt;
+            border-bottom-color: #000000;
+            border-top-width: 1pt;
+            border-right-width: 0pt;
+            border-left-color: #000000;
+            vertical-align: top;
+            border-right-color: #000000;
+            border-left-width: 0pt;
+            border-top-style: solid;
+            border-left-style: solid;
+            border-bottom-width: 0pt;
+            width: 54.8pt;
+            border-top-color: #000000;
+            border-bottom-style: solid
+        }
+
+        .c27 {
+            border-right-style: solid;
+            padding: 5pt 5pt 5pt 5pt;
+            border-bottom-color: #000000;
+            border-top-width: 0pt;
+            border-right-width: 0pt;
+            border-left-color: #000000;
+            vertical-align: top;
+            border-right-color: #000000;
+            border-left-width: 0pt;
+            border-top-style: solid;
+            border-left-style: solid;
+            border-bottom-width: 0pt;
+            width: 407.2pt;
+            border-top-color: #000000;
+            border-bottom-style: solid
+        }
+
+        .c11 {
+            border-right-style: solid;
+            padding: 5pt 5pt 5pt 5pt;
+            border-bottom-color: #000000;
+            border-top-width: 0pt;
+            border-right-width: 0pt;
+            border-left-color: #000000;
+            vertical-align: top;
+            border-right-color: #000000;
+            border-left-width: 0pt;
+            border-top-style: solid;
+            border-left-style: solid;
+            border-bottom-width: 0pt;
+            width: 54.8pt;
+            border-top-color: #000000;
+            border-bottom-style: solid
+        }
+
+        .c23 {
+            border-right-style: solid;
+            padding: 5pt 5pt 5pt 5pt;
+            border-bottom-color: #000000;
+            border-top-width: 1pt;
+            border-right-width: 0pt;
+            border-left-color: #000000;
+            vertical-align: top;
+            border-right-color: #000000;
+            border-left-width: 0pt;
+            border-top-style: solid;
+            border-left-style: solid;
+            border-bottom-width: 0pt;
+            width: 493.5pt;
+            border-top-color: #000000;
+            border-bottom-style: solid
+        }
+
+        .c6 {
+            border-right-style: solid;
+            padding: 5pt 5pt 5pt 5pt;
+            border-bottom-color: #000000;
+            border-top-width: 0pt;
+            border-right-width: 0pt;
+            border-left-color: #000000;
+            vertical-align: top;
+            border-right-color: #000000;
+            border-left-width: 0pt;
+            border-top-style: solid;
+            border-left-style: solid;
+            border-bottom-width: 0pt;
+            width: 70.5pt;
+            border-top-color: #000000;
+            border-bottom-style: solid
+        }
+
+        .c29 {
+            border-right-style: solid;
+            padding: 5pt 5pt 5pt 5pt;
+            border-bottom-color: #000000;
+            border-top-width: 0pt;
+            border-right-width: 0pt;
+            border-left-color: #000000;
+            vertical-align: top;
+            border-right-color: #000000;
+            border-left-width: 0pt;
+            border-top-style: solid;
+            border-left-style: solid;
+            border-bottom-width: 1pt;
+            width: 493.5pt;
+            border-top-color: #000000;
+            border-bottom-style: solid
+        }
+
+        .c10 {
+            border-right-style: solid;
+            padding: 5pt 5pt 5pt 5pt;
+            border-bottom-color: #000000;
+            border-top-width: 0pt;
+            border-right-width: 0pt;
+            border-left-color: #000000;
+            vertical-align: top;
+            border-right-color: #000000;
+            border-left-width: 0pt;
+            border-top-style: solid;
+            border-left-style: solid;
+            border-bottom-width: 1pt;
+            width: 70.5pt;
+            border-top-color: #000000;
+            border-bottom-style: solid
+        }
+
+        .c20 {
+            border-right-style: solid;
+            padding: 5pt 5pt 5pt 5pt;
+            border-bottom-color: #000000;
+            border-top-width: 1pt;
+            border-right-width: 0pt;
+            border-left-color: #000000;
+            vertical-align: top;
+            border-right-color: #000000;
+            border-left-width: 0pt;
+            border-top-style: solid;
+            border-left-style: solid;
+            border-bottom-width: 0pt;
+            width: 86.2pt;
+            border-top-color: #000000;
+            border-bottom-style: solid
+        }
+
+        .c19 {
+            border-right-style: solid;
+            padding: 5pt 5pt 5pt 5pt;
+            border-bottom-color: #000000;
+            border-top-width: 0pt;
+            border-right-width: 0pt;
+            border-left-color: #000000;
+            vertical-align: top;
+            border-right-color: #000000;
+            border-left-width: 0pt;
+            border-top-style: solid;
+            border-left-style: solid;
+            border-bottom-width: 0pt;
+            width: 86.2pt;
+            border-top-color: #000000;
+            border-bottom-style: solid
+        }
+
+        .c7 {
+            border-right-style: solid;
+            padding: 5pt 5pt 5pt 5pt;
+            border-bottom-color: #000000;
+            border-top-width: 1pt;
+            border-right-width: 0pt;
+            border-left-color: #000000;
+            vertical-align: top;
+            border-right-color: #000000;
+            border-left-width: 0pt;
+            border-top-style: solid;
+            border-left-style: solid;
+            border-bottom-width: 0pt;
+            width: 70.5pt;
+            border-top-color: #000000;
+            border-bottom-style: solid
+        }
+
+        .c28 {
+            border-right-style: solid;
+            padding: 5pt 5pt 5pt 5pt;
+            border-bottom-color: #000000;
+            border-top-width: 0pt;
+            border-right-width: 0pt;
+            border-left-color: #000000;
+            vertical-align: top;
+            border-right-color: #000000;
+            border-left-width: 0pt;
+            border-top-style: solid;
+            border-left-style: solid;
+            border-bottom-width: 1pt;
+            width: 54.8pt;
+            border-top-color: #000000;
+            border-bottom-style: solid
+        }
+
+        .c36 {
+            border-right-style: solid;
+            padding: 5pt 5pt 5pt 5pt;
+            border-bottom-color: #000000;
+            border-top-width: 0pt;
+            border-right-width: 0pt;
+            border-left-color: #000000;
+            vertical-align: top;
+            border-right-color: #000000;
+            border-left-width: 0pt;
+            border-top-style: solid;
+            border-left-style: solid;
+            border-bottom-width: 0pt;
+            width: 493.5pt;
+            border-top-color: #000000;
+            border-bottom-style: solid
+        }
+
+        .c5 {
+            color: #000000;
+            font-weight: 700;
+            text-decoration: none;
+            vertical-align: baseline;
+            font-size: 18pt;
+            font-family: "Noto Sans KR";
+            font-style: normal
+        }
+
+        .c2 {
+            color: #000000;
+            font-weight: 400;
+            text-decoration: none;
+            vertical-align: baseline;
+            font-size: 11pt;
+            font-family: "Noto Sans KR";
+            font-style: normal;
+            line-height: 1.5;
+        }
+
+        .c0 {
+            padding-top: 0pt;
+            padding-bottom: 0pt;
+            line-height: 1.0;
+            orphans: 2;
+            widows: 2;
+            text-align: left;
+            height: 11pt
+        }
+
+        .c22 {
+            color: #000000;
+            font-weight: 700;
+            text-decoration: none;
+            vertical-align: baseline;
+            font-size: 12pt;
+            font-family: "Noto Sans KR";
+            font-style: normal
+        }
+
+        .c4 {
+            color: #000000;
+            font-weight: 400;
+            text-decoration: none;
+            vertical-align: baseline;
+            font-size: 10pt;
+            font-family: "Noto Sans KR";
+            font-style: normal;
+            line-height: 1.5;
+        }
+
+        .c12 {
+            color: #000000;
+            font-weight: 400;
+            text-decoration: none;
+            vertical-align: baseline;
+            font-size: 9pt;
+            font-family: "Noto Sans KR";
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        .c3 {
+            color: #000000;
+            font-weight: 400;
+            text-decoration: none;
+            vertical-align: baseline;
+            font-size: 11pt;
+            font-family: "Arial";
+            font-style: normal;
+            line-height: 1.5;
+        }
+
+        .c1 {
+            padding-top: 0pt;
+            padding-bottom: 0pt;
+            line-height: 1.5;
+            orphans: 2;
+            widows: 2;
+            text-align: left
+        }
+
+        .c26 {
+            padding-top: 0pt;
+            padding-bottom: 0pt;
+            line-height: 1.5;
+            orphans: 2;
+            widows: 2;
+            text-align: center
+        }
+
+        .c17 {
+            padding-top: 0pt;
+            padding-bottom: 0pt;
+            line-height: 1.5;
+            orphans: 2;
+            widows: 2;
+            text-align: left
+        }
+
+        .c40 {
+            border-spacing: 0;
+            border-collapse: collapse;
+            margin-right: auto
+        }
+
+        .c33 {
+            color: #000000;
+            text-decoration: none;
+            vertical-align: baseline;
+            font-style: italic
+        }
+
+        .c25 {
+            color: #000000;
+            text-decoration: none;
+            vertical-align: baseline;
+            font-style: normal
+        }
+
+        .c16 {
+            -webkit-text-decoration-skip: none;
+            color: #1155cc;
+            text-decoration: underline;
+            text-decoration-skip-ink: none
+        }
+
+        .c18 {
+            font-size: 9pt;
+            font-weight: 400;
+            font-family: "Noto Sans KR";
+            line-height: 1.5;
+        }
+
+        .c13 {
+            font-size: 16pt;
+            font-weight: 700;
+            font-family: "Noto Sans KR"
+        }
+
+        .c34 {
+            font-weight: 700;
+            font-size: 14pt;
+            font-family: "Noto Sans KR"
+        }
+
+        .c31 {
+            font-weight: 700;
+            font-size: 6pt;
+            font-family: "Noto Sans KR"
+        }
+
+        .c35 {
+            font-size: 12pt;
+            font-weight: 700;
+            font-family: "Noto Sans KR"
+        }
+
+        .c42 {
+            background-color: #ffffff;
+            max-width: 451.3pt;
+            padding: 62.4pt 72pt 72pt 72pt
+        }
+
+        .c8 {
+            font-size: 10pt;
+            font-weight: 400;
+            font-family: "Noto Sans KR";
+            line-height: 1.5;
+        }
+
+        .c32 {
+            font-weight: 400;
+            font-size: 1pt;
+            font-family: "Noto Sans KR"
+        }
+
+        .c38 {
+            font-weight: 700;
+            font-size: 20pt;
+            font-family: "Noto Sans KR"
+        }
+
+        .c14 {
+            font-size: 10pt;
+            font-weight: 700;
+            font-family: "Noto Sans KR";
+            line-height: 1.5;
+        }
+
+        .c30 {
+            color: inherit;
+            text-decoration: inherit
+        }
+
+        .c37 {
+            height: 19.6pt
+        }
+
+        .c15 {
+            height: 21pt
+        }
+
+        .c41 {
+            height: 12.9pt
+        }
+
+        .c9 {
+            height: 11pt
+        }
+
+        .c24 {
+            height: 24pt
+        }
+
+        .c39 {
+            height: 31.9pt
+        }
+
+        .c43 {
+            height: 26pt
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            line-height: 1.5;
+        }
+    </style>
 </head>
-<body class="c37 doc-content">
-<div>
-<p class="c4 c11"><span class="c31"></span></p>
-</div>
-<p class="c4 c11"><span class="c33"></span></p>
-<table class="c36">
-<tr class="c21">
-<td class="c25" colspan="7" rowspan="1">
-<p class="c4"><span class="c30">&#44608;&#44053;&#45224; &mdash; AI Research Engineer</span></p>
-<p class="c4"><span class="c1">&#128222; +82 010 5230 7653</span></p>
-<p class="c4"><span class="c14">&#9993;&#65039; </span><span class="c24 c14"><a class="c16" href="mailto:kangnam7653@gmail.com">kangnam7653@gmail.com</a></span></p>
-<p class="c4"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 13.23px; height: 13.23px;"><img alt="" src="images/image2.png" style="width: 13.23px; height: 13.23px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span><span class="c14">&nbsp;</span><span class="c14 c24"><a class="c16" href="https://www.google.com/url?q=https://github.com/kangnam7654&amp;sa=D&amp;source=editors&amp;ust=1744041783088750&amp;usg=AOvVaw24bxlD6FmxcDPoORh5G2pa">https://github.com/kangnam7654</a></span></p>
-<p class="c4"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 13.23px; height: 13.23px;"><img alt="" src="images/image1.png" style="width: 13.23px; height: 13.23px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span><span class="c14">&nbsp;</span><span class="c24 c14"><a class="c16" href="https://www.google.com/url?q=https://linkedin.com/in/kangnam7654&amp;sa=D&amp;source=editors&amp;ust=1744041783089134&amp;usg=AOvVaw0rrVl3vbn9d-j35m0u3sf5">https://linkedin.com/in/kangnam7654</a></span></p>
-</td>
-</tr>
-<tr class="c20">
-<td class="c7" colspan="7" rowspan="1">
-<p class="c4"><span class="c26">Keyword</span></p>
-</td>
-</tr>
-<tr class="c20">
-<td class="c19" colspan="7" rowspan="1">
-<p class="c4"><span class="c1">- Microsoft Azure &#44592;&#48152; &#49436;&#48708;&#49828;&#51032; &#47784;&#45944; &#48176;&#54252; &#48143; &#50868;&#50689; &#44221;&#54744; (Azure ML, Blob &#46321;)</span></p>
-<p class="c4"><span class="c1">- &#52628;&#47200;(Inference) &#52572;&#51201;&#54868; &#48143; &#47784;&#45944; &#49436;&#48729; &#54028;&#51060;&#54532;&#46972;&#51064; &#44396;&#52629; &#44221;&#54744; (ONNX, FastAPI &#46321;)</span></p>
-<p class="c4"><span class="c1">- Sprint &#44592;&#48152; Agile &#44060;&#48156; &#54532;&#47196;&#49464;&#49828; &#44221;&#54744; (Daily Scrum, Sprint Planning, Retrospective &#46321;)</span></p>
-<p class="c4"><span class="c1">- Git &#44592;&#48152; &#54801;&#50629; &#47928;&#54868; &#44221;&#54744; (Pull Request &rarr; Code Review &rarr; Merge)</span></p>
-<p class="c4"><span class="c1">- Vibe Coding &#54876;&#50857; &#45733;&#47141; (GitHub Copilot, ChatGPT &#46321;&#51012; &#53685;&#54620; &#54801;&#50629; &#48143; &#54532;&#47196;&#53664;&#53440;&#51060;&#54609;)</span></p>
-<p class="c4"><span class="c1">- &#52572;&#49888; &#45436;&#47928; &#44592;&#48152; SOTA &#50500;&#53412;&#53581;&#52376; &#48143; &#49552;&#49892; &#54632;&#49688; &#52964;&#49828;&#53552;&#47560;&#51060;&#51669; &#44221;&#54744; (Generative / Discriminative &#54252;&#54632;)</span></p>
-<p class="c4"><span class="c1">- PyTorch &#48143; PyTorch Lightning &#44592;&#48152; from-scratch &#54617;&#49845; &#54028;&#51060;&#54532;&#46972;&#51064; &#44396;&#52629; &#44221;&#54744; (W&amp;B &#54252;&#54632;)</span></p>
-<p class="c4"><span class="c1">- &#51452;&#50836; &#46020;&#47700;&#51064; &#44221;&#54744;: Computer Vision, Audio, Recommender System, Anomaly Detection &#46321;</span></p>
-</td>
-</tr>
-<tr class="c20">
-<td class="c7" colspan="7" rowspan="1">
-<p class="c4"><span class="c26">About Me</span></p>
-</td>
-</tr>
-<tr class="c21">
-<td class="c19" colspan="7" rowspan="1">
-<p class="c4"><span class="c1">AI Research Engineer&#47196;&#49436; 3&#45380; &#51060;&#49345; &#45796;&#50577;&#54620; &#54532;&#47196;&#51229;&#53944;&#47484; &#49688;&#54665;&#54644;&#50772;&#49845;&#45768;&#45796;.</span></p>
-<p class="c4 c11"><span class="c1"></span></p>
-<p class="c4"><span class="c1">&#51452;&#47196; Computer Vision &#51473;&#49900;&#51032; &#44284;&#51228;&#47484; &#45796;&#47364;&#50772;&#51648;&#47564;, &#54596;&#50836;&#50640; &#46384;&#46972; &#51020;&#49457; &#54633;&#49457;(TTS), &#52628;&#52380; &#49884;&#49828;&#53596;, &#44160;&#49353;, &#51088;&#50672;&#50612; &#52376;&#47532;(NLP), &#45936;&#51060;&#53552; &#48516;&#49437; &#46321; &#50668;&#47084; &#46020;&#47700;&#51064;&#51032; &#47928;&#51228;&#47484; &#51201;&#44537;&#51201;&#51004;&#47196; &#54644;&#44208;&#54644;&#50772;&#49845;&#45768;&#45796;. &#53945;&#51221; &#44592;&#49696;&#51060;&#45208; &#46020;&#47700;&#51064;&#50640; &#50621;&#47588;&#51060;&#51648; &#50506;&#44256;, &#47928;&#51228; &#54644;&#44208;&#50640; &#51201;&#54633;&#54620; &#44592;&#49696;&#51012; &#48736;&#47476;&#44172; &#54617;&#49845;&#54616;&#44256; &#51201;&#50857;&#54616;&#45716; &#44163;&#50640; &#51061;&#49689;&#54633;&#45768;&#45796;.</span></p>
-<p class="c4 c11"><span class="c1"></span></p>
-<p class="c4"><span class="c1">&#45436;&#47928;&#51012; &#44592;&#48152;&#51004;&#47196; &#46373;&#47084;&#45789; &#47784;&#45944;&#51012; &#51649;&#51217; &#44396;&#54788;&#54616;&#44256; &#54617;&#49845;&#49884;&#53416; &#44221;&#54744;&#51060; &#51080;&#49845;&#45768;&#45796;. &#50696;&#47484; &#46308;&#50612;, &#54617;&#49845;&#51060; &#44620;&#45796;&#47196;&#50868; GAN&#51012; &#50504;&#51221;&#51201;&#51004;&#47196; &#49444;&#44228;&middot;&#54617;&#49845;&#49884;&#53416; &#44221;&#54744;&#51060; &#51080;&#51004;&#47728;, &#47928;&#51228; &#54644;&#44208; &#47785;&#51201;&#50640; &#47582;&#52656; Discriminative &#47784;&#45944;&#51012; &#49444;&#44228;&#54616;&#44256; &#51201;&#50857;&#54620; &#49324;&#47168;&#46020; &#51080;&#49845;&#45768;&#45796;. &#51060;&#47084;&#54620; &#44221;&#54744;&#51012; &#53685;&#54644; &#51060;&#47200;&#51201; &#51648;&#49885;&#44284; &#49892;&#47924; &#50669;&#47049;&#51012; &#50976;&#44592;&#51201;&#51004;&#47196; &#50672;&#44208;&#54616;&#45716; &#45936; &#44053;&#51216;&#51012; &#44032;&#51648;&#44256; &#51080;&#49845;&#45768;&#45796;.</span></p>
-<p class="c4 c11"><span class="c1"></span></p>
-</td>
-</tr>
-<tr class="c15">
-<td class="c7" colspan="7" rowspan="1">
-<p class="c4"><span class="c26">Experience</span></p>
-</td>
-</tr>
-<tr class="c15">
-<td class="c19" colspan="7" rowspan="1">
-<p class="c4"><span class="c34">&#53356;&#47112;&#48260;&#49828;</span><span class="c38 c34">&nbsp;(&#52397;&#45812; &#47084;&#45789;)</span></p>
-<p class="c4"><span class="c2">AI &#50644;&#51648;&#45768;&#50612; &ndash; Nesto CV &#48376;&#48512;, AI Biz &#54016;</span></p>
-<p class="c4"><span class="c40">2024.04 &ndash; &#54788;&#51116;, &#49436;&#50872;</span></p>
-<p class="c4"><span class="c6">&#50640;&#51060;&#54532;&#47540;&#50612;&#54617;&#50896; &#51088;&#46041;&#54217;&#44032; &#49884;&#49828;&#53596; (&#49436;&#48708;&#49828; &#52636;&#49884;)</span></p>
-<p class="c4"><span class="c1">- [Vision] &#49373;&#49457;&#54805; &#47784;&#45944;&#51012; &#54876;&#50857;&#54620; &#51060;&#48120;&#51648; &#49373;&#49457; &#54028;&#51060;&#54532;&#46972;&#51064; &#44060;&#48156; &#48143; &#52572;&#51201;&#54868;(&#50577;&#51088;&#54868;)</span></p>
-<p class="c4"><span class="c1">- [Audio] &#46020;&#47700;&#51064; &#53945;&#54868; &#51020;&#49457; &#45936;&#51060;&#53552;&#47484; &#54876;&#50857;&#54620; STT(Speech-to-Text) &#47784;&#45944; &#48120;&#49464;&#51312;&#51221;</span></p>
-<p class="c4"><span class="c1">- [Audio] &#46020;&#47700;&#51064; &#53945;&#54868; &#51020;&#49457; &#45936;&#51060;&#53552;&#47484; &#54876;&#50857;&#54620; TTS(Text-to-Speech) &#47784;&#45944; &#48120;&#49464;&#51312;&#51221;</span></p>
-<p class="c4"><span class="c1">- [Search] LLM API &#48708;&#50857;&#51208;&#44048;&#51012; &#50948;&#54620; &#54616;&#51060;&#48652;&#47532;&#46300; &#44160;&#49353; &#49884;&#49828;&#53596; &#44060;&#48156;</span></p>
-<p class="c4"><span class="c6">&#52397;&#45812;&#50612;&#54617;&#50896; &#51088;&#46041;&#54217;&#44032; &#49884;&#49828;&#53596; (&#49436;&#48708;&#49828; &#52636;&#49884;)</span></p>
-<p class="c4"><span class="c14">- [Vision] Google MediaPipe &#44592;&#48152; &#48156;&#54364;&#53468;&#46020; &#54217;&#44032; &#49884;&#49828;&#53596; &#49444;&#44228; &#48143; &#44060;&#48156;</span></p>
-</td>
-</tr>
-<tr class="c15">
-<td class="c25" colspan="7" rowspan="1">
-<p class="c4"><span class="c34">&#47700;&#53440;&#48260;&#49828;&#50900;&#46300; (&#45367;&#47560;&#48660; F&amp;C)</span></p>
-<p class="c4"><span class="c2">AI &#50672;&#44396; &#50644;&#51648;&#45768;&#50612; &ndash; &#44060;&#48156; 1&#49892;, &#47700;&#53440;&#50900;&#46300; &#44060;&#48156; &#54028;&#53944;</span></p>
-<p class="c4"><span class="c40">2022.10 &ndash; 2024.01, &#49436;&#50872;</span></p>
-<p class="c4"><span class="c6">&#44536;&#47004;&#46300;&#53356;&#47196;&#49828;: &#47700;&#53440;&#50900;&#46300;</span></p>
-<p class="c4"><span class="c1">- [Vision] &#49324;&#50857;&#51088; &#50620;&#44404;&#51012; &#44592;&#48152;&#51004;&#47196; &#44172;&#51076; &#52880;&#47533;&#53552;&#47484; &#49373;&#49457;&#54616;&#45716; Face-to-Character &#47784;&#45944; &#44060;&#48156;</span></p>
-<p class="c4"><span class="c1">- [Vision] Google MediaPipe &#44592;&#48152; Pose Estimation &#44592;&#49696;&#51012; &#54876;&#50857;&#54616;&#50668; &#52880;&#47533;&#53552; &#47784;&#49496; &#53944;&#47000;&#53433; &#49884;&#49828;&#53596; &#44060;&#48156;</span></p>
-</td>
-</tr>
-<tr class="c15">
-<td class="c25" colspan="7" rowspan="1">
-<p class="c4"><span class="c34 c38">&#53076;&#53076;&#45339;&#49324;&#51068;&#47196;</span></p>
-<p class="c4"><span class="c2">AI &#50672;&#44396; &#50644;&#51648;&#45768;&#50612; &ndash; CTO&#49892;</span></p>
-<p class="c4"><span class="c40">2021.06 &ndash; 2022.04, &#49436;&#50872;</span></p>
-<p class="c4"><span class="c6">&#51221;&#48512; &#51648;&#50896; &#54532;&#47196;&#51229;&#53944; &#45796;&#49688; &#52280;&#50668;</span></p>
-<p class="c4"><span class="c1">- [Recommender System, NLP] BERT &#44592;&#48152; &#53080;&#53584;&#52768; &#44592;&#48152; &#52628;&#52380; &#49884;&#49828;&#53596;(CBF) &#49444;&#44228; &#48143; &#44396;&#54788; &ndash; &#51228;&#54408; &#49444;&#47749;&#51012; BERT&#47196; &#51076;&#48288;&#46377;&#54616;&#50668; &#50976;&#49324; &#50500;&#51060;&#53596; &#52628;&#52380; &#47784;&#45944; &#44060;&#48156;</span></p>
-<p class="c4"><span class="c1">- [Vision] &#54644;&#49345; &#47112;&#51060;&#45908; &#44061;&#52404; &#53456;&#51648;&#47484; &#50948;&#54620; YOLOv5 &#47784;&#45944; &#48120;&#49464;&#51312;&#51221; &ndash; &#46020;&#47700;&#51064; &#53945;&#54868; &#44061;&#52404; &#44160;&#52636; &#47784;&#45944; &#48120;&#49464;&#51312;&#51221; &#48143; &#54617;&#49845;</span></p>
-<p class="c4"><span class="c1">- [Vision] &#49328;&#50629;&#50857; &#44552;&#49549; &#54532;&#47536;&#53552; &#44277;&#51221; &#47784;&#45768;&#53552;&#47553;&#51012; &#50948;&#54620; &#51060;&#49345; &#53456;&#51648; &#47196;&#51649; &#44396;&#54788; &ndash; &#49892;&#49884;&#44036; &#50689;&#49345; &#44592;&#48152; Anomaly Detection &#49884;&#49828;&#53596; &#44060;&#48156;</span></p>
-</td>
-</tr>
-<tr class="c42">
-<td class="c25" colspan="7" rowspan="1">
-<p class="c4 c11"><span class="c18"></span></p>
-</td>
-</tr>
-<tr class="c39">
-<td class="c7" colspan="7" rowspan="1">
-<p class="c4"><span class="c26">Education</span></p>
-</td>
-</tr>
-<tr class="c15">
-<td class="c19" colspan="7" rowspan="1">
-<p class="c4"><span class="c13">&#49436;&#44053;&#45824;&#54617;&#44368; AI&#12685;SW &#45824;&#54617;&#50896;</span></p>
-<p class="c4"><span class="c32 c14">&#45936;&#51060;&#53552;&#49324;&#51060;&#50616;&#49828; &bull; &#51064;&#44277;&#51648;&#45733;</span></p>
-<p class="c4"><span class="c1">2023.03 &ndash; &#51116;&#54617;&#51473;, &#49436;&#50872;</span></p>
-<p class="c4"><span class="c1">* &#49457;&#51201; &#50864;&#49688; &#51109;&#54617;&#44552; 1&#54924; (2023&#45380; &#44032;&#51012;)</span></p>
-</td>
-</tr>
-<tr class="c15">
-<td class="c25" colspan="7" rowspan="1">
-<p class="c4"><span class="c13">&#49464;&#51333;&#45824;&#54617;&#44368;</span></p>
-<p class="c4"><span class="c14 c32">&#47932;&#47532;&#54617;, &#51060;&#54617;&#49324;</span></p>
-</td>
-</tr>
-<tr class="c21">
-<td class="c7" colspan="7" rowspan="1">
-<p class="c4"><span class="c26">Skill</span></p>
-</td>
-</tr>
-<tr class="c21">
-<td class="c41" colspan="1" rowspan="1">
-<p class="c4"><span class="c6">&#50616;&#50612;</span></p>
-<p class="c4 c11"><span class="c1"></span></p>
-</td>
-<td class="c35" colspan="6" rowspan="1">
-<p class="c23"><span class="c1">Python (&#51473;&#44553;)</span></p>
-<p class="c23"><span class="c1">C++ (&#52488;&#44553;)</span></p>
-</td>
-</tr>
-<tr class="c21">
-<td class="c17" colspan="1" rowspan="1">
-<p class="c4"><span class="c6">&#54532;&#47112;&#51076;&#50892;&#53356; / &#46972;&#51060;&#48652;&#47084;&#47532;</span></p>
-</td>
-<td class="c12" colspan="6" rowspan="1">
-<p class="c23"><span class="c14">PyTorch</span><span class="c14">, </span><span class="c14">PyTorch</span><span class="c14">&nbsp;</span><span class="c14">Lightning</span><span class="c1">&nbsp;(&#51473;&#44553;)</span></p>
-<p class="c23"><span class="c14">Weights &amp; Biases, FastAPI, </span><span class="c14">Gradio</span><span class="c14">, </span><span class="c14">Streamlit</span><span class="c1">&nbsp;(&#51473;&#44553;)</span></p>
-<p class="c23"><span class="c1">OpenCV, FFMpeg (&#51473;&#44553;)</span></p>
-<p class="c23"><span class="c1">Pandas, Polars, Numpy, Matplotlib, Seaborn (&#51473;&#44553;)</span></p>
-</td>
-</tr>
-<tr class="c21">
-<td class="c17" colspan="1" rowspan="1">
-<p class="c4"><span class="c6">&#53364;&#46972;&#50864;&#46300;</span></p>
-</td>
-<td class="c12" colspan="6" rowspan="1">
-<p class="c23"><span class="c1">Microsoft Azure</span></p>
-</td>
-</tr>
-<tr class="c21">
-<td class="c17" colspan="1" rowspan="1">
-<p class="c4"><span class="c6">&#44060;&#48156; &#46020;&#44396;</span></p>
-</td>
-<td class="c12" colspan="6" rowspan="1">
-<p class="c23"><span class="c1">Visual Studio, Visual Studio Code, Github, Github Copilot, WSL (&#51473;&#44553;)</span></p>
-<p class="c23"><span class="c1">Unreal Engine, Docker (&#52488;&#44553;)</span></p>
-</td>
-</tr>
-<tr class="c21">
-<td class="c17" colspan="1" rowspan="1">
-<p class="c4"><span class="c6">&#54801;&#50629; &#46020;&#44396;</span></p>
-</td>
-<td class="c12" colspan="6" rowspan="1">
-<p class="c23"><span class="c1">Jira, Confluence, Slack, Google Workspace</span></p>
-</td>
-</tr>
-<tr class="c21">
-<td class="c7" colspan="7" rowspan="1">
-<p class="c4"><span class="c26">Certification</span></p>
-</td>
-</tr>
-<tr class="c21">
-<td class="c19" colspan="7" rowspan="1">
-<p class="c4"><span class="c1">AICE (AI Certificate for Everyone), Basic &ndash; 2022. 11</span></p>
-<p class="c4"><span class="c1">ADsP(Advanced Data Analytics Semi-Professional) &ndash; 2022. 06</span></p>
-</td>
-</tr>
-</table>
-<p class="c4 c11"><span class="c33"></span></p>
+
+<body class="doc-content">
+    <div>
+        <p class="c1 c9"><span class="c3"></span></p>
+    </div>
+    <p class="c1 c9"><span class="c25 c32"></span></p>
+    <table class="c40">
+        <tr class="c15">
+            <td class="c36" colspan="7" rowspan="1">
+                <p class="c1"><span class="c25 c38">김강남 &mdash; AI Research Engineer</span></p>
+                <p class="c1"><span class="c4">📞 +82 010 5230 7653</span></p>
+                <p class="c1"><span class="c8">✉️ </span><span class="c16 c8"><a class="c30"
+                            href="mailto:kangnam7653@gmail.com">kangnam7653@gmail.com</a></span></p>
+                <p class="c1"><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 13.23px; height: 13.23px;"><img
+                            alt="" src="images/image2.png"
+                            style="width: 13.23px; height: 13.23px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span><span class="c8">&nbsp;</span><span class="c8 c16"><a class="c30"
+                            href="https://www.google.com/url?q=https://github.com/kangnam7654&amp;sa=D&amp;source=editors&amp;ust=1747197367317410&amp;usg=AOvVaw2fWmk-jorMaSouqGdBRaX9">https://github.com/kangnam7654</a></span>
+                </p>
+                <p class="c1"><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 13.23px; height: 13.23px;"><img
+                            alt="" src="images/image1.png"
+                            style="width: 13.23px; height: 13.23px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span><span class="c8">&nbsp;</span><span class="c16 c8"><a class="c30"
+                            href="https://www.google.com/url?q=https://linkedin.com/in/kangnam7654&amp;sa=D&amp;source=editors&amp;ust=1747197367318021&amp;usg=AOvVaw2HFoo0pz6oxr6aVoIbPEIK">https://linkedin.com/in/kangnam7654</a></span>
+                </p>
+            </td>
+        </tr>
+        <tr class="c41">
+            <td class="c29" colspan="7" rowspan="1">
+                <p class="c1"><span class="c5">Keyword</span></p>
+            </td>
+        </tr>
+        <tr class="c41">
+            <td class="c23" colspan="7" rowspan="1">
+                <p class="c1"><span class="c22">기술 역량</span></p>
+                <p class="c1"><span class="c8">- </span><span class="c14">Azure ML 기반 AI 모델
+                        배포</span><span class="c4">&nbsp;및 운영 (Blob Storage, Endpoint
+                        등 포함)</span></p>
+                <p class="c1"><span class="c4">- LLM(Agent), NLP, Vision, Audio, Search, Recommender System 등
+                        경험</span></p>
+                <p class="c1"><span class="c8">- PyTorch </span><span class="c8">Lightning</span><span
+                        class="c8">&nbsp;기반 </span><span class="c14">from-scratch 학습
+                        파이프라인 구현</span><span
+                        class="c4">&nbsp;(W&amp;B로 실험 관리)</span></p>
+                <p class="c1"><span class="c8">- 논문 기반 </span><span
+                        class="c14">모델 구조 및 손실 함수
+                        커스터마이징</span><span class="c4">을
+                        통한 성능 개선 경험</span></p>
+                <p class="c1"><span class="c8">- ONNX, FastAPI를 활용한 </span><span
+                        class="c14">추론 최적화 및 서빙
+                        자동화</span><span class="c4">&nbsp;경험</span></p>
+                <p class="c1 c9"><span class="c4"></span></p>
+                <p class="c1"><span class="c22">협업 및 기타 경험</span></p>
+                <p class="c1"><span class="c4">- Git 기반 PR/Code Review 협업</span></p>
+                <p class="c1"><span class="c8">- Agile 방식 업무 경험 (Sprint,
+                        StandUp 등)</span></p>
+            </td>
+        </tr>
+        <tr class="c41">
+            <td class="c29" colspan="7" rowspan="1">
+                <p class="c1"><span class="c5">About Me</span></p>
+            </td>
+        </tr>
+        <tr class="c15">
+            <td class="c23" colspan="7" rowspan="1">
+                <p class="c1"><span class="c14">저는 </span><span class="c14">문제
+                        해결에 집중하는 AI
+                        엔지니어</span><span class="c4">입니다.
+                        주어진 기술에
+                        얽매이기보다는, 문제에
+                        가장 적합한 기술을 빠르게
+                        익히고 적용하는 데 자신이
+                        있습니다. 실제로 LLM, 이미지,
+                        음성, 추천 시스템 등 다양한
+                        도메인에서 모델 학습, 추론
+                        최적화, 배포까지 전방위적
+                        경험을 쌓아왔습니다.
+                        이러한 경험을 바탕으로 from-scratch
+                        학습 파이프라인 구성, Azure ML을
+                        활용한 클라우드 배포, FastAPI
+                        기반 서빙 시스템 구현 등 end-to-end
+                        개발을 수행할 수
+                        있습니다.</span></p>
+                <p class="c1 c9"><span class="c1"></span></p>
+                <p class="c1"><span class="c4">기술 중심으로
+                        사고하다 보니, 때로는 제
+                        의도나 판단을 동료에게
+                        충분히 설득하는 데
+                        어려움을 겪기도 했습니다.
+                        이를 보완하기 위해
+                        문서화를 적극적으로
+                        활용하고, 발표 전에
+                        스크립트를 준비하며
+                        의사전달을 보다
+                        구조적으로 하려고
+                        노력하고 있습니다.</span></p>
+                <p class="c1 c9"><span class="c4"></span></p>
+            </td>
+        </tr>
+        <tr class="c24">
+            <td class="c29" colspan="7" rowspan="1">
+                <p class="c1"><span class="c5">Experience</span></p>
+            </td>
+        </tr>
+        <tr class="c24">
+            <td class="c23" colspan="7" rowspan="1">
+                <p class="c1"><span class="c13">크레버스</span><span
+                        class="c25 c13">&nbsp;(청담 러닝)</span></p>
+                <p class="c1"><span class="c12">AI 엔지니어 &ndash; Nesto CV 본부,
+                        AI Biz 팀</span></p>
+                <p class="c1"><span class="c18">2024.04 &ndash; 현재, 서울</span></p>
+                <p class="c1"><span class="c22">AI 자동평가 시스템</span></p>
+                <p class="c1"><span class="c4">- [MLOps] Azure ML에 실시간 추론
+                        시스템을 배포하였고, 월간
+                        활성 사용자 수(MAU) 3만 명을
+                        달성</span></p>
+                <p class="c1"><span class="c4">- [LLM Agent] 다중
+                        에이전트(Multi-Agent) 접근 방식을
+                        사용하여 합성 학생
+                        데이터를 생성</span></p>
+                <p class="c1"><span class="c4">- [Vision] 학생 친화적인
+                        이미지 생성을 위해 Diffusion 모델
+                        기반 파이프라인을
+                        구성하고, 양자화를 통해
+                        모델을 경량화</span></p>
+                <p class="c1"><span class="c4">- [Audio] 비원어민 어린이
+                        음성 데이터를 활용하여 NVIDIA
+                        Parakeet 기반 STT 모델을 미세
+                        조정하고, 인식률 개선을
+                        목표로 실험 및 튜닝을
+                        수행</span></p>
+                <p class="c1"><span class="c4">- [Audio] 같은 데이터를
+                        기반으로 TTS(Text-to-Speech) 모델을
+                        파인튜닝하여 자연스러운
+                        음성 합성을 위한 시도를
+                        진행</span></p>
+                <p class="c1"><span class="c8">- [Search] LLM 사용 비용을
+                        절감하기 위한 방안으로,
+                        키워드 기반 검색과 벡터
+                        검색을 조합한 하이브리드
+                        검색 시스템을 설계 및
+                        구현</span></p>
+                <p class="c1"><span class="c4">- [Vision] Google MediaPipe의 얼굴 인식
+                        및 자세 추적 기술을
+                        활용하여 학생의 발표
+                        태도와 집중도를 자동
+                        평가하는 기능을 개발</span></p>
+            </td>
+        </tr>
+        <tr class="c24">
+            <td class="c36" colspan="7" rowspan="1">
+                <p class="c1"><span class="c13">메타버스월드
+                        (넷마블 F&amp;C)</span></p>
+                <p class="c1"><span class="c12">AI 연구 엔지니어 &ndash;
+                        개발 1실, 메타월드 개발
+                        파트</span></p>
+                <p class="c1"><span class="c18">2022.10 &ndash; 2024.01, 서울</span></p>
+                <p class="c1"><span class="c22">그랜드크로스:
+                        메타월드</span></p>
+                <p class="c1"><span class="c4">- [Vision] 사용자의 얼굴
+                        이미지를 기반으로 게임
+                        아바타를 생성하는 Face-to-Character
+                        시스템을 설계하고, 캐릭터
+                        외형 반영 과정을 end-to-end로
+                        구성</span></p>
+                <p class="c1"><span class="c4">- [Vision] MediaPipe 기반 Pose Estimation
+                        기술을 활용하여 사용자의
+                        실시간 동작을 3D 캐릭터에
+                        반영하는 모션 트래킹
+                        기능을 개발</span></p>
+            </td>
+        </tr>
+        <tr class="c24">
+            <td class="c36" colspan="7" rowspan="1">
+                <p class="c1"><span class="c25 c34">코코넛사일로</span></p>
+                <p class="c1"><span class="c12">AI 연구 엔지니어 &ndash;
+                        CTO실</span></p>
+                <p class="c1"><span class="c18">2021.06 &ndash; 2022.04, 서울</span></p>
+                <p class="c1"><span class="c22">정부 지원 프로젝트
+                        다수 참여</span></p>
+                <p class="c1"><span class="c4">- [Recommender System] 제품 설명
+                        문서를 BERT로 임베딩하고, 내적
+                        유사도를 기반으로 유사
+                        제품을 추천하는 콘텐츠
+                        기반 추천 시스템(CBF)을 구현</span>
+                </p>
+                <p class="c1"><span class="c4">- [Vision] 해상 레이더 영상
+                        내 객체 탐지를 위한 YOLOv5
+                        파인튜닝을 진행하고,
+                        다양한 날씨 조건에서의
+                        검출 성능 개선을 위한
+                        실험을 수행</span></p>
+                <p class="c1"><span class="c4">- [Anomaly Detection] 산업용 금속 3D
+                        프린터의 공정 모니터링을
+                        위한 비전 기반 이상 탐지
+                        시스템을 개발하여, 사전
+                        고장 예측 가능성을 확보</span></p>
+            </td>
+        </tr>
+        <tr class="c43">
+            <td class="c36" colspan="7" rowspan="1">
+                <p class="c1 c9"><span class="c25 c31"></span></p>
+            </td>
+        </tr>
+        <tr class="c37">
+            <td class="c29" colspan="7" rowspan="1">
+                <p class="c1"><span class="c5">Education</span></p>
+            </td>
+        </tr>
+        <tr class="c24">
+            <td class="c23" colspan="7" rowspan="1">
+                <p class="c1"><span class="c25 c34">서강대학교 AIㆍSW
+                        대학원</span></p>
+                <p class="c1"><span class="c33 c8">데이터사이언스 &bull;
+                        인공지능</span></p>
+                <p class="c1"><span class="c4">2023.03 &ndash; 재학중, 서울</span></p>
+                <p class="c1"><span class="c4">* 성적 우수 장학금 1회
+                        (2023년 가을)</span></p>
+            </td>
+        </tr>
+        <tr class="c24">
+            <td class="c36" colspan="7" rowspan="1">
+                <p class="c1"><span class="c25 c34">세종대학교</span></p>
+                <p class="c1"><span class="c8 c33">물리학, 이학사</span></p>
+            </td>
+        </tr>
+        <tr class="c15">
+            <td class="c29" colspan="7" rowspan="1">
+                <p class="c1"><span class="c5">Skill</span></p>
+            </td>
+        </tr>
+        <tr class="c39">
+            <td class="c20" colspan="1" rowspan="1">
+                <p class="c1"><span class="c35">Languages</span></p>
+            </td>
+            <td class="c44" colspan="6" rowspan="1">
+                <p class="c17"><span class="c4">- Python (중급), C++ (초급)</span></p>
+            </td>
+        </tr>
+        <tr class="c15">
+            <td class="c19" colspan="1" rowspan="1">
+                <p class="c1"><span class="c22">Frameworks &amp; Libraries</span></p>
+            </td>
+            <td class="c27" colspan="6" rowspan="1">
+                <p class="c17"><span class="c8">- </span><span class="c8">PyTorch</span><span class="c8">, </span><span
+                        class="c8">PyTorch</span><span class="c8">&nbsp;</span><span class="c8">Lightning</span><span
+                        class="c4">, HuggingFace, Transformers(중급)</span></p>
+                <p class="c17"><span class="c4">- LangChain, LangGraph (중급)</span></p>
+                <p class="c17"><span class="c4">- FastAPI, Gradio, Streamlit, Weights &amp; Biases
+                        (중급)</span></p>
+                <p class="c17"><span class="c4">- OpenCV, FFmpeg (중급)</span></p>
+                <p class="c17"><span class="c4">- Pandas, Polars, NumPy, Matplotlib, Seaborn (중급)</span>
+                </p>
+            </td>
+        </tr>
+        <tr class="c15">
+            <td class="c19" colspan="1" rowspan="1">
+                <p class="c1"><span class="c22">Cloud</span></p>
+                <p class="c1"><span class="c22">&amp; Infra</span></p>
+            </td>
+            <td class="c27" colspan="6" rowspan="1">
+                <p class="c17"><span class="c4">- Microsoft Azure (Azure ML, Blob Storage 등)</span></p>
+                <p class="c17"><span class="c4">- Docker (초급), WSL</span></p>
+            </td>
+        </tr>
+        <tr class="c15">
+            <td class="c19" colspan="1" rowspan="1">
+                <p class="c1"><span class="c22">Dev &amp; Tools</span></p>
+            </td>
+            <td class="c27" colspan="6" rowspan="1">
+                <p class="c17"><span class="c4">- Visual Studio, VS Code, GitHub, GitHub Copilot</span></p>
+                <p class="c17"><span class="c4">- Jira, Confluence, Slack, Google Workspace</span></p>
+            </td>
+        </tr>
+        <tr class="c15">
+            <td class="c19" colspan="1" rowspan="1">
+                <p class="c1"><span class="c22">Others</span></p>
+            </td>
+            <td class="c27" colspan="6" rowspan="1">
+                <p class="c17"><span class="c4">- Unreal Engine (초급)</span></p>
+                <p class="c0"><span class="c4"></span></p>
+                <p class="c0"><span class="c4"></span></p>
+            </td>
+        </tr>
+        <tr class="c15">
+            <td class="c29" colspan="7" rowspan="1">
+                <p class="c1"><span class="c5">Certification</span></p>
+            </td>
+        </tr>
+        <tr class="c15">
+            <td class="c23" colspan="7" rowspan="1">
+                <p class="c1"><span class="c4">AICE (AI Certificate for Everyone), Basic &ndash; 2022. 11</span></p>
+                <p class="c1"><span class="c4">ADsP (Advanced Data Analytics Semi-Professional) &ndash; 2022. 06</span>
+                </p>
+            </td>
+        </tr>
+    </table>
+    <p class="c1 c9"><span class="c25 c32"></span></p>
 </body>
+
 </html>
