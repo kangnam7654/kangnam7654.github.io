@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import GlassCard from "../ui/GlassCard";
 
@@ -158,7 +159,34 @@ const projects: Project[] = [
   },
 ];
 
+type FilterKey = "company" | "side" | "claude";
+
+const filterDefs: { key: FilterKey; label: string; count: number }[] = [
+  { key: "company", label: "회사", count: projects.filter((p) => !p.sideProject).length },
+  { key: "side", label: "사이드", count: projects.filter((p) => p.sideProject).length },
+  { key: "claude", label: "Claude Code", count: projects.filter((p) => p.claudeCode).length },
+];
+
 export default function Projects() {
+  const [active, setActive] = useState<Set<FilterKey>>(new Set());
+
+  const toggle = (key: FilterKey) => {
+    setActive((prev) => {
+      const next = new Set(prev);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
+  };
+
+  const filtered = projects.filter((p) => {
+    if (active.size === 0) return true;
+    if (active.has("company") && !p.sideProject) return true;
+    if (active.has("side") && p.sideProject) return true;
+    if (active.has("claude") && p.claudeCode) return true;
+    return false;
+  });
+
   return (
     <section id="projects" className="px-6 py-24">
       <div className="mx-auto max-w-5xl">
@@ -171,19 +199,47 @@ export default function Projects() {
           <h2 className="mb-2 text-sm font-semibold uppercase tracking-widest text-[var(--color-primary)]">
             Projects
           </h2>
-          <h3 className="mb-12 text-3xl font-bold md:text-4xl font-[family-name:var(--font-heading)]">
+          <h3 className="mb-6 text-3xl font-bold md:text-4xl font-[family-name:var(--font-heading)]">
             프로젝트
           </h3>
         </motion.div>
 
+        {/* Filters */}
+        <div className="mb-8 flex flex-wrap items-center gap-2">
+          <span className="mr-1 text-xs text-[var(--color-text-secondary)]">
+            {filtered.length} / {projects.length}
+          </span>
+          {filterDefs.map((f) => (
+            <button
+              key={f.key}
+              onClick={() => toggle(f.key)}
+              className={`rounded-full px-4 py-1.5 text-xs font-semibold transition-all duration-200 ${
+                active.has(f.key)
+                  ? "bg-[var(--color-primary)] text-[var(--color-bg)]"
+                  : "bg-[var(--color-surface)]/60 text-[var(--color-text-secondary)] border border-[var(--color-border)] hover:text-[var(--color-primary)]"
+              }`}
+            >
+              {f.label}
+              <span className="ml-1.5 opacity-60">{f.count}</span>
+            </button>
+          ))}
+          {active.size > 0 && (
+            <button
+              onClick={() => setActive(new Set())}
+              className="rounded-full px-3 py-1.5 text-xs text-[var(--color-text-secondary)] transition-colors duration-200 hover:text-[var(--color-primary)]"
+            >
+              초기화
+            </button>
+          )}
+        </div>
+
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {projects.map((project, index) => (
+          {filtered.map((project, index) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
             >
               <a href={project.href}>
               <GlassCard className="group h-full cursor-pointer">
