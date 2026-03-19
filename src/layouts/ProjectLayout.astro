@@ -1,0 +1,121 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Navbar from "../components/layout/Navbar.astro";
+import Footer from "../components/layout/Footer.astro";
+
+interface Props {
+  title: string;
+  company: string;
+  period: string;
+  role: string;
+  tags: string[];
+}
+
+const { title, company, period, role, tags } = Astro.props;
+---
+
+<BaseLayout title={`${title} | 김강남`}>
+  <Navbar />
+  <main class="mx-auto max-w-4xl px-6 pt-20 pb-16 lg:pt-12">
+    <!-- Back link -->
+    <a
+      href="/"
+      class="mb-8 inline-flex items-center gap-2 text-sm text-[var(--color-text-secondary)] transition-colors duration-200 hover:text-[var(--color-primary)]"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+      메인으로 돌아가기
+    </a>
+
+    <!-- Header -->
+    <header class="mb-12">
+      <p class="mb-2 text-sm font-medium text-[var(--color-accent)]">
+        {company} · {role}
+      </p>
+      <h1 class="mb-3 text-3xl font-extrabold md:text-4xl font-[family-name:var(--font-heading)]">
+        {title}
+      </h1>
+      <p class="mb-4 text-sm text-[var(--color-text-secondary)]">{period}</p>
+      <div class="flex flex-wrap gap-2">
+        {
+          tags.map((tag) => (
+            <span class="rounded-md bg-[var(--color-primary)]/10 px-3 py-1 text-xs text-[var(--color-primary)]">
+              {tag}
+            </span>
+          ))
+        }
+      </div>
+    </header>
+
+    <!-- Content -->
+    <article class="prose-custom">
+      <slot />
+    </article>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .prose-custom :global(h2) {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+  }
+
+  .prose-custom :global(h3) {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+  }
+
+  .prose-custom :global(p) {
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .prose-custom :global(ul) {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .prose-custom :global(li) {
+    color: var(--color-text-secondary);
+    padding-left: 1.25rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+  }
+
+  .prose-custom :global(li::before) {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7rem;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+  }
+
+  .prose-custom :global(strong) {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  .prose-custom :global(code) {
+    font-family: var(--font-mono);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+  }
+</style>

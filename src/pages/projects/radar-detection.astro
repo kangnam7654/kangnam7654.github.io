@@ -1,0 +1,31 @@
+---
+import ProjectLayout from "../../layouts/ProjectLayout.astro";
+---
+
+<ProjectLayout
+  title="해상 레이더 객체 탐지"
+  company="코코넛사일로"
+  period="2021.06 ~ 2022.04"
+  role="AI 연구 엔지니어"
+  tags={["Vision", "Object Detection", "YOLOv5"]}
+>
+  <h2>개요</h2>
+  <p>
+    해상 레이더 영상 내 객체 탐지를 위한 YOLOv5 파인튜닝을 진행하고,
+    다양한 날씨 조건에서의 검출 성능 개선을 위한 실험을 수행했습니다.
+  </p>
+
+  <h2>주요 성과</h2>
+  <ul>
+    <li>해상 레이더 영상 데이터에 특화된 YOLOv5 파인튜닝</li>
+    <li>다양한 날씨 조건(맑음, 안개, 비 등)에서의 검출 성능 실험 및 개선</li>
+    <li>데이터 증강 기법 적용으로 악천후 조건 성능 향상</li>
+  </ul>
+
+  <h2>기술 스택</h2>
+  <ul>
+    <li><strong>Model</strong>: YOLOv5</li>
+    <li><strong>Framework</strong>: PyTorch</li>
+    <li><strong>Tools</strong>: OpenCV, Albumentations</li>
+  </ul>
+</ProjectLayout>

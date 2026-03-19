@@ -10,10 +10,21 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
+    company: "위메이드 넥스트",
+    team: "미르5 프로그램실",
+    role: "AI 엔지니어",
+    period: "2026.02 ~ 현재",
+    location: "서울",
+    project: "Unreal Engine MCP 플러그인",
+    highlights: [
+      "[MCP] 언리얼 엔진에서 동작하는 플러그인 형태의 MCP 개발",
+    ],
+  },
+  {
     company: "크레버스 (청담러닝)",
     team: "Nesto CV 본부, AI Biz 팀",
     role: "AI 엔지니어",
-    period: "2024.04 ~ 현재",
+    period: "2024.04 ~ 2025.06",
     location: "서울",
     project: "AI 자동평가 시스템",
     highlights: [
@@ -49,6 +60,19 @@ export const experiences: Experience[] = [
       "[Recommender] BERT 임베딩 기반 콘텐츠 추천 시스템 구현",
       "[Vision] 해상 레이더 영상 객체 탐지를 위한 YOLOv5 파인튜닝",
       "[Anomaly] 산업용 3D 프린터 비전 기반 이상 탐지 시스템 개발",
+    ],
+  },
+  {
+    company: "주식회사 가이온",
+    team: "서비스사업부",
+    role: "데이터사이언티스트",
+    period: "2020.08 ~ 2021.05",
+    location: "서울",
+    project: "정부 지원 프로젝트 (데이터 바우처) / 무역 데이터 매칭 플랫폼",
+    highlights: [
+      "[Data] 데이터 분석을 위한 데이터 수집 및 가공",
+      "[Data] 무역 데이터 수집, 가공 및 분석",
+      "[Planning] 중소기업 매칭 플랫폼 기획",
     ],
   },
 ];
