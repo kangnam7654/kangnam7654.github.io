@@ -117,6 +117,16 @@ const projects: Project[] = [
     claudeCode: true,
   },
   {
+    title: "Quorum — 멀티에이전트 협업",
+    description:
+      "여러 AI 에이전트가 실시간으로 토론·분석·합성하는 멀티에이전트 협업 플랫폼. Rust 백엔드 + Next.js + Tauri 데스크탑 크로스플랫폼",
+    tags: ["Rust", "Next.js", "Tauri", "LLM"],
+    company: "개인 프로젝트",
+    href: "/projects/quorum",
+    sideProject: true,
+    claudeCode: true,
+  },
+  {
     title: "중소기업 매칭 플랫폼",
     description:
       "무역 데이터를 수집·가공·분석하여 중소기업 간 매칭을 지원하는 플랫폼 기획 및 데이터 파이프라인 구축",
