@@ -38,14 +38,20 @@ export const skills: SkillCategory[] = [
   {
     title: "Data & Vision",
     icon: "📊",
-    items: ["OpenCV", "FFmpeg", "Pandas", "Polars", "NumPy", "Matplotlib"],
+    items: ["OpenCV", "FFmpeg", "Pandas", "Polars", "NumPy", "Matplotlib", "Seaborn"],
     size: "medium",
   },
   {
     title: "Dev Tools",
     icon: "🛠️",
-    items: ["VS Code", "GitHub", "GitHub Copilot", "Jira", "Confluence"],
+    items: ["Visual Studio", "VS Code", "GitHub", "Perforce", "Jira", "Confluence", "Slack"],
     size: "medium",
+  },
+  {
+    title: "AI-Powered Dev",
+    icon: "🤖",
+    items: ["Claude Code", "GitHub Copilot"],
+    size: "small",
   },
   {
     title: "Others",

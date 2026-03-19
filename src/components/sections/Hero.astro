@@ -4,7 +4,7 @@ import TypeWriter from "../ui/TypeWriter.tsx";
 
 <section
   id="hero"
-  class="relative flex min-h-screen items-center justify-center px-6"
+  class="relative flex min-h-screen items-center justify-center px-6 pt-14 lg:pt-0"
 >
   <!-- Background gradient -->
   <div
@@ -24,9 +24,11 @@ import TypeWriter from "../ui/TypeWriter.tsx";
   <div class="relative z-10 text-center">
     <!-- Profile image placeholder -->
     <div class="mx-auto mb-8 h-36 w-36 overflow-hidden rounded-full border-2 border-[var(--color-primary)]/30 shadow-[0_0_40px_rgba(0,212,255,0.15)]">
-      <div class="flex h-full w-full items-center justify-center bg-[var(--color-surface)] text-4xl">
-        👨‍💻
-      </div>
+      <img
+        src="/images/profile.jpg"
+        alt="김강남 프로필 사진"
+        class="h-full w-full object-cover object-top"
+      />
     </div>
 
     <h1
@@ -52,13 +54,13 @@ import TypeWriter from "../ui/TypeWriter.tsx";
 
     <div class="flex flex-wrap justify-center gap-4">
       <a
-        href="#projects"
+        href="/projects"
         class="rounded-full bg-[var(--color-primary)] px-8 py-3 font-semibold text-[var(--color-bg)] transition-all duration-200 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,212,255,0.3)]"
       >
         프로젝트 보기
       </a>
       <a
-        href="#contact"
+        href="/contact"
         class="rounded-full border border-[var(--color-primary)]/30 px-8 py-3 font-semibold text-[var(--color-primary)] transition-all duration-200 hover:scale-105 hover:bg-[var(--color-primary)]/10"
       >
         연락하기
