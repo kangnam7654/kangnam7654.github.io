@@ -138,6 +138,17 @@ const projects: Project[] = [
     claudeCode: true,
   },
   {
+    title: "Multi-Agent Story Writer",
+    description:
+      "Lorebook 기반 세계관을 참고해 스토리를 생성·검수·피드백하는 멀티에이전트 시스템",
+    tags: ["Python", "LangGraph", "ChromaDB"],
+    company: "개인 프로젝트",
+    href: "/projects/story-writer",
+    github: "https://github.com/kangnam7654/multi_agent_storywriter",
+    sideProject: true,
+    claudeCode: true,
+  },
+  {
     title: "중소기업 매칭 플랫폼",
     description:
       "무역 데이터를 수집·가공·분석하여 중소기업 간 매칭을 지원하는 플랫폼 기획 및 데이터 파이프라인 구축",
