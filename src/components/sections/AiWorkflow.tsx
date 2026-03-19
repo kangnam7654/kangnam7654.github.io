@@ -4,7 +4,6 @@ import GlassCard from "../ui/GlassCard";
 interface Step {
   title: string;
   desc: string;
-  hasVisual?: boolean;
 }
 
 interface Phase {
@@ -25,17 +24,14 @@ const phases: Phase[] = [
       {
         title: "AI 브레인스토밍 & 주제 선정",
         desc: "AI와 아이디어 발산 → 문제 정의 → 주제 선정",
-        hasVisual: true,
       },
       {
         title: "설계 문서 & 다이어그램 작성 (For AI)",
         desc: "6개 필수 섹션(목적, 아키텍처, 데이터 흐름, API, 파일 구조, 의사결정 근거) + Mermaid 다이어그램. AI가 소비하는 문서",
-        hasVisual: true,
       },
       {
         title: "Prompt Critic 채점",
         desc: "Doc-Critic이 5개 기준(가독성, 구조, 예시, 완성도, 정확성)으로 채점. 8.0/10 이상 통과",
-        hasVisual: true,
       },
       {
         title: "통과할 때까지 2↔3 반복",
@@ -44,12 +40,10 @@ const phases: Phase[] = [
       {
         title: "Figma 와이어프레임",
         desc: "구조와 레이아웃을 Lo-fi로 시각 설계",
-        hasVisual: true,
       },
       {
         title: "Hi-fi 디자인",
         desc: "색상, 타이포, 인터랙션 포함 고충실도 디자인",
-        hasVisual: true,
       },
       {
         title: "AI Plan 수립",
@@ -58,7 +52,6 @@ const phases: Phase[] = [
       {
         title: "Plan Critic 채점",
         desc: "6개 기준(명확성, 완성도, 실현가능성, 의존성, 리스크, 범위) 채점",
-        hasVisual: true,
       },
       {
         title: "통과할 때까지 7↔8 반복",
@@ -75,7 +68,6 @@ const phases: Phase[] = [
       {
         title: "개발",
         desc: "승인된 플랜 기반 AI 페어 프로그래밍. NEVER 규칙 10개 자동 적용",
-        hasVisual: true,
       },
       {
         title: "커밋 (Checkpoint)",
@@ -84,7 +76,6 @@ const phases: Phase[] = [
       {
         title: "코드 리뷰",
         desc: "AI 리뷰어가 보안·성능·가독성 검토",
-        hasVisual: true,
       },
       {
         title: "이슈 수정",
@@ -97,7 +88,6 @@ const phases: Phase[] = [
       {
         title: "문서 편집 & 개발 기록 (For Human)",
         desc: "사람이 읽을 README, 가이드, 변경 기록 작성",
-        hasVisual: true,
       },
       {
         title: "사람이 확인하며 1→6 반복",
@@ -114,17 +104,14 @@ const phases: Phase[] = [
       {
         title: "Unit → Integration → E2E 설계",
         desc: "단계별 테스트 전략. Unit은 외부 의존성 Mock, Integration은 모듈 간 실제 호출",
-        hasVisual: true,
       },
       {
         title: "Unit Test 커버리지 80%+",
         desc: "최소 80% 강제. 미달 시 커밋 불가 (NEVER 규칙)",
-        hasVisual: true,
       },
       {
         title: "AI 스크린샷 테스트 (LLM Test)",
         desc: "실제 화면 캡처 → AI가 시각적 검증. UI 깨짐·레이아웃 이슈 자동 탐지",
-        hasVisual: true,
       },
     ],
   },
@@ -255,23 +242,6 @@ export default function AiWorkflow() {
                           {step.desc}
                         </p>
                       </div>
-
-                      {/* Visual Placeholder */}
-                      {step.hasVisual && (
-                        <div
-                          className="hidden shrink-0 items-center justify-center rounded-lg border border-dashed md:flex"
-                          style={{
-                            width: 150,
-                            height: 70,
-                            backgroundColor: "rgba(10,10,15,0.5)",
-                            borderColor: `color-mix(in srgb, ${phase.color} 40%, transparent)`,
-                          }}
-                        >
-                          <span className="text-[10px] text-[var(--color-text-secondary)]/50">
-                            📸 Screenshot
-                          </span>
-                        </div>
-                      )}
                     </GlassCard>
                   </motion.div>
                 ))}
