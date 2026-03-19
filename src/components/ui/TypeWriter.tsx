@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface Props {
   texts: string[];
@@ -15,31 +15,39 @@ export default function TypeWriter({
 }: Props) {
   const [displayText, setDisplayText] = useState("");
   const [textIndex, setTextIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
+  const [phase, setPhase] = useState<"typing" | "pausing" | "deleting">(
+    "typing",
+  );
+  const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
 
   useEffect(() => {
     const currentText = texts[textIndex];
 
-    const timeout = setTimeout(
-      () => {
-        if (!isDeleting) {
+    if (phase === "typing") {
+      if (displayText.length < currentText.length) {
+        timeoutRef.current = setTimeout(() => {
           setDisplayText(currentText.slice(0, displayText.length + 1));
-          if (displayText.length === currentText.length) {
-            setTimeout(() => setIsDeleting(true), pause);
-          }
-        } else {
+        }, speed);
+      } else {
+        setPhase("pausing");
+      }
+    } else if (phase === "pausing") {
+      timeoutRef.current = setTimeout(() => {
+        setPhase("deleting");
+      }, pause);
+    } else if (phase === "deleting") {
+      if (displayText.length > 0) {
+        timeoutRef.current = setTimeout(() => {
           setDisplayText(currentText.slice(0, displayText.length - 1));
-          if (displayText.length === 0) {
-            setIsDeleting(false);
-            setTextIndex((prev) => (prev + 1) % texts.length);
-          }
-        }
-      },
-      isDeleting ? deleteSpeed : speed,
-    );
+        }, deleteSpeed);
+      } else {
+        setTextIndex((prev) => (prev + 1) % texts.length);
+        setPhase("typing");
+      }
+    }
 
-    return () => clearTimeout(timeout);
-  }, [displayText, isDeleting, textIndex, texts, speed, deleteSpeed, pause]);
+    return () => clearTimeout(timeoutRef.current);
+  }, [displayText, phase, textIndex, texts, speed, deleteSpeed, pause]);
 
   return (
     <span className="text-[var(--color-primary)]">

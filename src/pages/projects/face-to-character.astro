@@ -8,6 +8,7 @@ import ProjectLayout from "../../layouts/ProjectLayout.astro";
   period="2022.10 ~ 2024.01"
   role="AI 연구 엔지니어"
   tags={["Vision", "Deep Learning", "3D Avatar"]}
+  github="https://github.com/kangnam7654/face_to_parameter"
 >
   <h2>개요</h2>
   <p>
@@ -15,11 +16,27 @@ import ProjectLayout from "../../layouts/ProjectLayout.astro";
     캐릭터 외형 반영 과정을 end-to-end로 구성했습니다.
   </p>
 
+  <h2>변환 예시</h2>
+  <div class="demo-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+    <div class="demo-item">
+      <span class="demo-label">원본</span>
+      <img src="/images/projects/ftc-original.png" alt="원본 얼굴 이미지" loading="lazy" />
+    </div>
+    <div class="demo-item">
+      <span class="demo-label">게임 캐릭터</span>
+      <img src="/images/projects/ftc-game.png" alt="게임 캐릭터 변환 결과" loading="lazy" />
+    </div>
+    <div class="demo-item">
+      <span class="demo-label">애니메이션</span>
+      <img src="/images/projects/ftc-anime.png" alt="애니메이션 스타일 변환 결과" loading="lazy" />
+    </div>
+  </div>
+
   <h2>주요 성과</h2>
   <ul>
     <li>사용자 얼굴 특징을 추출하여 3D 게임 캐릭터에 매핑하는 파이프라인 구축</li>
     <li>얼굴 랜드마크 검출부터 캐릭터 파라미터 생성까지 end-to-end 프로세스 설계</li>
-    <li>다양한 얼굴 형태와 특징에 대응하는 범용적 시스템 개발</li>
+    <li>PoC(Proof of Concept) 완료</li>
   </ul>
 
   <h2>기술 스택</h2>

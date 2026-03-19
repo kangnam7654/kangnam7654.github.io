@@ -8,6 +8,7 @@ import ProjectLayout from "../../layouts/ProjectLayout.astro";
   period="2021.06 ~ 2022.04"
   role="AI 연구 엔지니어"
   tags={["Vision", "Object Detection", "YOLOv5"]}
+  github="https://github.com/kangnam7654/Vision_Radar_od"
 >
   <h2>개요</h2>
   <p>
@@ -15,11 +16,30 @@ import ProjectLayout from "../../layouts/ProjectLayout.astro";
     다양한 날씨 조건에서의 검출 성능 개선을 위한 실험을 수행했습니다.
   </p>
 
+  <h2>데모</h2>
+  <div class="demo-grid">
+    <div class="demo-item">
+      <span class="demo-label">원본 레이더 영상</span>
+      <img src="/images/projects/radar-original1.png" alt="레이더 시뮬레이터 원본 영상" loading="lazy" />
+    </div>
+    <div class="demo-item">
+      <span class="demo-label">원본 ARPA 레이더</span>
+      <img src="/images/projects/radar-original2.png" alt="ARPA 레이더 원본 영상" loading="lazy" />
+    </div>
+    <div class="demo-item">
+      <span class="demo-label">Hough 원 추출</span>
+      <img src="/images/projects/radar-hough.png" alt="Hough 알고리즘 원 추출 결과" loading="lazy" />
+    </div>
+    <div class="demo-item">
+      <span class="demo-label">객체 탐지 결과</span>
+      <img src="/images/projects/radar-detection.png" alt="YOLOv5 객체 탐지 결과" loading="lazy" />
+    </div>
+  </div>
+
   <h2>주요 성과</h2>
   <ul>
-    <li>해상 레이더 영상 데이터에 특화된 YOLOv5 파인튜닝</li>
-    <li>다양한 날씨 조건(맑음, 안개, 비 등)에서의 검출 성능 실험 및 개선</li>
-    <li>데이터 증강 기법 적용으로 악천후 조건 성능 향상</li>
+    <li>Hough 변환으로 레이더 스코프 원형 영역 추출</li>
+    <li>YOLOv5 파인튜닝을 통한 해상 레이더 영상 내 객체 탐지</li>
   </ul>
 
   <h2>기술 스택</h2>
