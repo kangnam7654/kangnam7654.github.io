@@ -1,0 +1,6 @@
+graph LR
+    A["1. 콘텐츠 작성<br/>(Markdown + frontmatter)"] --> B["2. Astro Build<br/>(Content Collections 파싱)"]
+    B --> C["3. 컴포넌트 렌더링<br/>(Astro + React Islands)"]
+    C --> D["4. Static HTML/CSS/JS<br/>생성 (dist/)"]
+    D --> E["5. GitHub Actions<br/>(push 트리거)"]
+    E --> F["6. GitHub Pages<br/>배포 완료"]

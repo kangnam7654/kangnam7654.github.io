@@ -1,0 +1,43 @@
+---
+import AnimatedSection from "../ui/AnimatedSection.tsx";
+import GlassCard from "../ui/GlassCard.tsx";
+import { education } from "../../data/education";
+---
+
+<section id="education" class="py-24 px-6">
+  <div class="mx-auto max-w-4xl">
+    <AnimatedSection client:visible>
+      <h2
+        class="mb-2 text-sm font-semibold uppercase tracking-widest text-[var(--color-primary)]"
+      >
+        Education
+      </h2>
+      <h3 class="mb-12 text-3xl font-bold md:text-4xl font-[family-name:var(--font-heading)]">
+        학력
+      </h3>
+    </AnimatedSection>
+
+    <div class="space-y-6">
+      {
+        education.map((edu, index) => (
+          <AnimatedSection client:visible delay={index * 0.15}>
+            <GlassCard client:visible hover={false}>
+              <h4 class="text-xl font-bold">{edu.school}</h4>
+              <p class="text-[var(--color-text-secondary)]">{edu.degree}</p>
+              {edu.period && (
+                <p class="mt-1 text-sm text-[var(--color-primary)]">
+                  {edu.period}
+                </p>
+              )}
+              {edu.note && (
+                <p class="mt-2 text-sm text-[var(--color-accent)]">
+                  {edu.note}
+                </p>
+              )}
+            </GlassCard>
+          </AnimatedSection>
+        ))
+      }
+    </div>
+  </div>
+</section>
