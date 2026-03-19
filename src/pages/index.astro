@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/layout/Navbar.astro";
+import Footer from "../components/layout/Footer.astro";
+import ScrollProgress from "../components/ui/ScrollProgress.tsx";
+import Hero from "../components/sections/Hero.astro";
+import About from "../components/sections/About.astro";
+import Experience from "../components/sections/Experience.tsx";
+import Skills from "../components/sections/Skills.tsx";
+import Projects from "../components/sections/Projects.tsx";
+import Education from "../components/sections/Education.astro";
+import Contact from "../components/sections/Contact.astro";
+---
+
+<BaseLayout title="김강남 | AI Research Engineer">
+  <ScrollProgress client:load />
+  <Navbar />
+  <main>
+    <Hero />
+    <About />
+    <Experience client:visible />
+    <Skills client:visible />
+    <Projects client:visible />
+    <Education />
+    <Contact />
+  </main>
+  <Footer />
+</BaseLayout>

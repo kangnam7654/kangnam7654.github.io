@@ -1,0 +1,26 @@
+graph TB
+    subgraph "Build Time"
+        A[Astro Pages<br/>.astro files] --> B[Static HTML Generator]
+        C[React Islands<br/>.tsx components] --> B
+        D[Tailwind CSS] --> B
+        E[Content Collections<br/>프로젝트 Markdown] --> B
+    end
+
+    subgraph "Runtime (Browser)"
+        F[Static HTML/CSS]
+        G[Hydrated React Islands]
+        H[Framer Motion<br/>Animations]
+        I[Theme Toggle<br/>Dark/Light]
+    end
+
+    subgraph "Infrastructure"
+        J[GitHub Repository] --> K[GitHub Actions<br/>astro build]
+        K --> L[GitHub Pages<br/>kangnam7654.github.io]
+    end
+
+    B --> F
+    B --> G
+    G --> H
+    G --> I
+    F --> J
+    G --> J
