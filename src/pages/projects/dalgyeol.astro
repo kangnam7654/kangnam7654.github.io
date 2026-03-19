@@ -13,43 +13,30 @@ import ProjectLayout from "../../layouts/ProjectLayout.astro";
 >
   <h2>개요</h2>
   <p>
-    달결은 사주(四柱)와 타로를 결합한 AI 운세 상담 서비스입니다.
-    사용자의 생년월일시를 기반으로 규칙 기반 사주 엔진이 운세를 생성하고,
-    멀티 LLM 프로바이더(Claude, GPT, Gemini, Copilot)를 활용한 AI 상담사가 실시간 채팅 상담을 제공합니다.
+    사주와 타로를 결합한 AI 운세 상담 iOS 앱입니다.
+    규칙 기반 사주 엔진(순수 Rust, LLM 비의존)으로 운세를 생성하고,
+    멀티 LLM 프로바이더를 활용한 AI 상담사가 실시간 채팅 상담을 제공합니다.
+    서비스 출시 예정입니다.
   </p>
 
-  <h2>핵심 기술적 도전</h2>
+  <h2>주요 구현</h2>
   <ul>
-    <li>사주 계산 엔진을 순수 Rust로 구현하여 외부 API 의존 없이 비용 $0으로 운세 생성</li>
-    <li>생년월일 등 민감 개인정보를 AES-256-GCM으로 암호화하여 DB 저장</li>
-    <li>StoreKit 2 기반 인앱결제 + 포인트 경제 시스템 설계 및 구현</li>
-    <li>프리미엄 프리뷰 모델(첫 줄 공개 + 블러)로 무료→유료 전환 퍼널 설계</li>
+    <li>순수 Rust 사주 계산 엔진 (외부 API 의존 없음, ~1,100줄)</li>
+    <li>AES-256-GCM 개인정보 암호화</li>
+    <li>StoreKit 2 인앱결제 + 포인트 경제 시스템</li>
+    <li>실시간 WebSocket AI 상담 + PII 마스킹</li>
   </ul>
 
   <h2>기술 스택</h2>
-  <h3>Backend</h3>
   <ul>
-    <li><strong>Language</strong>: Rust (Axum 0.8, Tokio)</li>
-    <li><strong>DB</strong>: PostgreSQL 16 (8 스키마, 30+ 테이블)</li>
-    <li><strong>보안</strong>: JWT + Argon2, AES-256-GCM (PII 암호화)</li>
-    <li><strong>배포</strong>: Fly.io (Tokyo region)</li>
-  </ul>
-  <h3>iOS</h3>
-  <ul>
-    <li><strong>UI</strong>: SwiftUI (iOS 17+), MVVM</li>
-    <li><strong>결제</strong>: StoreKit 2 (IAP + 자동갱신 구독)</li>
-    <li><strong>인증</strong>: Sign in with Apple, Google Sign-In</li>
-  </ul>
-  <h3>AI</h3>
-  <ul>
-    <li><strong>LLM</strong>: 멀티 프로바이더 (Claude, ChatGPT, Gemini 등)</li>
-    <li><strong>사주 엔진</strong>: 순수 Rust 규칙 기반 (LLM 비의존)</li>
+    <li><strong>Backend</strong>: Rust (Axum, Tokio), PostgreSQL, Fly.io</li>
+    <li><strong>iOS</strong>: SwiftUI (iOS 17+), StoreKit 2, Sign in with Apple</li>
+    <li><strong>AI</strong>: 멀티 LLM (Claude, GPT, Gemini)</li>
   </ul>
 
   <h2>규모</h2>
   <ul>
-    <li>Backend: Rust 5,000줄+, 마이그레이션 15개</li>
-    <li>iOS: Swift 8,000줄+, View 32개, ViewModel 10개</li>
-    <li>설계문서 7개, API 문서, 아키텍처 다이어그램</li>
+    <li>Backend Rust 5,000줄+, iOS Swift 8,000줄+</li>
+    <li>설계문서 7개, 마이그레이션 15개</li>
   </ul>
 </ProjectLayout>

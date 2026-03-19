@@ -13,26 +13,18 @@ import ProjectLayout from "../../layouts/ProjectLayout.astro";
 >
   <h2>개요</h2>
   <p>
-    단일 LLM의 한계를 넘기 위해, 서로 다른 성격·관점·역할을 가진 AI 에이전트들이
-    실시간으로 토론하고 협업하는 멀티에이전트 플랫폼입니다.
+    서로 다른 역할을 가진 AI 에이전트들이 실시간으로 토론·협업하는 멀티에이전트 플랫폼입니다.
+    병렬 토론, 3단계 오케스트레이션(Research → Analysis → Synthesis),
+    4개 LLM 프로바이더 통합, SSE 기반 토큰 스트리밍을 구현했습니다.
   </p>
-
-  <h2>핵심 기술적 도전</h2>
-  <ul>
-    <li><strong>병렬 토론 시스템</strong> — 모든 에이전트가 라운드마다 동시에 응답하는 fully parallel debate 아키텍처</li>
-    <li><strong>3단계 협업 오케스트레이션</strong> — Research → Analysis → Synthesis 파이프라인</li>
-    <li><strong>멀티 LLM 프로바이더</strong> — Anthropic, OpenAI, Codex(PKCE OAuth), GitHub Copilot(Device Flow) 4개 통합</li>
-    <li><strong>실시간 스트리밍</strong> — SSE 파이프라인(LLM → mpsc → Orchestrator → broadcast → SSE → Client)으로 토큰 단위 실시간 응답</li>
-    <li><strong>Knowledge Graph</strong> — 세션 간 지식 추출·축적·검색</li>
-  </ul>
 
   <h2>기술 스택</h2>
   <ul>
-    <li><strong>Backend</strong>: Rust, Axum 0.8, Tokio, SQLite (sqlx), JWT</li>
-    <li><strong>Frontend</strong>: Next.js 16, TypeScript, Tailwind CSS 4, shadcn/ui</li>
-    <li><strong>Desktop</strong>: Tauri 2.x (cross-platform)</li>
-    <li><strong>AI/LLM</strong>: Anthropic Claude, OpenAI GPT-4o/4.1, multi-provider abstraction</li>
-    <li><strong>Real-time</strong>: Server-Sent Events (SSE), mpsc + broadcast channels</li>
+    <li><strong>Backend</strong>: Rust (Axum, Tokio, sqlx)</li>
+    <li><strong>Frontend</strong>: Next.js 16, TypeScript, Tailwind CSS 4</li>
+    <li><strong>Desktop</strong>: Tauri 2.x</li>
+    <li><strong>AI</strong>: Anthropic, OpenAI, Codex, GitHub Copilot</li>
+    <li><strong>Real-time</strong>: SSE, mpsc + broadcast channels</li>
     <li><strong>테스트</strong>: 103개</li>
   </ul>
 </ProjectLayout>
