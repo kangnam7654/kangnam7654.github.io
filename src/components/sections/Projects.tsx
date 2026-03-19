@@ -83,6 +83,16 @@ const projects: Project[] = [
     sideProject: true,
   },
   {
+    title: "YouTube Shorts 자동화",
+    description:
+      "Google Veo 3.1로 AI 영상 생성, Whisper 자막 추가, YouTube 업로드까지 자동화하는 파이프라인",
+    tags: ["Python", "Veo 3.1", "Whisper"],
+    company: "개인 프로젝트",
+    href: "/projects/auto-shorts",
+    github: "https://github.com/kangnam7654/AutoShorts",
+    sideProject: true,
+  },
+  {
     title: "중소기업 매칭 플랫폼",
     description:
       "무역 데이터를 수집·가공·분석하여 중소기업 간 매칭을 지원하는 플랫폼 기획 및 데이터 파이프라인 구축",
