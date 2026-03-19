@@ -14,9 +14,22 @@
 - `src/components/ui/` — 재사용 UI (GlassCard, TypeWriter, ScrollProgress 등)
 - `src/layouts/` — BaseLayout, ProjectLayout
 - `src/styles/global.css` — CSS 변수, 다크/라이트 테마
-- `src/data/` — experience, education, skills 데이터
-- `public/images/projects/` — 프로젝트 이미지/GIF
-- `assets/` — 원본 소스 (PPT, 영상, 이미지) - Git에 포함하지 않음 (.gitignore 권장)
+- `src/data/` — experience, education, skills, resume 데이터
+- `public/images/projects/` — 프로젝트 이미지/GIF (빌드에 포함)
+- `assets/` — 원본 소스 (.gitignore로 제외)
+
+## 로컬 assets 구조 (.gitignore)
+```
+assets/
+├── portfolio/          # PPT
+├── resume/             # 이력서 docx (original, v2, v3-latest)
+├── source-images/      # 원본 이미지 (프로젝트별)
+│   ├── ai-assessment/
+│   ├── anomaly-detection/
+│   ├── icons/
+│   └── profile/
+└── videos/             # 데모 영상
+```
 
 ## 테마 시스템
 - 다크모드 기본, 라이트모드 지원
@@ -26,39 +39,45 @@
 
 ## 프로젝트 페이지
 - `ProjectLayout.astro` — 공통 레이아웃 (props: title, company, period, role, tags, github?, sideProject?, claudeCode?)
-- `Projects.tsx` — 프로젝트 카드 그리드 + 필터 (전체/회사/사이드/Claude Code 토글)
+- `Projects.tsx` — 프로젝트 카드 그리드 + 다중 토글 필터 (회사/사이드/Claude Code)
 - 프로젝트 데이터는 `Projects.tsx` 내 `projects` 배열에 정의
 - 배지: Side Project (에메랄드), Claude Code (앰버)
 
 ## 회사 프로젝트 (8개)
-| 프로젝트 | 회사 | GitHub |
-|---------|------|--------|
-| UE5 MCP 플러그인 | 위메이드 넥스트 | kangnam-unreal-mcp |
-| AI 자동평가 시스템 | 크레버스 | Multi-Agent-English-Assessment-System |
-| Face-to-Character | 메타버스월드 | face_to_parameter |
-| 모션 트래킹 | 메타버스월드 | - |
-| 추천 시스템 | 코코넛사일로 | private |
-| 레이더 객체 탐지 | 코코넛사일로 | Vision_Radar_od |
-| 이상 탐지 | 코코넛사일로 | private |
-| 매칭 플랫폼 | 가이온 | - |
+| 프로젝트 | 회사 | GitHub | 비고 |
+|---------|------|--------|------|
+| UE5 MCP 플러그인 | 위메이드 넥스트 | kangnam-unreal-mcp | 데모 GIF 4개 |
+| AI 자동평가 시스템 | 크레버스 | Multi-Agent-English-Assessment-System | 아키텍처/시퀀스 다이어그램, 발표태도 데모 |
+| Face-to-Character | 메타버스월드 | face_to_parameter | PoC, 변환 예시 3종 |
+| 모션 트래킹 | 메타버스월드 | - | DLL 변환 통신 방식 |
+| 추천 시스템 | 코코넛사일로 | private | FAISS 미사용 |
+| 레이더 객체 탐지 | 코코넛사일로 | Vision_Radar_od | 원본/Hough/탐지 이미지 |
+| 이상 탐지 | 코코넛사일로 | private | PoC, 데모 GIF |
+| 매칭 플랫폼 | 가이온 | - | |
 
 ## 사이드 프로젝트 (7개, 모두 Claude Code)
 | 프로젝트 | GitHub | 기술 |
 |---------|--------|------|
 | MCP 데스크탑 클라이언트 | kangnam-client | Tauri, Rust |
-| AutoShorts | AutoShorts | Python, Veo 3.1 |
+| AutoShorts (AI 숏폼) | AutoShorts | Python, Veo 3.1 |
 | What Health | what_health | Swift, Rust |
 | 달결 (AI 사주·타로) | private | Rust, Swift |
 | Quorum (멀티에이전트) | 미등록 | Rust, Next.js, Tauri |
-| Game NPC with LLM | Game-NPC-with-LLM | Python |
+| Game NPC with LLM | Game-NPC-with-LLM | Python, RL |
 | Story Writer | multi_agent_storywriter | Python, LangGraph |
 
 ## 주의사항
-- 프로젝트 성과에 없는 내용을 지어내지 말 것 (사용자가 여러 차례 수정 요청함)
-- TTS 파인튜닝은 "실험 단계", Face-to-Character는 "PoC 완료"
-- 레이더 프로젝트: image8은 Hough 원 추출 결과, 원본 아님
-- 발표태도 평가 이미지 중 head 사진은 학생 얼굴 → 크롭 필요, hand 사진은 본인
-- PPT 이미지 소스: `assets/_포트폴리오_251203.pptx` (unzip으로 추출)
+- **프로젝트 성과를 지어내지 말 것** — 사용자가 여러 차례 수정함
+  - Face-to-Character, 이상 탐지: PoC
+  - 레이더, 이상 탐지, 추천 시스템: SI 납품, 성과 확인 불가
+  - TTS 파인튜닝: 실험 단계
+  - 추천 시스템: FAISS 미사용
+  - 모션 트래킹: ONNX Runtime 미사용, MediaPipe DLL 변환
+- 발표태도 평가 head 이미지는 학생 얼굴 → 크롭 필요, hand는 본인
+- PPT 이미지 소스: `assets/portfolio/portfolio-2025-12.pptx` (unzip으로 추출)
+- 이력서 최신 버전: `assets/resume/resume-v3-latest.docx`
+- 이력서 생성 데이터: `src/data/resume.ts` (Single Source of Truth)
+- 타이틀: "AI Engineer" (Research 제거)
 
 ## 다음 작업
 - [ ] i18n (한국어/영어/일본어) 지원
