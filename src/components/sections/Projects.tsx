@@ -76,7 +76,7 @@ const projects: Project[] = [
   {
     title: "MCP 데스크탑 클라이언트",
     description:
-      "비개발자도 MCP를 편하게 사용할 수 있는 데스크탑 LLM 채팅 클라이언트. Unreal Engine MCP 개발 경험에서 착안",
+      "MCP 지원 데스크탑 LLM 채팅 클라이언트",
     tags: ["Tauri", "Rust", "MCP"],
     company: "개인 프로젝트",
     href: "/projects/kangnam-client",
@@ -87,7 +87,7 @@ const projects: Project[] = [
   {
     title: "AutoShorts — AI 숏폼 자동화",
     description:
-      "AI 사주 앱 마케팅을 위한 유튜브 쇼츠 자동 생산 파이프라인. Veo 3.1 영상 생성 → Whisper 자막 → LLM 보정 → 얼굴 인식 크롭 → YouTube 업로드까지 CLI 한 줄로 완결",
+      "Veo 3.1 영상 생성부터 자막, 후처리, YouTube 업로드까지 자동화하는 숏폼 제작 CLI",
     tags: ["Python", "Veo 3.1", "Whisper", "FFmpeg"],
     company: "개인 프로젝트",
     href: "/projects/auto-shorts",
@@ -109,7 +109,7 @@ const projects: Project[] = [
   {
     title: "달결 — AI 사주·타로",
     description:
-      "사주팔자 기반 AI 운세 상담 플랫폼 — iOS 네이티브 앱 + Rust 백엔드 풀스택 1인 개발. 서비스 출시 예정",
+      "사주·타로 기반 AI 운세 상담 iOS 앱. 서비스 출시 예정",
     tags: ["Rust", "Swift", "LLM", "iOS"],
     company: "개인 프로젝트",
     href: "/projects/dalgyeol",
@@ -119,7 +119,7 @@ const projects: Project[] = [
   {
     title: "Quorum — 멀티에이전트 협업",
     description:
-      "여러 AI 에이전트가 실시간으로 토론·분석·합성하는 멀티에이전트 협업 플랫폼. Rust 백엔드 + Next.js + Tauri 데스크탑 크로스플랫폼",
+      "여러 AI 에이전트가 토론·협업하는 멀티에이전트 플랫폼",
     tags: ["Rust", "Next.js", "Tauri", "LLM"],
     company: "개인 프로젝트",
     href: "/projects/quorum",
