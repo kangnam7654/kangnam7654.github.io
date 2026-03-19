@@ -118,4 +118,41 @@ const { title, company, period, role, tags } = Astro.props;
     border-radius: 4px;
     font-size: 0.875rem;
   }
+
+  .prose-custom :global(img) {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    margin: 1rem 0;
+  }
+
+  .prose-custom :global(.demo-grid) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .prose-custom :global(.demo-item) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .prose-custom :global(.demo-item img) {
+    margin: 0;
+  }
+
+  .prose-custom :global(.demo-label) {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-align: center;
+  }
+
+  @media (max-width: 640px) {
+    .prose-custom :global(.demo-grid) {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
