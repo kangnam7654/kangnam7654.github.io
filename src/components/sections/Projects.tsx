@@ -9,6 +9,7 @@ interface Project {
   href: string;
   github?: string;
   sideProject?: boolean;
+  claudeCode?: boolean;
 }
 
 const projects: Project[] = [
@@ -81,16 +82,39 @@ const projects: Project[] = [
     href: "/projects/kangnam-client",
     github: "https://github.com/kangnam7654/kangnam-client",
     sideProject: true,
+    claudeCode: true,
   },
   {
-    title: "YouTube Shorts 자동화",
+    title: "AutoShorts — AI 숏폼 자동화",
     description:
-      "Google Veo 3.1로 AI 영상 생성, Whisper 자막 추가, YouTube 업로드까지 자동화하는 파이프라인",
-    tags: ["Python", "Veo 3.1", "Whisper"],
+      "AI 사주 앱 마케팅을 위한 유튜브 쇼츠 자동 생산 파이프라인. Veo 3.1 영상 생성 → Whisper 자막 → LLM 보정 → 얼굴 인식 크롭 → YouTube 업로드까지 CLI 한 줄로 완결",
+    tags: ["Python", "Veo 3.1", "Whisper", "FFmpeg"],
     company: "개인 프로젝트",
     href: "/projects/auto-shorts",
     github: "https://github.com/kangnam7654/AutoShorts",
     sideProject: true,
+    claudeCode: true,
+  },
+  {
+    title: "What Health",
+    description:
+      "LLM이 운동 코치가 되어 개인 맞춤 운동 스케줄을 관리해주는 앱",
+    tags: ["Swift", "Rust", "LLM"],
+    company: "개인 프로젝트",
+    href: "/projects/what-health",
+    github: "https://github.com/kangnam7654/what_health",
+    sideProject: true,
+    claudeCode: true,
+  },
+  {
+    title: "달결 — AI 사주·타로",
+    description:
+      "사주팔자 기반 AI 운세 상담 플랫폼 — iOS 네이티브 앱 + Rust 백엔드 풀스택 1인 개발. 서비스 출시 예정",
+    tags: ["Rust", "Swift", "LLM", "iOS"],
+    company: "개인 프로젝트",
+    href: "/projects/dalgyeol",
+    sideProject: true,
+    claudeCode: true,
   },
   {
     title: "중소기업 매칭 플랫폼",
@@ -153,6 +177,11 @@ export default function Projects() {
                   {project.sideProject && (
                     <span className="rounded-full bg-emerald-500/15 px-2 py-0.5 text-[10px] font-semibold text-emerald-400">
                       Side Project
+                    </span>
+                  )}
+                  {project.claudeCode && (
+                    <span className="rounded-full bg-amber-500/15 px-2 py-0.5 text-[10px] font-semibold text-amber-400">
+                      Claude Code
                     </span>
                   )}
                 </h4>
