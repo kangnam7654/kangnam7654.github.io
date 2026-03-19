@@ -20,5 +20,10 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
+# source assets (PPT, resume, raw images)
+assets/
+images/
+test-results/
+
 # jetbrains setting folder
 .idea/
