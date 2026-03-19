@@ -127,6 +127,17 @@ const projects: Project[] = [
     claudeCode: true,
   },
   {
+    title: "Game NPC with LLM",
+    description:
+      "강화학습으로 퀘스트를 수행하고, LLM 기반 NPC와 대화하는 게임",
+    tags: ["Python", "RL", "LLM"],
+    company: "개인 프로젝트",
+    href: "/projects/game-npc",
+    github: "https://github.com/kangnam7654/Game-NPC-with-LLM",
+    sideProject: true,
+    claudeCode: true,
+  },
+  {
     title: "중소기업 매칭 플랫폼",
     description:
       "무역 데이터를 수집·가공·분석하여 중소기업 간 매칭을 지원하는 플랫폼 기획 및 데이터 파이프라인 구축",
