@@ -8,6 +8,9 @@ interface Props {
 
 const { title, description = "김강남 - AI Engineer 포트폴리오" } =
   Astro.props;
+
+const siteUrl = "https://kangnam7654.github.io";
+const ogImage = `${siteUrl}/images/profile.jpg`;
 ---
 
 <!doctype html>
@@ -16,6 +19,21 @@ const { title, description = "김강남 - AI Engineer 포트폴리오" } =
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+
+    <!-- Open Graph (카카오톡, LinkedIn, Facebook 등) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:site_name" content="김강남 포트폴리오" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
