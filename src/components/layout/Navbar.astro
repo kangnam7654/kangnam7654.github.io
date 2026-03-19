@@ -15,6 +15,7 @@ const projectItems = [
   { label: "레이더 객체 탐지", href: "/projects/radar-detection" },
   { label: "이상 탐지", href: "/projects/anomaly-detection" },
   { label: "매칭 플랫폼", href: "/projects/matching-platform" },
+  { label: "MCP 클라이언트", href: "/projects/kangnam-client" },
 ];
 
 const allMobileItems = [
@@ -115,8 +116,23 @@ const allMobileItems = [
     </a>
   </div>
 
-  <!-- Social Links -->
-  <div class="flex gap-4 pt-4">
+  <!-- Theme Toggle + Social Links -->
+  <div class="flex items-center gap-4 pt-4">
+    <button
+      id="theme-toggle"
+      class="text-[var(--color-text-secondary)] transition-colors duration-200 hover:text-[var(--color-primary)]"
+      aria-label="테마 전환"
+    >
+      <!-- Sun (shown in dark mode) -->
+      <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg>
+      <!-- Moon (shown in light mode) -->
+      <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+      </svg>
+    </button>
+    <div class="h-4 w-px bg-[var(--color-border)]"></div>
     <a
       href="https://github.com/kangnam7654"
       target="_blank"
@@ -160,15 +176,29 @@ const allMobileItems = [
     <a href="/" class="font-bold text-[var(--color-primary)] font-[family-name:var(--font-heading)]">
       KN.
     </a>
-    <button
-      id="mobile-menu-btn"
-      class="text-[var(--color-text)]"
-      aria-label="메뉴 열기"
-    >
+    <div class="flex items-center gap-3">
+      <button
+        id="mobile-theme-toggle"
+        class="text-[var(--color-text-secondary)] transition-colors duration-200 hover:text-[var(--color-primary)]"
+        aria-label="테마 전환"
+      >
+        <svg id="mobile-icon-sun" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+        <svg id="mobile-icon-moon" xmlns="http://www.w3.org/2000/svg" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+      </button>
+      <button
+        id="mobile-menu-btn"
+        class="text-[var(--color-text)]"
+        aria-label="메뉴 열기"
+      >
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
+    </div>
   </div>
   <div id="mobile-menu" class="hidden max-h-[70vh] overflow-y-auto border-t border-[var(--color-border)] px-5 py-4">
     <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-[var(--color-text-secondary)]">Resume</p>
@@ -237,6 +267,26 @@ const allMobileItems = [
 
   setupToggle("resume-toggle", "resume-menu", "resume-chevron");
   setupToggle("projects-toggle", "projects-menu", "projects-chevron");
+
+  // Theme toggle
+  function updateIcons() {
+    const isLight = document.documentElement.classList.contains("light");
+    document.getElementById("icon-sun")?.classList.toggle("hidden", isLight);
+    document.getElementById("icon-moon")?.classList.toggle("hidden", !isLight);
+    document.getElementById("mobile-icon-sun")?.classList.toggle("hidden", isLight);
+    document.getElementById("mobile-icon-moon")?.classList.toggle("hidden", !isLight);
+  }
+
+  function toggleTheme() {
+    document.documentElement.classList.toggle("light");
+    const isLight = document.documentElement.classList.contains("light");
+    localStorage.setItem("theme", isLight ? "light" : "dark");
+    updateIcons();
+  }
+
+  document.getElementById("theme-toggle")?.addEventListener("click", toggleTheme);
+  document.getElementById("mobile-theme-toggle")?.addEventListener("click", toggleTheme);
+  updateIcons();
 
   // Active section highlight (resume page only)
   const navLinks = document.querySelectorAll(".nav-link");

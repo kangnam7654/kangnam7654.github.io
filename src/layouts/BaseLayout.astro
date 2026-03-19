@@ -22,6 +22,14 @@ const { title, description = "김강남 - AI Research Engineer 포트폴리오" 
       rel="stylesheet"
     />
     <title>{title}</title>
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'light' || (!theme && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+          document.documentElement.classList.add('light');
+        }
+      })();
+    </script>
   </head>
   <body class="min-h-screen overflow-x-hidden lg:pl-64">
     <slot />
