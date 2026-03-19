@@ -8,6 +8,7 @@ import About from "../components/sections/About.astro";
 import Experience from "../components/sections/Experience.tsx";
 import Skills from "../components/sections/Skills.tsx";
 import Education from "../components/sections/Education.astro";
+import AiDevCta from "../components/sections/AiDevCta.astro";
 ---
 
 <BaseLayout title="김강남 | AI Research Engineer">
@@ -19,6 +20,7 @@ import Education from "../components/sections/Education.astro";
     <Experience client:visible />
     <Skills client:visible />
     <Education />
+    <AiDevCta />
   </main>
   <Footer />
 </BaseLayout>
