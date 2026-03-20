@@ -5,6 +5,13 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://kangnam7654.github.io',
+  i18n: {
+    defaultLocale: 'ko',
+    locales: ['ko', 'en', 'ja'],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
   integrations: [react()],
   vite: {
     plugins: [tailwindcss()],

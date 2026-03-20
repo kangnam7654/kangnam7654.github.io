@@ -1,32 +1,43 @@
 ---
 import "../styles/global.css";
+import { t, localePath, defaultLocale } from "../i18n/utils";
+import type { Locale } from "../i18n/utils";
 
 interface Props {
   title: string;
   description?: string;
+  locale?: Locale;
 }
 
-const { title, description = "김강남 - AI Engineer 포트폴리오" } =
-  Astro.props;
+const { title, locale = defaultLocale } = Astro.props;
+const description = Astro.props.description ?? t("layout.defaultDescription", locale);
 
 const siteUrl = "https://kangnam7654.github.io";
 const ogImage = `${siteUrl}/images/og-image.png`;
+const ogSiteName = t("layout.ogSiteName", locale);
+
+const langMap: Record<Locale, string> = { ko: "ko", en: "en", ja: "ja" };
 ---
 
 <!doctype html>
-<html lang="ko">
+<html lang={langMap[locale]}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
 
-    <!-- Open Graph (카카오톡, LinkedIn, Facebook 등) -->
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="ko" href={`${siteUrl}${localePath(Astro.url.pathname, "ko")}`} />
+    <link rel="alternate" hreflang="en" href={`${siteUrl}${localePath(Astro.url.pathname, "en")}`} />
+    <link rel="alternate" hreflang="ja" href={`${siteUrl}${localePath(Astro.url.pathname, "ja")}`} />
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:url" content={siteUrl} />
-    <meta property="og:site_name" content="김강남 포트폴리오" />
+    <meta property="og:site_name" content={ogSiteName} />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />

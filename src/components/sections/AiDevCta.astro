@@ -1,36 +1,44 @@
 ---
+import { t, localePath } from "../../i18n/utils";
+import type { Locale } from "../../i18n/utils";
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = "ko" } = Astro.props;
 ---
 
 <section class="px-6 py-24">
   <div class="mx-auto max-w-3xl text-center">
     <div class="rounded-2xl border border-[var(--color-accent)]/20 bg-[var(--color-accent)]/5 px-8 py-12">
       <p class="mb-2 text-sm font-semibold uppercase tracking-widest text-[var(--color-accent)]">
-        AI-Augmented Development
+        {t("aiDevCta.label", locale)}
       </p>
       <h3 class="mb-4 text-2xl font-bold md:text-3xl font-[family-name:var(--font-heading)]">
-        AI와 함께 일하는 시스템이 궁금하신가요?
+        {t("aiDevCta.title", locale)}
       </h3>
       <p class="mb-8 text-[var(--color-text-secondary)]">
-        설계 → 개발 → 테스트까지, AI를 활용한 개발 워크플로우를 소개합니다.
+        {t("aiDevCta.description", locale)}
       </p>
       <div class="flex flex-wrap justify-center gap-4">
         <a
-          href="/projects"
+          href={localePath("/projects", locale)}
           class="rounded-full bg-[var(--color-primary)] px-8 py-3 font-semibold text-[var(--color-bg)] transition-all duration-200 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,212,255,0.3)]"
         >
-          프로젝트 보기
+          {t("aiDevCta.cta.projects", locale)}
         </a>
         <a
-          href="/ai-dev"
+          href={localePath("/ai-dev", locale)}
           class="rounded-full bg-[var(--color-accent)] px-8 py-3 font-semibold text-[var(--color-bg)] transition-all duration-200 hover:scale-105 hover:shadow-[0_0_20px_rgba(6,255,165,0.3)]"
         >
-          AI와 일하는 법
+          {t("aiDevCta.cta.aidev", locale)}
         </a>
         <a
-          href="/contact"
+          href={localePath("/contact", locale)}
           class="rounded-full border border-[var(--color-primary)]/30 px-8 py-3 font-semibold text-[var(--color-primary)] transition-all duration-200 hover:scale-105 hover:bg-[var(--color-primary)]/10"
         >
-          연락하기
+          {t("aiDevCta.cta.contact", locale)}
         </a>
       </div>
     </div>

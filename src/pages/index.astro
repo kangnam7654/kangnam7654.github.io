@@ -9,18 +9,22 @@ import Experience from "../components/sections/Experience.tsx";
 import Skills from "../components/sections/Skills.tsx";
 import Education from "../components/sections/Education.astro";
 import AiDevCta from "../components/sections/AiDevCta.astro";
+import { t } from "../i18n/utils";
+import type { Locale } from "../i18n/utils";
+
+const locale: Locale = "ko";
 ---
 
-<BaseLayout title="김강남 | AI Engineer">
+<BaseLayout title={t("layout.pageTitle", locale)} locale={locale}>
   <ScrollProgress client:load />
-  <Navbar />
+  <Navbar locale={locale} />
   <main>
-    <Hero />
-    <About />
-    <Experience client:visible />
-    <Skills client:visible />
-    <Education />
-    <AiDevCta />
+    <Hero locale={locale} />
+    <About locale={locale} />
+    <Experience client:visible locale={locale} />
+    <Skills client:visible locale={locale} />
+    <Education locale={locale} />
+    <AiDevCta locale={locale} />
   </main>
-  <Footer />
+  <Footer locale={locale} />
 </BaseLayout>

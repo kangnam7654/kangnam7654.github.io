@@ -1,5 +1,15 @@
 ---
 import AnimatedSection from "../ui/AnimatedSection.tsx";
+import { t } from "../../i18n/utils";
+import type { Locale } from "../../i18n/utils";
+import { getAboutData } from "../../i18n/data/about";
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = "ko" } = Astro.props;
+const aboutData = getAboutData(locale);
 ---
 
 <section id="about" class="py-24 px-6">
@@ -8,47 +18,23 @@ import AnimatedSection from "../ui/AnimatedSection.tsx";
       <h2
         class="mb-2 text-sm font-semibold uppercase tracking-widest text-[var(--color-primary)]"
       >
-        About Me
+        {t("about.subtitle", locale)}
       </h2>
       <h3 class="mb-8 text-3xl font-bold md:text-4xl font-[family-name:var(--font-heading)]">
-        소개
+        {t("about.title", locale)}
       </h3>
     </AnimatedSection>
 
     <AnimatedSection client:visible delay={0.1}>
-      <p class="mb-6 text-lg leading-relaxed text-[var(--color-text-secondary)]">
-        <span class="text-[var(--color-text)] font-medium">Vision·Audio·LLM 등 다양한 AI 기술로 서비스를 설계하고 배포해 온 AI 엔지니어</span>입니다.
-        어린이 영어 학습, 메타버스, B2B 솔루션 등 다양한 도메인에서 서비스 배포부터 PoC까지 폭넓은 경험을 쌓았습니다.
-      </p>
-      <p class="mb-6 text-lg leading-relaxed text-[var(--color-text-secondary)]">
-        LLM, 이미지, 음성, 추천 시스템 등 다양한 도메인에서 모델 학습, 추론 최적화, 배포까지
-        전방위적 경험을 쌓아왔습니다. from-scratch 학습 파이프라인 구성, Azure ML을 활용한
-        클라우드 배포 등 end-to-end 개발을 수행할 수 있습니다.
-      </p>
-      <p class="mb-8 text-lg leading-relaxed text-[var(--color-text-secondary)]">
-        또한 <span class="text-[var(--color-text)] font-medium">AI 도구를 활용한 개발 생산성 극대화</span>를 추구합니다.
-        Claude Code, GitHub Copilot 등을 일상적으로 활용하며,
-        이 포트폴리오 사이트 자체도 Claude Code와의 협업으로 설계부터 구현까지 완성했습니다.
-        AI를 만드는 것뿐 아니라, AI와 함께 일하는 방식에도 전문성을 갖추고 있습니다.
-      </p>
+      {aboutData.paragraphs.map((paragraph) => (
+        <p class="mb-6 text-lg leading-relaxed text-[var(--color-text-secondary)]" set:html={paragraph} />
+      ))}
     </AnimatedSection>
 
     <AnimatedSection client:visible delay={0.2}>
       <div class="flex flex-wrap gap-3">
         {
-          [
-            "LLM / Agent",
-            "Computer Vision",
-            "Speech (STT/TTS)",
-            "Search System",
-            "Recommender",
-            "MCP",
-            "Unreal Engine",
-            "MLOps",
-            "PyTorch",
-            "Azure ML",
-            "FastAPI",
-          ].map((tag) => (
+          aboutData.tags.map((tag) => (
             <span class="rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/5 px-4 py-2 text-sm text-[var(--color-primary)] transition-colors duration-200 hover:bg-[var(--color-primary)]/15">
               {tag}
             </span>

@@ -3,12 +3,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Navbar from "../components/layout/Navbar.astro";
 import Footer from "../components/layout/Footer.astro";
 import Contact from "../components/sections/Contact.astro";
+import { t } from "../i18n/utils";
+import type { Locale } from "../i18n/utils";
+
+const locale: Locale = "ko";
 ---
 
-<BaseLayout title="Contact | 김강남">
-  <Navbar />
+<BaseLayout title={`Contact | ${t("hero.name", locale)}`} locale={locale}>
+  <Navbar locale={locale} />
   <main>
-    <Contact />
+    <Contact locale={locale} />
   </main>
-  <Footer />
+  <Footer locale={locale} />
 </BaseLayout>
