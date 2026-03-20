@@ -1,8 +1,16 @@
 import { motion } from "framer-motion";
-import { experiences } from "../../data/experience";
+import { getExperiences } from "../../i18n/data/experience";
+import { ui } from "../../i18n/ui";
+import type { Locale } from "../../i18n/utils";
 import GlassCard from "../ui/GlassCard";
 
-export default function Experience() {
+interface Props {
+  locale?: Locale;
+}
+
+export default function Experience({ locale = "ko" }: Props) {
+  const experiences = getExperiences(locale);
+
   return (
     <section id="experience" className="px-6 py-24">
       <div className="mx-auto max-w-4xl">
@@ -13,10 +21,10 @@ export default function Experience() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="mb-2 text-sm font-semibold uppercase tracking-widest text-[var(--color-primary)]">
-            Experience
+            {ui[locale]["experience.subtitle"]}
           </h2>
           <h3 className="mb-12 text-3xl font-bold md:text-4xl font-[family-name:var(--font-heading)]">
-            경력
+            {ui[locale]["experience.title"]}
           </h3>
         </motion.div>
 

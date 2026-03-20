@@ -2,6 +2,8 @@
 import BaseLayout from "./BaseLayout.astro";
 import Navbar from "../components/layout/Navbar.astro";
 import Footer from "../components/layout/Footer.astro";
+import { t, localePath } from "../i18n/utils";
+import type { Locale } from "../i18n/utils";
 
 interface Props {
   title: string;
@@ -12,23 +14,24 @@ interface Props {
   github?: string;
   sideProject?: boolean;
   claudeCode?: boolean;
+  locale?: Locale;
 }
 
-const { title, company, period, role, tags, github, sideProject, claudeCode } = Astro.props;
+const { title, company, period, role, tags, github, sideProject, claudeCode, locale = "ko" } = Astro.props;
 ---
 
-<BaseLayout title={`${title} | 김강남`}>
-  <Navbar />
+<BaseLayout title={`${title} | ${t("hero.name", locale)}`}>
+  <Navbar locale={locale} />
   <main class="mx-auto max-w-4xl px-6 pt-20 pb-16 lg:pt-12">
     <!-- Back link -->
     <a
-      href="/"
+      href={localePath("/", locale)}
       class="mb-8 inline-flex items-center gap-2 text-sm text-[var(--color-text-secondary)] transition-colors duration-200 hover:text-[var(--color-primary)]"
     >
       <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
       </svg>
-      메인으로 돌아가기
+      {t("layout.backToMain", locale)}
     </a>
 
     <!-- Header -->
@@ -79,7 +82,7 @@ const { title, company, period, role, tags, github, sideProject, claudeCode } = 
       <slot />
     </article>
   </main>
-  <Footer />
+  <Footer locale={locale} />
 </BaseLayout>
 
 <style>

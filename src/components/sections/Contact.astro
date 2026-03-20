@@ -1,5 +1,13 @@
 ---
 import AnimatedSection from "../ui/AnimatedSection.tsx";
+import { t } from "../../i18n/utils";
+import type { Locale } from "../../i18n/utils";
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = "ko" } = Astro.props;
 ---
 
 <section id="contact" class="py-24 px-6">
@@ -8,13 +16,13 @@ import AnimatedSection from "../ui/AnimatedSection.tsx";
       <h2
         class="mb-2 text-sm font-semibold uppercase tracking-widest text-[var(--color-primary)]"
       >
-        Contact
+        {t("contact.subtitle", locale)}
       </h2>
       <h3 class="mb-6 text-3xl font-bold md:text-4xl font-[family-name:var(--font-heading)]">
-        연락처
+        {t("contact.title", locale)}
       </h3>
       <p class="mb-10 text-lg text-[var(--color-text-secondary)]">
-        협업이나 문의가 있으시면 편하게 연락주세요.
+        {t("contact.description", locale)}
       </p>
     </AnimatedSection>
 

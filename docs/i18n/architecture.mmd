@@ -1,0 +1,40 @@
+graph TD
+    subgraph "URL Routing"
+        R1["/ (Korean default)"]
+        R2["/en/ (English)"]
+        R3["/ja/ (Japanese)"]
+    end
+
+    subgraph "Astro i18n Config"
+        CFG["astro.config.mjs<br/>defaultLocale: ko<br/>locales: ko, en, ja<br/>prefixDefaultLocale: false"]
+    end
+
+    subgraph "Translation Layer"
+        T1["src/i18n/ui.ts<br/>UI 문자열 (섹션 타이틀, 버튼, 라벨)"]
+        T2["src/i18n/data/<br/>experience, education, projects<br/>언어별 콘텐츠 데이터"]
+        T3["src/i18n/utils.ts<br/>t() 헬퍼, getLocale(), localePath()"]
+    end
+
+    subgraph "Pages"
+        P1["src/pages/*.astro<br/>Korean (default)"]
+        P2["src/pages/en/*.astro<br/>English (thin wrappers)"]
+        P3["src/pages/ja/*.astro<br/>Japanese (thin wrappers)"]
+    end
+
+    subgraph "Shared Components"
+        C1["Section Components<br/>(locale prop)"]
+        C2["Layout Components<br/>(locale prop)"]
+    end
+
+    CFG --> R1
+    CFG --> R2
+    CFG --> R3
+    R1 --> P1
+    R2 --> P2
+    R3 --> P3
+    P1 --> C1
+    P2 --> C1
+    P3 --> C1
+    C1 --> T1
+    C1 --> T2
+    C2 --> T3

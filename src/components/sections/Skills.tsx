@@ -1,8 +1,14 @@
 import { motion } from "framer-motion";
 import { skills } from "../../data/skills";
+import { ui } from "../../i18n/ui";
+import type { Locale } from "../../i18n/utils";
 import GlassCard from "../ui/GlassCard";
 
-export default function Skills() {
+interface Props {
+  locale?: Locale;
+}
+
+export default function Skills({ locale = "ko" }: Props) {
   const sizeClasses = {
     large: "md:col-span-2 md:row-span-2",
     medium: "md:col-span-1 md:row-span-1",
@@ -19,10 +25,10 @@ export default function Skills() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="mb-2 text-sm font-semibold uppercase tracking-widest text-[var(--color-primary)]">
-            Skills
+            {ui[locale]["skills.subtitle"]}
           </h2>
           <h3 className="mb-12 text-3xl font-bold md:text-4xl font-[family-name:var(--font-heading)]">
-            기술 스택
+            {ui[locale]["skills.title"]}
           </h3>
         </motion.div>
 

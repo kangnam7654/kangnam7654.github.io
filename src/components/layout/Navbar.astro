@@ -1,33 +1,37 @@
 ---
+import { t, localePath } from "../../i18n/utils";
+import type { Locale } from "../../i18n/utils";
+import LanguageSwitcher from "../ui/LanguageSwitcher.astro";
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = "ko" } = Astro.props;
+
 const resumeItems = [
-  { label: "About", href: "/#about" },
-  { label: "Experience", href: "/#experience" },
-  { label: "Skills", href: "/#skills" },
-  { label: "Education", href: "/#education" },
+  { label: "About", href: localePath("/#about", locale) },
+  { label: "Experience", href: localePath("/#experience", locale) },
+  { label: "Skills", href: localePath("/#skills", locale) },
+  { label: "Education", href: localePath("/#education", locale) },
 ];
 
 const projectItems = [
-  { label: "UE5 MCP 플러그인", href: "/projects/ue5-mcp" },
-  { label: "AI 자동평가 시스템", href: "/projects/ai-assessment" },
-  { label: "Face-to-Character", href: "/projects/face-to-character" },
-  { label: "모션 트래킹", href: "/projects/motion-tracking" },
-  { label: "추천 시스템", href: "/projects/recommender" },
-  { label: "레이더 객체 탐지", href: "/projects/radar-detection" },
-  { label: "이상 탐지", href: "/projects/anomaly-detection" },
-  { label: "매칭 플랫폼", href: "/projects/matching-platform" },
-  { label: "MCP 클라이언트", href: "/projects/kangnam-client" },
-  { label: "Shorts 자동화", href: "/projects/auto-shorts" },
-  { label: "What Health", href: "/projects/what-health" },
-  { label: "달결", href: "/projects/dalgyeol" },
-  { label: "Quorum", href: "/projects/quorum" },
-  { label: "Game NPC", href: "/projects/game-npc" },
-  { label: "Story Writer", href: "/projects/story-writer" },
-];
-
-const allMobileItems = [
-  ...resumeItems,
-  { label: "─── Projects ───", href: "#projects" },
-  ...projectItems,
+  { label: t("nav.project.ue5Mcp", locale), href: localePath("/projects/ue5-mcp", locale) },
+  { label: t("nav.project.aiAssessment", locale), href: localePath("/projects/ai-assessment", locale) },
+  { label: t("nav.project.faceToChar", locale), href: localePath("/projects/face-to-character", locale) },
+  { label: t("nav.project.motionTracking", locale), href: localePath("/projects/motion-tracking", locale) },
+  { label: t("nav.project.recommender", locale), href: localePath("/projects/recommender", locale) },
+  { label: t("nav.project.radarDetection", locale), href: localePath("/projects/radar-detection", locale) },
+  { label: t("nav.project.anomalyDetection", locale), href: localePath("/projects/anomaly-detection", locale) },
+  { label: t("nav.project.matchingPlatform", locale), href: localePath("/projects/matching-platform", locale) },
+  { label: t("nav.project.kangnamClient", locale), href: localePath("/projects/kangnam-client", locale) },
+  { label: t("nav.project.autoShorts", locale), href: localePath("/projects/auto-shorts", locale) },
+  { label: t("nav.project.whatHealth", locale), href: localePath("/projects/what-health", locale) },
+  { label: t("nav.project.dalgyeol", locale), href: localePath("/projects/dalgyeol", locale) },
+  { label: t("nav.project.quorum", locale), href: localePath("/projects/quorum", locale) },
+  { label: t("nav.project.gameNpc", locale), href: localePath("/projects/game-npc", locale) },
+  { label: t("nav.project.storyWriter", locale), href: localePath("/projects/story-writer", locale) },
 ];
 ---
 
@@ -38,23 +42,23 @@ const allMobileItems = [
 >
   <div>
     <!-- Profile -->
-    <a href="/" class="mb-6 block">
+    <a href={localePath("/", locale)} class="mb-6 block">
       <div class="mb-1 text-xl font-extrabold tracking-tight font-[family-name:var(--font-heading)]">
-        김강남
+        {t("hero.name", locale)}
       </div>
       <div class="text-sm text-[var(--color-primary)]">
-        AI Engineer
+        {t("hero.role", locale)}
       </div>
     </a>
 
     <!-- Resume Category -->
     <div class="mb-6">
       <div class="flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-bold uppercase tracking-widest text-[var(--color-text)]">
-        <a href="/" class="transition-colors duration-200 hover:text-[var(--color-primary)]">Resume</a>
+        <a href={localePath("/", locale)} class="transition-colors duration-200 hover:text-[var(--color-primary)]">{t("nav.resume", locale)}</a>
         <button
           id="resume-toggle"
           class="transition-colors duration-200 hover:text-[var(--color-primary)]"
-          aria-label="Resume 메뉴 펼치기"
+          aria-label={t("nav.ariaResumeToggle", locale)}
         >
           <svg id="resume-chevron" xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -67,7 +71,7 @@ const allMobileItems = [
             <a
               href={item.href}
               class="nav-link rounded-lg px-3 py-1.5 text-sm text-[var(--color-text-secondary)] transition-all duration-200 hover:bg-white/5 hover:text-[var(--color-primary)]"
-              data-section={item.href.replace("/#", "")}
+              data-section={item.href.replace(/^\/(en|ja)?\/?(#?)/, "").replace("#", "")}
             >
               {item.label}
             </a>
@@ -78,20 +82,20 @@ const allMobileItems = [
 
     <!-- AI Dev -->
     <a
-      href="/ai-dev"
+      href={localePath("/ai-dev", locale)}
       class="mt-4 block rounded-lg px-3 py-2 text-sm font-bold uppercase tracking-widest text-[var(--color-text)] transition-colors duration-200 hover:bg-white/5 hover:text-[var(--color-primary)]"
     >
-      AI Dev
+      {t("nav.aiDev", locale)}
     </a>
 
     <!-- Projects Category -->
     <div class="mt-4 mb-2">
       <div class="flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-bold uppercase tracking-widest text-[var(--color-text)]">
-        <a href="/projects" class="transition-colors duration-200 hover:text-[var(--color-primary)]">Projects</a>
+        <a href={localePath("/projects", locale)} class="transition-colors duration-200 hover:text-[var(--color-primary)]">{t("nav.projects", locale)}</a>
         <button
           id="projects-toggle"
           class="transition-colors duration-200 hover:text-[var(--color-primary)]"
-          aria-label="프로젝트 목록 펼치기"
+          aria-label={t("nav.ariaProjectsToggle", locale)}
         >
           <svg id="projects-chevron" xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -114,20 +118,20 @@ const allMobileItems = [
 
     <!-- Contact -->
     <a
-      href="/contact"
+      href={localePath("/contact", locale)}
       class="nav-link mt-4 block rounded-lg px-3 py-2 text-sm font-bold uppercase tracking-widest text-[var(--color-text)] transition-colors duration-200 hover:bg-white/5 hover:text-[var(--color-primary)]"
       data-section="contact"
     >
-      Contact
+      {t("nav.contact", locale)}
     </a>
   </div>
 
-  <!-- Theme Toggle + Social Links -->
+  <!-- Theme Toggle + Language Switcher + Social Links -->
   <div class="flex items-center gap-4 pt-4">
     <button
       id="theme-toggle"
       class="text-[var(--color-text-secondary)] transition-colors duration-200 hover:text-[var(--color-primary)]"
-      aria-label="테마 전환"
+      aria-label={t("nav.ariaTheme", locale)}
     >
       <!-- Sun (shown in dark mode) -->
       <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -138,6 +142,8 @@ const allMobileItems = [
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
       </svg>
     </button>
+    <div class="h-4 w-px bg-[var(--color-border)]"></div>
+    <LanguageSwitcher locale={locale} />
     <div class="h-4 w-px bg-[var(--color-border)]"></div>
     <a
       href="https://github.com/kangnam7654"
@@ -179,14 +185,15 @@ const allMobileItems = [
   class="fixed top-0 left-0 right-0 z-50 border-b border-[var(--color-border)] bg-[var(--color-bg)]/90 backdrop-blur-xl lg:hidden"
 >
   <div class="flex items-center justify-between px-5 py-3">
-    <a href="/" class="font-bold text-[var(--color-primary)] font-[family-name:var(--font-heading)]">
+    <a href={localePath("/", locale)} class="font-bold text-[var(--color-primary)] font-[family-name:var(--font-heading)]">
       KN.
     </a>
     <div class="flex items-center gap-3">
+      <LanguageSwitcher locale={locale} />
       <button
         id="mobile-theme-toggle"
         class="text-[var(--color-text-secondary)] transition-colors duration-200 hover:text-[var(--color-primary)]"
-        aria-label="테마 전환"
+        aria-label={t("nav.ariaTheme", locale)}
       >
         <svg id="mobile-icon-sun" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -198,7 +205,7 @@ const allMobileItems = [
       <button
         id="mobile-menu-btn"
         class="text-[var(--color-text)]"
-        aria-label="메뉴 열기"
+        aria-label={t("nav.ariaMenu", locale)}
       >
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -207,7 +214,7 @@ const allMobileItems = [
     </div>
   </div>
   <div id="mobile-menu" class="hidden max-h-[70vh] overflow-y-auto border-t border-[var(--color-border)] px-5 py-4">
-    <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-[var(--color-text-secondary)]">Resume</p>
+    <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-[var(--color-text-secondary)]">{t("nav.resume", locale)}</p>
     {
       resumeItems.map((item) => (
         <a
@@ -219,12 +226,12 @@ const allMobileItems = [
       ))
     }
     <a
-      href="/ai-dev"
+      href={localePath("/ai-dev", locale)}
       class="mobile-link mt-4 block border-t border-[var(--color-border)] pt-4 text-xs font-semibold uppercase tracking-widest text-[var(--color-text-secondary)] transition-colors duration-200 hover:text-[var(--color-primary)]"
     >
-      AI Dev
+      {t("nav.aiDev", locale)}
     </a>
-    <p class="mb-3 mt-4 text-xs font-semibold uppercase tracking-widest text-[var(--color-text-secondary)]">Projects</p>
+    <p class="mb-3 mt-4 text-xs font-semibold uppercase tracking-widest text-[var(--color-text-secondary)]">{t("nav.projects", locale)}</p>
     {
       projectItems.map((item) => (
         <a
@@ -236,10 +243,10 @@ const allMobileItems = [
       ))
     }
     <a
-      href="/contact"
+      href={localePath("/contact", locale)}
       class="mobile-link mt-4 block border-t border-[var(--color-border)] pt-4 text-xs font-semibold uppercase tracking-widest text-[var(--color-text-secondary)] transition-colors duration-200 hover:text-[var(--color-primary)]"
     >
-      Contact
+      {t("nav.contact", locale)}
     </a>
   </div>
 </nav>
