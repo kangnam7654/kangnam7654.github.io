@@ -348,6 +348,7 @@ export default function AiWorkflow({ locale = "ko" }: Props) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          style={{ opacity: 1 }}
         >
           <h2 className="mb-2 text-sm font-semibold uppercase tracking-widest text-[var(--color-primary)]">
             {ui[locale]["aiWorkflow.subtitle"]}
@@ -367,6 +368,7 @@ export default function AiWorkflow({ locale = "ko" }: Props) {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
+          style={{ opacity: 1 }}
           className="mb-20 flex items-center justify-center gap-3 md:gap-5"
         >
           {cycleItems.map((item, i) => (
@@ -402,6 +404,7 @@ export default function AiWorkflow({ locale = "ko" }: Props) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              style={{ opacity: 1 }}
             >
               {/* Phase Header */}
               <div className="mb-6 flex items-baseline gap-4">
@@ -436,6 +439,7 @@ export default function AiWorkflow({ locale = "ko" }: Props) {
                       duration: 0.4,
                       delay: stepIdx * 0.05,
                     }}
+                    style={{ opacity: 1 }}
                   >
                     <GlassCard className="flex flex-row items-start gap-4 !p-[18px]">
                       {/* Step Number */}
@@ -470,6 +474,7 @@ export default function AiWorkflow({ locale = "ko" }: Props) {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
+          style={{ opacity: 1 }}
           className="mt-16 text-center"
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-[var(--color-accent)]/20 bg-[var(--color-accent)]/5 px-6 py-2.5 text-sm text-[var(--color-accent)]">
