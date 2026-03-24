@@ -52,8 +52,8 @@ export const ui = {
     "aiDevCta.cta.contact": "연락하기",
 
     // AI Workflow
-    "aiWorkflow.subtitle": "AI-Augmented Development",
-    "aiWorkflow.title": "AI와 함께 일하는 시스템",
+    "aiWorkflow.subtitle": "Harness Engineering",
+    "aiWorkflow.title": "AI와 일하는 법 (Harness Engineering)",
     "aiWorkflow.description": "현재는 AI를 얼마나 잘 활용하느냐에 따라",
     "aiWorkflow.descriptionBr": "생산성과 결과물의 품질이 달라집니다.",
     "aiWorkflow.badge": "이 포트폴리오는 Claude Code로 제작되었습니다",
@@ -148,8 +148,8 @@ export const ui = {
     "aiDevCta.cta.contact": "Contact",
 
     // AI Workflow
-    "aiWorkflow.subtitle": "AI-Augmented Development",
-    "aiWorkflow.title": "Working with AI",
+    "aiWorkflow.subtitle": "Harness Engineering",
+    "aiWorkflow.title": "Working with AI (Harness Engineering)",
     "aiWorkflow.description": "Today, the quality and productivity of your work",
     "aiWorkflow.descriptionBr": "depends on how well you leverage AI.",
     "aiWorkflow.badge": "This portfolio was built with Claude Code",
@@ -244,8 +244,8 @@ export const ui = {
     "aiDevCta.cta.contact": "お問い合わせ",
 
     // AI Workflow
-    "aiWorkflow.subtitle": "AI-Augmented Development",
-    "aiWorkflow.title": "AIと共に働くシステム",
+    "aiWorkflow.subtitle": "Harness Engineering",
+    "aiWorkflow.title": "AIとの働き方 (Harness Engineering)",
     "aiWorkflow.description": "今日、AIをどれだけうまく活用するかによって",
     "aiWorkflow.descriptionBr": "生産性とアウトプットの品質が変わります。",
     "aiWorkflow.badge": "このポートフォリオはClaude Codeで制作されました",
