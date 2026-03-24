@@ -54,8 +54,8 @@ export const ui = {
     // AI Workflow
     "aiWorkflow.subtitle": "Harness Engineering",
     "aiWorkflow.title": "AI와 일하는 법 (Harness Engineering)",
-    "aiWorkflow.description": "현재는 AI를 얼마나 잘 활용하느냐에 따라",
-    "aiWorkflow.descriptionBr": "생산성과 결과물의 품질이 달라집니다.",
+    "aiWorkflow.description": "AI 에이전트가 좋은 결과만 낼 수밖에 없는 환경을 설계합니다.",
+    "aiWorkflow.descriptionBr": "아이디어 발굴부터 검증·설계·구현·론칭까지, 31단계 자동화 파이프라인.",
     "aiWorkflow.badge": "이 포트폴리오는 Claude Code로 제작되었습니다",
 
     // Navbar
@@ -150,8 +150,8 @@ export const ui = {
     // AI Workflow
     "aiWorkflow.subtitle": "Harness Engineering",
     "aiWorkflow.title": "Working with AI (Harness Engineering)",
-    "aiWorkflow.description": "Today, the quality and productivity of your work",
-    "aiWorkflow.descriptionBr": "depends on how well you leverage AI.",
+    "aiWorkflow.description": "Designing environments where AI agents can only produce good results.",
+    "aiWorkflow.descriptionBr": "A 31-step automated pipeline from ideation to validation, design, build, and launch.",
     "aiWorkflow.badge": "This portfolio was built with Claude Code",
 
     // Navbar
@@ -246,8 +246,8 @@ export const ui = {
     // AI Workflow
     "aiWorkflow.subtitle": "Harness Engineering",
     "aiWorkflow.title": "AIとの働き方 (Harness Engineering)",
-    "aiWorkflow.description": "今日、AIをどれだけうまく活用するかによって",
-    "aiWorkflow.descriptionBr": "生産性とアウトプットの品質が変わります。",
+    "aiWorkflow.description": "AIエージェントが良い結果しか出せない環境を設計します。",
+    "aiWorkflow.descriptionBr": "アイデア発掘から検証・設計・実装・ローンチまで、31ステップの自動化パイプライン。",
     "aiWorkflow.badge": "このポートフォリオはClaude Codeで制作されました",
 
     // Navbar
