@@ -87,6 +87,7 @@ export const ui = {
 
     // Layout
     "layout.backToMain": "메인으로 돌아가기",
+    "layout.backToProjects": "프로젝트 목록으로",
     "layout.defaultDescription": "김강남 - AI Engineer 포트폴리오",
     "layout.ogSiteName": "김강남 포트폴리오",
     "layout.pageTitle": "김강남 | AI Engineer",
@@ -182,6 +183,7 @@ export const ui = {
 
     // Layout
     "layout.backToMain": "Back to Main",
+    "layout.backToProjects": "Back to Projects",
     "layout.defaultDescription": "Kangnam Kim - AI Engineer Portfolio",
     "layout.ogSiteName": "Kangnam Kim Portfolio",
     "layout.pageTitle": "Kangnam Kim | AI Engineer",
@@ -277,6 +279,7 @@ export const ui = {
 
     // Layout
     "layout.backToMain": "メインに戻る",
+    "layout.backToProjects": "プロジェクト一覧へ",
     "layout.defaultDescription": "キム・カンナム - AIエンジニア ポートフォリオ",
     "layout.ogSiteName": "キム・カンナム ポートフォリオ",
     "layout.pageTitle": "キム・カンナム | AI Engineer",
