@@ -20,101 +20,101 @@ const phasesData: Record<Locale, Phase[]> = {
   ko: [
     {
       num: "01",
-      title: "Plan Loop",
-      subtitle: "설계 우선 개발",
+      title: "Idea Phase",
+      subtitle: "아이디어 발굴 & 검증",
       color: "var(--color-primary)",
       steps: [
         {
-          title: "AI 브레인스토밍 & 주제 선정",
-          desc: "AI와 아이디어 발산 → 문제 정의 → 주제 선정",
+          title: "AI 브레인스토밍 & 트렌드 스코어링",
+          desc: "AI와 아이디어 발산, 트렌드 데이터 기반 주제 발굴. 막연한 요청도 구체화",
         },
         {
-          title: "설계 문서 & 다이어그램 작성 (For AI)",
-          desc: "6개 필수 섹션(목적, 아키텍처, 데이터 흐름, API, 파일 구조, 의사결정 근거) + Mermaid 다이어그램. AI가 소비하는 문서",
+          title: "CEO 방향 결정 → 시장 조사 → CSO 전략 검증",
+          desc: "AI CEO가 방향 설정, Researcher가 시장 조사, AI CSO가 리스크·실현가능성 검증. No-Go 시 방향 재설정",
         },
         {
-          title: "Prompt Critic 채점",
-          desc: "Doc-Critic이 5개 기준(가독성, 구조, 예시, 완성도, 정확성)으로 채점. 8.0/10 이상 통과",
+          title: "BM 설계",
+          desc: "수익 모델, 가격 전략, 유닛 이코노믹스를 체계적으로 설계",
         },
         {
-          title: "통과할 때까지 2↔3 반복",
-          desc: "REJECT → 피드백 반영 재작성. 최대 5회",
-        },
-        {
-          title: "Figma 와이어프레임",
-          desc: "구조와 레이아웃을 Lo-fi로 시각 설계",
-        },
-        {
-          title: "Hi-fi 디자인",
-          desc: "색상, 타이포, 인터랙션 포함 고충실도 디자인",
-        },
-        {
-          title: "AI Plan 수립",
-          desc: "Planner 에이전트가 구현 계획 생성",
-        },
-        {
-          title: "Plan Critic 채점",
-          desc: "6개 기준(명확성, 완성도, 실현가능성, 의존성, 리스크, 범위) 채점",
-        },
-        {
-          title: "통과할 때까지 7↔8 반복",
-          desc: "최대 5회",
+          title: "CEO 게이트",
+          desc: "PASS / BM 수정 / 방향 변경 삼분기 의사결정. 통과 시 Design Phase 진입",
         },
       ],
     },
     {
       num: "02",
-      title: "Dev Loop",
-      subtitle: "AI 페어 프로그래밍 + Git 안전망",
-      color: "var(--color-secondary)",
+      title: "Design Phase",
+      subtitle: "설계 & 아키텍처",
+      color: "var(--color-accent)",
       steps: [
         {
-          title: "개발",
-          desc: "승인된 플랜 기반 AI 페어 프로그래밍. NEVER 규칙 10개 자동 적용",
+          title: "기술 스택 & DB 스키마 설계",
+          desc: "CTO가 기술 스택 결정, data-engineer가 DB 설계, CTO 리뷰. FAIL 시 재설계",
         },
         {
-          title: "커밋 (Checkpoint)",
-          desc: "작업 단위마다 커밋. 언제든 이전 상태로 되돌릴 수 있는 체크포인트",
+          title: "API 설계 & DB-API 정합성 검증",
+          desc: "backend-dev가 API 설계, CTO가 DB-API 정합성 검증. 불일치 시 DB부터 재설계",
         },
         {
-          title: "코드 리뷰",
-          desc: "AI 리뷰어가 보안·성능·가독성 검토",
+          title: "UX/UI 디자인 & 디베이트",
+          desc: "product-designer가 UX→UI 순차 설계, 각각 리뷰어 검증 후 UX↔UI 디자인 디베이트",
         },
         {
-          title: "이슈 수정",
-          desc: "리뷰 피드백 반영하여 코드 수정",
+          title: "실행 계획 & Plan Critic",
+          desc: "planner가 구현 계획 생성, plan-critic이 6개 기준 채점. 통과까지 반복",
         },
         {
-          title: "커밋 (Checkpoint)",
-          desc: "수정 사항도 별도 커밋. git revert로 안전하게 되돌리기 가능",
-        },
-        {
-          title: "문서 편집 & 개발 기록 (For Human)",
-          desc: "사람이 읽을 README, 가이드, 변경 기록 작성",
-        },
-        {
-          title: "사람이 확인하며 1→6 반복",
-          desc: "개발자가 직접 검증. 문제 시 git으로 어느 시점이든 복원",
+          title: "CTO 게이트",
+          desc: "설계+계획 통합 검증. PASS 시 Build Phase 진입",
         },
       ],
     },
     {
       num: "03",
-      title: "Test Loop",
-      subtitle: "품질 게이트",
-      color: "var(--color-accent)",
+      title: "Build Phase",
+      subtitle: "구현 & 리뷰",
+      color: "#f59e0b",
       steps: [
         {
-          title: "Unit → Integration → E2E 설계",
-          desc: "단계별 테스트 전략. Unit은 외부 의존성 Mock, Integration은 모듈 간 실제 호출",
+          title: "병렬 구현",
+          desc: "frontend / backend / mobile / ai-engineer 에이전트가 동시 개발",
         },
         {
-          title: "Unit Test 커버리지 80%+",
-          desc: "최소 80% 강제. 미달 시 커밋 불가 (NEVER 규칙)",
+          title: "마이그레이션 리뷰 (DBA)",
+          desc: "DBA가 DB 변경사항 검증. 지적 시 구현으로 되돌아감",
         },
         {
-          title: "AI 스크린샷 테스트 (LLM Test)",
-          desc: "실제 화면 캡처 → AI가 시각적 검증. UI 깨짐·레이아웃 이슈 자동 탐지",
+          title: "코드 리뷰 + 보안 리뷰",
+          desc: "code-reviewer가 품질 검토, security-reviewer가 보안 취약점 검사",
+        },
+        {
+          title: "QA 테스트",
+          desc: "qa-engineer가 Unit / Integration / E2E 테스트 실행. FAIL 시 구현으로 복귀",
+        },
+      ],
+    },
+    {
+      num: "04",
+      title: "Verify Phase",
+      subtitle: "검증 & 론칭",
+      color: "var(--color-secondary)",
+      steps: [
+        {
+          title: "동작 검증 (Simulator)",
+          desc: "실제 앱을 실행하여 기능 동작 확인. FAIL 시 Build Phase로 복귀",
+        },
+        {
+          title: "UI 검증 & 사용성 테스트",
+          desc: "스크린샷 기반 시각적 검증 + 사용자 관점 사용성 테스트. FAIL 시 Design Phase로 복귀",
+        },
+        {
+          title: "론칭 디베이트",
+          desc: "CEO ↔ CTO ↔ CSO 삼자 회의. 코드 수정 / 설계 변경 / PASS 삼분기 결정",
+        },
+        {
+          title: "완성 보고",
+          desc: "론칭 승인 후 최종 보고서 생성",
         },
       ],
     },
@@ -122,101 +122,101 @@ const phasesData: Record<Locale, Phase[]> = {
   en: [
     {
       num: "01",
-      title: "Plan Loop",
-      subtitle: "Design-First Development",
+      title: "Idea Phase",
+      subtitle: "Ideation & Validation",
       color: "var(--color-primary)",
       steps: [
         {
-          title: "AI Brainstorming & Topic Selection",
-          desc: "Diverge ideas with AI → Define problem → Select topic",
+          title: "AI Brainstorming & Trend Scoring",
+          desc: "Diverge ideas with AI, discover topics based on trend data. Even vague requests get refined",
         },
         {
-          title: "Design Doc & Diagrams (For AI)",
-          desc: "6 required sections (Purpose, Architecture, Data Flow, API, File Structure, Decision Rationale) + Mermaid diagrams. Documents consumed by AI",
+          title: "CEO Direction → Market Research → CSO Validation",
+          desc: "AI CEO sets direction, Researcher conducts market research, AI CSO validates risks & feasibility. No-Go triggers re-direction",
         },
         {
-          title: "Prompt Critic Scoring",
-          desc: "Doc-Critic scores on 5 criteria (Readability, Structure, Examples, Completeness, Accuracy). Pass at 8.0/10+",
+          title: "Business Model Design",
+          desc: "Systematically design revenue model, pricing strategy, and unit economics",
         },
         {
-          title: "Repeat 2↔3 Until Pass",
-          desc: "REJECT → Revise with feedback. Max 5 rounds",
-        },
-        {
-          title: "Figma Wireframe",
-          desc: "Lo-fi visual design for structure and layout",
-        },
-        {
-          title: "Hi-fi Design",
-          desc: "High-fidelity design with colors, typography, and interactions",
-        },
-        {
-          title: "AI Plan Generation",
-          desc: "Planner agent generates implementation plan",
-        },
-        {
-          title: "Plan Critic Scoring",
-          desc: "Scored on 6 criteria (Clarity, Completeness, Feasibility, Dependencies, Risks, Scope)",
-        },
-        {
-          title: "Repeat 7↔8 Until Pass",
-          desc: "Max 5 rounds",
+          title: "CEO Gate",
+          desc: "PASS / Revise BM / Change direction. Proceeds to Design Phase on pass",
         },
       ],
     },
     {
       num: "02",
-      title: "Dev Loop",
-      subtitle: "AI Pair Programming + Git Safety Net",
-      color: "var(--color-secondary)",
+      title: "Design Phase",
+      subtitle: "Design & Architecture",
+      color: "var(--color-accent)",
       steps: [
         {
-          title: "Development",
-          desc: "AI pair programming based on approved plan. 10 NEVER rules auto-enforced",
+          title: "Tech Stack & DB Schema Design",
+          desc: "CTO decides tech stack, data-engineer designs DB, CTO reviews. FAIL triggers redesign",
         },
         {
-          title: "Commit (Checkpoint)",
-          desc: "Commit per work unit. Checkpoint to revert to any previous state",
+          title: "API Design & DB-API Consistency Check",
+          desc: "backend-dev designs API, CTO verifies DB-API consistency. Mismatch triggers DB redesign",
         },
         {
-          title: "Code Review",
-          desc: "AI reviewer checks security, performance, and readability",
+          title: "UX/UI Design & Debate",
+          desc: "product-designer creates UX→UI sequentially, each verified by reviewers, then UX↔UI design debate",
         },
         {
-          title: "Fix Issues",
-          desc: "Apply review feedback to fix code",
+          title: "Execution Plan & Plan Critic",
+          desc: "Planner generates implementation plan, plan-critic scores on 6 criteria. Iterates until pass",
         },
         {
-          title: "Commit (Checkpoint)",
-          desc: "Separate commit for fixes. Safe rollback via git revert",
-        },
-        {
-          title: "Doc Editing & Dev Log (For Human)",
-          desc: "Write README, guides, and changelogs for human readers",
-        },
-        {
-          title: "Human Review, Repeat 1→6",
-          desc: "Developer verifies directly. Restore to any point via git if needed",
+          title: "CTO Gate",
+          desc: "Integrated validation of design + plan. Proceeds to Build Phase on pass",
         },
       ],
     },
     {
       num: "03",
-      title: "Test Loop",
-      subtitle: "Quality Gate",
-      color: "var(--color-accent)",
+      title: "Build Phase",
+      subtitle: "Implementation & Review",
+      color: "#f59e0b",
       steps: [
         {
-          title: "Unit → Integration → E2E Design",
-          desc: "Staged test strategy. Unit mocks external deps, Integration uses real module calls",
+          title: "Parallel Implementation",
+          desc: "frontend / backend / mobile / ai-engineer agents develop simultaneously",
         },
         {
-          title: "Unit Test Coverage 80%+",
-          desc: "Minimum 80% enforced. Commit blocked if below (NEVER rule)",
+          title: "Migration Review (DBA)",
+          desc: "DBA verifies DB changes. Issues route back to implementation",
         },
         {
-          title: "AI Screenshot Test (LLM Test)",
-          desc: "Capture actual screens → AI visual verification. Auto-detect UI breaks and layout issues",
+          title: "Code Review + Security Review",
+          desc: "code-reviewer checks quality, security-reviewer scans for vulnerabilities",
+        },
+        {
+          title: "QA Testing",
+          desc: "qa-engineer runs Unit / Integration / E2E tests. FAIL routes back to implementation",
+        },
+      ],
+    },
+    {
+      num: "04",
+      title: "Verify Phase",
+      subtitle: "Verification & Launch",
+      color: "var(--color-secondary)",
+      steps: [
+        {
+          title: "Functional Verification (Simulator)",
+          desc: "Run actual app to verify functionality. FAIL routes back to Build Phase",
+        },
+        {
+          title: "UI Verification & Usability Test",
+          desc: "Screenshot-based visual verification + user perspective usability test. FAIL routes to Design Phase",
+        },
+        {
+          title: "Launch Debate",
+          desc: "CEO ↔ CTO ↔ CSO three-way meeting. Code fix / Design change / PASS decision",
+        },
+        {
+          title: "Completion Report",
+          desc: "Final report generated after launch approval",
         },
       ],
     },
@@ -224,101 +224,101 @@ const phasesData: Record<Locale, Phase[]> = {
   ja: [
     {
       num: "01",
-      title: "Plan Loop",
-      subtitle: "設計優先開発",
+      title: "Idea Phase",
+      subtitle: "アイデア発掘＆検証",
       color: "var(--color-primary)",
       steps: [
         {
-          title: "AIブレインストーミング＆テーマ選定",
-          desc: "AIとアイデア発散 → 問題定義 → テーマ選定",
+          title: "AIブレインストーミング＆トレンドスコアリング",
+          desc: "AIとアイデア発散、トレンドデータに基づくテーマ発掘。漠然とした要望も具体化",
         },
         {
-          title: "設計ドキュメント＆ダイアグラム作成 (For AI)",
-          desc: "6つの必須セクション（目的、アーキテクチャ、データフロー、API、ファイル構造、意思決定根拠）+ Mermaidダイアグラム。AIが消費するドキュメント",
+          title: "CEO方向決定 → 市場調査 → CSO戦略検証",
+          desc: "AI CEOが方向設定、Researcherが市場調査、AI CSOがリスク・実現可能性を検証。No-Goで方向再設定",
         },
         {
-          title: "Prompt Critic採点",
-          desc: "Doc-Criticが5つの基準（可読性、構造、例示、完成度、正確性）で採点。8.0/10以上で通過",
+          title: "BM設計",
+          desc: "収益モデル、価格戦略、ユニットエコノミクスを体系的に設計",
         },
         {
-          title: "通過するまで2↔3を繰り返し",
-          desc: "REJECT → フィードバック反映して再作成。最大5回",
-        },
-        {
-          title: "Figmaワイヤーフレーム",
-          desc: "構造とレイアウトをLo-fiで視覚設計",
-        },
-        {
-          title: "Hi-fiデザイン",
-          desc: "色、タイポグラフィ、インタラクションを含む高忠実度デザイン",
-        },
-        {
-          title: "AIプラン策定",
-          desc: "Plannerエージェントが実装計画を生成",
-        },
-        {
-          title: "Plan Critic採点",
-          desc: "6つの基準（明確性、完成度、実現可能性、依存関係、リスク、範囲）で採点",
-        },
-        {
-          title: "通過するまで7↔8を繰り返し",
-          desc: "最大5回",
+          title: "CEOゲート",
+          desc: "PASS / BM修正 / 方向変更の三分岐意思決定。通過でDesign Phaseへ",
         },
       ],
     },
     {
       num: "02",
-      title: "Dev Loop",
-      subtitle: "AIペアプログラミング + Gitセーフティネット",
-      color: "var(--color-secondary)",
+      title: "Design Phase",
+      subtitle: "設計＆アーキテクチャ",
+      color: "var(--color-accent)",
       steps: [
         {
-          title: "開発",
-          desc: "承認されたプランに基づくAIペアプログラミング。NEVERルール10個を自動適用",
+          title: "技術スタック＆DBスキーマ設計",
+          desc: "CTOが技術スタック決定、data-engineerがDB設計、CTOレビュー。FAILで再設計",
         },
         {
-          title: "コミット（チェックポイント）",
-          desc: "作業単位ごとにコミット。いつでも以前の状態に戻せるチェックポイント",
+          title: "API設計＆DB-API整合性検証",
+          desc: "backend-devがAPI設計、CTOがDB-API整合性を検証。不一致でDBから再設計",
         },
         {
-          title: "コードレビュー",
-          desc: "AIレビュアーがセキュリティ・パフォーマンス・可読性を検査",
+          title: "UX/UIデザイン＆ディベート",
+          desc: "product-designerがUX→UI順次設計、各レビュアー検証後UX↔UIデザインディベート",
         },
         {
-          title: "イシュー修正",
-          desc: "レビューフィードバックを反映してコードを修正",
+          title: "実行計画＆Plan Critic",
+          desc: "plannerが実装計画生成、plan-criticが6基準で採点。通過まで繰り返し",
         },
         {
-          title: "コミット（チェックポイント）",
-          desc: "修正事項も別途コミット。git revertで安全にロールバック可能",
-        },
-        {
-          title: "ドキュメント編集＆開発記録 (For Human)",
-          desc: "人が読むREADME、ガイド、変更記録を作成",
-        },
-        {
-          title: "人が確認しながら1→6を繰り返し",
-          desc: "開発者が直接検証。問題があればgitでどの時点にも復元",
+          title: "CTOゲート",
+          desc: "設計+計画の統合検証。PASSでBuild Phaseへ",
         },
       ],
     },
     {
       num: "03",
-      title: "Test Loop",
-      subtitle: "品質ゲート",
-      color: "var(--color-accent)",
+      title: "Build Phase",
+      subtitle: "実装＆レビュー",
+      color: "#f59e0b",
       steps: [
         {
-          title: "Unit → Integration → E2E設計",
-          desc: "段階別テスト戦略。Unitは外部依存をMock、Integrationはモジュール間の実際の呼び出し",
+          title: "並列実装",
+          desc: "frontend / backend / mobile / ai-engineerエージェントが同時開発",
         },
         {
-          title: "Unit Testカバレッジ80%+",
-          desc: "最低80%を強制。未達の場合コミット不可（NEVERルール）",
+          title: "マイグレーションレビュー（DBA）",
+          desc: "DBAがDB変更を検証。指摘があれば実装に差し戻し",
         },
         {
-          title: "AIスクリーンショットテスト（LLM Test）",
-          desc: "実際の画面キャプチャ → AIが視覚的に検証。UI崩れ・レイアウト問題を自動検出",
+          title: "コードレビュー＋セキュリティレビュー",
+          desc: "code-reviewerが品質検査、security-reviewerが脆弱性スキャン",
+        },
+        {
+          title: "QAテスト",
+          desc: "qa-engineerがUnit / Integration / E2Eテスト実行。FAILで実装に復帰",
+        },
+      ],
+    },
+    {
+      num: "04",
+      title: "Verify Phase",
+      subtitle: "検証＆ローンチ",
+      color: "var(--color-secondary)",
+      steps: [
+        {
+          title: "動作検証（Simulator）",
+          desc: "実際のアプリを実行して機能動作を確認。FAILでBuild Phaseに復帰",
+        },
+        {
+          title: "UI検証＆ユーザビリティテスト",
+          desc: "スクリーンショットベースの視覚検証＋ユーザー視点のユーザビリティテスト。FAILでDesign Phaseに復帰",
+        },
+        {
+          title: "ローンチディベート",
+          desc: "CEO ↔ CTO ↔ CSO三者会議。コード修正 / 設計変更 / PASSの三分岐決定",
+        },
+        {
+          title: "完成レポート",
+          desc: "ローンチ承認後、最終レポートを生成",
         },
       ],
     },
@@ -326,9 +326,10 @@ const phasesData: Record<Locale, Phase[]> = {
 };
 
 const cycleItems = [
-  { name: "Plan", color: "var(--color-primary)" },
-  { name: "Dev", color: "var(--color-secondary)" },
-  { name: "Test", color: "var(--color-accent)" },
+  { name: "Idea", color: "var(--color-primary)" },
+  { name: "Design", color: "var(--color-accent)" },
+  { name: "Build", color: "#f59e0b" },
+  { name: "Verify", color: "var(--color-secondary)" },
 ];
 
 interface Props {
@@ -366,12 +367,12 @@ export default function AiWorkflow({ locale = "ko" }: Props) {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-20 flex items-center justify-center gap-5"
+          className="mb-20 flex items-center justify-center gap-3 md:gap-5"
         >
           {cycleItems.map((item, i) => (
-            <div key={item.name} className="flex items-center gap-5">
+            <div key={item.name} className="flex items-center gap-3 md:gap-5">
               <div
-                className="flex h-[52px] w-[84px] items-center justify-center rounded-xl border-2 text-[15px] font-bold"
+                className="flex h-[44px] w-[68px] items-center justify-center rounded-xl border-2 text-[13px] font-bold md:h-[52px] md:w-[84px] md:text-[15px]"
                 style={{
                   borderColor: item.color,
                   color: item.color,
