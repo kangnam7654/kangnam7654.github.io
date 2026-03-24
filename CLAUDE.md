@@ -79,5 +79,5 @@ assets/
 - 이력서 생성 데이터: `src/data/resume.ts` (Single Source of Truth)
 - 타이틀: "AI Engineer" (Research 제거)
 
-## 다음 작업
-- [ ] i18n (한국어/영어/일본어) 지원
+## 완료된 작업
+- [x] i18n (한국어/영어/일본어) 지원 — 57페이지, 동적 라우트 통합, 플로팅 언어/테마 스위처
