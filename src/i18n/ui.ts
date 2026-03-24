@@ -47,9 +47,13 @@ export const ui = {
     "aiDevCta.label": "AI-Augmented Development",
     "aiDevCta.title": "AI와 함께 일하는 시스템이 궁금하신가요?",
     "aiDevCta.description": "설계 → 개발 → 테스트까지, AI를 활용한 개발 워크플로우를 소개합니다.",
-    "aiDevCta.cta.projects": "프로젝트 보기",
     "aiDevCta.cta.aidev": "AI와 일하는 법",
-    "aiDevCta.cta.contact": "연락하기",
+    "aiDevCta.stat1.value": "15+",
+    "aiDevCta.stat1.label": "프로젝트",
+    "aiDevCta.stat2.value": "36",
+    "aiDevCta.stat2.label": "자동화 단계",
+    "aiDevCta.stat3.value": "4+",
+    "aiDevCta.stat3.label": "년 경력",
 
     // AI Workflow
     "aiWorkflow.subtitle": "Harness Engineering",
@@ -143,9 +147,13 @@ export const ui = {
     "aiDevCta.label": "AI-Augmented Development",
     "aiDevCta.title": "Curious about AI-augmented development?",
     "aiDevCta.description": "From design to development to testing — an introduction to AI-powered dev workflows.",
-    "aiDevCta.cta.projects": "View Projects",
     "aiDevCta.cta.aidev": "How I Work with AI",
-    "aiDevCta.cta.contact": "Contact",
+    "aiDevCta.stat1.value": "15+",
+    "aiDevCta.stat1.label": "Projects",
+    "aiDevCta.stat2.value": "36",
+    "aiDevCta.stat2.label": "Pipeline Steps",
+    "aiDevCta.stat3.value": "4+",
+    "aiDevCta.stat3.label": "Years Exp.",
 
     // AI Workflow
     "aiWorkflow.subtitle": "Harness Engineering",
@@ -239,9 +247,13 @@ export const ui = {
     "aiDevCta.label": "AI-Augmented Development",
     "aiDevCta.title": "AIを活用した開発システムに興味がありますか？",
     "aiDevCta.description": "設計→開発→テストまで、AIを活用した開発ワークフローを紹介します。",
-    "aiDevCta.cta.projects": "プロジェクトを見る",
     "aiDevCta.cta.aidev": "AIとの協業",
-    "aiDevCta.cta.contact": "お問い合わせ",
+    "aiDevCta.stat1.value": "15+",
+    "aiDevCta.stat1.label": "プロジェクト",
+    "aiDevCta.stat2.value": "36",
+    "aiDevCta.stat2.label": "自動化ステップ",
+    "aiDevCta.stat3.value": "4+",
+    "aiDevCta.stat3.label": "年の経験",
 
     // AI Workflow
     "aiWorkflow.subtitle": "Harness Engineering",
