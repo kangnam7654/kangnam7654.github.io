@@ -132,16 +132,7 @@ const projectsData: Record<Locale, Project[]> = {
       href: "/projects/dalgyeol",
       sideProject: true,
       claudeCode: true,
-    },
-    {
-      title: "Quorum — 멀티에이전트 협업",
-      description:
-        "여러 AI 에이전트가 토론·협업하는 멀티에이전트 플랫폼",
-      tags: ["Rust", "Next.js", "Tauri", "LLM"],
-      company: "개인 프로젝트",
-      href: "/projects/quorum",
-      sideProject: true,
-      claudeCode: true,
+      thumbnail: "/images/projects/dalgyeol-home.png",
     },
     {
       title: "Game NPC with LLM",
@@ -284,16 +275,7 @@ const projectsData: Record<Locale, Project[]> = {
       href: "/projects/dalgyeol",
       sideProject: true,
       claudeCode: true,
-    },
-    {
-      title: "Quorum — Multi-Agent Collaboration",
-      description:
-        "Multi-agent platform where multiple AI agents discuss and collaborate",
-      tags: ["Rust", "Next.js", "Tauri", "LLM"],
-      company: "Personal Project",
-      href: "/projects/quorum",
-      sideProject: true,
-      claudeCode: true,
+      thumbnail: "/images/projects/dalgyeol-home.png",
     },
     {
       title: "Game NPC with LLM",
@@ -436,16 +418,7 @@ const projectsData: Record<Locale, Project[]> = {
       href: "/projects/dalgyeol",
       sideProject: true,
       claudeCode: true,
-    },
-    {
-      title: "Quorum — マルチエージェント協業",
-      description:
-        "複数のAIエージェントが討論・協業するマルチエージェントプラットフォーム",
-      tags: ["Rust", "Next.js", "Tauri", "LLM"],
-      company: "個人プロジェクト",
-      href: "/projects/quorum",
-      sideProject: true,
-      claudeCode: true,
+      thumbnail: "/images/projects/dalgyeol-home.png",
     },
     {
       title: "Game NPC with LLM",

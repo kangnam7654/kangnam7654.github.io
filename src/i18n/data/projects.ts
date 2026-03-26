@@ -25,7 +25,6 @@ export const projectSlugs = [
   "auto-shorts",
   "what-health",
   "dalgyeol",
-  "quorum",
   "game-npc",
   "story-writer",
 ] as const;
@@ -575,7 +574,12 @@ const projectsData: Record<string, Record<Locale, ProjectData>> = {
 <h2>기술 스택</h2>
 <ul><li><strong>Backend</strong>: Rust (Axum, Tokio), PostgreSQL, Fly.io</li><li><strong>iOS</strong>: SwiftUI (iOS 17+), StoreKit 2, Sign in with Apple</li><li><strong>AI</strong>: 멀티 LLM (Claude, GPT, Gemini)</li></ul>
 <h2>규모</h2>
-<ul><li>Backend Rust 5,000줄+, iOS Swift 8,000줄+</li><li>설계문서 7개, 마이그레이션 15개</li></ul>`,
+<ul><li>Backend Rust 5,000줄+, iOS Swift 8,000줄+</li><li>설계문서 7개, 마이그레이션 15개</li></ul>
+<h2>스크린샷</h2>
+<div style="display:flex;gap:16px;flex-wrap:wrap;">
+<img src="/images/projects/dalgyeol-daily-fortune.png" alt="오늘의 운세" style="width:240px;border-radius:12px;" />
+<img src="/images/projects/dalgyeol-fortune-detail.png" alt="월운 상세" style="width:240px;border-radius:12px;" />
+</div>`,
     },
     en: {
       title: "Dalgyeol — AI Fortune & Tarot",
@@ -592,7 +596,12 @@ const projectsData: Record<string, Record<Locale, ProjectData>> = {
 <h2>Tech Stack</h2>
 <ul><li><strong>Backend</strong>: Rust (Axum, Tokio), PostgreSQL, Fly.io</li><li><strong>iOS</strong>: SwiftUI (iOS 17+), StoreKit 2, Sign in with Apple</li><li><strong>AI</strong>: Multi LLM (Claude, GPT, Gemini)</li></ul>
 <h2>Scale</h2>
-<ul><li>Backend Rust 5,000+ lines, iOS Swift 8,000+ lines</li><li>7 design documents, 15 migrations</li></ul>`,
+<ul><li>Backend Rust 5,000+ lines, iOS Swift 8,000+ lines</li><li>7 design documents, 15 migrations</li></ul>
+<h2>Screenshots</h2>
+<div style="display:flex;gap:16px;flex-wrap:wrap;">
+<img src="/images/projects/dalgyeol-daily-fortune.png" alt="Daily Fortune" style="width:240px;border-radius:12px;" />
+<img src="/images/projects/dalgyeol-fortune-detail.png" alt="Monthly Fortune Detail" style="width:240px;border-radius:12px;" />
+</div>`,
     },
     ja: {
       title: "ダルギョル — AI四柱推命・タロット",
@@ -609,49 +618,12 @@ const projectsData: Record<string, Record<Locale, ProjectData>> = {
 <h2>技術スタック</h2>
 <ul><li><strong>Backend</strong>: Rust (Axum, Tokio), PostgreSQL, Fly.io</li><li><strong>iOS</strong>: SwiftUI (iOS 17+), StoreKit 2, Sign in with Apple</li><li><strong>AI</strong>: マルチLLM (Claude, GPT, Gemini)</li></ul>
 <h2>規模</h2>
-<ul><li>Backend Rust 5,000行+、iOS Swift 8,000行+</li><li>設計文書7件、マイグレーション15件</li></ul>`,
-    },
-  },
-
-  "quorum": {
-    ko: {
-      title: "Quorum — 멀티에이전트 협업",
-      company: "개인 프로젝트",
-      period: "2026.03 ~",
-      role: "풀스택 개발",
-      tags: ["Rust", "Next.js", "Tauri", "LLM"],
-      sideProject: true,
-      claudeCode: true,
-      contentHtml: `<h2>개요</h2>
-<p>서로 다른 역할을 가진 AI 에이전트들이 실시간으로 토론·협업하는 멀티에이전트 플랫폼입니다. 병렬 토론, 3단계 오케스트레이션(Research → Analysis → Synthesis), 4개 LLM 프로바이더 통합, SSE 기반 토큰 스트리밍을 구현했습니다.</p>
-<h2>기술 스택</h2>
-<ul><li><strong>Backend</strong>: Rust (Axum, Tokio, sqlx)</li><li><strong>Frontend</strong>: Next.js 16, TypeScript, Tailwind CSS 4</li><li><strong>Desktop</strong>: Tauri 2.x</li><li><strong>AI</strong>: Anthropic, OpenAI, Codex, GitHub Copilot</li><li><strong>Real-time</strong>: SSE, mpsc + broadcast channels</li><li><strong>테스트</strong>: 103개</li></ul>`,
-    },
-    en: {
-      title: "Quorum — Multi-Agent Collaboration",
-      company: "Side Project",
-      period: "2026.03 ~",
-      role: "Full-stack Developer",
-      tags: ["Rust", "Next.js", "Tauri", "LLM"],
-      sideProject: true,
-      claudeCode: true,
-      contentHtml: `<h2>Overview</h2>
-<p>A multi-agent platform where AI agents with different roles discuss and collaborate in real-time. Implemented parallel discussions, 3-stage orchestration (Research → Analysis → Synthesis), integration of 4 LLM providers, and SSE-based token streaming.</p>
-<h2>Tech Stack</h2>
-<ul><li><strong>Backend</strong>: Rust (Axum, Tokio, sqlx)</li><li><strong>Frontend</strong>: Next.js 16, TypeScript, Tailwind CSS 4</li><li><strong>Desktop</strong>: Tauri 2.x</li><li><strong>AI</strong>: Anthropic, OpenAI, Codex, GitHub Copilot</li><li><strong>Real-time</strong>: SSE, mpsc + broadcast channels</li><li><strong>Testing</strong>: 103 tests</li></ul>`,
-    },
-    ja: {
-      title: "Quorum — マルチエージェント協業",
-      company: "個人プロジェクト",
-      period: "2026.03 ~",
-      role: "フルスタック開発",
-      tags: ["Rust", "Next.js", "Tauri", "LLM"],
-      sideProject: true,
-      claudeCode: true,
-      contentHtml: `<h2>概要</h2>
-<p>異なる役割を持つAIエージェントたちがリアルタイムで議論・協業するマルチエージェントプラットフォームです。並列ディスカッション、3段階オーケストレーション（Research → Analysis → Synthesis）、4つのLLMプロバイダー統合、SSEベースのトークンストリーミングを実装しました。</p>
-<h2>技術スタック</h2>
-<ul><li><strong>Backend</strong>: Rust (Axum, Tokio, sqlx)</li><li><strong>Frontend</strong>: Next.js 16, TypeScript, Tailwind CSS 4</li><li><strong>Desktop</strong>: Tauri 2.x</li><li><strong>AI</strong>: Anthropic, OpenAI, Codex, GitHub Copilot</li><li><strong>Real-time</strong>: SSE, mpsc + broadcast channels</li><li><strong>テスト</strong>: 103件</li></ul>`,
+<ul><li>Backend Rust 5,000行+、iOS Swift 8,000行+</li><li>設計文書7件、マイグレーション15件</li></ul>
+<h2>スクリーンショット</h2>
+<div style="display:flex;gap:16px;flex-wrap:wrap;">
+<img src="/images/projects/dalgyeol-daily-fortune.png" alt="今日の運勢" style="width:240px;border-radius:12px;" />
+<img src="/images/projects/dalgyeol-fortune-detail.png" alt="月運詳細" style="width:240px;border-radius:12px;" />
+</div>`,
     },
   },
 
