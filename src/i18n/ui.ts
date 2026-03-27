@@ -85,7 +85,6 @@ export const ui = {
     "nav.project.autoShorts": "Shorts 자동화",
     "nav.project.whatHealth": "What Health",
     "nav.project.dalgyeol": "달결",
-    "nav.project.quorum": "Quorum",
     "nav.project.gameNpc": "Game NPC",
     "nav.project.storyWriter": "Story Writer",
 
@@ -185,7 +184,6 @@ export const ui = {
     "nav.project.autoShorts": "AutoShorts",
     "nav.project.whatHealth": "What Health",
     "nav.project.dalgyeol": "Dalgyeol",
-    "nav.project.quorum": "Quorum",
     "nav.project.gameNpc": "Game NPC",
     "nav.project.storyWriter": "Story Writer",
 
@@ -285,7 +283,6 @@ export const ui = {
     "nav.project.autoShorts": "AutoShorts",
     "nav.project.whatHealth": "What Health",
     "nav.project.dalgyeol": "ダルギョル",
-    "nav.project.quorum": "Quorum",
     "nav.project.gameNpc": "Game NPC",
     "nav.project.storyWriter": "Story Writer",
 
