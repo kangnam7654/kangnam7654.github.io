@@ -1,0 +1,95 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ScrollProgress from "../components/ui/ScrollProgress.tsx";
+import HeroApple from "../components/apple/HeroApple.tsx";
+import AboutApple from "../components/apple/AboutApple.tsx";
+import ExperienceApple from "../components/apple/ExperienceApple.tsx";
+import SkillsApple from "../components/apple/SkillsApple.tsx";
+import MarqueeApple from "../components/apple/MarqueeApple.tsx";
+import CtaApple from "../components/apple/CtaApple.tsx";
+import { t } from "../i18n/utils";
+import type { Locale } from "../i18n/utils";
+import { getAboutData } from "../i18n/data/about";
+import { getExperiences } from "../i18n/data/experience";
+
+const locale: Locale = "ko";
+const about = getAboutData(locale);
+const experiences = getExperiences(locale);
+
+const marqueeItems = [
+  "LLM",
+  "Vision",
+  "Audio",
+  "Search",
+  "MCP",
+  "Agent",
+  "Unreal",
+  "PyTorch",
+  "Azure ML",
+  "Claude Code",
+];
+---
+
+<BaseLayout title={`Preview · ${t("hero.name", locale)}`} locale={locale}>
+  <ScrollProgress client:load />
+  <a
+    href="/"
+    class="fixed left-4 top-4 z-50 rounded-full border border-[var(--color-border)] bg-[var(--color-surface)]/80 px-4 py-2 text-xs text-[var(--color-text-secondary)] backdrop-blur-md transition-colors hover:text-[var(--color-primary)]"
+  >
+    ← 메인으로
+  </a>
+  <main>
+    <HeroApple
+      client:load
+      name={t("hero.name", locale)}
+      role={t("hero.role", locale)}
+      tagline={t("hero.typewriter.2", locale)}
+    />
+
+    <AboutApple
+      client:load
+      paragraphs={about.paragraphs}
+      tags={about.tags}
+      eyebrow={t("about.subtitle", locale)}
+      title={t("about.title", locale)}
+    />
+
+    <MarqueeApple client:visible items={marqueeItems} />
+
+    <ExperienceApple
+      client:load
+      experiences={experiences}
+      eyebrow={t("experience.subtitle", locale)}
+      title={t("experience.title", locale)}
+    />
+
+    <SkillsApple
+      client:visible
+      eyebrow={t("skills.subtitle", locale)}
+      title={t("skills.title", locale)}
+    />
+
+    <CtaApple
+      client:visible
+      eyebrow="Get in touch"
+      title="함께 만들어요."
+      primary={{ label: t("hero.cta.projects", locale), href: "/projects" }}
+      secondary={{ label: t("hero.cta.contact", locale), href: "/contact" }}
+    />
+  </main>
+
+  <div class="fixed bottom-4 right-4 z-50 rounded-full border border-[var(--color-border)] bg-[var(--color-surface)]/80 px-3 py-1.5 text-xs text-[var(--color-text-secondary)] backdrop-blur-md">
+    Preview · Apple-style
+  </div>
+</BaseLayout>
+
+<style is:global>
+  body {
+    padding-left: 0 !important;
+  }
+</style>
+<style>
+  main {
+    background: var(--color-bg);
+  }
+</style>
