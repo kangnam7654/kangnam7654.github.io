@@ -113,17 +113,6 @@ const projectsData: Record<Locale, Project[]> = {
       claudeCode: true,
     },
     {
-      title: "What Health",
-      description:
-        "LLM이 운동 코치가 되어 개인 맞춤 운동 스케줄을 관리해주는 앱",
-      tags: ["Swift", "Rust", "LLM"],
-      company: "개인 프로젝트",
-      href: "/projects/what-health",
-      github: "https://github.com/kangnam7654/what_health",
-      sideProject: true,
-      claudeCode: true,
-    },
-    {
       title: "달결 — AI 사주·타로",
       description:
         "사주·타로 기반 AI 운세 상담 iOS 앱. 서비스 출시 예정",
@@ -256,17 +245,6 @@ const projectsData: Record<Locale, Project[]> = {
       claudeCode: true,
     },
     {
-      title: "What Health",
-      description:
-        "App where LLM becomes a fitness coach managing personalized workout schedules",
-      tags: ["Swift", "Rust", "LLM"],
-      company: "Personal Project",
-      href: "/projects/what-health",
-      github: "https://github.com/kangnam7654/what_health",
-      sideProject: true,
-      claudeCode: true,
-    },
-    {
       title: "Dalgyeol — AI Fortune Telling",
       description:
         "AI fortune consultation iOS app based on Korean fortune telling and tarot. Service launch planned",
@@ -395,17 +373,6 @@ const projectsData: Record<Locale, Project[]> = {
       company: "個人プロジェクト",
       href: "/projects/auto-shorts",
       github: "https://github.com/kangnam7654/AutoShorts",
-      sideProject: true,
-      claudeCode: true,
-    },
-    {
-      title: "What Health",
-      description:
-        "LLMがフィットネスコーチとなり、パーソナライズされたワークアウトスケジュールを管理するアプリ",
-      tags: ["Swift", "Rust", "LLM"],
-      company: "個人プロジェクト",
-      href: "/projects/what-health",
-      github: "https://github.com/kangnam7654/what_health",
       sideProject: true,
       claudeCode: true,
     },
