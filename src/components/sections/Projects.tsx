@@ -26,29 +26,37 @@ function localePath(path: string, locale: Locale): string {
 const projectsData: Record<Locale, Project[]> = {
   ko: [
     {
-      title: "Unreal Engine MCP 플러그인",
-      description:
-        "언리얼 엔진에서 동작하는 플러그인 형태의 MCP(Model Context Protocol) 개발. AI와 게임 엔진 간 연동 인터페이스 구축",
-      tags: ["MCP", "Unreal Engine", "AI Integration"],
-      company: "위메이드 넥스트",
-      href: "/projects/ue5-mcp",
-      github: "https://github.com/kangnam7654/kangnam-unreal-mcp",
-      thumbnail: "/images/projects/ue5-mcp-spawn.gif",
-    },
-    {
       title: "AI 자동평가 시스템",
       description:
-        "Azure ML 기반 실시간 추론 시스템 배포. Multi-Agent 합성 데이터 생성, Diffusion 이미지 생성, STT/TTS 파인튜닝, 하이브리드 검색 시스템 구현",
-      tags: ["MLOps", "LLM Agent", "Vision", "Audio", "Search"],
+        "Azure ML 기반 자동평가 서비스. 월간 약 3만 명이 사용한 추론 운영, STT 개선, 발표태도 모델, 합성 데이터 에이전트 구현",
+      tags: ["MLOps", "LLM Agent", "Vision", "Speech"],
       company: "크레버스",
       href: "/projects/ai-assessment",
       github: "https://github.com/kangnam7654/Multi-Agent-English-Assessment-System",
       thumbnail: "/images/projects/ai-assessment-architecture.png",
     },
     {
+      title: "보안 이상 탐지 시스템",
+      description:
+        "CERT 사용자 행동과 BODMAS PE 파일을 대상으로, 정상 데이터 중심의 LSTM·VAE 이상 탐지 모델을 학습·검증",
+      tags: ["Security", "Anomaly Detection", "LSTM", "VAE"],
+      company: "라이앤캐처스",
+      href: "/projects/security-anomaly-detection",
+    },
+    {
+      title: "Unreal Engine MCP 플러그인",
+      description:
+        "언리얼 엔진 오브젝트를 자연어로 CRUD하는 MCP 서버. 비동기 처리, N:M 연결, 동적 툴 등록을 설계",
+      tags: ["MCP", "Unreal Engine", "C++"],
+      company: "위메이드 넥스트",
+      href: "/projects/ue5-mcp",
+      github: "https://github.com/kangnam7654/kangnam-unreal-mcp",
+      thumbnail: "/images/projects/ue5-mcp-spawn.gif",
+    },
+    {
       title: "Face-to-Character 아바타 생성",
       description:
-        "사용자 얼굴 이미지 기반 게임 아바타 생성 시스템 설계 및 캐릭터 외형 반영 end-to-end 파이프라인 구성",
+        "얼굴 이미지에서 캐릭터 파라미터를 추정하는 GAN 기반 PoC. 게임 엔진 연동은 미완료",
       tags: ["Vision", "Deep Learning"],
       company: "메타버스월드",
       href: "/projects/face-to-character",
@@ -147,29 +155,37 @@ const projectsData: Record<Locale, Project[]> = {
   ],
   en: [
     {
-      title: "Unreal Engine MCP Plugin",
-      description:
-        "Developed MCP (Model Context Protocol) as a plugin for Unreal Engine. Built an integration interface between AI and game engine",
-      tags: ["MCP", "Unreal Engine", "AI Integration"],
-      company: "Wemade Next",
-      href: "/projects/ue5-mcp",
-      github: "https://github.com/kangnam7654/kangnam-unreal-mcp",
-      thumbnail: "/images/projects/ue5-mcp-spawn.gif",
-    },
-    {
       title: "AI Auto-Assessment System",
       description:
-        "Deployed real-time inference system on Azure ML. Multi-Agent synthetic data generation, Diffusion image generation, STT/TTS fine-tuning, hybrid search system",
-      tags: ["MLOps", "LLM Agent", "Vision", "Audio", "Search"],
+        "Azure ML assessment service used by approximately 30K students monthly, with speech improvement, presentation-attitude modeling, and synthetic-data agents",
+      tags: ["MLOps", "LLM Agent", "Vision", "Speech"],
       company: "Creverse",
       href: "/projects/ai-assessment",
       github: "https://github.com/kangnam7654/Multi-Agent-English-Assessment-System",
       thumbnail: "/images/projects/ai-assessment-architecture.png",
     },
     {
+      title: "Security Anomaly Detection Systems",
+      description:
+        "Train and validate normal-data-centered LSTM and VAE anomaly-detection models for CERT user behavior and BODMAS PE files",
+      tags: ["Security", "Anomaly Detection", "LSTM", "VAE"],
+      company: "Rye&Catchers",
+      href: "/projects/security-anomaly-detection",
+    },
+    {
+      title: "Unreal Engine MCP Plugin",
+      description:
+        "MCP server for natural-language CRUD of Unreal Engine objects, with asynchronous processing, many-to-many connectivity, and dynamic tool registration",
+      tags: ["MCP", "Unreal Engine", "C++"],
+      company: "Wemade Next",
+      href: "/projects/ue5-mcp",
+      github: "https://github.com/kangnam7654/kangnam-unreal-mcp",
+      thumbnail: "/images/projects/ue5-mcp-spawn.gif",
+    },
+    {
       title: "Face-to-Character Avatar Generation",
       description:
-        "Designed avatar generation system from user face images and built end-to-end pipeline for character appearance mapping",
+        "GAN-based PoC that estimates character parameters from facial images; game-engine integration was not completed",
       tags: ["Vision", "Deep Learning"],
       company: "Metaverse World",
       href: "/projects/face-to-character",
@@ -268,29 +284,37 @@ const projectsData: Record<Locale, Project[]> = {
   ],
   ja: [
     {
-      title: "Unreal Engine MCPプラグイン",
-      description:
-        "Unreal Engineで動作するプラグイン形態のMCP（Model Context Protocol）開発。AIとゲームエンジン間の連携インターフェース構築",
-      tags: ["MCP", "Unreal Engine", "AI Integration"],
-      company: "Wemade Next",
-      href: "/projects/ue5-mcp",
-      github: "https://github.com/kangnam7654/kangnam-unreal-mcp",
-      thumbnail: "/images/projects/ue5-mcp-spawn.gif",
-    },
-    {
       title: "AI自動評価システム",
       description:
-        "Azure MLベースのリアルタイム推論システムデプロイ。Multi-Agent合成データ生成、Diffusion画像生成、STT/TTSファインチューニング、ハイブリッド検索システム実装",
-      tags: ["MLOps", "LLM Agent", "Vision", "Audio", "Search"],
+        "月間約3万人が利用したAzure MLベースの自動評価サービス。音声認識改善、プレゼン態度モデル、合成データエージェントを実装",
+      tags: ["MLOps", "LLM Agent", "Vision", "Speech"],
       company: "クレバース",
       href: "/projects/ai-assessment",
       github: "https://github.com/kangnam7654/Multi-Agent-English-Assessment-System",
       thumbnail: "/images/projects/ai-assessment-architecture.png",
     },
     {
+      title: "セキュリティ異常検知システム",
+      description:
+        "CERTユーザー行動とBODMAS PEファイルを対象に、正常データ中心のLSTM・VAE異常検知モデルを学習・検証",
+      tags: ["Security", "Anomaly Detection", "LSTM", "VAE"],
+      company: "ライアンドキャッチャーズ",
+      href: "/projects/security-anomaly-detection",
+    },
+    {
+      title: "Unreal Engine MCPプラグイン",
+      description:
+        "Unreal Engineのオブジェクトを自然言語でCRUD操作するMCPサーバー。非同期処理、N:M接続、ツールの動的登録を設計",
+      tags: ["MCP", "Unreal Engine", "C++"],
+      company: "Wemade Next",
+      href: "/projects/ue5-mcp",
+      github: "https://github.com/kangnam7654/kangnam-unreal-mcp",
+      thumbnail: "/images/projects/ue5-mcp-spawn.gif",
+    },
+    {
       title: "Face-to-Character アバター生成",
       description:
-        "ユーザーの顔画像ベースのゲームアバター生成システム設計およびキャラクター外見反映のエンドツーエンドパイプライン構成",
+        "顔画像からキャラクターパラメータを推定するGANベースのPoC。ゲームエンジン連携は未完了",
       tags: ["Vision", "Deep Learning"],
       company: "メタバースワールド",
       href: "/projects/face-to-character",
