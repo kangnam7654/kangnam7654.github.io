@@ -502,8 +502,13 @@ export default function Projects({ locale = "ko" }: Props) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: index * 0.05 }}
             >
-              <a href={localePath(project.href, locale)}>
-              <GlassCard className="group h-full cursor-pointer overflow-hidden" noPadding>
+              <div className="relative h-full">
+                <a
+                  href={localePath(project.href, locale)}
+                  className="absolute inset-0 z-10 rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
+                  aria-label={`View ${project.title}`}
+                />
+                <GlassCard className="group h-full cursor-pointer overflow-hidden pointer-events-none" noPadding>
                 {/* Thumbnail */}
                 <div className="relative h-40 overflow-hidden">
                   {project.thumbnail ? (
@@ -531,7 +536,7 @@ export default function Projects({ locale = "ko" }: Props) {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[var(--color-text-secondary)] transition-colors duration-200 hover:text-[var(--color-primary)]"
+                        className="relative z-20 pointer-events-auto text-[var(--color-text-secondary)] transition-colors duration-200 hover:text-[var(--color-primary)]"
                         aria-label="GitHub"
                         onClick={(e) => e.stopPropagation()}
                       >
@@ -566,7 +571,7 @@ export default function Projects({ locale = "ko" }: Props) {
                   </div>
                 </div>
               </GlassCard>
-              </a>
+              </div>
             </motion.div>
           ))}
         </div>
