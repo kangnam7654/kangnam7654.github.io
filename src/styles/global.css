@@ -38,14 +38,14 @@ body {
 
 /* The project hub uses its own bright editorial system, including navigation. */
 body:has(#project-showcase) {
-  --color-bg: #fbfbff;
+  --color-bg: #ffffff;
   --color-surface: #ffffff;
-  --color-primary: #2446ff;
-  --color-secondary: #7c4dff;
-  --color-accent: #ff5e4d;
-  --color-text: #182033;
-  --color-text-secondary: #59637a;
-  --color-border: rgba(24, 32, 51, 0.12);
+  --color-primary: #78866d;
+  --color-secondary: #b6adcb;
+  --color-accent: #bd765d;
+  --color-text: #2d2b29;
+  --color-text-secondary: #706d68;
+  --color-border: rgba(45, 43, 41, 0.12);
 }
 
 h1, h2, h3, h4, h5, h6 {
