@@ -75,6 +75,7 @@ export const ui = {
     // Nav project labels
     "nav.project.ue5Mcp": "UE5 MCP 플러그인",
     "nav.project.aiAssessment": "AI 자동평가 시스템",
+    "nav.project.securityAnomaly": "보안 이상 탐지",
     "nav.project.faceToChar": "Face-to-Character",
     "nav.project.motionTracking": "모션 트래킹",
     "nav.project.recommender": "추천 시스템",
@@ -174,6 +175,7 @@ export const ui = {
     // Nav project labels
     "nav.project.ue5Mcp": "UE5 MCP Plugin",
     "nav.project.aiAssessment": "AI Auto-Assessment",
+    "nav.project.securityAnomaly": "Security Anomaly Detection",
     "nav.project.faceToChar": "Face-to-Character",
     "nav.project.motionTracking": "Motion Tracking",
     "nav.project.recommender": "Recommender System",
@@ -273,6 +275,7 @@ export const ui = {
     // Nav project labels
     "nav.project.ue5Mcp": "UE5 MCPプラグイン",
     "nav.project.aiAssessment": "AI自動評価システム",
+    "nav.project.securityAnomaly": "セキュリティ異常検知",
     "nav.project.faceToChar": "Face-to-Character",
     "nav.project.motionTracking": "モーショントラッキング",
     "nav.project.recommender": "レコメンドシステム",

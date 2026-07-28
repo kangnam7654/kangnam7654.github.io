@@ -13,10 +13,22 @@ export interface Experience {
 const experienceData: Record<Locale, Experience[]> = {
   ko: [
     {
+      company: "라이앤캐처스",
+      team: "AI 연구팀",
+      role: "AI 연구 엔지니어",
+      period: "2026.05 ~ 현재",
+      location: "서울",
+      project: "보안 이상 탐지 시스템",
+      highlights: [
+        "[Security] 악성 사용자 행동과 PE 파일을 1차 격리하기 위한 딥러닝 이상 탐지 시스템을 학습·검증",
+        "[Anomaly Detection] CERT 사용자 행동 데이터에는 LSTM likelihood 기반 점수(NLL), BODMAS PE 파일 데이터에는 VAE reconstruction error와 uncertainty quantification을 적용",
+      ],
+    },
+    {
       company: "위메이드넥스트",
       team: "미르5프로그램실, 서버팀",
       role: "AI 엔지니어",
-      period: "2026.02 ~ 현재",
+      period: "2026.02 ~ 2026.05",
       location: "판교",
       project: "미르5",
       highlights: [
@@ -80,10 +92,22 @@ const experienceData: Record<Locale, Experience[]> = {
   ],
   en: [
     {
+      company: "Rye&Catchers",
+      team: "AI Research Team",
+      role: "AI Research Engineer",
+      period: "May 2026 - Present",
+      location: "Seoul",
+      project: "Security Anomaly Detection Systems",
+      highlights: [
+        "[Security] Train and validate deep-learning anomaly-detection systems for first-stage quarantine of malicious behavior and PE files",
+        "[Anomaly Detection] Apply LSTM likelihood-based scoring (NLL) to CERT user-behavior data and VAE reconstruction error with uncertainty quantification to BODMAS PE-file data",
+      ],
+    },
+    {
       company: "Wemade Next",
       team: "MIR5 Programming Office, Server Team",
       role: "AI Engineer",
-      period: "2026.02 ~ Present",
+      period: "Feb 2026 - May 2026",
       location: "Pangyo",
       project: "MIR5",
       highlights: [
@@ -147,10 +171,22 @@ const experienceData: Record<Locale, Experience[]> = {
   ],
   ja: [
     {
+      company: "ライアンドキャッチャーズ",
+      team: "AIリサーチチーム",
+      role: "AIリサーチエンジニア",
+      period: "2026.05 ~ 現在",
+      location: "ソウル",
+      project: "セキュリティ異常検知システム",
+      highlights: [
+        "[Security] 悪意ある行動とPEファイルの一次隔離のためのディープラーニング異常検知システムを学習・検証",
+        "[Anomaly Detection] CERTユーザー行動データにはLSTMのlikelihoodベースのスコア（NLL）、BODMAS PEファイルデータにはVAEのreconstruction errorとuncertainty quantificationを適用",
+      ],
+    },
+    {
       company: "Wemade Next",
       team: "MIR5プログラム室、サーバーチーム",
       role: "AIエンジニア",
-      period: "2026.02 ~ 現在",
+      period: "2026.02 ~ 2026.05",
       location: "板橋",
       project: "MIR5",
       highlights: [

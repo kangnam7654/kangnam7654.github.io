@@ -13,8 +13,9 @@ export interface ProjectData {
 }
 
 export const projectSlugs = [
-  "ue5-mcp",
   "ai-assessment",
+  "security-anomaly-detection",
+  "ue5-mcp",
   "face-to-character",
   "motion-tracking",
   "recommender",
@@ -34,12 +35,12 @@ const projectsData: Record<string, Record<Locale, ProjectData>> = {
     ko: {
       title: "Unreal Engine MCP 플러그인",
       company: "위메이드 넥스트",
-      period: "2026.02 ~ 현재",
+      period: "2026.02 ~ 2026.05",
       role: "AI 엔지니어",
       tags: ["MCP", "Unreal Engine", "AI Integration", "C++"],
       github: "https://github.com/kangnam7654/kangnam-unreal-mcp",
       contentHtml: `<h2>개요</h2>
-<p>언리얼 엔진에서 동작하는 플러그인 형태의 MCP(Model Context Protocol)를 개발하고 있습니다. AI와 게임 엔진 간의 연동 인터페이스를 구축하여, 게임 개발 워크플로우에 AI를 자연스럽게 통합하는 것이 목표입니다.</p>
+<p>언리얼 엔진에서 자연어로 오브젝트를 CRUD할 수 있는 플러그인 형태의 MCP(Model Context Protocol)를 구현했습니다. 비동기 처리, N:M 연결, 동적 툴 등록을 설계해 AI와 게임 엔진의 연동 인터페이스를 구축했습니다.</p>
 <h2>데모</h2>
 <div class="demo-item"><span class="demo-label">액터 스폰</span><img src="/images/projects/ue5-mcp-spawn.gif" alt="MCP로 액터 스폰" loading="lazy" /></div>
 <div class="demo-item"><span class="demo-label">머티리얼 제어</span><img src="/images/projects/ue5-mcp-sphere.gif" alt="메탈릭 구체 생성 및 머티리얼 제어" loading="lazy" /></div>
@@ -53,12 +54,12 @@ const projectsData: Record<string, Record<Locale, ProjectData>> = {
     en: {
       title: "Unreal Engine MCP Plugin",
       company: "Wemade Next",
-      period: "2026.02 ~ Present",
+      period: "Feb 2026 - May 2026",
       role: "AI Engineer",
       tags: ["MCP", "Unreal Engine", "AI Integration", "C++"],
       github: "https://github.com/kangnam7654/kangnam-unreal-mcp",
       contentHtml: `<h2>Overview</h2>
-<p>Developing a plugin-based MCP (Model Context Protocol) that runs within Unreal Engine. The goal is to seamlessly integrate AI into game development workflows by building an interface between AI and the game engine.</p>
+<p>Built a plugin-based MCP (Model Context Protocol) for natural-language CRUD operations on Unreal Engine objects. Designed asynchronous processing, many-to-many connectivity, and dynamic tool registration for an interface between AI and the game engine.</p>
 <h2>Demo</h2>
 <div class="demo-item"><span class="demo-label">Actor Spawning</span><img src="/images/projects/ue5-mcp-spawn.gif" alt="Spawning actors via MCP" loading="lazy" /></div>
 <div class="demo-item"><span class="demo-label">Material Control</span><img src="/images/projects/ue5-mcp-sphere.gif" alt="Creating metallic sphere and controlling materials" loading="lazy" /></div>
@@ -72,12 +73,12 @@ const projectsData: Record<string, Record<Locale, ProjectData>> = {
     ja: {
       title: "Unreal Engine MCPプラグイン",
       company: "Wemade Next",
-      period: "2026.02 ~ 現在",
+      period: "2026.02 ~ 2026.05",
       role: "AIエンジニア",
       tags: ["MCP", "Unreal Engine", "AI Integration", "C++"],
       github: "https://github.com/kangnam7654/kangnam-unreal-mcp",
       contentHtml: `<h2>概要</h2>
-<p>Unreal Engineで動作するプラグイン形式のMCP（Model Context Protocol）を開発しています。AIとゲームエンジン間の連携インターフェースを構築し、ゲーム開発ワークフローにAIを自然に統合することが目標です。</p>
+<p>Unreal Engineのオブジェクトを自然言語でCRUD操作できるプラグイン形式のMCP（Model Context Protocol）を実装しました。非同期処理、N:M接続、ツールの動的登録を設計し、AIとゲームエンジンの連携インターフェースを構築しました。</p>
 <h2>デモ</h2>
 <div class="demo-item"><span class="demo-label">アクタースポーン</span><img src="/images/projects/ue5-mcp-spawn.gif" alt="MCPによるアクタースポーン" loading="lazy" /></div>
 <div class="demo-item"><span class="demo-label">マテリアル制御</span><img src="/images/projects/ue5-mcp-sphere.gif" alt="メタリック球体の生成とマテリアル制御" loading="lazy" /></div>
@@ -153,6 +154,54 @@ const projectsData: Record<string, Record<Locale, ProjectData>> = {
     },
   },
 
+  "security-anomaly-detection": {
+    ko: {
+      title: "보안 이상 탐지 시스템",
+      company: "라이앤캐처스",
+      period: "2026.05 ~ 현재",
+      role: "AI 연구 엔지니어",
+      tags: ["Security", "Anomaly Detection", "LSTM", "VAE"],
+      contentHtml: `<h2>개요</h2>
+<p>악성 사용자 행동과 PE 파일을 우선 격리하기 위한 딥러닝 이상 탐지 시스템을 개발하고 있습니다. 현재 학습과 검증 단계이며, 실제 운영 데이터가 제한적인 상황을 고려해 정상 데이터 중심의 탐지 방식을 적용했습니다.</p>
+<h2>접근 방식</h2>
+<ul><li><strong>CERT 사용자 행동 데이터</strong>: LSTM의 likelihood 기반 점수(NLL)로 행동 패턴의 이상도를 측정</li><li><strong>BODMAS PE 파일 데이터</strong>: VAE reconstruction error와 uncertainty quantification을 결합해 이상도를 측정</li><li><strong>평가 구성</strong>: 학습·검증은 정상 데이터만 사용하고, 테스트는 정상·악성 데이터를 함께 사용해 AUC와 운영점 후보를 검토</li></ul>
+<h2>운영 관점</h2>
+<p>이 모델은 최종 판정보다 1차 격리를 위한 모델입니다. 정상 데이터를 과도하게 탐지하면 사람이 검토해야 할 대상이 급증하므로 FPR과 운영 비용의 trade-off를 우선 고려했습니다. 이후 정밀 탐지 단계와 각 조직의 위험 허용도에 맞춰 threshold를 조정할 수 있도록 설계하고 있습니다.</p>
+<h2>기술 스택</h2>
+<ul><li><strong>Models</strong>: LSTM, VAE</li><li><strong>Methods</strong>: Likelihood, Reconstruction Error, Uncertainty Quantification, ROC-AUC</li><li><strong>Data</strong>: CERT insider-threat behavior data, BODMAS PE-file data</li></ul>`,
+    },
+    en: {
+      title: "Security Anomaly Detection Systems",
+      company: "Rye&Catchers",
+      period: "May 2026 - Present",
+      role: "AI Research Engineer",
+      tags: ["Security", "Anomaly Detection", "LSTM", "VAE"],
+      contentHtml: `<h2>Overview</h2>
+<p>Developing deep-learning anomaly-detection systems to triage malicious user behavior and PE files. The work is currently in training and validation, using normal-data-centered approaches because representative operational attack data is limited.</p>
+<h2>Approach</h2>
+<ul><li><strong>CERT user-behavior data</strong>: measure behavioral anomaly with an LSTM likelihood-based score (NLL)</li><li><strong>BODMAS PE-file data</strong>: combine VAE reconstruction error with uncertainty quantification</li><li><strong>Evaluation setup</strong>: train and validate on benign-only data, then inspect AUC and candidate operating points on a benign-plus-malicious test set</li></ul>
+<h2>Operational Framing</h2>
+<p>The model is intended for first-stage quarantine rather than final adjudication. False positives can sharply increase human review load, so threshold selection considers the trade-off between FPR and operating cost. The threshold can then be calibrated to a downstream precision model and each organization&apos;s risk tolerance.</p>
+<h2>Tech Stack</h2>
+<ul><li><strong>Models</strong>: LSTM, VAE</li><li><strong>Methods</strong>: Likelihood, Reconstruction Error, Uncertainty Quantification, ROC-AUC</li><li><strong>Data</strong>: CERT insider-threat behavior data, BODMAS PE-file data</li></ul>`,
+    },
+    ja: {
+      title: "セキュリティ異常検知システム",
+      company: "ライアンドキャッチャーズ",
+      period: "2026.05 ~ 現在",
+      role: "AIリサーチエンジニア",
+      tags: ["Security", "Anomaly Detection", "LSTM", "VAE"],
+      contentHtml: `<h2>概要</h2>
+<p>悪意あるユーザー行動とPEファイルを優先的に隔離するためのディープラーニング異常検知システムを開発しています。現在は学習・検証段階であり、実運用の攻撃データが限られることを考慮して正常データ中心の検知方式を採用しています。</p>
+<h2>アプローチ</h2>
+<ul><li><strong>CERTユーザー行動データ</strong>: LSTMのlikelihoodベースのスコア（NLL）で行動パターンの異常度を測定</li><li><strong>BODMAS PEファイルデータ</strong>: VAEのreconstruction errorとuncertainty quantificationを組み合わせて異常度を測定</li><li><strong>評価構成</strong>: 学習・検証は正常データのみを使用し、テストでは正常・悪意あるデータを併用してAUCと運用点候補を検討</li></ul>
+<h2>運用上の考え方</h2>
+<p>このモデルは最終判定ではなく、一次隔離のためのモデルです。正常データを過度に検知すると人手レビューが急増するため、FPRと運用コストのtrade-offを優先して考慮しています。後段の精密モデルと各組織のリスク許容度に合わせてthresholdを調整できるように設計しています。</p>
+<h2>技術スタック</h2>
+<ul><li><strong>Models</strong>: LSTM, VAE</li><li><strong>Methods</strong>: Likelihood, Reconstruction Error, Uncertainty Quantification, ROC-AUC</li><li><strong>Data</strong>: CERT insider-threat behavior data, BODMAS PE-file data</li></ul>`,
+    },
+  },
+
   "face-to-character": {
     ko: {
       title: "Face-to-Character 아바타 생성",
@@ -162,11 +211,11 @@ const projectsData: Record<string, Record<Locale, ProjectData>> = {
       tags: ["Vision", "Deep Learning", "3D Avatar"],
       github: "https://github.com/kangnam7654/face_to_parameter",
       contentHtml: `<h2>개요</h2>
-<p>사용자의 얼굴 이미지를 기반으로 게임 아바타를 생성하는 Face-to-Character 시스템을 설계·구현했습니다 (PoC).</p>
+<p>사용자의 얼굴 이미지에서 캐릭터 파라미터를 추정하는 Face-to-Character PoC를 구현했습니다. 원 논문의 미분 불가능한 게임 렌더링 단계를 직접 연결하는 대신, GAN을 미분 가능한 proxy로 사용해 파라미터 최적화를 실험했습니다.</p>
 <h2>변환 예시</h2>
 <div class="demo-grid" style="grid-template-columns: 1fr 1fr 1fr;"><div class="demo-item"><span class="demo-label">원본</span><img src="/images/projects/ftc-original.png" alt="원본 얼굴 이미지" loading="lazy" /></div><div class="demo-item"><span class="demo-label">게임 캐릭터</span><img src="/images/projects/ftc-game.png" alt="게임 캐릭터 변환 결과" loading="lazy" /></div><div class="demo-item"><span class="demo-label">애니메이션</span><img src="/images/projects/ftc-anime.png" alt="애니메이션 스타일 변환 결과" loading="lazy" /></div></div>
 <h2>주요 성과</h2>
-<ul><li>사용자 얼굴 특징을 추출하여 3D 게임 캐릭터에 매핑하는 파이프라인 구축</li><li>얼굴 랜드마크 검출부터 캐릭터 파라미터 생성까지 end-to-end 프로세스 설계</li><li>PoC(Proof of Concept) 완료</li></ul>
+<ul><li>데이터 준비, GAN 구조 구현·학습, 정성적 결과 평가 수행</li><li>GAN, VAE, autoencoder 접근을 비교해 당시 GAN의 시각 품질을 선택</li><li>게임 엔진 연동은 완료하지 않았으며, 결과는 PoC 범위로 한정</li></ul>
 <h2>기술 스택</h2>
 <ul><li><strong>Framework</strong>: PyTorch</li><li><strong>Vision</strong>: Face Detection, Landmark Extraction</li><li><strong>Engine</strong>: Unreal Engine</li></ul>`,
     },
@@ -178,11 +227,11 @@ const projectsData: Record<string, Record<Locale, ProjectData>> = {
       tags: ["Vision", "Deep Learning", "3D Avatar"],
       github: "https://github.com/kangnam7654/face_to_parameter",
       contentHtml: `<h2>Overview</h2>
-<p>Designed and implemented a Face-to-Character system that generates game avatars based on users' facial images (PoC).</p>
+<p>Implemented a Face-to-Character PoC that estimates character parameters from facial images. Rather than connecting the paper&apos;s non-differentiable game renderer directly, I used a GAN as a differentiable proxy to experiment with parameter optimization.</p>
 <h2>Conversion Examples</h2>
 <div class="demo-grid" style="grid-template-columns: 1fr 1fr 1fr;"><div class="demo-item"><span class="demo-label">Original</span><img src="/images/projects/ftc-original.png" alt="Original face image" loading="lazy" /></div><div class="demo-item"><span class="demo-label">Game Character</span><img src="/images/projects/ftc-game.png" alt="Game character conversion result" loading="lazy" /></div><div class="demo-item"><span class="demo-label">Animation</span><img src="/images/projects/ftc-anime.png" alt="Animation style conversion result" loading="lazy" /></div></div>
 <h2>Key Achievements</h2>
-<ul><li>Built a pipeline to extract facial features and map them to 3D game characters</li><li>Designed an end-to-end process from facial landmark detection to character parameter generation</li><li>Completed Proof of Concept (PoC)</li></ul>
+<ul><li>Prepared data, implemented and trained the GAN architecture, and performed qualitative result evaluation</li><li>Compared GAN, VAE, and autoencoder approaches; selected GAN for the strongest visual quality at the time</li><li>Game-engine integration was not completed; the work remains a PoC</li></ul>
 <h2>Tech Stack</h2>
 <ul><li><strong>Framework</strong>: PyTorch</li><li><strong>Vision</strong>: Face Detection, Landmark Extraction</li><li><strong>Engine</strong>: Unreal Engine</li></ul>`,
     },
@@ -194,11 +243,11 @@ const projectsData: Record<string, Record<Locale, ProjectData>> = {
       tags: ["Vision", "Deep Learning", "3D Avatar"],
       github: "https://github.com/kangnam7654/face_to_parameter",
       contentHtml: `<h2>概要</h2>
-<p>ユーザーの顔画像を基にゲームアバターを生成するFace-to-Characterシステムを設計・実装しました（PoC）。</p>
+<p>顔画像からキャラクターパラメータを推定するFace-to-Character PoCを実装しました。論文の微分不可能なゲームレンダラーを直接接続する代わりに、GANを微分可能なproxyとして利用し、パラメータ最適化を実験しました。</p>
 <h2>変換例</h2>
 <div class="demo-grid" style="grid-template-columns: 1fr 1fr 1fr;"><div class="demo-item"><span class="demo-label">オリジナル</span><img src="/images/projects/ftc-original.png" alt="元の顔画像" loading="lazy" /></div><div class="demo-item"><span class="demo-label">ゲームキャラクター</span><img src="/images/projects/ftc-game.png" alt="ゲームキャラクター変換結果" loading="lazy" /></div><div class="demo-item"><span class="demo-label">アニメーション</span><img src="/images/projects/ftc-anime.png" alt="アニメーションスタイル変換結果" loading="lazy" /></div></div>
 <h2>主要成果</h2>
-<ul><li>ユーザーの顔特徴を抽出し3Dゲームキャラクターにマッピングするパイプライン構築</li><li>顔ランドマーク検出からキャラクターパラメータ生成までのエンドツーエンドプロセス設計</li><li>PoC（Proof of Concept）完了</li></ul>
+<ul><li>データ準備、GAN構造の実装・学習、定性的な結果評価を実施</li><li>GAN、VAE、autoencoderを比較し、当時もっとも高い視覚品質を示したGANを選択</li><li>ゲームエンジンとの連携は未完了であり、成果はPoCの範囲に限定</li></ul>
 <h2>技術スタック</h2>
 <ul><li><strong>Framework</strong>: PyTorch</li><li><strong>Vision</strong>: Face Detection, Landmark Extraction</li><li><strong>Engine</strong>: Unreal Engine</li></ul>`,
     },
