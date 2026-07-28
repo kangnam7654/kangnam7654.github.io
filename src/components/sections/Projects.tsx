@@ -102,17 +102,6 @@ const projectsData: Record<Locale, Project[]> = {
       claudeCode: true,
     },
     {
-      title: "AutoShorts — AI 숏폼 자동화",
-      description:
-        "Veo 3.1 영상 생성부터 자막, 후처리, YouTube 업로드까지 자동화하는 숏폼 제작 CLI",
-      tags: ["Python", "Veo 3.1", "Whisper", "FFmpeg"],
-      company: "개인 프로젝트",
-      href: "/projects/auto-shorts",
-      github: "https://github.com/kangnam7654/AutoShorts",
-      sideProject: true,
-      claudeCode: true,
-    },
-    {
       title: "달결 — AI 사주·타로",
       description:
         "사주·타로 기반 AI 운세 상담 iOS 앱. 서비스 출시 예정",
@@ -234,17 +223,6 @@ const projectsData: Record<Locale, Project[]> = {
       claudeCode: true,
     },
     {
-      title: "AutoShorts — AI Short-form Automation",
-      description:
-        "CLI tool automating short-form video production from Veo 3.1 video generation to subtitles, post-processing, and YouTube upload",
-      tags: ["Python", "Veo 3.1", "Whisper", "FFmpeg"],
-      company: "Personal Project",
-      href: "/projects/auto-shorts",
-      github: "https://github.com/kangnam7654/AutoShorts",
-      sideProject: true,
-      claudeCode: true,
-    },
-    {
       title: "Dalgyeol — AI Fortune Telling",
       description:
         "AI fortune consultation iOS app based on Korean fortune telling and tarot. Service launch planned",
@@ -362,17 +340,6 @@ const projectsData: Record<Locale, Project[]> = {
       company: "個人プロジェクト",
       href: "/projects/kangnam-client",
       github: "https://github.com/kangnam7654/kangnam-client",
-      sideProject: true,
-      claudeCode: true,
-    },
-    {
-      title: "AutoShorts — AIショートフォーム自動化",
-      description:
-        "Veo 3.1動画生成から字幕、後処理、YouTubeアップロードまで自動化するショートフォーム制作CLI",
-      tags: ["Python", "Veo 3.1", "Whisper", "FFmpeg"],
-      company: "個人プロジェクト",
-      href: "/projects/auto-shorts",
-      github: "https://github.com/kangnam7654/AutoShorts",
       sideProject: true,
       claudeCode: true,
     },
