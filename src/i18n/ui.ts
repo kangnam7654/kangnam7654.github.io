@@ -50,17 +50,17 @@ export const ui = {
     "aiDevCta.cta.aidev": "AI와 일하는 법",
     "aiDevCta.stat1.value": "15+",
     "aiDevCta.stat1.label": "프로젝트",
-    "aiDevCta.stat2.value": "4",
-    "aiDevCta.stat2.label": "개발 원칙",
+    "aiDevCta.stat2.value": "5",
+    "aiDevCta.stat2.label": "에이전틱 실무 원칙",
     "aiDevCta.stat3.value": "5+",
     "aiDevCta.stat3.label": "년 경력",
 
     // AI Workflow
-    "aiWorkflow.subtitle": "AI-Augmented Engineering",
-    "aiWorkflow.title": "AI와 함께, 더 빠르게 검증하는 개발",
-    "aiWorkflow.description": "AI 코딩 도구로 탐색·문서화·구현 속도를 높이되, 문제 정의와 출시 판단은 사람이 책임집니다.",
-    "aiWorkflow.descriptionBr": "작은 PoC부터 사용자 검증과 운영 개선까지, 반복 가능한 개발 원칙입니다.",
-    "aiWorkflow.badge": "이 포트폴리오는 AI 코딩 도구와 함께 반복적으로 개선하고 있습니다",
+    "aiWorkflow.subtitle": "Agentic Engineering",
+    "aiWorkflow.title": "코딩 에이전트를 실제 개발 흐름에 연결하는 법",
+    "aiWorkflow.description": "에이전트의 자율성보다 맥락, 검증, 그리고 사람이 내리는 의사결정을 우선합니다.",
+    "aiWorkflow.descriptionBr": "명세·컨텍스트·병렬 작업·검증을 실무에 적용하는 방식입니다.",
+    "aiWorkflow.badge": "Codex · Claude Code · GitHub Copilot",
 
     // Navbar
     "nav.resume": "Resume",
@@ -150,17 +150,17 @@ export const ui = {
     "aiDevCta.cta.aidev": "How I Work with AI",
     "aiDevCta.stat1.value": "15+",
     "aiDevCta.stat1.label": "Projects",
-    "aiDevCta.stat2.value": "4",
-    "aiDevCta.stat2.label": "Working Principles",
+    "aiDevCta.stat2.value": "5",
+    "aiDevCta.stat2.label": "Agentic Practices",
     "aiDevCta.stat3.value": "5+",
     "aiDevCta.stat3.label": "Years Exp.",
 
     // AI Workflow
-    "aiWorkflow.subtitle": "AI-Augmented Engineering",
-    "aiWorkflow.title": "Building and validating faster with AI",
-    "aiWorkflow.description": "I use AI coding tools to accelerate exploration, documentation, and implementation while keeping problem framing and release decisions human-owned.",
-    "aiWorkflow.descriptionBr": "A repeatable practice from a small PoC to user validation and operational improvement.",
-    "aiWorkflow.badge": "This portfolio is iterated with AI coding tools",
+    "aiWorkflow.subtitle": "Agentic Engineering",
+    "aiWorkflow.title": "Connecting coding agents to real engineering workflows",
+    "aiWorkflow.description": "I prioritize context, verification, and human decision-making over agent autonomy.",
+    "aiWorkflow.descriptionBr": "This is how I apply specs, repository context, parallel work, and verification in practice.",
+    "aiWorkflow.badge": "Codex · Claude Code · GitHub Copilot",
 
     // Navbar
     "nav.resume": "Resume",
@@ -250,17 +250,17 @@ export const ui = {
     "aiDevCta.cta.aidev": "AIとの協業",
     "aiDevCta.stat1.value": "15+",
     "aiDevCta.stat1.label": "プロジェクト",
-    "aiDevCta.stat2.value": "4",
-    "aiDevCta.stat2.label": "開発原則",
+    "aiDevCta.stat2.value": "5",
+    "aiDevCta.stat2.label": "エージェント実務原則",
     "aiDevCta.stat3.value": "5+",
     "aiDevCta.stat3.label": "年の経験",
 
     // AI Workflow
-    "aiWorkflow.subtitle": "AI-Augmented Engineering",
-    "aiWorkflow.title": "AIと共に、より速く検証する開発",
-    "aiWorkflow.description": "AIコーディングツールで探索・文書化・実装を加速しつつ、課題設定とリリース判断は人が担います。",
-    "aiWorkflow.descriptionBr": "小さなPoCからユーザー検証、運用改善までを繰り返す開発原則です。",
-    "aiWorkflow.badge": "このポートフォリオはAIコーディングツールと共に継続的に改善しています",
+    "aiWorkflow.subtitle": "Agentic Engineering",
+    "aiWorkflow.title": "コーディングエージェントを実際の開発フローにつなぐ方法",
+    "aiWorkflow.description": "エージェントの自律性よりも、コンテキスト、検証、人による意思決定を優先します。",
+    "aiWorkflow.descriptionBr": "仕様、リポジトリのコンテキスト、並列作業、検証を実務に適用する方法です。",
+    "aiWorkflow.badge": "Codex · Claude Code · GitHub Copilot",
 
     // Navbar
     "nav.resume": "Resume",
