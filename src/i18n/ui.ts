@@ -9,7 +9,6 @@ export const ui = {
     "hero.typewriter.3": "End-to-End ML Pipeline Builder",
     "hero.typewriter.4": "AI와 함께 일하는 AI 엔지니어",
     "hero.cta.projects": "프로젝트 보기",
-    "hero.cta.aidev": "AI와 일하는 법",
     "hero.cta.contact": "연락하기",
 
     // About
@@ -43,28 +42,8 @@ export const ui = {
     "projects.filter.side": "사이드",
     "projects.filter.reset": "초기화",
 
-    // AI Dev CTA
-    "aiDevCta.label": "AI-Augmented Development",
-    "aiDevCta.title": "AI와 함께 일하는 시스템이 궁금하신가요?",
-    "aiDevCta.description": "설계 → 개발 → 테스트까지, AI를 활용한 개발 워크플로우를 소개합니다.",
-    "aiDevCta.cta.aidev": "AI와 일하는 법",
-    "aiDevCta.stat1.value": "15+",
-    "aiDevCta.stat1.label": "프로젝트",
-    "aiDevCta.stat2.value": "5",
-    "aiDevCta.stat2.label": "에이전틱 실무 원칙",
-    "aiDevCta.stat3.value": "5+",
-    "aiDevCta.stat3.label": "년 경력",
-
-    // AI Workflow
-    "aiWorkflow.subtitle": "Agentic Engineering",
-    "aiWorkflow.title": "코딩 에이전트를 실제 개발 흐름에 연결하는 법",
-    "aiWorkflow.description": "에이전트의 자율성보다 맥락, 검증, 그리고 사람이 내리는 의사결정을 우선합니다.",
-    "aiWorkflow.descriptionBr": "명세·컨텍스트·병렬 작업·검증을 실무에 적용하는 방식입니다.",
-    "aiWorkflow.badge": "Codex · Claude Code · GitHub Copilot",
-
     // Navbar
     "nav.resume": "Resume",
-    "nav.aiDev": "AI Dev",
     "nav.projects": "Projects",
     "nav.contact": "Contact",
     "nav.ariaResumeToggle": "Resume 메뉴 펼치기",
@@ -109,7 +88,6 @@ export const ui = {
     "hero.typewriter.3": "End-to-End ML Pipeline Builder",
     "hero.typewriter.4": "AI Engineer who works with AI",
     "hero.cta.projects": "View Projects",
-    "hero.cta.aidev": "How I Work with AI",
     "hero.cta.contact": "Contact",
 
     // About
@@ -143,28 +121,8 @@ export const ui = {
     "projects.filter.side": "Side",
     "projects.filter.reset": "Reset",
 
-    // AI Dev CTA
-    "aiDevCta.label": "AI-Augmented Development",
-    "aiDevCta.title": "Curious about AI-augmented development?",
-    "aiDevCta.description": "From design to development to testing — an introduction to AI-powered dev workflows.",
-    "aiDevCta.cta.aidev": "How I Work with AI",
-    "aiDevCta.stat1.value": "15+",
-    "aiDevCta.stat1.label": "Projects",
-    "aiDevCta.stat2.value": "5",
-    "aiDevCta.stat2.label": "Agentic Practices",
-    "aiDevCta.stat3.value": "5+",
-    "aiDevCta.stat3.label": "Years Exp.",
-
-    // AI Workflow
-    "aiWorkflow.subtitle": "Agentic Engineering",
-    "aiWorkflow.title": "Connecting coding agents to real engineering workflows",
-    "aiWorkflow.description": "I prioritize context, verification, and human decision-making over agent autonomy.",
-    "aiWorkflow.descriptionBr": "This is how I apply specs, repository context, parallel work, and verification in practice.",
-    "aiWorkflow.badge": "Codex · Claude Code · GitHub Copilot",
-
     // Navbar
     "nav.resume": "Resume",
-    "nav.aiDev": "AI Dev",
     "nav.projects": "Projects",
     "nav.contact": "Contact",
     "nav.ariaResumeToggle": "Toggle Resume menu",
@@ -209,7 +167,6 @@ export const ui = {
     "hero.typewriter.3": "End-to-End ML Pipeline Builder",
     "hero.typewriter.4": "AIと共に働くAIエンジニア",
     "hero.cta.projects": "プロジェクトを見る",
-    "hero.cta.aidev": "AIとの協業",
     "hero.cta.contact": "お問い合わせ",
 
     // About
@@ -243,28 +200,8 @@ export const ui = {
     "projects.filter.side": "サイド",
     "projects.filter.reset": "リセット",
 
-    // AI Dev CTA
-    "aiDevCta.label": "AI-Augmented Development",
-    "aiDevCta.title": "AIを活用した開発システムに興味がありますか？",
-    "aiDevCta.description": "設計→開発→テストまで、AIを活用した開発ワークフローを紹介します。",
-    "aiDevCta.cta.aidev": "AIとの協業",
-    "aiDevCta.stat1.value": "15+",
-    "aiDevCta.stat1.label": "プロジェクト",
-    "aiDevCta.stat2.value": "5",
-    "aiDevCta.stat2.label": "エージェント実務原則",
-    "aiDevCta.stat3.value": "5+",
-    "aiDevCta.stat3.label": "年の経験",
-
-    // AI Workflow
-    "aiWorkflow.subtitle": "Agentic Engineering",
-    "aiWorkflow.title": "コーディングエージェントを実際の開発フローにつなぐ方法",
-    "aiWorkflow.description": "エージェントの自律性よりも、コンテキスト、検証、人による意思決定を優先します。",
-    "aiWorkflow.descriptionBr": "仕様、リポジトリのコンテキスト、並列作業、検証を実務に適用する方法です。",
-    "aiWorkflow.badge": "Codex · Claude Code · GitHub Copilot",
-
     // Navbar
     "nav.resume": "Resume",
-    "nav.aiDev": "AI Dev",
     "nav.projects": "Projects",
     "nav.contact": "Contact",
     "nav.ariaResumeToggle": "Resumeメニューを開く",

@@ -77,14 +77,6 @@ const projectItems = [
       </nav>
     </div>
 
-    <!-- AI Dev -->
-    <a
-      href={localePath("/ai-dev", locale)}
-      class="mt-4 block rounded-lg px-3 py-2 text-sm font-bold uppercase tracking-widest text-[var(--color-text)] transition-colors duration-200 hover:bg-white/5 hover:text-[var(--color-primary)]"
-    >
-      {t("nav.aiDev", locale)}
-    </a>
-
     <!-- Projects Category -->
     <div class="mt-4 mb-2">
       <div class="flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-bold uppercase tracking-widest text-[var(--color-text)]">
@@ -192,12 +184,6 @@ const projectItems = [
         </a>
       ))
     }
-    <a
-      href={localePath("/ai-dev", locale)}
-      class="mobile-link mt-4 block border-t border-[var(--color-border)] pt-4 text-xs font-semibold uppercase tracking-widest text-[var(--color-text-secondary)] transition-colors duration-200 hover:text-[var(--color-primary)]"
-    >
-      {t("nav.aiDev", locale)}
-    </a>
     <p class="mb-3 mt-4 text-xs font-semibold uppercase tracking-widest text-[var(--color-text-secondary)]">{t("nav.projects", locale)}</p>
     {
       projectItems.map((item) => (
