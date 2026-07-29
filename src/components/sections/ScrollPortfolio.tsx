@@ -127,7 +127,7 @@ function Arrow() {
 
 function LinkButton({ href, children, inverse = false }: { href: string; children: string; inverse?: boolean }) {
   return (
-    <a href={href} className={`group inline-flex items-center gap-3 rounded-md px-5 py-3 text-sm font-semibold transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#78866d] ${inverse ? "border border-white/55 bg-white/10 text-white hover:bg-white hover:text-[#2d2b29]" : "bg-[#78866d] text-white hover:-translate-y-0.5 hover:bg-[#606f57] hover:shadow-[0_12px_24px_rgba(82,95,73,.18)]"}`}>
+    <a href={href} className={`group inline-flex items-center gap-3 rounded-full px-5 py-3 text-sm font-semibold transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2446ff] ${inverse ? "bg-white text-[#2446ff] hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(0,0,0,.2)]" : "bg-[#2446ff] text-white hover:-translate-y-1 hover:bg-[#1028d8] hover:shadow-[0_16px_32px_rgba(36,70,255,.22)]"}`}>
       {children}<span className="transition-transform duration-300 group-hover:translate-x-1"><Arrow /></span>
     </a>
   );
@@ -136,8 +136,8 @@ function LinkButton({ href, children, inverse = false }: { href: string; childre
 function ArtFrame({ image, alt, accent, className = "" }: { image: string; alt: string; accent: string; className?: string }) {
   return (
     <div className={`relative ${className}`}>
-      <div className="absolute -inset-3 opacity-35 blur-2xl" style={{ background: accent }} aria-hidden="true" />
-      <div className="relative overflow-hidden rounded-md border border-[#d8d5cf] bg-white shadow-[0_24px_52px_rgba(45,43,41,.09)]">
+      <div className="absolute -inset-3 rounded-[2.2rem] opacity-80 blur-2xl" style={{ background: accent }} aria-hidden="true" />
+      <div className="relative overflow-hidden rounded-[1.8rem] border border-white bg-white shadow-[0_28px_70px_rgba(36,70,255,.14)]">
         <img src={image} alt={alt} className="h-full w-full object-cover" />
       </div>
     </div>
@@ -150,79 +150,84 @@ export default function ScrollPortfolio({ locale = "ko" }: Props) {
   const content = copy[locale];
 
   return (
-    <section id="project-showcase" className="overflow-hidden bg-white text-[#2d2b29]">
+    <section id="project-showcase" className="overflow-hidden bg-[#fbfbff] text-[#182033]">
       <nav aria-label="Project story" className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 pt-8 lg:px-14">
-        <a href="#project-showcase" className="font-[family-name:var(--font-heading)] text-sm font-extrabold tracking-[-.03em] text-[#2d2b29]">KANGNAM KIM</a>
-        <div className="hidden items-center gap-5 text-xs font-semibold text-[#73706b] md:flex">
-          {(Object.keys(content.navigation) as SceneKey[]).slice(1, 4).map((scene) => <a key={scene} href={`#story-${scene}`} className="transition-colors hover:text-[#78866d]">{content.navigation[scene]}</a>)}
+        <a href="#project-showcase" className="font-[family-name:var(--font-heading)] text-sm font-extrabold tracking-[-.03em] text-[#2446ff]">KK / SELECTED WORK</a>
+        <div className="hidden items-center gap-5 text-xs font-semibold text-[#59637a] md:flex">
+          {(Object.keys(content.navigation) as SceneKey[]).slice(1, 4).map((scene) => <a key={scene} href={`#story-${scene}`} className="transition-colors hover:text-[#2446ff]">{content.navigation[scene]}</a>)}
         </div>
       </nav>
 
       <header className="relative mx-auto grid min-h-[calc(100svh-5rem)] max-w-7xl items-center gap-10 px-6 pb-16 pt-10 lg:grid-cols-[.83fr_1.17fr] lg:px-14 lg:pb-24">
         <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="relative z-10">
-          <h1 className="max-w-xl font-[family-name:var(--font-heading)] text-5xl font-extrabold leading-[.94] tracking-[-.065em] text-[#2d2b29] sm:text-6xl lg:text-7xl">{content.intro.title}</h1>
-          <p className="mt-7 max-w-md text-base leading-7 text-[#706d68]">{content.intro.body}</p>
+          <p className="text-sm font-bold tracking-[-.01em] text-[#ff5e4d]">Applied AI Engineer</p>
+          <h1 className="mt-5 max-w-xl font-[family-name:var(--font-heading)] text-5xl font-extrabold leading-[.94] tracking-[-.065em] text-[#182033] sm:text-6xl lg:text-7xl">{content.intro.title}</h1>
+          <p className="mt-7 max-w-md text-base leading-7 text-[#59637a]">{content.intro.body}</p>
           <div className="mt-9"><LinkButton href="#story-assessment">{content.intro.action}</LinkButton></div>
         </motion.div>
         <motion.div initial={{ opacity: 0, x: 28 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.1 }} className="relative lg:translate-x-8">
-          <ArtFrame image="/images/projects/portfolio-hero-v3.png" alt="Calm abstract editorial artwork representing applied AI systems" accent="rgba(184, 174, 207, .34)" className="aspect-[1.22/1]" />
+          <ArtFrame image="/images/projects/portfolio-hero-v2.png" alt="Abstract editorial artwork representing applied AI systems" accent="rgba(58, 71, 255, .18)" className="aspect-[1.22/1]" />
+          <div className="absolute -bottom-6 left-5 rounded-2xl bg-[#bfff30] px-5 py-4 text-sm font-bold text-[#182033] shadow-[0_16px_32px_rgba(109,151,5,.18)] sm:left-10">Data → Model → Product</div>
         </motion.div>
       </header>
 
-      <article id="story-assessment" className="relative bg-[#edf0e8] px-6 py-16 text-[#2d2b29] lg:px-14 lg:py-24">
+      <article id="story-assessment" className="relative bg-[#2446ff] px-6 py-16 text-white lg:px-14 lg:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.08fr_.92fr] lg:items-center">
           <motion.div initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.65 }} className="relative order-2 lg:order-1">
-            <div className="relative overflow-hidden rounded-md border border-[#d8d5cf] bg-white p-3 shadow-[0_24px_52px_rgba(45,43,41,.1)]">
-              <img src="/images/projects/ai-assessment-architecture.png" alt="AI auto-assessment system architecture" className="aspect-[16/10] w-full rounded-sm object-cover" />
+            <div className="relative overflow-hidden rounded-[1.8rem] border border-white/25 bg-white p-3 shadow-[0_30px_75px_rgba(9,23,135,.35)]">
+              <img src="/images/projects/ai-assessment-architecture.png" alt="AI auto-assessment system architecture" className="aspect-[16/10] w-full rounded-[1.3rem] object-cover" />
             </div>
-            <div className="absolute -bottom-7 -right-2 w-40 overflow-hidden rounded-md border-4 border-[#edf0e8] bg-white shadow-xl sm:w-52">
+            <div className="absolute -bottom-7 -right-2 w-40 overflow-hidden rounded-2xl border-4 border-[#2446ff] bg-white shadow-xl sm:w-52">
               <img src="/images/projects/ai-assessment-head.png" alt="Presentation-attitude landmark visualization" className="aspect-square w-full object-cover" />
             </div>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.65, delay: 0.1 }} className="order-1 lg:order-2">
-            <p className="text-sm font-bold text-[#78866d]">{content.assessment.number} / {content.assessment.label}</p>
+            <p className="text-sm font-bold text-[#bfff30]">{content.assessment.number} / {content.assessment.label}</p>
             <h2 className="mt-5 max-w-xl font-[family-name:var(--font-heading)] text-4xl font-extrabold leading-[.98] tracking-[-.055em] sm:text-5xl">{content.assessment.title}</h2>
-            <p className="mt-6 max-w-lg text-base leading-7 text-[#706d68]">{content.assessment.body}</p>
-            <p className="mt-7 max-w-lg border-l-2 border-[#bd765d] pl-4 text-sm font-semibold leading-6 text-[#625f5b]">{content.assessment.detail}</p>
-            <div className="mt-9"><LinkButton href={localePath("/projects/ai-assessment", locale)}>{content.assessment.action}</LinkButton></div>
+            <p className="mt-6 max-w-lg text-base leading-7 text-white/78">{content.assessment.body}</p>
+            <p className="mt-7 max-w-lg border-l-2 border-[#ff7968] pl-4 text-sm font-semibold leading-6 text-white/86">{content.assessment.detail}</p>
+            <div className="mt-9"><LinkButton href={localePath("/projects/ai-assessment", locale)} inverse>{content.assessment.action}</LinkButton></div>
           </motion.div>
         </div>
       </article>
 
       <article id="story-security" className="relative overflow-hidden px-6 py-20 lg:px-14 lg:py-28">
-        <div className="absolute inset-0 bg-white" aria-hidden="true" />
+        <div className="absolute inset-0 bg-[#fff4ee]" aria-hidden="true" />
         <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[.78fr_1.22fr] lg:items-center">
           <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.65 }}>
-            <p className="text-sm font-bold text-[#bd765d]">{content.security.number} / {content.security.label}</p>
+            <p className="text-sm font-bold text-[#ff5e4d]">{content.security.number} / {content.security.label}</p>
             <h2 className="mt-5 max-w-md font-[family-name:var(--font-heading)] text-4xl font-extrabold leading-[.98] tracking-[-.055em] sm:text-5xl">{content.security.title}</h2>
-            <p className="mt-6 max-w-md text-base leading-7 text-[#706d68]">{content.security.body}</p>
-            <p className="mt-7 max-w-md border-l-2 border-[#78866d] pl-4 text-sm font-semibold leading-6 text-[#625f5b]">{content.security.detail}</p>
+            <p className="mt-6 max-w-md text-base leading-7 text-[#59637a]">{content.security.body}</p>
+            <p className="mt-7 max-w-md border-l-2 border-[#2446ff] pl-4 text-sm font-semibold leading-6 text-[#414d66]">{content.security.detail}</p>
             <div className="mt-9"><LinkButton href={localePath("/projects/security-anomaly-detection", locale)}>{content.security.action}</LinkButton></div>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.7, delay: 0.1 }}>
-            <ArtFrame image="/images/projects/portfolio-security-v3.png" alt="Calm abstract editorial artwork representing anomaly separation" accent="rgba(189, 118, 93, .16)" className="aspect-[1.35/1]" />
+            <ArtFrame image="/images/projects/portfolio-security-v2.png" alt="Abstract editorial artwork representing anomaly separation" accent="rgba(255, 94, 77, .2)" className="aspect-[1.35/1]" />
           </motion.div>
         </div>
       </article>
 
-      <article id="story-unreal" className="relative overflow-hidden bg-[#f3f0eb] px-6 py-20 lg:px-14 lg:py-28">
+      <article id="story-unreal" className="relative overflow-hidden bg-[#bfff30] px-6 py-20 lg:px-14 lg:py-28">
+        <div className="absolute -left-28 top-14 h-80 w-80 rounded-full bg-[#ff7968] blur-3xl opacity-45" aria-hidden="true" />
         <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.14fr_.86fr] lg:items-center">
           <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.7 }}>
-            <ArtFrame image="/images/projects/portfolio-unreal-v3.png" alt="Calm abstract editorial artwork representing intent becoming a spatial system" accent="rgba(184, 174, 207, .22)" className="aspect-[1.35/1]" />
+            <ArtFrame image="/images/projects/portfolio-unreal-v2.png" alt="Abstract editorial artwork representing intent becoming a spatial system" accent="rgba(255, 255, 255, .74)" className="aspect-[1.35/1]" />
+            <div className="-mt-9 ml-7 inline-flex items-center gap-2 rounded-full bg-[#182033] px-4 py-2 text-xs font-bold text-white shadow-xl"><span className="h-2 w-2 rounded-full bg-[#bfff30]" />MCP / Unreal Engine</div>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.65, delay: 0.1 }}>
-            <p className="text-sm font-bold text-[#78866d]">{content.unreal.number} / {content.unreal.label}</p>
+            <p className="text-sm font-bold text-[#2446ff]">{content.unreal.number} / {content.unreal.label}</p>
             <h2 className="mt-5 max-w-md font-[family-name:var(--font-heading)] text-4xl font-extrabold leading-[.98] tracking-[-.055em] sm:text-5xl">{content.unreal.title}</h2>
-            <p className="mt-6 max-w-md text-base leading-7 text-[#706d68]">{content.unreal.body}</p>
-            <p className="mt-7 max-w-md border-l-2 border-[#bd765d] pl-4 text-sm font-semibold leading-6 text-[#625f5b]">{content.unreal.detail}</p>
+            <p className="mt-6 max-w-md text-base leading-7 text-[#344057]">{content.unreal.body}</p>
+            <p className="mt-7 max-w-md border-l-2 border-[#2446ff] pl-4 text-sm font-semibold leading-6 text-[#344057]">{content.unreal.detail}</p>
             <div className="mt-9"><LinkButton href={localePath("/projects/ue5-mcp", locale)}>{content.unreal.action}</LinkButton></div>
           </motion.div>
         </div>
       </article>
 
-      <section id="story-contact" className="relative overflow-hidden bg-[#2d2b29] px-6 py-20 text-white lg:px-14 lg:py-28">
+      <section id="story-contact" className="relative overflow-hidden bg-[#182033] px-6 py-20 text-white lg:px-14 lg:py-28">
+        <div className="absolute right-0 top-0 h-full w-1/2 bg-[radial-gradient(circle_at_top_right,rgba(255,121,104,.8),transparent_48%),radial-gradient(circle_at_bottom_right,rgba(36,70,255,.95),transparent_57%)]" aria-hidden="true" />
         <div className="relative mx-auto max-w-7xl">
-          <p className="text-sm font-bold text-[#c6d0ba]">04 / {content.navigation.contact}</p>
+          <p className="text-sm font-bold text-[#bfff30]">04 / {content.navigation.contact}</p>
           <div className="mt-7 grid gap-10 lg:grid-cols-[1.08fr_.92fr] lg:items-end">
             <div>
               <h2 className="max-w-3xl font-[family-name:var(--font-heading)] text-4xl font-extrabold leading-[.98] tracking-[-.055em] sm:text-6xl">{content.contact.title}</h2>
