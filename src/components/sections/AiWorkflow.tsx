@@ -20,105 +20,105 @@ const phasesData: Record<Locale, Phase[]> = {
   ko: [
     {
       num: "01",
-      title: "Idea Phase",
-      subtitle: "아이디어 발굴 & 검증",
+      title: "Define",
+      subtitle: "문제와 제약 정렬",
       color: "var(--color-primary)",
       steps: [
         {
-          title: "AI 브레인스토밍 & 트렌드 스코어링",
-          desc: "AI와 아이디어 발산, 트렌드 데이터 기반 주제 발굴. 막연한 요청도 구체화",
+          title: "현업 문제 먼저 확인",
+          desc: "사용자와 대화하고 직접 흐름을 써 보며, 반복 작업과 실제 병목을 찾습니다",
         },
         {
-          title: "CEO 방향 결정 → 시장 조사 → CSO 전략 검증",
-          desc: "AI CEO가 방향 설정, Researcher가 시장 조사, AI CSO가 리스크·실현가능성·타겟 유저 페르소나 검증. No-Go 시 방향 재설정",
+          title: "성공 기준과 제약 설정",
+          desc: "사용 경험, 운영 비용, 모델 품질의 우선순위와 데이터·지연 시간·보안 제약을 명확히 합니다",
         },
         {
-          title: "BM 설계",
-          desc: "수익 모델, 가격 전략, 유닛 이코노믹스를 체계적으로 설계",
+          title: "작은 PoC로 가설 검증",
+          desc: "완성도를 앞세우기보다 가장 빠르게 배울 수 있는 최소 구현을 만듭니다",
         },
         {
-          title: "CEO 게이트",
-          desc: "PASS / BM 수정 / 방향 변경 삼분기 의사결정. 통과 시 Design Phase 진입",
+          title: "근거로 다음 단계 결정",
+          desc: "사용자 피드백과 측정 결과를 바탕으로 진행·수정·중단을 결정합니다",
         },
       ],
     },
     {
       num: "02",
-      title: "Design Phase",
-      subtitle: "설계 & 아키텍처",
+      title: "Build",
+      subtitle: "구현과 탐색",
       color: "var(--color-accent)",
       steps: [
         {
-          title: "기술 스택 & DB 스키마 설계",
-          desc: "CTO가 기술 스택 결정, data-engineer가 DB 설계, CTO 리뷰. FAIL 시 재설계",
+          title: "빠르게 동작하는 첫 버전 만들기",
+          desc: "AI 코딩 도구를 활용해 조사와 구현 속도를 높이되, 핵심 설계 판단은 직접 검토합니다",
         },
         {
-          title: "UX/UI 디자인 & 디베이트",
-          desc: "product-designer가 UX→UI 순차 설계, 각각 리뷰어 검증 후 UX↔UI 디자인 디베이트. 사용자 흐름이 API 설계의 기반이 됨",
+          title: "문서화와 코드 리뷰",
+          desc: "결정 근거와 인터페이스를 남기고, 동료의 피드백과 검증 가능한 결과로 코드를 다듬습니다",
         },
         {
-          title: "API 설계 & DB-API 정합성 검증",
-          desc: "UX 흐름 기반으로 backend-dev가 API 설계, CTO가 DB-API 정합성 검증. 불일치 시 DB부터 재설계",
+          title: "비용과 실행 환경 고려",
+          desc: "추론 지연 시간, GPU 비용, CPU 실행 가능성 등 운영 조건을 구현 단계부터 반영합니다",
         },
         {
-          title: "실행 계획 & Plan Critic",
-          desc: "planner가 구현 계획 생성, plan-critic이 6개 기준 채점. 통과까지 반복",
+          title: "필요한 범위만 확장",
+          desc: "검증된 흐름을 기준으로 모델·시스템·자동화를 단계적으로 확장합니다",
         },
         {
-          title: "CTO 게이트",
-          desc: "설계+계획 통합 검증. PASS 시 Build Phase 진입",
+          title: "재현 가능한 작업 흐름 유지",
+          desc: "실험, 배포, 운영에서 같은 기준으로 반복할 수 있도록 작업 과정을 정리합니다",
         },
       ],
     },
     {
       num: "03",
-      title: "Build Phase",
-      subtitle: "구현 & 리뷰",
+      title: "Verify",
+      subtitle: "동작과 사용성 검증",
       color: "#f59e0b",
       steps: [
         {
-          title: "병렬 구현",
-          desc: "frontend / backend / mobile / ai-engineer 에이전트가 동시 개발",
+          title: "실행 가능한 환경에서 확인",
+          desc: "모델 지표뿐 아니라 실제 입력, 지연 시간, 오류 상황을 포함해 동작을 점검합니다",
         },
         {
-          title: "마이그레이션 리뷰 (DBA)",
-          desc: "DBA가 DB 변경사항 검증. 지적 시 구현으로 되돌아감",
+          title: "사용자 관점으로 평가",
+          desc: "사용자가 실제로 쓰는지, 문제 해결에 도움이 되는지를 성공 기준으로 확인합니다",
         },
         {
-          title: "코드 리뷰 + 보안 리뷰",
-          desc: "code-reviewer가 품질 검토, security-reviewer가 보안 취약점 검사",
+          title: "안전과 품질 점검",
+          desc: "실패 사례와 오탐·미탐의 비용을 확인하고, 필요한 안전장치와 운영 절차를 보완합니다",
         },
         {
-          title: "QA 테스트",
-          desc: "qa-engineer가 Unit / Integration / E2E 테스트 실행. FAIL 시 구현으로 복귀",
+          title: "피드백으로 수정",
+          desc: "근거 있는 피드백은 빠르게 반영하고, 결과로 다시 확인합니다",
         },
         {
-          title: "배포 환경 구성 (DevOps)",
-          desc: "devops가 CI/CD 파이프라인, Docker 컨테이너, 배포 환경을 구성. Verify Phase에서 실제 동작 검증 가능한 상태로 준비",
+          title: "출시 기준 확인",
+          desc: "사용 경험과 운영 비용을 해치지 않는 범위에서 배포 여부를 결정합니다",
         },
       ],
     },
     {
       num: "04",
-      title: "Verify Phase",
-      subtitle: "검증 & 론칭",
+      title: "Iterate",
+      subtitle: "운영과 개선",
       color: "var(--color-secondary)",
       steps: [
         {
-          title: "동작 검증 (Simulator)",
-          desc: "실제 앱을 실행하여 기능 동작 확인. FAIL 시 Build Phase로 복귀",
+          title: "운영 신호 관찰",
+          desc: "사용량, 오류, 지연 시간, 비용을 보며 시스템이 지속 가능하게 동작하는지 확인합니다",
         },
         {
-          title: "UI 검증 & 사용성 테스트",
-          desc: "스크린샷 기반 시각적 검증 + 사용자 관점 사용성 테스트. 구현 버그 → Build Phase, 디자인 문제 → Design Phase로 분기",
+          title: "사용자 피드백 수집",
+          desc: "실제 사용자의 불편과 반복 작업을 다음 개선의 출발점으로 삼습니다",
         },
         {
-          title: "론칭 디베이트",
-          desc: "CEO ↔ CTO ↔ CSO 삼자 회의. 코드 수정 / 설계 변경 / PASS 삼분기 결정",
+          title: "비용·품질 균형 조정",
+          desc: "필요한 품질을 유지하면서도 운영 비용과 대응 부담을 통제합니다",
         },
         {
-          title: "완성 보고",
-          desc: "론칭 승인 후 최종 보고서 생성",
+          title: "다음 문제로 확장",
+          desc: "검증된 기반 위에서 더 큰 자동화와 제품 개선으로 이어갑니다",
         },
       ],
     },
@@ -337,19 +337,102 @@ const phasesData: Record<Locale, Phase[]> = {
   ],
 };
 
-const cycleItems = [
-  { name: "Idea", color: "var(--color-primary)" },
-  { name: "Design", color: "var(--color-accent)" },
-  { name: "Build", color: "#f59e0b" },
-  { name: "Verify", color: "var(--color-secondary)" },
-];
+const cycleItems: Record<Locale, { name: string; color: string }[]> = {
+  ko: [
+    { name: "Define", color: "var(--color-primary)" },
+    { name: "Build", color: "var(--color-accent)" },
+    { name: "Verify", color: "#f59e0b" },
+    { name: "Iterate", color: "var(--color-secondary)" },
+  ],
+  en: [
+    { name: "Define", color: "var(--color-primary)" },
+    { name: "Build", color: "var(--color-accent)" },
+    { name: "Verify", color: "#f59e0b" },
+    { name: "Iterate", color: "var(--color-secondary)" },
+  ],
+  ja: [
+    { name: "Define", color: "var(--color-primary)" },
+    { name: "Build", color: "var(--color-accent)" },
+    { name: "Verify", color: "#f59e0b" },
+    { name: "Iterate", color: "var(--color-secondary)" },
+  ],
+};
+
+const currentPhasesData: Record<Locale, Phase[]> = {
+  ko: [
+    { num: "01", title: "Define", subtitle: "문제와 제약 정렬", color: "var(--color-primary)", steps: [
+      { title: "현업 문제 확인", desc: "사용자와 대화하고 직접 흐름을 써 보며 반복 작업과 병목을 찾습니다" },
+      { title: "성공 기준 설정", desc: "사용 경험·운영 비용·모델 품질의 우선순위와 제약을 명확히 합니다" },
+      { title: "작은 PoC 설계", desc: "가장 빨리 배울 수 있는 최소 구현으로 가설을 검증합니다" },
+    ] },
+    { num: "02", title: "Build", subtitle: "구현과 탐색", color: "var(--color-accent)", steps: [
+      { title: "동작하는 첫 버전", desc: "AI 코딩 도구로 조사와 구현 속도를 높이되, 핵심 설계 판단은 직접 검토합니다" },
+      { title: "문서화와 코드 리뷰", desc: "결정 근거와 인터페이스를 남기고 피드백과 검증 가능한 결과로 다듬습니다" },
+      { title: "운영 조건 반영", desc: "추론 지연 시간, GPU 비용, CPU 실행 가능성 같은 조건을 구현부터 고려합니다" },
+    ] },
+    { num: "03", title: "Verify", subtitle: "동작과 사용성 검증", color: "#f59e0b", steps: [
+      { title: "실행 환경에서 확인", desc: "모델 지표뿐 아니라 실제 입력, 지연 시간, 오류 상황을 점검합니다" },
+      { title: "사용자 관점 평가", desc: "사용자가 실제로 쓰고 문제 해결에 도움이 되는지를 성공 기준으로 봅니다" },
+      { title: "안전과 품질 점검", desc: "실패 사례와 운영 비용을 확인하고 필요한 안전장치를 보완합니다" },
+    ] },
+    { num: "04", title: "Iterate", subtitle: "운영과 개선", color: "var(--color-secondary)", steps: [
+      { title: "운영 신호 관찰", desc: "사용량, 오류, 지연 시간, 비용으로 지속 가능성을 확인합니다" },
+      { title: "피드백 반영", desc: "근거 있는 피드백을 빠르게 반영하고 결과로 다시 확인합니다" },
+      { title: "다음 문제로 확장", desc: "검증된 기반 위에서 자동화와 제품 개선을 단계적으로 확장합니다" },
+    ] },
+  ],
+  en: [
+    { num: "01", title: "Define", subtitle: "Align the problem and constraints", color: "var(--color-primary)", steps: [
+      { title: "Start with the real problem", desc: "Talk with users and walk through their work to find repetitive tasks and bottlenecks." },
+      { title: "Set success criteria", desc: "Make user experience, operating cost, model quality, and constraints explicit." },
+      { title: "Design a small PoC", desc: "Test the hypothesis with the smallest implementation that can teach us quickly." },
+    ] },
+    { num: "02", title: "Build", subtitle: "Implement and explore", color: "var(--color-accent)", steps: [
+      { title: "Build a working first version", desc: "Use AI coding tools to accelerate research and implementation while reviewing key design decisions directly." },
+      { title: "Document and review", desc: "Record rationale and interfaces, then refine with feedback and verifiable results." },
+      { title: "Account for operations", desc: "Consider inference latency, GPU cost, and CPU feasibility from the implementation stage." },
+    ] },
+    { num: "03", title: "Verify", subtitle: "Validate behavior and usability", color: "#f59e0b", steps: [
+      { title: "Check in a runnable environment", desc: "Test real inputs, latency, and failure cases alongside model metrics." },
+      { title: "Evaluate from the user's perspective", desc: "Treat actual use and problem resolution as the success criteria." },
+      { title: "Review safety and quality", desc: "Check failure modes and operating cost, then add the safeguards that are needed." },
+    ] },
+    { num: "04", title: "Iterate", subtitle: "Operate and improve", color: "var(--color-secondary)", steps: [
+      { title: "Observe operational signals", desc: "Use usage, errors, latency, and cost to assess sustainability." },
+      { title: "Incorporate feedback", desc: "Act on evidence-based feedback quickly, then validate the result again." },
+      { title: "Expand to the next problem", desc: "Extend automation and product improvements gradually from a validated base." },
+    ] },
+  ],
+  ja: [
+    { num: "01", title: "Define", subtitle: "課題と制約を整理", color: "var(--color-primary)", steps: [
+      { title: "現場の課題を確認", desc: "ユーザーと対話し実際の業務フローを試して、繰り返し作業とボトルネックを見つけます。" },
+      { title: "成功基準を設定", desc: "ユーザー体験、運用コスト、モデル品質、制約の優先順位を明確にします。" },
+      { title: "小さなPoCを設計", desc: "最も早く学べる最小実装で仮説を検証します。" },
+    ] },
+    { num: "02", title: "Build", subtitle: "実装と探索", color: "var(--color-accent)", steps: [
+      { title: "動く最初の版を作る", desc: "AIコーディングツールで調査と実装を加速しつつ、重要な設計判断は直接レビューします。" },
+      { title: "文書化とコードレビュー", desc: "判断根拠とインターフェースを残し、フィードバックと検証可能な結果で改善します。" },
+      { title: "運用条件を反映", desc: "推論レイテンシ、GPUコスト、CPUでの実行可能性を実装段階から考慮します。" },
+    ] },
+    { num: "03", title: "Verify", subtitle: "動作と使いやすさを検証", color: "#f59e0b", steps: [
+      { title: "実行環境で確認", desc: "モデル指標だけでなく、実際の入力、レイテンシ、エラー状況を確認します。" },
+      { title: "ユーザー視点で評価", desc: "ユーザーが実際に使い、課題解決に役立つかを成功基準とします。" },
+      { title: "安全性と品質を点検", desc: "失敗事例と運用コストを確認し、必要な安全策を補います。" },
+    ] },
+    { num: "04", title: "Iterate", subtitle: "運用と改善", color: "var(--color-secondary)", steps: [
+      { title: "運用シグナルを観察", desc: "利用量、エラー、レイテンシ、コストから持続可能性を確認します。" },
+      { title: "フィードバックを反映", desc: "根拠のあるフィードバックを速く反映し、結果を再確認します。" },
+      { title: "次の課題へ拡張", desc: "検証済みの基盤から自動化とプロダクト改善を段階的に広げます。" },
+    ] },
+  ],
+};
 
 interface Props {
   locale?: Locale;
 }
 
 export default function AiWorkflow({ locale = "ko" }: Props) {
-  const phases = phasesData[locale];
+  const phases = currentPhasesData[locale];
 
   return (
     <section id="ai-workflow" className="px-6 py-24">
@@ -381,12 +464,12 @@ export default function AiWorkflow({ locale = "ko" }: Props) {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           style={{ opacity: 1 }}
-          className="mb-20 flex items-center justify-center gap-3 md:gap-5"
+          className="mb-20 flex items-center justify-center gap-1 md:gap-5"
         >
-          {cycleItems.map((item, i) => (
-            <div key={item.name} className="flex items-center gap-3 md:gap-5">
+          {cycleItems[locale].map((item, i) => (
+            <div key={item.name} className="flex items-center gap-1 md:gap-5">
               <div
-                className="flex h-[44px] w-[68px] items-center justify-center rounded-xl border-2 text-[13px] font-bold md:h-[52px] md:w-[84px] md:text-[15px]"
+                className="flex h-10 w-[54px] items-center justify-center rounded-xl border-2 text-[11px] font-bold md:h-[52px] md:w-[84px] md:text-[15px]"
                 style={{
                   borderColor: item.color,
                   color: item.color,
@@ -395,7 +478,7 @@ export default function AiWorkflow({ locale = "ko" }: Props) {
               >
                 {item.name}
               </div>
-              {i < cycleItems.length - 1 && (
+              {i < cycleItems[locale].length - 1 && (
                 <span className="text-[var(--color-text-secondary)]/30">
                   →
                 </span>
