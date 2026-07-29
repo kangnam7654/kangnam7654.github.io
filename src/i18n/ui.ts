@@ -50,17 +50,17 @@ export const ui = {
     "aiDevCta.cta.aidev": "AI와 일하는 법",
     "aiDevCta.stat1.value": "15+",
     "aiDevCta.stat1.label": "프로젝트",
-    "aiDevCta.stat2.value": "36",
-    "aiDevCta.stat2.label": "자동화 단계",
-    "aiDevCta.stat3.value": "4+",
+    "aiDevCta.stat2.value": "4",
+    "aiDevCta.stat2.label": "개발 원칙",
+    "aiDevCta.stat3.value": "5+",
     "aiDevCta.stat3.label": "년 경력",
 
     // AI Workflow
-    "aiWorkflow.subtitle": "Harness Engineering",
-    "aiWorkflow.title": "AI와 일하는 법 (Harness Engineering)",
-    "aiWorkflow.description": "AI 에이전트가 좋은 결과만 낼 수밖에 없는 환경을 설계합니다.",
-    "aiWorkflow.descriptionBr": "아이디어 발굴부터 검증·설계·구현·론칭까지, 36단계 자동화 파이프라인.",
-    "aiWorkflow.badge": "이 포트폴리오는 Claude Code로 제작되었습니다",
+    "aiWorkflow.subtitle": "AI-Augmented Engineering",
+    "aiWorkflow.title": "AI와 함께, 더 빠르게 검증하는 개발",
+    "aiWorkflow.description": "AI 코딩 도구로 탐색·문서화·구현 속도를 높이되, 문제 정의와 출시 판단은 사람이 책임집니다.",
+    "aiWorkflow.descriptionBr": "작은 PoC부터 사용자 검증과 운영 개선까지, 반복 가능한 개발 원칙입니다.",
+    "aiWorkflow.badge": "이 포트폴리오는 AI 코딩 도구와 함께 반복적으로 개선하고 있습니다",
 
     // Navbar
     "nav.resume": "Resume",
@@ -150,17 +150,17 @@ export const ui = {
     "aiDevCta.cta.aidev": "How I Work with AI",
     "aiDevCta.stat1.value": "15+",
     "aiDevCta.stat1.label": "Projects",
-    "aiDevCta.stat2.value": "36",
-    "aiDevCta.stat2.label": "Pipeline Steps",
-    "aiDevCta.stat3.value": "4+",
+    "aiDevCta.stat2.value": "4",
+    "aiDevCta.stat2.label": "Working Principles",
+    "aiDevCta.stat3.value": "5+",
     "aiDevCta.stat3.label": "Years Exp.",
 
     // AI Workflow
-    "aiWorkflow.subtitle": "Harness Engineering",
-    "aiWorkflow.title": "Working with AI (Harness Engineering)",
-    "aiWorkflow.description": "Designing environments where AI agents can only produce good results.",
-    "aiWorkflow.descriptionBr": "A 36-step automated pipeline from ideation to validation, design, build, and launch.",
-    "aiWorkflow.badge": "This portfolio was built with Claude Code",
+    "aiWorkflow.subtitle": "AI-Augmented Engineering",
+    "aiWorkflow.title": "Building and validating faster with AI",
+    "aiWorkflow.description": "I use AI coding tools to accelerate exploration, documentation, and implementation while keeping problem framing and release decisions human-owned.",
+    "aiWorkflow.descriptionBr": "A repeatable practice from a small PoC to user validation and operational improvement.",
+    "aiWorkflow.badge": "This portfolio is iterated with AI coding tools",
 
     // Navbar
     "nav.resume": "Resume",
@@ -250,17 +250,17 @@ export const ui = {
     "aiDevCta.cta.aidev": "AIとの協業",
     "aiDevCta.stat1.value": "15+",
     "aiDevCta.stat1.label": "プロジェクト",
-    "aiDevCta.stat2.value": "36",
-    "aiDevCta.stat2.label": "自動化ステップ",
-    "aiDevCta.stat3.value": "4+",
+    "aiDevCta.stat2.value": "4",
+    "aiDevCta.stat2.label": "開発原則",
+    "aiDevCta.stat3.value": "5+",
     "aiDevCta.stat3.label": "年の経験",
 
     // AI Workflow
-    "aiWorkflow.subtitle": "Harness Engineering",
-    "aiWorkflow.title": "AIとの働き方 (Harness Engineering)",
-    "aiWorkflow.description": "AIエージェントが良い結果しか出せない環境を設計します。",
-    "aiWorkflow.descriptionBr": "アイデア発掘から検証・設計・実装・ローンチまで、36ステップの自動化パイプライン。",
-    "aiWorkflow.badge": "このポートフォリオはClaude Codeで制作されました",
+    "aiWorkflow.subtitle": "AI-Augmented Engineering",
+    "aiWorkflow.title": "AIと共に、より速く検証する開発",
+    "aiWorkflow.description": "AIコーディングツールで探索・文書化・実装を加速しつつ、課題設定とリリース判断は人が担います。",
+    "aiWorkflow.descriptionBr": "小さなPoCからユーザー検証、運用改善までを繰り返す開発原則です。",
+    "aiWorkflow.badge": "このポートフォリオはAIコーディングツールと共に継続的に改善しています",
 
     // Navbar
     "nav.resume": "Resume",
