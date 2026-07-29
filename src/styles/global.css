@@ -36,20 +36,6 @@ body {
   color: var(--color-text);
 }
 
-/* The project hub is an intentionally cinematic, dark portfolio experience.
-   Keep its surrounding navigation in the same visual system instead of leaving
-   a light sidebar against the story canvas when the OS prefers light mode. */
-body:has(#project-showcase) {
-  --color-bg: #0b0f14;
-  --color-surface: #111923;
-  --color-primary: #74e9ff;
-  --color-secondary: #5b7ca8;
-  --color-accent: #9df5dd;
-  --color-text: #f2f7f9;
-  --color-text-secondary: #a9b5bd;
-  --color-border: rgba(242, 247, 249, 0.13);
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
 }
