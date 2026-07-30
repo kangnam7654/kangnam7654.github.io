@@ -1,0 +1,127 @@
+---
+import { localePath } from "../../i18n/utils";
+import type { Locale } from "../../i18n/utils";
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = "en" } = Astro.props;
+
+const copy = {
+  ko: {
+    eyebrow: "APPLIED AI / ML ENGINEER",
+    title: "공개 영문 이력서",
+    description:
+      "채용 담당자가 빠르게 검토할 수 있도록 핵심 경력과 프로젝트를 한 페이지로 정리했습니다.",
+    points: [
+      "약 5년의 Applied AI / ML 엔지니어링 경험",
+      "LLM, 음성, 비전 시스템의 모델링부터 배포·운영까지 수행",
+      "한국 기반 원격·하이브리드 및 고용주 지원 해외 이주 기회에 열려 있음",
+    ],
+    open: "PDF 열기",
+    download: "PDF 다운로드",
+    back: "포트폴리오로 돌아가기",
+    alt: "김강남 영문 이력서 미리보기",
+  },
+  en: {
+    eyebrow: "APPLIED AI / ML ENGINEER",
+    title: "Public Recruiter Resume",
+    description:
+      "A one-page overview of the experience and projects most relevant to international recruiters.",
+    points: [
+      "Approximately five years of Applied AI and ML engineering experience",
+      "LLM, speech, and vision systems from modeling through deployment and operations",
+      "Open to Korea-based remote or hybrid roles and employer-sponsored relocation",
+    ],
+    open: "Open PDF",
+    download: "Download PDF",
+    back: "Back to portfolio",
+    alt: "Kangnam Kim public resume preview",
+  },
+  ja: {
+    eyebrow: "APPLIED AI / ML ENGINEER",
+    title: "公開英文レジュメ",
+    description:
+      "海外の採用担当者向けに、主要な経歴とプロジェクトを1ページにまとめました。",
+    points: [
+      "約5年間のApplied AI・MLエンジニアリング経験",
+      "LLM・音声・ビジョンシステムのモデリングからデプロイ・運用まで担当",
+      "韓国からのリモート・ハイブリッド勤務および雇用主支援による海外移住に対応",
+    ],
+    open: "PDFを開く",
+    download: "PDFをダウンロード",
+    back: "ポートフォリオに戻る",
+    alt: "キム・カンナム英文レジュメのプレビュー",
+  },
+} as const;
+
+const text = copy[locale];
+---
+
+<main class="min-h-screen px-6 py-24 lg:py-16">
+  <div class="mx-auto max-w-5xl">
+    <a
+      href={localePath("/", locale)}
+      class="mb-8 inline-flex items-center gap-2 text-sm text-[var(--color-text-secondary)] transition-colors hover:text-[var(--color-primary)]"
+    >
+      <span aria-hidden="true">←</span>
+      {text.back}
+    </a>
+
+    <div class="grid items-start gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
+      <section class="lg:sticky lg:top-12">
+        <p class="mb-4 font-[family-name:var(--font-mono)] text-xs font-semibold tracking-[0.18em] text-[var(--color-accent)]">
+          {text.eyebrow}
+        </p>
+        <h1 class="mb-5 text-4xl font-extrabold tracking-tight md:text-5xl font-[family-name:var(--font-heading)]">
+          {text.title}
+        </h1>
+        <p class="mb-7 text-base leading-7 text-[var(--color-text-secondary)]">
+          {text.description}
+        </p>
+        <ul class="mb-8 space-y-3 text-sm leading-6 text-[var(--color-text-secondary)]">
+          {text.points.map((point) => (
+            <li class="flex gap-3">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-primary)]"></span>
+              <span>{point}</span>
+            </li>
+          ))}
+        </ul>
+        <div class="flex flex-wrap gap-3">
+          <a
+            href="/kangnam-kim-resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rounded-full bg-[var(--color-primary)] px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
+          >
+            {text.open}
+          </a>
+          <a
+            href="/kangnam-kim-resume.pdf"
+            download="kangnam-kim-resume.pdf"
+            class="rounded-full border border-[var(--color-border)] px-6 py-3 text-sm font-semibold text-[var(--color-text)] transition-colors hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+          >
+            {text.download}
+          </a>
+        </div>
+      </section>
+
+      <a
+        href="/kangnam-kim-resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white shadow-[0_24px_70px_rgba(15,23,42,0.12)] transition-transform hover:-translate-y-1"
+        aria-label={text.open}
+      >
+        <img
+          src="/kangnam-kim-resume-preview.png"
+          alt={text.alt}
+          class="block h-auto w-full"
+          width="1275"
+          height="1650"
+        />
+      </a>
+    </div>
+  </div>
+</main>

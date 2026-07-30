@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navbar from "../../components/layout/Navbar.astro";
+import Footer from "../../components/layout/Footer.astro";
+import ResumeDownload from "../../components/sections/ResumeDownload.astro";
+import type { Locale } from "../../i18n/utils";
+
+const locale: Locale = "ja";
+---
+
+<BaseLayout
+  title="公開英文レジュメ | キム・カンナム"
+  description="Applied AI / ML Engineer キム・カンナムの公開英文レジュメ"
+  locale={locale}
+>
+  <Navbar locale={locale} />
+  <ResumeDownload locale={locale} />
+  <Footer locale={locale} />
+</BaseLayout>
