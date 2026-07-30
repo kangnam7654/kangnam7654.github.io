@@ -54,7 +54,7 @@ const educationData: Record<Locale, { education: Education[]; certifications: Ce
     education: [
       {
         school: "Sogang University, AI·SW Graduate School",
-        degree: "Data Science & AI, M.Eng.",
+        degree: "Master's degree in Data Science & Artificial Intelligence",
         period: "2023.03 ~ 2026.02",
         note: "Academic Excellence Scholarship (Fall 2023)",
         thesis: {

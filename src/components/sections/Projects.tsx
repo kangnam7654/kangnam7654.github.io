@@ -28,7 +28,7 @@ const projectsData: Record<Locale, Project[]> = {
     {
       title: "AI 자동평가 시스템",
       description:
-        "Azure ML 기반 자동평가 서비스. 월간 약 3만 명이 사용한 추론 운영, STT 개선, 발표태도 모델, 합성 데이터 에이전트 구현",
+        "월간 약 3만 명 학생의 평가에 활용된 Azure ML 추론 운영, STT 개선, 발표태도 모델, 학생·평가자 에이전트 구현",
       tags: ["MLOps", "LLM Agent", "Vision", "Speech"],
       company: "크레버스",
       href: "/projects/ai-assessment",
@@ -157,7 +157,7 @@ const projectsData: Record<Locale, Project[]> = {
     {
       title: "AI Auto-Assessment System",
       description:
-        "Azure ML assessment service used by approximately 30K students monthly, with speech improvement, presentation-attitude modeling, and synthetic-data agents",
+        "Azure ML assessment workflow used by approximately 30K students monthly, with speech improvement, presentation-attitude modeling, and student-evaluator agents",
       tags: ["MLOps", "LLM Agent", "Vision", "Speech"],
       company: "Creverse",
       href: "/projects/ai-assessment",
@@ -286,7 +286,7 @@ const projectsData: Record<Locale, Project[]> = {
     {
       title: "AI自動評価システム",
       description:
-        "月間約3万人が利用したAzure MLベースの自動評価サービス。音声認識改善、プレゼン態度モデル、合成データエージェントを実装",
+        "月間約3万人の学生の評価に活用されたAzure ML推論運用。音声認識改善、プレゼン態度モデル、学生・評価者エージェントを実装",
       tags: ["MLOps", "LLM Agent", "Vision", "Speech"],
       company: "クレバース",
       href: "/projects/ai-assessment",

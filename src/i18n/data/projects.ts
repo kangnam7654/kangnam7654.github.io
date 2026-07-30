@@ -100,17 +100,17 @@ const projectsData: Record<string, Record<Locale, ProjectData>> = {
       tags: ["MLOps", "LLM Agent", "Vision", "Audio", "Search"],
       github: "https://github.com/kangnam7654/Multi-Agent-English-Assessment-System",
       contentHtml: `<h2>개요</h2>
-<p>학생의 영어 발표를 AI로 자동 평가하는 시스템을 개발했습니다. Azure ML 기반 실시간 추론 시스템을 배포하여 월간 활성 사용자 수(MAU) 3만 명을 달성했습니다.</p>
+<p>학생의 영어 발표를 AI로 자동 평가하는 시스템을 개발했습니다. Azure ML 기반 추론 시스템을 설계·배포·운영했으며, 월간 약 3만 명 학생의 발표 평가에 활용되었습니다.</p>
 <h2>아키텍처</h2>
 <img src="/images/projects/ai-assessment-architecture.png" alt="AI 자동평가 에이전트 워크플로우" loading="lazy" />
 <img src="/images/projects/ai-assessment-sequence.png" alt="Multi-Agent 시퀀스 다이어그램" loading="lazy" />
 <h2>발표태도 평가 데모</h2>
-<p>MediaPipe 기반 얼굴·손 인식으로 발표자의 시선 방향, 손 제스처, 움직임을 실시간 분석하여 발표 태도를 자동 평가합니다.</p>
+<p>MediaPipe 랜드마크를 입력으로 사용해 발표자의 시선, 자세, 움직임을 분석하고 발표 태도를 평가합니다.</p>
 <div class="demo-grid"><div class="demo-item"><span class="demo-label">시선 방향 추적</span><img src="/images/projects/ai-assessment-head.png" alt="Head Position 추적" loading="lazy" /></div><div class="demo-item"><span class="demo-label">손 제스처 인식</span><img src="/images/projects/ai-assessment-hand1.png" alt="Hand Gesture 인식 - 양손" loading="lazy" /></div></div>
 <h2>주요 성과</h2>
-<ul><li><strong>[MLOps]</strong> Azure ML에 실시간 추론 시스템 배포, MAU 3만 명 달성</li><li><strong>[LLM Agent]</strong> 다중 에이전트(Multi-Agent) 접근 방식으로 합성 학생 데이터 생성</li><li><strong>[Vision]</strong> Diffusion 모델 기반 이미지 생성 파이프라인 구성 및 양자화를 통한 모델 경량화</li><li><strong>[Audio]</strong> NVIDIA Parakeet 기반 STT 모델 미세 조정으로 비원어민 어린이 음성 인식률 개선</li><li><strong>[Audio]</strong> TTS 모델 파인튜닝 연구 (실험 단계)</li><li><strong>[Search]</strong> 키워드 기반 검색과 벡터 검색을 조합한 하이브리드 검색 시스템 설계 및 구현</li><li><strong>[Vision]</strong> MediaPipe 기반 얼굴 인식 및 자세 추적으로 학생 발표 태도 자동 평가</li></ul>
+<ul><li><strong>[MLOps]</strong> Azure ML Endpoint와 Blob Storage 기반 추론 파이프라인을 설계·배포·운영하여 월간 약 3만 명 학생의 발표 평가에 활용</li><li><strong>[LLM Agent]</strong> 해외 평가 탐색을 위해 학생·평가자 에이전트로 학년과 수준에 맞는 합성 영어 작문을 생성·평가</li><li><strong>[Audio]</strong> NVIDIA Parakeet STT를 파인튜닝해 비원어민 어린이 음성의 WER을 9.6%에서 4.4%로 감소</li><li><strong>[Vision]</strong> MediaPipe 기반 시선·자세 평가 모델이 검증 데이터에서 정확도 98.32%, F1 98.77%를 기록하고 CPU 추론에 맞게 구성</li><li><strong>[Vision]</strong> 개발 단계 GPU 비용 절감을 위해 양자화 이미지 생성 모델을 사용하고, 아동 서비스에 AWS 이미지 안전성 판별과 초기 운영자 검수를 적용</li><li><strong>[Search]</strong> BM25와 벡터 검색을 결합해 동일 품질 기준의 내부 로그 평가에서 LLM 호출을 최대 약 20% 절감</li></ul>
 <h2>기술 스택</h2>
-<ul><li><strong>Cloud</strong>: Azure ML, Blob Storage</li><li><strong>Frameworks</strong>: PyTorch, HuggingFace, LangChain, LangGraph</li><li><strong>Models</strong>: Diffusion, NVIDIA Parakeet, MediaPipe</li><li><strong>Serving</strong>: FastAPI, ONNX</li><li><strong>Search</strong>: Hybrid Search (BM25 + Vector)</li></ul>`,
+<ul><li><strong>Cloud</strong>: Azure ML, Blob Storage, AWS Image Moderation</li><li><strong>Frameworks</strong>: PyTorch, HuggingFace, LangGraph</li><li><strong>Models</strong>: Quantized Diffusion, NVIDIA Parakeet, MediaPipe</li><li><strong>Serving</strong>: FastAPI, ONNX</li><li><strong>Search</strong>: Hybrid Search (BM25 + Vector)</li></ul>`,
     },
     en: {
       title: "AI Auto-Assessment System",
@@ -120,17 +120,17 @@ const projectsData: Record<string, Record<Locale, ProjectData>> = {
       tags: ["MLOps", "LLM Agent", "Vision", "Audio", "Search"],
       github: "https://github.com/kangnam7654/Multi-Agent-English-Assessment-System",
       contentHtml: `<h2>Overview</h2>
-<p>Developed an AI-powered automatic assessment system for students' English presentations. Deployed a real-time inference system on Azure ML, achieving 30,000 monthly active users (MAU).</p>
+<p>Developed an AI system for assessing students' English presentations. Designed, deployed, and operated an Azure ML inference system used for presentation assessment by approximately 30,000 students monthly.</p>
 <h2>Architecture</h2>
 <img src="/images/projects/ai-assessment-architecture.png" alt="AI Auto-Assessment Agent Workflow" loading="lazy" />
 <img src="/images/projects/ai-assessment-sequence.png" alt="Multi-Agent Sequence Diagram" loading="lazy" />
 <h2>Presentation Attitude Assessment Demo</h2>
-<p>Automatically evaluates presentation attitudes by analyzing the presenter's gaze direction, hand gestures, and movements in real-time using MediaPipe-based face and hand recognition.</p>
+<p>Uses MediaPipe landmarks to analyze gaze, posture, and movement for presentation-attitude assessment.</p>
 <div class="demo-grid"><div class="demo-item"><span class="demo-label">Gaze Direction Tracking</span><img src="/images/projects/ai-assessment-head.png" alt="Head Position Tracking" loading="lazy" /></div><div class="demo-item"><span class="demo-label">Hand Gesture Recognition</span><img src="/images/projects/ai-assessment-hand1.png" alt="Hand Gesture Recognition - Both Hands" loading="lazy" /></div></div>
 <h2>Key Achievements</h2>
-<ul><li><strong>[MLOps]</strong> Deployed real-time inference system on Azure ML, achieving 30K MAU</li><li><strong>[LLM Agent]</strong> Generated synthetic student data using a multi-agent approach</li><li><strong>[Vision]</strong> Built an image generation pipeline based on diffusion models with quantization for model compression</li><li><strong>[Audio]</strong> Fine-tuned NVIDIA Parakeet-based STT model to improve speech recognition for non-native children</li><li><strong>[Audio]</strong> TTS model fine-tuning research (experimental stage)</li><li><strong>[Search]</strong> Designed and implemented a hybrid search system combining keyword-based and vector search</li><li><strong>[Vision]</strong> Automated student presentation attitude assessment using MediaPipe-based face recognition and pose tracking</li></ul>
+<ul><li><strong>[MLOps]</strong> Designed, deployed, and operated an Azure ML Endpoint and Blob Storage inference pipeline used for presentation assessment by approximately 30K students monthly</li><li><strong>[LLM Agent]</strong> Built student-and-evaluator agents to generate and review grade- and proficiency-conditioned synthetic English writing for international assessment exploration</li><li><strong>[Audio]</strong> Fine-tuned NVIDIA Parakeet STT on non-native children's speech, reducing WER from 9.6% to 4.4%</li><li><strong>[Vision]</strong> Built MediaPipe-based gaze and posture assessment with 98.32% validation accuracy and 98.77% F1, configured for practical CPU inference</li><li><strong>[Vision]</strong> Used a quantized image-generation model during development to reduce GPU cost; added AWS image-safety detection and initial human review for a children's service</li><li><strong>[Search]</strong> Combined BM25 and vector retrieval; internal log-based evaluation showed up to ~20% fewer LLM calls at the same quality threshold</li></ul>
 <h2>Tech Stack</h2>
-<ul><li><strong>Cloud</strong>: Azure ML, Blob Storage</li><li><strong>Frameworks</strong>: PyTorch, HuggingFace, LangChain, LangGraph</li><li><strong>Models</strong>: Diffusion, NVIDIA Parakeet, MediaPipe</li><li><strong>Serving</strong>: FastAPI, ONNX</li><li><strong>Search</strong>: Hybrid Search (BM25 + Vector)</li></ul>`,
+<ul><li><strong>Cloud</strong>: Azure ML, Blob Storage, AWS Image Moderation</li><li><strong>Frameworks</strong>: PyTorch, HuggingFace, LangGraph</li><li><strong>Models</strong>: Quantized Diffusion, NVIDIA Parakeet, MediaPipe</li><li><strong>Serving</strong>: FastAPI, ONNX</li><li><strong>Search</strong>: Hybrid Search (BM25 + Vector)</li></ul>`,
     },
     ja: {
       title: "AI自動評価システム",
@@ -140,17 +140,17 @@ const projectsData: Record<string, Record<Locale, ProjectData>> = {
       tags: ["MLOps", "LLM Agent", "Vision", "Audio", "Search"],
       github: "https://github.com/kangnam7654/Multi-Agent-English-Assessment-System",
       contentHtml: `<h2>概要</h2>
-<p>学生の英語プレゼンテーションをAIで自動評価するシステムを開発しました。Azure MLベースのリアルタイム推論システムをデプロイし、月間アクティブユーザー数（MAU）3万人を達成しました。</p>
+<p>学生の英語プレゼンテーションをAIで評価するシステムを開発しました。Azure MLベースの推論システムを設計・デプロイ・運用し、月間約3万人の学生のプレゼンテーション評価に活用されました。</p>
 <h2>アーキテクチャ</h2>
 <img src="/images/projects/ai-assessment-architecture.png" alt="AI自動評価エージェントワークフロー" loading="lazy" />
 <img src="/images/projects/ai-assessment-sequence.png" alt="マルチエージェントシーケンス図" loading="lazy" />
 <h2>プレゼン態度評価デモ</h2>
-<p>MediaPipeベースの顔・手認識により、発表者の視線方向、ハンドジェスチャー、動きをリアルタイム分析してプレゼンテーション態度を自動評価します。</p>
+<p>MediaPipeのランドマークを入力として、発表者の視線・姿勢・動きを分析し、プレゼンテーション態度を評価します。</p>
 <div class="demo-grid"><div class="demo-item"><span class="demo-label">視線方向追跡</span><img src="/images/projects/ai-assessment-head.png" alt="頭部位置追跡" loading="lazy" /></div><div class="demo-item"><span class="demo-label">ハンドジェスチャー認識</span><img src="/images/projects/ai-assessment-hand1.png" alt="ハンドジェスチャー認識 - 両手" loading="lazy" /></div></div>
 <h2>主要成果</h2>
-<ul><li><strong>[MLOps]</strong> Azure MLにリアルタイム推論システムをデプロイ、MAU 3万人達成</li><li><strong>[LLM Agent]</strong> マルチエージェントアプローチによる合成学生データ生成</li><li><strong>[Vision]</strong> Diffusionモデルベースの画像生成パイプライン構築及び量子化によるモデル軽量化</li><li><strong>[Audio]</strong> NVIDIA ParakeetベースのSTTモデル微調整による非ネイティブ児童の音声認識率改善</li><li><strong>[Audio]</strong> TTSモデルファインチューニング研究（実験段階）</li><li><strong>[Search]</strong> キーワードベース検索とベクトル検索を組み合わせたハイブリッド検索システムの設計・実装</li><li><strong>[Vision]</strong> MediaPipeベースの顔認識及びポーズ追跡による学生プレゼン態度自動評価</li></ul>
+<ul><li><strong>[MLOps]</strong> Azure ML EndpointとBlob Storageベースの推論パイプラインを設計・デプロイ・運用し、月間約3万人の学生の評価に活用</li><li><strong>[LLM Agent]</strong> 海外向け評価の検討において、学生・評価者エージェントで学年と習熟度に応じた合成英作文を生成・評価</li><li><strong>[Audio]</strong> 非ネイティブ児童の音声でNVIDIA Parakeet STTをファインチューニングし、WERを9.6%から4.4%に削減</li><li><strong>[Vision]</strong> MediaPipeベースの視線・姿勢評価モデルが検証データで精度98.32%、F1 98.77%を記録し、CPU推論に対応</li><li><strong>[Vision]</strong> 開発時のGPUコスト削減に量子化画像生成モデルを使用し、児童向けサービスにAWS画像安全性判定と初期の人手確認を導入</li><li><strong>[Search]</strong> BM25とベクトル検索を組み合わせ、同一品質基準の内部ログ評価でLLM呼び出しを最大約20%削減</li></ul>
 <h2>技術スタック</h2>
-<ul><li><strong>Cloud</strong>: Azure ML, Blob Storage</li><li><strong>Frameworks</strong>: PyTorch, HuggingFace, LangChain, LangGraph</li><li><strong>Models</strong>: Diffusion, NVIDIA Parakeet, MediaPipe</li><li><strong>Serving</strong>: FastAPI, ONNX</li><li><strong>Search</strong>: Hybrid Search (BM25 + Vector)</li></ul>`,
+<ul><li><strong>Cloud</strong>: Azure ML, Blob Storage, AWS Image Moderation</li><li><strong>Frameworks</strong>: PyTorch, HuggingFace, LangGraph</li><li><strong>Models</strong>: Quantized Diffusion, NVIDIA Parakeet, MediaPipe</li><li><strong>Serving</strong>: FastAPI, ONNX</li><li><strong>Search</strong>: Hybrid Search (BM25 + Vector)</li></ul>`,
     },
   },
 
