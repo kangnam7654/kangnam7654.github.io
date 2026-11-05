@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>포트폴리오 시안 비교 — 김강남</title>
+    <meta name="description" content="기존 A와 보존된 B, 새로운 C 시안을 나란히 검토합니다." />
+  </head>
+  <body>
+    <main>
+      <a class="back" href="/">← 기존 포트폴리오</a>
+      <h1>시안 비교</h1>
+      <p class="intro">이전 안을 지우지 않고, 다른 방향을 놓고 봅니다.<br />이번 C는 한국어로 먼저 살펴보는 초안입니다.</p>
+      <ol>
+        <li><span>A</span><div><a href="/">지금 공개된 구성</a><p>사진과 경력 중심의 기존 포트폴리오. 기본 홈은 유지합니다.</p></div></li>
+        <li><span>B</span><div><a href="/preview/ko/?review=1">정리된 Studio 안</a><p>지난번 시안. 정형적이고 AI 템플릿처럼 느껴진다는 피드백을 받았습니다.</p></div></li>
+        <li class="current"><span>C</span><div><a href="/c/">실제 작업을 펼쳐 놓은 안 →</a><p>슬로건과 공통 카드 대신 실제 화면, 구체적인 설명, 서로 다른 비중의 작업을 배치했습니다.</p></div></li>
+      </ol>
+      <section><h2>이번에는 무엇이 다르게 느껴지는지</h2><p>그냥 마음에 걸리는 부분을 이 대화에 적어 주세요. “그림은 좋은데 글이 과하다”, “아직도 너무 꾸민 느낌이다”처럼 구체적이지 않은 첫인상도 괜찮습니다.</p><p>접근성·모바일 검증과 별개로, 이 방향이 본인에게 맞는지는 직접 보고 판단하는 단계입니다. 실제 방문자 A/B 테스트나 승자 선정은 아직 하지 않습니다.</p></section>
+      <footer>새 시안의 기본 홈 승격이나 공개 배포는 하지 않았습니다. 이 주소는 로컬 미리보기입니다.</footer>
+    </main>
+  </body>
+</html>
+<style>
+  :global(*) { box-sizing: border-box; }
+  :global(html) { color: #292b30; background: #fafaf8; }
+  :global(body) { margin: 0; font: 16px/1.8 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif; }
+  main { max-width: 750px; margin: 0 auto; padding: 50px 28px 80px; }
+  a { color: #245997; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+  a:focus-visible { outline: 3px solid #245997; outline-offset: 5px; }
+  .back { font-size: 13px; }
+  h1 { margin: 40px 0 16px; font-size: 36px; font-weight: 600; letter-spacing: -.04em; }
+  .intro { color: #62656b; font-size: 16px; }
+  ol { list-style: none; margin: 38px 0 52px; padding: 0; }
+  li { display: flex; align-items: baseline; gap: 24px; padding: 24px 0; border-top: 1px solid #dbddd7; }
+  li:last-child { border-bottom: 1px solid #dbddd7; }
+  li > span { flex: 0 0 22px; color: #62656b; font-family: Georgia, serif; font-size: 26px; }
+  li a { font-size: 20px; }
+  li p { margin: 8px 0 0; font-size: 14px; color: #62656b; }
+  .current > span { color: #a83f29; }
+  .current a { color: #8c3e2e; }
+  h2 { font-size: 19px; font-weight: 600; }
+  section p { font-size: 14px; color: #62656b; }
+  footer { border-top: 1px solid #dbddd7; padding-top: 22px; margin-top: 42px; font-size: 12px; color: #62656b; }
+  @media (max-width: 400px) { main { padding-inline: 20px; } li { gap: 16px; } li a { font-size: 18px; } }
+</style>
