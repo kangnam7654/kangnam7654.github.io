@@ -1,0 +1,19 @@
+{
+  "source_commit": "8411b39978ed8b182e80d9412f0348fb9ad8af3c",
+  "local_worktree": "/Users/kangnam/projects/portfolio-notebook-preview",
+  "local_branch": "feat/portfolio-notebook-c-20261106",
+  "preview_url": "http://127.0.0.1:4328/c/",
+  "comparison_url": "http://127.0.0.1:4328/design-review/",
+  "local_build_and_browser_checks_passed": true,
+  "design_acceptance": "awaiting owner feedback",
+  "remote_branch_published": false,
+  "remote_pr_created": false,
+  "attempts": [
+    {"transport": "existing SSH origin", "result": "Permission denied (publickey)"},
+    {"transport": "HTTPS with existing gh credential helper, command-scoped", "result": "remote rejected: fatal error in commit_refs_rules"}
+  ],
+  "readback": {"remote_ref": "404 Not Found", "matching_prs": [], "rulesets_returned": []},
+  "cause": "GitHub ref rejection cause not established; do not conflate it with the separately observed earlier Pages billing lock",
+  "unchanged_boundaries": ["Original A", "Studio B", "all 137 baseline files", "all 62 pre-existing semantic routes", "Git remotes/global credentials/keys", "production home and traffic allocation"],
+  "status_note": "The code is committed locally and the loopback preview works. Do not claim C has a GitHub PR or public deployment."
+}
