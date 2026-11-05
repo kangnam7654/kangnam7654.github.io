@@ -163,8 +163,10 @@ const projectItems = [
     <div class="flex items-center gap-3">
       <button
         id="mobile-menu-btn"
-        class="text-[var(--color-text)]"
+        class="inline-flex h-11 w-11 items-center justify-center rounded-lg text-[var(--color-text)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)]"
         aria-label={t("nav.ariaMenu", locale)}
+        aria-controls="mobile-menu"
+        aria-expanded="false"
       >
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -209,14 +211,24 @@ const projectItems = [
   const mobileBtn = document.getElementById("mobile-menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
 
+  function setMobileMenu(open: boolean) {
+    mobileMenu?.classList.toggle("hidden", !open);
+    mobileBtn?.setAttribute("aria-expanded", String(open));
+  }
+
   mobileBtn?.addEventListener("click", () => {
-    mobileMenu?.classList.toggle("hidden");
+    setMobileMenu(mobileBtn.getAttribute("aria-expanded") !== "true");
   });
 
   document.querySelectorAll(".mobile-link").forEach((link) => {
-    link.addEventListener("click", () => {
-      mobileMenu?.classList.add("hidden");
-    });
+    link.addEventListener("click", () => setMobileMenu(false));
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && mobileBtn?.getAttribute("aria-expanded") === "true") {
+      setMobileMenu(false);
+      mobileBtn.focus();
+    }
   });
 
   // Collapsible sections
