@@ -1,0 +1,20 @@
+---
+import type { GetStaticPaths } from "astro";
+import StudioPortfolio from "../../components/studio/StudioPortfolio.astro";
+import { studioLocales } from "../../data/studio";
+import type { Locale } from "../../i18n/utils";
+
+export const getStaticPaths = (() =>
+  studioLocales.map((locale) => ({
+    params: { lang: locale },
+    props: { locale },
+  }))) satisfies GetStaticPaths;
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+
+<StudioPortfolio locale={locale} />
