@@ -1,0 +1,10 @@
+{
+  "commit": "cd63d50eebdb07bfbb391c20330fcd76d3e458d2",
+  "source_pr": "https://github.com/kangnam7654/kangnam7654.github.io/pull/1",
+  "reason": "Independently tested original-A navigation/contrast maintenance, not B design edits",
+  "expected_overrides": {
+    "src/components/layout/Navbar.astro": "f1ce200854a1915580ece164c55dfa056cc88ec3b01dee91ef87f1875e6b46f3",
+    "src/components/ui/FloatingControls.astro": "e308e79f3464f9fd05fdd128088a669393d2557a75f3eededf015ef1fa4e119b",
+    "src/styles/global.css": "e65995f00a695f3614e102b6df28dd0d91809f9419e3aef58bda3d80ec6c3005"
+  }
+}
