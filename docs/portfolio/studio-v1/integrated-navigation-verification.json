@@ -1,0 +1,613 @@
+{
+  "accepted": true,
+  "base_commit": "963e9e0750ce8e0ad3f33174385297b81564fdfa",
+  "existing_files_modified": [
+    "src/components/layout/Navbar.astro",
+    "src/components/ui/FloatingControls.astro",
+    "src/styles/global.css"
+  ],
+  "unmodified_original_tracked_files": 106,
+  "mobile_cases": 30,
+  "cases": [
+    {
+      "locale": "ko",
+      "theme": "light",
+      "width": 320,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 6,
+      "hero_cta_contrast": {
+        "foreground": "rgb(248, 249, 250)",
+        "background": "rgb(0, 117, 156)",
+        "ratio": 4.950084265622118
+      }
+    },
+    {
+      "locale": "ko",
+      "theme": "light",
+      "width": 360,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 6,
+      "hero_cta_contrast": {
+        "foreground": "rgb(248, 249, 250)",
+        "background": "rgb(0, 117, 156)",
+        "ratio": 4.950084265622118
+      }
+    },
+    {
+      "locale": "ko",
+      "theme": "light",
+      "width": 390,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 6,
+      "hero_cta_contrast": {
+        "foreground": "rgb(248, 249, 250)",
+        "background": "rgb(0, 117, 156)",
+        "ratio": 4.950084265622118
+      }
+    },
+    {
+      "locale": "ko",
+      "theme": "light",
+      "width": 430,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 6,
+      "hero_cta_contrast": {
+        "foreground": "rgb(248, 249, 250)",
+        "background": "rgb(0, 117, 156)",
+        "ratio": 4.950084265622118
+      }
+    },
+    {
+      "locale": "ko",
+      "theme": "light",
+      "width": 768,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 6,
+      "hero_cta_contrast": {
+        "foreground": "rgb(248, 249, 250)",
+        "background": "rgb(0, 117, 156)",
+        "ratio": 4.950084265622118
+      }
+    },
+    {
+      "locale": "ko",
+      "theme": "dark",
+      "width": 320,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 6,
+      "hero_cta_contrast": {
+        "foreground": "rgb(29, 29, 34)",
+        "background": "rgb(0, 204, 247)",
+        "ratio": 8.776550905751037
+      }
+    },
+    {
+      "locale": "ko",
+      "theme": "dark",
+      "width": 360,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 6,
+      "hero_cta_contrast": {
+        "foreground": "rgb(29, 29, 34)",
+        "background": "rgb(0, 204, 247)",
+        "ratio": 8.776550905751037
+      }
+    },
+    {
+      "locale": "ko",
+      "theme": "dark",
+      "width": 390,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 6,
+      "hero_cta_contrast": {
+        "foreground": "rgb(29, 29, 34)",
+        "background": "rgb(0, 204, 247)",
+        "ratio": 8.776550905751037
+      }
+    },
+    {
+      "locale": "ko",
+      "theme": "dark",
+      "width": 430,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 6,
+      "hero_cta_contrast": {
+        "foreground": "rgb(29, 29, 34)",
+        "background": "rgb(0, 204, 247)",
+        "ratio": 8.776550905751037
+      }
+    },
+    {
+      "locale": "ko",
+      "theme": "dark",
+      "width": 768,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 6,
+      "hero_cta_contrast": {
+        "foreground": "rgb(29, 29, 34)",
+        "background": "rgb(0, 204, 247)",
+        "ratio": 8.776550905751037
+      }
+    },
+    {
+      "locale": "en",
+      "theme": "light",
+      "width": 320,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 20,
+      "hero_cta_contrast": {
+        "foreground": "rgb(248, 249, 250)",
+        "background": "rgb(0, 117, 156)",
+        "ratio": 4.950084265622118
+      }
+    },
+    {
+      "locale": "en",
+      "theme": "light",
+      "width": 360,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 6,
+      "hero_cta_contrast": {
+        "foreground": "rgb(248, 249, 250)",
+        "background": "rgb(0, 117, 156)",
+        "ratio": 4.950084265622118
+      }
+    },
+    {
+      "locale": "en",
+      "theme": "light",
+      "width": 390,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 6,
+      "hero_cta_contrast": {
+        "foreground": "rgb(248, 249, 250)",
+        "background": "rgb(0, 117, 156)",
+        "ratio": 4.950084265622118
+      }
+    },
+    {
+      "locale": "en",
+      "theme": "light",
+      "width": 430,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 6,
+      "hero_cta_contrast": {
+        "foreground": "rgb(248, 249, 250)",
+        "background": "rgb(0, 117, 156)",
+        "ratio": 4.950084265622118
+      }
+    },
+    {
+      "locale": "en",
+      "theme": "light",
+      "width": 768,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 6,
+      "hero_cta_contrast": {
+        "foreground": "rgb(248, 249, 250)",
+        "background": "rgb(0, 117, 156)",
+        "ratio": 4.950084265622118
+      }
+    },
+    {
+      "locale": "en",
+      "theme": "dark",
+      "width": 320,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 20,
+      "hero_cta_contrast": {
+        "foreground": "rgb(10, 10, 15)",
+        "background": "rgb(0, 212, 255)",
+        "ratio": 11.156100392192611
+      }
+    },
+    {
+      "locale": "en",
+      "theme": "dark",
+      "width": 360,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 6,
+      "hero_cta_contrast": {
+        "foreground": "rgb(10, 10, 15)",
+        "background": "rgb(0, 212, 255)",
+        "ratio": 11.156100392192611
+      }
+    },
+    {
+      "locale": "en",
+      "theme": "dark",
+      "width": 390,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 6,
+      "hero_cta_contrast": {
+        "foreground": "rgb(10, 10, 15)",
+        "background": "rgb(0, 212, 255)",
+        "ratio": 11.156100392192611
+      }
+    },
+    {
+      "locale": "en",
+      "theme": "dark",
+      "width": 430,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 6,
+      "hero_cta_contrast": {
+        "foreground": "rgb(10, 10, 15)",
+        "background": "rgb(0, 212, 255)",
+        "ratio": 11.156100392192611
+      }
+    },
+    {
+      "locale": "en",
+      "theme": "dark",
+      "width": 768,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 6,
+      "hero_cta_contrast": {
+        "foreground": "rgb(10, 10, 15)",
+        "background": "rgb(0, 212, 255)",
+        "ratio": 11.156100392192611
+      }
+    },
+    {
+      "locale": "ja",
+      "theme": "light",
+      "width": 320,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 6,
+      "hero_cta_contrast": {
+        "foreground": "rgb(248, 249, 250)",
+        "background": "rgb(0, 117, 156)",
+        "ratio": 4.950084265622118
+      }
+    },
+    {
+      "locale": "ja",
+      "theme": "light",
+      "width": 360,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 6,
+      "hero_cta_contrast": {
+        "foreground": "rgb(248, 249, 250)",
+        "background": "rgb(0, 117, 156)",
+        "ratio": 4.950084265622118
+      }
+    },
+    {
+      "locale": "ja",
+      "theme": "light",
+      "width": 390,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 6,
+      "hero_cta_contrast": {
+        "foreground": "rgb(248, 249, 250)",
+        "background": "rgb(0, 117, 156)",
+        "ratio": 4.950084265622118
+      }
+    },
+    {
+      "locale": "ja",
+      "theme": "light",
+      "width": 430,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 6,
+      "hero_cta_contrast": {
+        "foreground": "rgb(248, 249, 250)",
+        "background": "rgb(0, 117, 156)",
+        "ratio": 4.950084265622118
+      }
+    },
+    {
+      "locale": "ja",
+      "theme": "light",
+      "width": 768,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 6,
+      "hero_cta_contrast": {
+        "foreground": "rgb(248, 249, 250)",
+        "background": "rgb(0, 117, 156)",
+        "ratio": 4.950084265622118
+      }
+    },
+    {
+      "locale": "ja",
+      "theme": "dark",
+      "width": 320,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 6,
+      "hero_cta_contrast": {
+        "foreground": "rgb(29, 29, 34)",
+        "background": "rgb(0, 204, 247)",
+        "ratio": 8.776550905751037
+      }
+    },
+    {
+      "locale": "ja",
+      "theme": "dark",
+      "width": 360,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 6,
+      "hero_cta_contrast": {
+        "foreground": "rgb(29, 29, 34)",
+        "background": "rgb(0, 204, 247)",
+        "ratio": 8.776550905751037
+      }
+    },
+    {
+      "locale": "ja",
+      "theme": "dark",
+      "width": 390,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 6,
+      "hero_cta_contrast": {
+        "foreground": "rgb(29, 29, 34)",
+        "background": "rgb(0, 204, 247)",
+        "ratio": 8.776550905751037
+      }
+    },
+    {
+      "locale": "ja",
+      "theme": "dark",
+      "width": 430,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 6,
+      "hero_cta_contrast": {
+        "foreground": "rgb(29, 29, 34)",
+        "background": "rgb(0, 204, 247)",
+        "ratio": 8.776550905751037
+      }
+    },
+    {
+      "locale": "ja",
+      "theme": "dark",
+      "width": 768,
+      "menu_hit_correct": true,
+      "menu_touch_target": {
+        "correct": true,
+        "width": 44,
+        "height": 44
+      },
+      "aria_state": true,
+      "escape_focus_return": true,
+      "link_closes_menu": true,
+      "observed_legacy_document_overflow_px": 6,
+      "hero_cta_contrast": {
+        "foreground": "rgb(29, 29, 34)",
+        "background": "rgb(0, 204, 247)",
+        "ratio": 8.776550905751037
+      }
+    }
+  ]
+}
