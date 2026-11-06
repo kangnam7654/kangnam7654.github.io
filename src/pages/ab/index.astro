@@ -1,0 +1,20 @@
+---
+import "../../styles/ab-support.css";
+const canonical = new URL("/", Astro.site ?? "https://kangnam7654.github.io").href;
+---
+<!doctype html>
+<html lang="ko">
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="robots" content="noindex,nofollow" /><link rel="canonical" href={canonical} /><title>김강남 | 포트폴리오 A/B 입구</title></head>
+<body class="ab-support" data-ab-entry="true">
+<main>
+  <a href="/">기존 포트폴리오</a>
+  <h1>김강남 포트폴리오</h1>
+  <p>타이포그래피와 오브젝트, 두 디자인 중 하나로 이동합니다. 처음 배정 확률은 같습니다.</p>
+  <p>선택한 디자인만 이 브라우저에 저장해 다음에도 같은 화면을 보여드립니다. 외부 분석 서비스나 방문 통계 수집은 사용하지 않습니다.</p>
+  <nav aria-label="디자인 직접 보기"><a href="/variants/type/?review=1">A · 타이포그래피 보기</a><a href="/variants/objects/?review=1">B · 오브젝트 보기</a></nav>
+  <p class="ab-support-small">자동 이동이 되지 않거나 JavaScript를 쓰지 않으면 위에서 직접 열 수 있습니다. 직접 보기와 검토용 입구는 저장된 선택을 바꾸지 않습니다. 저장이 차단된 환경에서는 다시 배정될 수 있습니다.</p>
+  <footer><a href="/ab/privacy/">화면 선택·브라우저 저장 안내</a><a href="/directions/">두 방향 비교</a></footer>
+</main>
+<script>import "../../lib/portfolio-ab";</script>
+</body>
+</html>

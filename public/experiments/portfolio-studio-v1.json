@@ -1,0 +1,30 @@
+{
+  "experiment": "portfolio-studio-v1",
+  "phase": "preview_only",
+  "production_default": "A",
+  "automatic_assignment_enabled": false,
+  "automatic_promotion_enabled": false,
+  "variants": {
+    "A": { "ko": "/", "en": "/en/", "ja": "/ja/" },
+    "B": { "ko": "/preview/ko/", "en": "/preview/en/", "ja": "/preview/ja/" }
+  },
+  "feedback_mode": "Add ?review=1 to a B URL; drafts stay in the tab; copy or download explicitly.",
+  "measurement": {
+    "collector": null,
+    "network_telemetry_enabled": false,
+    "local_event": "portfolio:interaction",
+    "available_preview_events": ["preview_view", "project_open", "resume_open", "contact_open"],
+    "production_ab_data_available": false,
+    "primary_candidate": "unique-session resume opens per exposed session",
+    "secondary_candidates": ["project detail opens per exposed session", "contact intent clicks per exposed session"],
+    "note": "Click intents are not downloads, messages sent, hiring outcomes, or global visitor counts. A is not instrumented."
+  },
+  "activation_gates": [
+    "Owner feedback on B and approval of the exact public content",
+    "Choose a real analytics collector and its privacy/retention policy",
+    "Instrument comparable exposure and goals for both A and B",
+    "Use stable assignment and exclude owner, bots, previews and QA",
+    "Pre-register hypothesis, denominator, observation window and minimum evidence",
+    "Review uncertainty and guardrails before changing exposure; no automatic winner now"
+  ]
+}

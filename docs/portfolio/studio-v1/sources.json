@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://kangnam7654.github.io",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 2,
+      "url": "https://brittanychiang.com",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 3,
+      "url": "https://hamel.dev",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 4,
+      "url": "https://simonwillison.net",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 5,
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 6,
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+      "title": "",
+      "accessed": "2026-11-05"
+    }
+  ]
+}

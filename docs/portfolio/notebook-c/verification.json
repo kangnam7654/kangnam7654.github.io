@@ -1,0 +1,53 @@
+{
+  "original_files_preserved": 137,
+  "original_routes_semantically_preserved": 62,
+  "local_targets_checked": 11,
+  "responsive": [
+    {
+      "width": 320,
+      "overflow": false,
+      "page_errors": [],
+      "external_requests": [],
+      "autoplay_gif_requests": []
+    },
+    {
+      "width": 375,
+      "overflow": false,
+      "page_errors": [],
+      "external_requests": [],
+      "autoplay_gif_requests": []
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "page_errors": [],
+      "external_requests": [],
+      "autoplay_gif_requests": []
+    },
+    {
+      "width": 1440,
+      "overflow": false,
+      "page_errors": [],
+      "external_requests": [],
+      "autoplay_gif_requests": []
+    }
+  ],
+  "accessibility": [
+    {
+      "width": 375,
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "violations": []
+    }
+  ],
+  "demo": {
+    "opt_in_request": true,
+    "pause_restores_poster": true,
+    "motion_preference_change_stops_demo": true
+  },
+  "qualitative_design_approval": "awaiting user feedback; not established by these tests",
+  "no_js_core_content": true,
+  "accepted_functionally": true
+}

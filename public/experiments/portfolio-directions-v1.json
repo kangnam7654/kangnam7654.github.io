@@ -1,0 +1,57 @@
+{
+  "experiment": "portfolio-directions-v1",
+  "mode": "browser_only_variant_delivery",
+  "phase": "ready_in_source_pending_public_release",
+  "production_default": "legacy_original_at_root",
+  "original_url": "/",
+  "comparison_url": "/directions/",
+  "randomized_entry_url": "/ab/",
+  "manual_review_entry": "/ab/?review=1",
+  "variants": {
+    "A": {
+      "id": "type",
+      "name": "타이포그래피",
+      "preview_url": "/directions/type/",
+      "full_url": "/variants/type/",
+      "keep": true
+    },
+    "B": {
+      "id": "objects",
+      "name": "오브젝트",
+      "preview_url": "/directions/objects/",
+      "full_url": "/variants/objects/",
+      "keep": true
+    }
+  },
+  "routing_enabled_in_build": true,
+  "configured_assignment_weights": {
+    "type": 0.5,
+    "objects": 0.5
+  },
+  "local_preference_storage": {
+    "kind": "localStorage",
+    "key": "portfolio-directions-v1:variant",
+    "values": [
+      "type",
+      "objects"
+    ],
+    "visitor_identifier": false
+  },
+  "automatic_promotion_enabled": false,
+  "automatic_traffic_reweighting_enabled": false,
+  "measurement": {
+    "collector": null,
+    "network_telemetry_enabled": false,
+    "visitor_counters_enabled": false,
+    "production_ab_data_available": false
+  },
+  "deployment": {
+    "state": "pending_public_release",
+    "last_failed_run": "https://github.com/kangnam7654/kangnam7654.github.io/actions/runs/42147244680"
+  },
+  "publication_gates": [
+    "Review the completed source before merging; the original home remains unchanged",
+    "Resolve the GitHub deployment gate and verify the exact published URLs"
+  ],
+  "note": "No external analytics account, SDK, collector, recurring report, adaptive allocation or winner selection is required or configured. Build readiness is not public deployment."
+}

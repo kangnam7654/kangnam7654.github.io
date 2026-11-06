@@ -1,0 +1,152 @@
+{
+  "base_commit": "963e9e0750ce8e0ad3f33174385297b81564fdfa",
+  "old_tracked_files_unchanged": 109,
+  "legacy_pages_semantically_unchanged": 58,
+  "preview_pages_checked": [
+    "preview/ko/index.html",
+    "preview/en/index.html",
+    "preview/ja/index.html"
+  ],
+  "unique_internal_targets_checked": 23,
+  "original_default_preserved": true,
+  "live_ab_running": false,
+  "private_employer_not_added": true,
+  "browser": {
+    "pages": [
+      {
+        "lang": "ko",
+        "width": 320,
+        "status": 200,
+        "overflow": false,
+        "errors": []
+      },
+      {
+        "lang": "ko",
+        "width": 375,
+        "status": 200,
+        "overflow": false,
+        "errors": []
+      },
+      {
+        "lang": "ko",
+        "width": 768,
+        "status": 200,
+        "overflow": false,
+        "errors": []
+      },
+      {
+        "lang": "ko",
+        "width": 1440,
+        "status": 200,
+        "overflow": false,
+        "errors": []
+      },
+      {
+        "lang": "en",
+        "width": 320,
+        "status": 200,
+        "overflow": false,
+        "errors": []
+      },
+      {
+        "lang": "en",
+        "width": 375,
+        "status": 200,
+        "overflow": false,
+        "errors": []
+      },
+      {
+        "lang": "en",
+        "width": 768,
+        "status": 200,
+        "overflow": false,
+        "errors": []
+      },
+      {
+        "lang": "en",
+        "width": 1440,
+        "status": 200,
+        "overflow": false,
+        "errors": []
+      },
+      {
+        "lang": "ja",
+        "width": 320,
+        "status": 200,
+        "overflow": false,
+        "errors": []
+      },
+      {
+        "lang": "ja",
+        "width": 375,
+        "status": 200,
+        "overflow": false,
+        "errors": []
+      },
+      {
+        "lang": "ja",
+        "width": 768,
+        "status": 200,
+        "overflow": false,
+        "errors": []
+      },
+      {
+        "lang": "ja",
+        "width": 1440,
+        "status": 200,
+        "overflow": false,
+        "errors": []
+      }
+    ],
+    "feedback": {
+      "dialog": true,
+      "escape_closes": true,
+      "empty_validation": true,
+      "draft_reload": true,
+      "text_not_html": true,
+      "clipboard_denial_fallback": true,
+      "json_download": true,
+      "clear": true,
+      "external_requests": []
+    },
+    "javascript_disabled": {
+      "headline": true,
+      "project_links": true,
+      "resume_link": true
+    },
+    "a11y": [
+      {
+        "lang": "ko",
+        "width": 375,
+        "violations": []
+      },
+      {
+        "lang": "ko",
+        "width": 1440,
+        "violations": []
+      },
+      {
+        "lang": "en",
+        "width": 375,
+        "violations": []
+      },
+      {
+        "lang": "en",
+        "width": 1440,
+        "violations": []
+      },
+      {
+        "lang": "ja",
+        "width": 375,
+        "violations": []
+      },
+      {
+        "lang": "ja",
+        "width": 1440,
+        "violations": []
+      }
+    ],
+    "comparison_page": true
+  },
+  "accepted": true
+}

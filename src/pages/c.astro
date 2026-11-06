@@ -1,0 +1,266 @@
+---
+import { getProjectData } from "../i18n/data/projects";
+import "../styles/notebook.css";
+
+const unreal = getProjectData("ue5-mcp", "ko");
+const assessment = getProjectData("ai-assessment", "ko");
+const writer = getProjectData("story-writer", "ko");
+const canonical = new URL("/", Astro.site ?? "https://kangnam7654.github.io").href;
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#f8fafc" />
+    <meta
+      name="description"
+      content="AI 엔지니어 김강남의 작업. 언리얼 엔진 MCP 도구, 영어 발표 평가 시스템, 개인적으로 만드는 앱과 로컬 LLM 도구를 소개합니다."
+    />
+    <link rel="canonical" href={canonical} />
+    <title>김강남 — AI 엔지니어 · 포트폴리오 C 시안</title>
+  </head>
+  <body data-variant="notebook-c" id="nc-top">
+    <a class="nc-skip" href="#nc-main">본문으로 건너뛰기</a>
+
+    <header class="nc-shell nc-header">
+      <div class="nc-byline">
+        <a class="nc-name" href="#nc-top">김강남</a>
+        <span class="nc-edition">디자인 시안 C</span>
+      </div>
+      <nav class="nc-nav" aria-label="이력서와 연락처">
+        <a href="/kangnam-kim-resume.pdf">이력서 <span class="nc-file-type">PDF</span></a>
+        <a href="/projects/">프로젝트 전체</a>
+        <a href="mailto:kangnam7653@gmail.com">이메일</a>
+        <a href="https://github.com/kangnam7654">GitHub</a>
+      </nav>
+    </header>
+
+    <main id="nc-main" tabindex="-1">
+      <section class="nc-shell nc-intro" aria-labelledby="nc-intro-title">
+        <h1 id="nc-intro-title">AI 엔지니어<br />김강남입니다.</h1>
+        <div class="nc-intro-copy">
+          <p>
+            언리얼 에디터를 자연어로 다루는 도구를 만들고,<br class="nc-wide-break" />
+            학생의 영어 발표를 평가하는 모델을 배포·운영했습니다.
+          </p>
+          <p>회사에서 맡았던 일과 개인적으로 만드는 것을 함께 담았습니다.</p>
+          <nav class="nc-contents" aria-label="이 페이지의 작업">
+            <a href="#nc-unreal">언리얼 엔진 도구</a>
+            <a href="#nc-assessment">영어 발표 평가</a>
+            <a href="#nc-personal">개인 프로젝트</a>
+          </nav>
+        </div>
+      </section>
+
+      <article class="nc-shell nc-unreal" id="nc-unreal" aria-labelledby="nc-unreal-title">
+        <header class="nc-work-heading">
+          <p class="nc-context">{unreal.company} <span aria-hidden="true">·</span> {unreal.period}</p>
+          <h2 id="nc-unreal-title">언리얼 에디터를 자연어로 다루기</h2>
+        </header>
+        <div class="nc-unreal-layout">
+          <figure class="nc-demo">
+            <div class="nc-demo-frame">
+              <img
+                id="nc-unreal-image"
+                src="/images/notebook/ue5-spawn-poster.webp"
+                width="960"
+                height="540"
+                sizes="(min-width: 1120px) 744px, (min-width: 900px) 67vw, calc(100vw - 40px)"
+                alt="왼쪽의 MCP 도구 호출 창과 오른쪽의 언리얼 엔진 에디터를 함께 띄운 개발 화면"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </div>
+            <figcaption>
+              <span>액터 스폰 데모에서 가져온 정지 화면.</span>
+              <button
+                class="nc-replay"
+                id="nc-unreal-replay"
+                type="button"
+                aria-controls="nc-unreal-image"
+                hidden
+              ><span aria-hidden="true">▷</span> 데모 재생 <span class="nc-download-size">(약 5 MB)</span></button>
+              <span class="nc-visually-hidden" id="nc-demo-status" role="status" aria-live="polite"></span>
+            </figcaption>
+          </figure>
+          <div class="nc-unreal-copy">
+            <p class="nc-scope">프로토타입 모듈 기여</p>
+            <p>
+              자연어로 오브젝트를 만들고, 수정하고, 삭제할 수 있는 MCP 플러그인입니다.
+              AI의 도구 호출을 언리얼 엔진의 작업으로 연결했습니다.
+            </p>
+            <p>
+              비동기 처리와 다대다 연결, 실행 중 도구를 등록하는 구조를 맡았습니다.
+              구현 범위는 프로토타입 단계의 연결 모듈입니다.
+            </p>
+            <div class="nc-inline-links">
+              <a href="/projects/ue5-mcp/">구현 내용과 다른 데모 <span aria-hidden="true">→</span></a>
+              <a href={unreal.github}>코드 보기 <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="nc-shell nc-assessment" id="nc-assessment" aria-labelledby="nc-assessment-title">
+        <div class="nc-assessment-copy">
+          <p class="nc-context">{assessment.company} <span aria-hidden="true">·</span> {assessment.period}</p>
+          <h2 id="nc-assessment-title">영어 발표를 평가하는 시스템</h2>
+          <p>
+            학생의 영어 발표를 자동으로 평가하는 프로젝트였습니다.
+            월 약 3만 명 학생의 발표 평가에 쓰이는 Azure ML 추론 파이프라인에서
+            배포·운영 모듈을 맡았습니다.
+          </p>
+          <p>
+            음성 인식은 비원어민 어린이의 발화에 맞춰야 했습니다.
+            Parakeet을 파인튜닝해 단어 오류율(WER)을 9.6%에서 4.4%로 낮췄고,
+            MediaPipe를 이용한 시선·자세 평가 모델도 개발했습니다.
+          </p>
+          <a class="nc-text-link" href="/projects/ai-assessment/">배포와 모델 개발 자세히 <span aria-hidden="true">→</span></a>
+        </div>
+        <figure class="nc-assessment-figure">
+          <img
+            src="/images/notebook/assessment-test.webp"
+            width="980"
+            height="739"
+            sizes="(min-width: 900px) 352px, (min-width: 600px) 440px, calc(100vw - 40px)"
+            alt="양손의 관절에 랜드마크를 표시한 발표태도 평가 개발 테스트"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>
+            손 랜드마크를 확인하던 개발 테스트.<br />화면의 수치는 디버그 표시입니다.
+          </figcaption>
+        </figure>
+      </article>
+
+      <section class="nc-shell nc-personal" id="nc-personal" aria-labelledby="nc-personal-title">
+        <header class="nc-personal-heading">
+          <h2 id="nc-personal-title">개인적으로 만드는 것</h2>
+          <p>앱 화면부터 로컬 LLM 도구까지, 회사 프로젝트 밖의 작업입니다.</p>
+        </header>
+        <div class="nc-personal-layout">
+          <article class="nc-writer" aria-labelledby="nc-writer-title">
+            <figure>
+              <a class="nc-image-link" href="/images/notebook/story-writer.webp" aria-label="Story Writer 개발 화면 원본 보기">
+                <img
+                  src="/images/notebook/story-writer.webp"
+                  width="1100"
+                  height="686"
+                  sizes="(min-width: 1120px) 600px, (min-width: 900px) 55vw, calc(100vw - 40px)"
+                  alt="아이디어 입력란과 스토리 초안, 검수 피드백이 보이는 Story Writer 개발 화면"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <figcaption>요청 분석, 초안, 검수 피드백을 보여 주는 개발 UI. 글은 예시입니다.</figcaption>
+            </figure>
+            <h3 id="nc-writer-title">Story Writer</h3>
+            <p>
+              세계관 설정집인 Lorebook을 검색해 글을 쓰고, Director 에이전트가 검수하는 도구입니다.
+              LangGraph로 작성과 피드백 과정을 연결하고, Ollama로 로컬 모델을 실행합니다.
+            </p>
+            <div class="nc-inline-links">
+              <a href="/projects/story-writer/">작동 방식 <span aria-hidden="true">→</span></a>
+              <a href={writer.github}>GitHub <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="nc-dalgyeol" aria-labelledby="nc-dalgyeol-title">
+            <div class="nc-dalgyeol-copy">
+              <p class="nc-context">Rust · Swift · 개발 중</p>
+              <h3 id="nc-dalgyeol-title">달결</h3>
+              <p>
+                사주·타로와 AI 상담을 담은 iOS 앱입니다.
+                사주 계산은 LLM이 아닌 Rust 규칙 엔진으로 처리하고,
+                상담 대화에는 LLM을 연결했습니다.
+              </p>
+              <a class="nc-text-link" href="/projects/dalgyeol/">앱 구현 살펴보기 <span aria-hidden="true">→</span></a>
+            </div>
+            <figure>
+              <a class="nc-image-link nc-app-crop" href="/images/notebook/dalgyeol-home.webp" aria-label="달결 개발 중인 홈 화면 전체 보기">
+                <img
+                  src="/images/notebook/dalgyeol-home.webp"
+                  width="393"
+                  height="1200"
+                  sizes="(min-width: 900px) 180px, 160px"
+                  alt="오늘의 운세와 카테고리별 운세를 보여 주는 보라색 달결 홈 화면"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <figcaption>개발 중인 홈 화면 일부.<br />누르면 전체를 볼 수 있습니다.</figcaption>
+            </figure>
+          </article>
+        </div>
+      </section>
+
+      <section class="nc-shell nc-closing" aria-labelledby="nc-contact-title">
+        <div>
+          <h2 id="nc-contact-title">이어서 이야기하려면</h2>
+          <p>채용이나 프로젝트에 관한 이야기는 이메일로 보내주세요.</p>
+          <a class="nc-email" href="mailto:kangnam7653@gmail.com">kangnam7653@gmail.com</a>
+        </div>
+        <div class="nc-closing-links">
+          <a href="/kangnam-kim-resume.pdf">이력서 PDF <span aria-hidden="true">↗</span></a>
+          <a href="/projects/">다른 프로젝트도 보기 <span aria-hidden="true">→</span></a>
+          <a href="https://github.com/kangnam7654">GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="nc-shell nc-footer">
+      <p>포트폴리오 C 시안입니다. 의견은 대화에 남겨주세요.</p>
+      <nav aria-label="포트폴리오 시안 비교">
+        <a href="/">원본 A</a>
+        <a href="/preview/ko/">Studio B</a>
+        <a href="/design-review/">비교 화면</a>
+      </nav>
+    </footer>
+
+    <script>
+      const image = document.querySelector<HTMLImageElement>("#nc-unreal-image");
+      const button = document.querySelector<HTMLButtonElement>("#nc-unreal-replay");
+      const status = document.querySelector<HTMLElement>("#nc-demo-status");
+      const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+      if (image && button && status) {
+        const poster = image.getAttribute("src")!;
+        const stillAlt = image.alt;
+        let playing = false;
+
+        const restorePoster = () => {
+          playing = false;
+          image.src = poster;
+          image.alt = stillAlt;
+          button.innerHTML = '<span aria-hidden="true">▷</span> 데모 재생 <span class="nc-download-size">(약 5 MB)</span>';
+          status.textContent = "정지 화면으로 돌아왔습니다.";
+        };
+
+        button.hidden = false;
+        button.addEventListener("click", () => {
+          if (playing) {
+            restorePoster();
+            return;
+          }
+          playing = true;
+          image.src = "/images/projects/ue5-mcp-spawn.gif";
+          image.alt = "MCP 도구 호출과 언리얼 에디터의 액터 스폰 과정을 보여 주는 데모";
+          button.textContent = "정지 화면으로";
+          status.textContent = "움직이는 데모를 재생합니다. 정지 화면으로 버튼을 누르면 멈춥니다.";
+        });
+        image.addEventListener("error", () => {
+          if (playing) {
+            restorePoster();
+            status.textContent = "데모를 불러오지 못해 정지 화면으로 돌아왔습니다.";
+          }
+        });
+        motion.addEventListener("change", (event) => {
+          if (event.matches && playing) restorePoster();
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+[
+  {
+    "source": "/images/projects/ue5-mcp-spawn.gif",
+    "derived": "/images/notebook/ue5-spawn-poster.webp",
+    "source_sha256": "2014b4c00fc252a665f20d11290120ebe2a5efa1dab214142f7c3df803d15923",
+    "derived_sha256": "cfc7cbcb189adbb969a3d0bc76fc09d42fd1fd5621b2f5d111cb3082401e0547",
+    "gif_frame": 177,
+    "dimensions": [
+      960,
+      540
+    ],
+    "bytes": 95478,
+    "selection_reason": "actual final demo frame contains generated colored objects; not a fabricated render"
+  },
+  {
+    "source": "/images/projects/dalgyeol-home.png",
+    "derived": "/images/notebook/dalgyeol-home.webp",
+    "source_sha256": "f338e86a3578018c9b78a9e429deff3ee8461f2093efd6e7ad006cc8605f670c",
+    "derived_sha256": "df310d8785650e740b891dd1d04efbbea4d3651c88a893b8f03c91750d66101b",
+    "gif_frame": 0,
+    "dimensions": [
+      393,
+      1200
+    ],
+    "bytes": 27484
+  },
+  {
+    "source": "/images/projects/ai-assessment-hand1.png",
+    "derived": "/images/notebook/assessment-test.webp",
+    "source_sha256": "c24020ba9df586555002736b18a32ebe952048e73eb34ff8af9843cb88fa7388",
+    "derived_sha256": "346e503933239030fe1da96ab0df4bf62d433f18e5addb5c1e7abcea55e636cf",
+    "gif_frame": 0,
+    "dimensions": [
+      980,
+      739
+    ],
+    "bytes": 54400
+  },
+  {
+    "source": "/images/projects/story-writer-ui.png",
+    "derived": "/images/notebook/story-writer.webp",
+    "source_sha256": "00e293c0a9357aa15e73b4e89072a4e9e0fcc22e399b3c06bd5f4e98de187b6e",
+    "derived_sha256": "05d45e772ce1800b0ba6bf1c8fab9012c1fdd3c16753ca833442a67c996602e2",
+    "gif_frame": 0,
+    "dimensions": [
+      1100,
+      686
+    ],
+    "bytes": 41160
+  },
+  {
+    "source": "/images/projects/ue5-mcp-spawn.gif",
+    "source_sha256": "2014b4c00fc252a665f20d11290120ebe2a5efa1dab214142f7c3df803d15923",
+    "derived": "/images/notebook/ue5-engine-detail.webp",
+    "gif_frame": 177,
+    "crop": [
+      480,
+      0,
+      960,
+      510
+    ],
+    "derived_sha256": "cf97d09c5d0f897f7cc97e8123aa2e000927c1628f6bf6450fe5afc72c80d427",
+    "bytes": 49412,
+    "note": "Crop of actual engine window; excludes terminal billing/debug panel, no synthetic imagery"
+  }
+]

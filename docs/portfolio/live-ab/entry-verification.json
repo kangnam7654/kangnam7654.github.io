@@ -1,0 +1,22 @@
+{
+  "actual_built_entry_cases": [
+    {
+      "variant": "type",
+      "actual_local_entry": true,
+      "privacy_control": true,
+      "external_requests": [],
+      "page_errors": []
+    },
+    {
+      "variant": "objects",
+      "actual_local_entry": true,
+      "privacy_control": true,
+      "external_requests": [],
+      "page_errors": []
+    }
+  ],
+  "no_js_fallback": true,
+  "production_flags_off": true,
+  "actual_provider_ingestion": false,
+  "all_passed": true
+}
