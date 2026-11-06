@@ -18,8 +18,9 @@
 
 - Weekly Monday 10:00 Asia/Seoul policy, using the existing local Hermes gateway rather than the blocked Pages deployment runner.
 - Isolated tracked-source snapshot; no build over the active checkout, no changes to its dist/index/dependencies, and no automatic reset of dirty worktrees.
-- Deterministic monitor output skips the agent while source/findings are unchanged. A reproducible technical regression may produce one tested draft fix PR; no auto merge/deploy or design winner.
+- A deterministic pre-run script checks safety; a weekly agent then handles at most one approved refinement/public-demo task even when the checks remain healthy. Reproducible defects may produce a tested draft fix PR; no auto merge/deploy or design winner.
 - Private durable QA environment/assets and bounded local reports. No external analytics, new account, visitor data or raw conversation uploads.
+- Owner-expanded scope: preserve both accepted heroes while proposing reviewed portfolio refinements; use restricted Claude Code workspaces for independent demos of projects without public code. Missing links, renamed public repos and intentionally private implementations are distinguished. New demos do not replace historical company source or authorize public-repository creation.
 - Bootstrap verified: 34 orchestration unit tests and the real Node 22 build plus all three browser QA suites. Source/dist/index preserved. Details: `docs/portfolio/simple-ab/automation-verification.json`.
 - Scheduler registration, actual first fire and delivery are verified separately in the private operational receipt; source readiness is not activation or publication.
 
