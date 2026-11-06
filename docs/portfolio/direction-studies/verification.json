@@ -210,10 +210,17 @@
       "violations": []
     }
   ],
-  "qualitative_approval": "not established; awaiting owner feedback",
+  "qualitative_approval": "both first-screen directions approved as A/B candidates; full pages and live experiment not yet reviewed",
   "no_js_core": true,
   "explicit_keyboard_rearrangement": true,
   "reduced_motion": true,
   "browser_case_count": 24,
+  "ab_candidates": {
+    "A": "type",
+    "B": "objects",
+    "both_retained": true,
+    "live_assignment": false,
+    "telemetry": false
+  },
   "functional_checks_passed": true
 }
