@@ -1,0 +1,56 @@
+---
+import "../../styles/art-directions.css";
+const canonical = new URL("/", Astro.site ?? "https://kangnam7654.github.io").href;
+---
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="theme-color" content="#f4b9d2" />
+    <link rel="canonical" href={canonical} />
+    <link rel="preload" href="/fonts/art-directions/black-han-name.woff2" as="font" type="font/woff2" crossorigin />
+    <title>김강남 | 타이포그래피 첫 화면 스터디</title>
+    <meta name="description" content="AI 엔지니어 김강남의 이름과 실제 작업을 중심으로 만든 첫 화면 디자인 스터디." />
+  </head>
+  <body data-study="type">
+    <a class="ad-skip" href="#type-main">본문으로 건너뛰기</a>
+    <div class="ad-type-page">
+      <header class="ad-header">
+        <a class="ad-wordmark" href="/">Kangnam Kim</a>
+        <p class="ad-header-role">AI Engineer</p>
+        <nav aria-label="작업과 이력서">
+          <a href="/projects/">작업</a>
+          <a href="/kangnam-kim-resume.pdf">이력서</a>
+          <a href="mailto:kangnam7653@gmail.com">연락</a>
+        </nav>
+      </header>
+      <main id="type-main" tabindex="-1">
+        <div class="ad-type-heading">
+          <p class="ad-type-kicker">모델을 학습시키고, 쓸 수 있는 도구로 만듭니다.</p>
+          <h1 class="ad-name">김강남</h1>
+
+        </div>
+        <div class="ad-type-details">
+          <div class="ad-type-note">
+            <p class="ad-type-role">AI 엔지니어.<br />음성·비전 모델과 개발 도구를 만듭니다.</p>
+            <a class="ad-text-link" href="/projects/">어떤 작업을 했는지 보기 <span aria-hidden="true">↗</span></a>
+          </div>
+          <a class="ad-work-cutout" href="/projects/ue5-mcp/">
+            <img src="/images/notebook/ue5-engine-detail.webp" width="480" height="510" alt="언리얼 액터 스폰 프로토타입에서 빨강·파랑·노랑 상자를 배치한 실제 개발 화면" decoding="async" />
+            <div>
+              <p>말로 움직이는 언리얼 에디터</p>
+              <span>MCP 플러그인 프로토타입 · 모듈 기여</span>
+            </div>
+            <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 26 26 6M8 6h18v18" /></svg>
+          </a>
+        </div>
+      </main>
+      <footer class="ad-type-footer">
+        <p>시각적 방향을 보는 첫 화면 스터디</p>
+        <nav aria-label="디자인 비교"><a href="/directions/">두 방향 비교</a><a href="/directions/objects/">오브젝트 안</a><a href="/c/">이전 C</a></nav>
+      </footer>
+    </div>
+  </body>
+</html>
