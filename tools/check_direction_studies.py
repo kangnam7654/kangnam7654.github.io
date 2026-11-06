@@ -62,7 +62,21 @@ def main():
     for font in fonts:
         assert digest(root / font["local_file"]) == font["sha256"]
         assert digest(root / "dist" / font["local_file"].removeprefix("public/")) == font["sha256"]
-    result = {"files_preserved": len(files), "routes_preserved": len(pages), "new_study_routes": list(routes), "local_targets": len(targets), "font_bytes": sum(f["bytes"] for f in fonts), "browser_cases": [], "axe": [], "qualitative_approval": "not established; awaiting owner feedback"}
+    experiment_file = "experiments/portfolio-directions-v1.json"
+    experiment = json.loads((root / "dist" / experiment_file).read_text())
+    assert experiment == json.loads((root / "public" / experiment_file).read_text())
+    assert experiment["owner_approved_candidates"] == ["A", "B"]
+    assert experiment["variants"]["A"]["preview_url"] == "/directions/type/"
+    assert experiment["variants"]["B"]["preview_url"] == "/directions/objects/"
+    assert all(v["keep"] for v in experiment["variants"].values())
+    assert experiment["original_url"] == "/"
+    assert not experiment["automatic_assignment_enabled"]
+    assert not experiment["automatic_promotion_enabled"]
+    assert not experiment["automatic_traffic_reweighting_enabled"]
+    assert not experiment["cookies_or_visitor_storage_enabled"]
+    assert experiment["measurement"]["collector"] is None
+    assert not experiment["measurement"]["network_telemetry_enabled"]
+    result = {"files_preserved": len(files), "routes_preserved": len(pages), "new_study_routes": list(routes), "local_targets": len(targets), "font_bytes": sum(f["bytes"] for f in fonts), "browser_cases": [], "axe": [], "qualitative_approval": "both first-screen directions approved as A/B candidates; full pages and live experiment not yet reviewed"}
     server = ThreadingHTTPServer(("127.0.0.1", 0), partial(QuietHandler, directory=str(root / "dist")))
     worker = threading.Thread(target=server.serve_forever, daemon=True)
     worker.start()
@@ -84,6 +98,9 @@ def main():
                         page.evaluate("document.fonts.ready")
                         assert not page.evaluate("document.documentElement.scrollWidth > innerWidth + 1"), (route, width)
                         assert page.locator("h1").count() == 1
+                        if route == "/directions/":
+                            assert page.locator("h2").all_inner_texts() == ["후보 A: 타이포그래피", "후보 B: 오브젝트"]
+                            assert "아직 시작하지 않았습니다" in page.locator(".intro").inner_text()
                         assert not errors, errors
                         assert not [u for u in requests if not u.startswith(base)], requests
                         for image in page.locator("img").all():
@@ -138,6 +155,7 @@ def main():
         server.server_close()
         worker.join(timeout=3)
     result["browser_case_count"] = len(result["browser_cases"])
+    result["ab_candidates"] = {"A": "type", "B": "objects", "both_retained": True, "live_assignment": False, "telemetry": False}
     result["functional_checks_passed"] = True
     (evidence / "verification.json").write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n")
     print(json.dumps(result, ensure_ascii=False, indent=2))

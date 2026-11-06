@@ -1,0 +1,35 @@
+{
+  "experiment": "portfolio-directions-v1",
+  "phase": "both_visual_directions_approved_for_ab_candidates",
+  "surface_ready": "first_screen_previews_only",
+  "variant_labels_apply_only_to_this_experiment": true,
+  "production_default": "legacy_original_at_root",
+  "original_url": "/",
+  "comparison_url": "/directions/",
+  "owner_approved_candidates": ["A", "B"],
+  "variants": {
+    "A": {"id": "type", "name": "타이포그래피", "preview_url": "/directions/type/", "keep": true},
+    "B": {"id": "objects", "name": "오브젝트", "preview_url": "/directions/objects/", "keep": true}
+  },
+  "automatic_assignment_enabled": false,
+  "automatic_promotion_enabled": false,
+  "automatic_traffic_reweighting_enabled": false,
+  "active_assignment_weights": null,
+  "cookies_or_visitor_storage_enabled": false,
+  "measurement": {
+    "collector": null,
+    "network_telemetry_enabled": false,
+    "production_ab_data_available": false,
+    "candidate_primary_metric": "resume opens per eligible exposed session",
+    "candidate_secondary_metrics": ["project-detail opens per eligible exposed session", "contact-intent clicks per eligible exposed session"],
+    "note": "Metrics are definitions for a future experiment, not collected data. Raw visits do not establish a winner; contact clicks are not messages sent."
+  },
+  "activation_gates": [
+    "Prepare matching full-portfolio facts, project order, resume and contact actions for both candidates",
+    "Review the completed designs with the owner; direction approval is not approval of unfinished pages",
+    "Verify public deployment and preserve the original site as a separately reachable fallback",
+    "Agree a real collector, privacy/retention policy and comparable exposure/goal instrumentation",
+    "Define stable assignment, owner/bot/QA exclusions, locale/device handling and an observation window",
+    "Start with a pre-agreed allocation; do not select or automatically favor a winner without sufficient evidence"
+  ]
+}
