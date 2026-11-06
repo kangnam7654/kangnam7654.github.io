@@ -1,15 +1,17 @@
 {
   "experiment": "portfolio-directions-v1",
-  "phase": "both_visual_directions_approved_for_ab_candidates",
-  "surface_ready": "first_screen_previews_only",
+  "phase": "full_variants_integrated_live_connection_blocked",
+  "surface_ready": "full_portfolio_local",
   "variant_labels_apply_only_to_this_experiment": true,
   "production_default": "legacy_original_at_root",
   "original_url": "/",
   "comparison_url": "/directions/",
+  "randomized_entry_url": "/ab/",
+  "local_review_entry": "/ab/?review=1",
   "owner_approved_candidates": ["A", "B"],
   "variants": {
-    "A": {"id": "type", "name": "타이포그래피", "preview_url": "/directions/type/", "keep": true},
-    "B": {"id": "objects", "name": "오브젝트", "preview_url": "/directions/objects/", "keep": true}
+    "A": {"id": "type", "name": "타이포그래피", "preview_url": "/directions/type/", "full_url": "/variants/type/", "keep": true},
+    "B": {"id": "objects", "name": "오브젝트", "preview_url": "/directions/objects/", "full_url": "/variants/objects/", "keep": true}
   },
   "automatic_assignment_enabled": false,
   "automatic_promotion_enabled": false,
@@ -18,18 +20,25 @@
   "cookies_or_visitor_storage_enabled": false,
   "measurement": {
     "collector": null,
+    "prepared_adapter": "posthog_not_connected",
     "network_telemetry_enabled": false,
     "production_ab_data_available": false,
-    "candidate_primary_metric": "resume opens per eligible exposed session",
-    "candidate_secondary_metrics": ["project-detail opens per eligible exposed session", "contact-intent clicks per eligible exposed session"],
-    "note": "Metrics are definitions for a future experiment, not collected data. Raw visits do not establish a winner; contact clicks are not messages sent."
+    "candidate_primary_metric": "resume opens per eligible consenting exposed tab-session",
+    "candidate_secondary_metrics": ["internal project-detail opens per eligible consenting exposed tab-session", "contact-intent clicks per eligible consenting exposed tab-session"],
+    "excluded_from_project_detail_goal": ["GitHub code links", "archive links", "image enlargement"],
+    "note": "Prepared instrumentation is not a live collector. Contact clicks are not messages sent. Future consent is obtained on the common entry before assignment; only consenting randomized visits enter analysis."
+  },
+  "deployment": {
+    "state": "pending_public_release",
+    "verified_run": "https://github.com/kangnam7654/kangnam7654.github.io/actions/runs/42147244680",
+    "source_branch_upload": "verified_available"
   },
   "activation_gates": [
-    "Prepare matching full-portfolio facts, project order, resume and contact actions for both candidates",
-    "Review the completed designs with the owner; direction approval is not approval of unfinished pages",
-    "Verify public deployment and preserve the original site as a separately reachable fallback",
-    "Agree a real collector, privacy/retention policy and comparable exposure/goal instrumentation",
-    "Define stable assignment, owner/bot/QA exclusions, locale/device handling and an observation window",
-    "Start with a pre-agreed allocation; do not select or automatically favor a winner without sufficient evidence"
+    "Owner review of the completed pages; the accepted first screens and shared public facts are retained",
+    "Resolve GitHub account billing lock and verify exact deployed URLs",
+    "Approve and authorize a real measurement account",
+    "Bind only the public project ingestion token, verify actual probe-event ingestion and the provider retention policy",
+    "Enable launch/measurement flags only after production checks; review consent, exclusions, denominator and observation window",
+    "No automatic winner or traffic reweighting without sufficient evidence"
   ]
 }

@@ -1,0 +1,16 @@
+{
+  "experiment": "portfolio-directions-v1",
+  "entryPath": "/ab/",
+  "publicOrigin": "https://kangnam7654.github.io",
+  "launchEnabled": false,
+  "analyticsEnabled": false,
+  "posthogIngestOrigin": "",
+  "posthogPublicToken": "",
+  "posthogProjectId": null,
+  "variants": {"type": "/variants/type/", "objects": "/variants/objects/"},
+  "originalPath": "/",
+  "privacyPath": "/ab/privacy/",
+  "sessionTtlMinutes": 30,
+  "automaticPromotion": false,
+  "automaticReweighting": false
+}

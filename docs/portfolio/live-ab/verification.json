@@ -1,0 +1,569 @@
+{
+  "source_base": "cbd81833383e88b52b76b3b0ba8d58a4e0a620c2",
+  "node_build": "v22.23.4",
+  "built_html_pages": 71,
+  "parent_browser_case_count": 38,
+  "parent_browser_cases": [
+    {
+      "variant": "type",
+      "width": 320,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 5
+    },
+    {
+      "variant": "type",
+      "width": 359,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 5
+    },
+    {
+      "variant": "type",
+      "width": 360,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 5
+    },
+    {
+      "variant": "type",
+      "width": 375,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 5
+    },
+    {
+      "variant": "type",
+      "width": 390,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 5
+    },
+    {
+      "variant": "type",
+      "width": 650,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 5
+    },
+    {
+      "variant": "type",
+      "width": 651,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 5
+    },
+    {
+      "variant": "type",
+      "width": 768,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 5
+    },
+    {
+      "variant": "type",
+      "width": 799,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 5
+    },
+    {
+      "variant": "type",
+      "width": 800,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 5
+    },
+    {
+      "variant": "type",
+      "width": 1023,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 5
+    },
+    {
+      "variant": "type",
+      "width": 1024,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 5
+    },
+    {
+      "variant": "type",
+      "width": 1099,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 5
+    },
+    {
+      "variant": "type",
+      "width": 1100,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 5
+    },
+    {
+      "variant": "type",
+      "width": 1101,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 5
+    },
+    {
+      "variant": "type",
+      "width": 1440,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 5
+    },
+    {
+      "variant": "type",
+      "width": 1699,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 5
+    },
+    {
+      "variant": "type",
+      "width": 1700,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 5
+    },
+    {
+      "variant": "type",
+      "width": 1701,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 5
+    },
+    {
+      "variant": "objects",
+      "width": 320,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 4
+    },
+    {
+      "variant": "objects",
+      "width": 359,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 4
+    },
+    {
+      "variant": "objects",
+      "width": 360,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 4
+    },
+    {
+      "variant": "objects",
+      "width": 375,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 4
+    },
+    {
+      "variant": "objects",
+      "width": 390,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 4
+    },
+    {
+      "variant": "objects",
+      "width": 650,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 4
+    },
+    {
+      "variant": "objects",
+      "width": 651,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 4
+    },
+    {
+      "variant": "objects",
+      "width": 768,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 4
+    },
+    {
+      "variant": "objects",
+      "width": 799,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 4
+    },
+    {
+      "variant": "objects",
+      "width": 800,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 4
+    },
+    {
+      "variant": "objects",
+      "width": 1023,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 4
+    },
+    {
+      "variant": "objects",
+      "width": 1024,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 4
+    },
+    {
+      "variant": "objects",
+      "width": 1099,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 4
+    },
+    {
+      "variant": "objects",
+      "width": 1100,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 4
+    },
+    {
+      "variant": "objects",
+      "width": 1101,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 4
+    },
+    {
+      "variant": "objects",
+      "width": 1440,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 4
+    },
+    {
+      "variant": "objects",
+      "width": 1699,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 4
+    },
+    {
+      "variant": "objects",
+      "width": 1700,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 4
+    },
+    {
+      "variant": "objects",
+      "width": 1701,
+      "overflow": false,
+      "outside_content": [],
+      "page_errors": [],
+      "external_requests": [],
+      "failed_resources": [],
+      "images_decoded": 4
+    }
+  ],
+  "accessibility": [
+    {
+      "variant": "type",
+      "width": 375,
+      "violations": []
+    },
+    {
+      "variant": "type",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "variant": "objects",
+      "width": 375,
+      "violations": []
+    },
+    {
+      "variant": "objects",
+      "width": 1440,
+      "violations": []
+    }
+  ],
+  "content_equivalence": {
+    "shared_copy_identical": true,
+    "goals_identical": true,
+    "goal_counts": {
+      "resume_open": 2,
+      "contact_open": 2,
+      "project_open": 5
+    },
+    "goals": [
+      {
+        "href": "/kangnam-kim-resume.pdf",
+        "goal": "resume_open",
+        "target": "resume"
+      },
+      {
+        "href": "mailto:kangnam7653@gmail.com",
+        "goal": "contact_open",
+        "target": "contact"
+      },
+      {
+        "href": "/projects/ue5-mcp/",
+        "goal": "project_open",
+        "target": "ue5-mcp"
+      },
+      {
+        "href": "/projects/ue5-mcp/",
+        "goal": "project_open",
+        "target": "ue5-mcp"
+      },
+      {
+        "href": "/projects/ai-assessment/",
+        "goal": "project_open",
+        "target": "ai-assessment"
+      },
+      {
+        "href": "/projects/story-writer/",
+        "goal": "project_open",
+        "target": "story-writer"
+      },
+      {
+        "href": "/projects/dalgyeol/",
+        "goal": "project_open",
+        "target": "dalgyeol"
+      },
+      {
+        "href": "mailto:kangnam7653@gmail.com",
+        "goal": "contact_open",
+        "target": "contact"
+      },
+      {
+        "href": "/kangnam-kim-resume.pdf",
+        "goal": "resume_open",
+        "target": "resume"
+      }
+    ]
+  },
+  "tracked_baseline": {
+    "count": 173,
+    "changed": [
+      "public/experiments/portfolio-directions-v1.json",
+      "src/pages/directions/index.astro"
+    ]
+  },
+  "semantic_baseline": {
+    "count": 67,
+    "changed": [
+      "directions/index.html"
+    ]
+  },
+  "interactions": {
+    "keyboard_arrange": true,
+    "explicit_gif_load_stop": true,
+    "motion_change_stops_gif": true,
+    "no_js_core": true,
+    "review_navigation": true,
+    "no_js_network_calls_by_worker": true
+  },
+  "pdf": {
+    "status": 200,
+    "has_pdf_magic": true
+  },
+  "entry_and_privacy": {
+    "actual_built_entry_cases": [
+      {
+        "variant": "type",
+        "actual_local_entry": true,
+        "privacy_control": true,
+        "external_requests": [],
+        "page_errors": []
+      },
+      {
+        "variant": "objects",
+        "actual_local_entry": true,
+        "privacy_control": true,
+        "external_requests": [],
+        "page_errors": []
+      }
+    ],
+    "no_js_fallback": true,
+    "production_flags_off": true,
+    "actual_provider_ingestion": false,
+    "all_passed": true
+  },
+  "client_contract": {
+    "fixture_only": true,
+    "no_requests_reached_posthog": true,
+    "provider_ingestion_verified": false,
+    "cases": [
+      {
+        "case": "allow_type",
+        "passed": true,
+        "intercepted_requests": 4
+      },
+      {
+        "case": "allow_objects",
+        "passed": true,
+        "intercepted_requests": 4
+      },
+      {
+        "case": "deny",
+        "passed": true,
+        "intercepted_requests": 0
+      },
+      {
+        "case": "gpc",
+        "passed": true,
+        "intercepted_requests": 0
+      },
+      {
+        "case": "dnt",
+        "passed": true,
+        "intercepted_requests": 0
+      },
+      {
+        "case": "storage_blocked",
+        "passed": true,
+        "intercepted_requests": 0
+      },
+      {
+        "case": "review",
+        "passed": true,
+        "intercepted_requests": 0
+      },
+      {
+        "case": "unassigned_direct",
+        "passed": true,
+        "intercepted_requests": 0
+      }
+    ],
+    "case_count": 8,
+    "all_passed": true
+  },
+  "live_deployment_verified": false,
+  "actual_provider_ingestion_verified": false,
+  "blockers": [
+    "public deployment authorization/account gate",
+    "measurement service selection and authorization"
+  ],
+  "local_preview": "http://127.0.0.1:4328/directions/"
+}

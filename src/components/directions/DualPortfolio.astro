@@ -1,0 +1,259 @@
+---
+import { dualPortfolio as content, unrealDemo, type PortfolioVariant } from "../../data/dual-portfolio";
+import "../../styles/art-directions.css";
+import "../../styles/dual-portfolio.css";
+
+interface Props { variant: PortfolioVariant }
+const { variant } = Astro.props;
+const isType = variant === "type";
+const otherVariant = isType ? "objects" : "type";
+const otherLabel = isType ? "오브젝트 화면" : "타이포그래피 화면";
+const [unreal, assessment, writer, dalgyeol] = content.cases;
+---
+
+<a class="ad-skip" href="#dp-main">본문으로 건너뛰기</a>
+<div class:list={["dp-portfolio", `dp-${variant}`]} id="dp-top">
+  <header class="ad-header dp-site-header">
+    <a class="ad-wordmark" href="/">{content.latinName}</a>
+    <p class="ad-header-role">{content.role}</p>
+    <nav aria-label="작업과 이력서">
+      <a href="/projects/">작업</a>
+      <a href={content.resume.href} data-ab-goal="resume_open" data-ab-target="resume">이력서</a>
+      <a href={content.contact.href} data-ab-goal="contact_open" data-ab-target="contact">연락</a>
+    </nav>
+  </header>
+
+  <main id="dp-main" tabindex="-1">
+    <section class:list={[isType ? "ad-type-page" : "ad-object-page", "dp-hero"]} aria-labelledby="dp-title">
+      {isType ? (
+        <div class="dp-type-hero-content">
+          <div class="ad-type-heading">
+            <p class="ad-type-kicker">{content.hero.type.kicker}</p>
+            <h1 class="ad-name" id="dp-title">{content.name}</h1>
+          </div>
+          <div class="ad-type-details">
+            <div class="ad-type-note">
+              <p class="ad-type-role">{content.hero.type.role}<br />{content.hero.type.description}</p>
+              <a class="ad-text-link" href="#work">{content.hero.type.work} <span aria-hidden="true">↗</span></a>
+            </div>
+            <a class="ad-work-cutout" href={unreal.detail.href} data-ab-goal="project_open" data-ab-target="ue5-mcp">
+              <img src="/images/notebook/ue5-engine-detail.webp" width="480" height="510" alt="언리얼 액터 스폰 프로토타입에서 빨강·파랑·노랑 상자를 배치한 실제 개발 화면" decoding="async" />
+              <div><p>{content.hero.type.cutoutTitle}</p><span>{content.hero.type.cutoutScope}</span></div>
+              <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 26 26 6M8 6h18v18" /></svg>
+            </a>
+          </div>
+        </div>
+      ) : (
+        <div class="ad-object-main">
+          <div class="ad-object-copy">
+            <p class="ad-object-hello">{content.hero.objects.hello}</p>
+            <h1 id="dp-title"><span class="ad-title-role">{content.hero.objects.role}</span>{content.name}.</h1>
+            <p class="ad-object-description">{content.hero.objects.description[0]}<br />{content.hero.objects.description[1]}<br class="ad-desktop-br" /> {content.hero.objects.description[2]}</p>
+            <a class="ad-object-work" href={unreal.detail.href} data-ab-goal="project_open" data-ab-target="ue5-mcp">{content.hero.objects.work} <span aria-hidden="true">↗</span></a>
+            <p class="ad-scope">{content.hero.objects.scope}</p>
+          </div>
+          <figure class="ad-object-art">
+            <div class="ad-stage" id="dp-stage" data-layout="scattered" role="img" aria-label="민트색, 살구색, 라벤더색 세 블록으로 만든 공간 그래픽">
+              <div class="ad-floor" aria-hidden="true"></div>
+              <div class="ad-object ad-object-mint" aria-hidden="true"><div class="ad-cube"><i class="ad-face ad-front"></i><i class="ad-face ad-top"></i><i class="ad-face ad-right"></i></div><span class="ad-block-shadow"></span></div>
+              <div class="ad-object ad-object-melon" aria-hidden="true"><div class="ad-cube"><i class="ad-face ad-front"></i><i class="ad-face ad-top"></i><i class="ad-face ad-right"></i></div><span class="ad-block-shadow"></span></div>
+              <div class="ad-object ad-object-lilac" aria-hidden="true"><div class="ad-cube"><i class="ad-face ad-front"></i><i class="ad-face ad-top"></i><i class="ad-face ad-right"></i></div><span class="ad-block-shadow"></span></div>
+              <svg class="ad-art-cursor" viewBox="0 0 68 78" aria-hidden="true"><path d="m5 3 54 39-25 5-13 23Z" fill="#f4f6ff" stroke="#253fc4" stroke-width="4" stroke-linejoin="round" /></svg>
+            </div>
+            <figcaption class="ad-art-tools">
+              <button id="dp-arrange" class="ad-arrange" type="button" aria-controls="dp-stage" aria-pressed="false" hidden>블록 모아보기 <span aria-hidden="true">↗</span></button>
+              <span id="dp-art-status" class="ad-sr-only" aria-live="polite"></span>
+              <p class="ad-art-disclosure">{content.hero.objects.disclosure}</p>
+            </figcaption>
+          </figure>
+        </div>
+      )}
+      <div class:list={[isType ? "ad-type-footer" : "ad-object-footer", "dp-hero-foot"]}>
+        <a href="#work">이어서 작업 보기 <span aria-hidden="true">↓</span></a>
+        <p>음성·비전 모델과 개발 도구</p>
+      </div>
+    </section>
+
+    <div class="dp-shared-content" data-shared-content>
+      <section class="dp-shell dp-intro" id="work" aria-labelledby="dp-intro-title">
+        <h2 id="dp-intro-title">{content.intro.title}</h2>
+        <div class="dp-intro-copy">
+          {content.intro.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+          <nav class="dp-contents" aria-label="이 페이지의 작업">
+            <a href="#case-ue5-mcp">언리얼 도구</a>
+            <a href="#case-ai-assessment">영어 발표 평가</a>
+            <a href="#case-story-writer">Story Writer</a>
+            <a href="#case-dalgyeol">달결</a>
+          </nav>
+        </div>
+      </section>
+
+      <article class="dp-unreal dp-case" id="case-ue5-mcp" aria-labelledby="dp-unreal-title" data-case="ue5-mcp">
+        <div class="dp-shell">
+          <header class="dp-case-heading">
+            <p class="dp-context">{unreal.context}<span>{unreal.period}</span></p>
+            <h2 id="dp-unreal-title">{unreal.title}</h2>
+          </header>
+          <div class="dp-unreal-layout">
+            <figure class="dp-engine-figure">
+              <div class="dp-engine-screen">
+                <img id="dp-unreal-image" src={unreal.image.src} width={unreal.image.width} height={unreal.image.height} alt={unreal.image.alt} sizes="(min-width: 1100px) 840px, (min-width: 800px) 66vw, calc(100vw - 44px)" loading="lazy" decoding="async" />
+              </div>
+              <figcaption class="dp-demo-caption">
+                <span>{unreal.image.caption}</span>
+                <button class="dp-demo-button" id="dp-unreal-replay" type="button" aria-controls="dp-unreal-image" aria-pressed="false" data-gif={unrealDemo.src} data-gif-alt={unrealDemo.alt} data-play-label={unrealDemo.play} data-stop-label={unrealDemo.stop} hidden>{unrealDemo.play}</button>
+                <span class="ad-sr-only" id="dp-demo-status" role="status" aria-live="polite"></span>
+              </figcaption>
+            </figure>
+            <div class="dp-case-copy dp-unreal-copy">
+              <p class="dp-scope">{unreal.scope}</p>
+              {unreal.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+              <div class="dp-case-links">
+                <a href={unreal.detail.href} data-ab-goal="project_open" data-ab-target={unreal.slug}>{unreal.detail.label}</a>
+                <a href={unreal.github}>코드 보기 <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="dp-assessment dp-case" id="case-ai-assessment" aria-labelledby="dp-assessment-title" data-case="ai-assessment">
+        <div class="dp-shell dp-assessment-layout">
+          <div class="dp-case-copy">
+            <p class="dp-context">{assessment.context}<span>{assessment.period}</span></p>
+            <h2 id="dp-assessment-title">{assessment.title}</h2>
+            <p class="dp-scope">{assessment.scope}</p>
+            {assessment.paragraphs.map((paragraph) => <p>{paragraph.split(/(오류율\(WER\)을)/).map((part) => part === "오류율(WER)을" ? <span class="dp-keep-together">{part}</span> : part)}</p>)}
+            <div class="dp-case-links"><a href={assessment.detail.href} data-ab-goal="project_open" data-ab-target={assessment.slug}>{assessment.detail.label}</a></div>
+          </div>
+          <figure class="dp-assessment-figure">
+            <img src={assessment.image.src} width={assessment.image.width} height={assessment.image.height} alt={assessment.image.alt} sizes="(min-width: 1100px) 480px, (min-width: 800px) 40vw, calc(100vw - 44px)" loading="lazy" decoding="async" />
+            <figcaption>{assessment.image.caption}</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="dp-writer dp-case" id="case-story-writer" aria-labelledby="dp-writer-title" data-case="story-writer">
+        <div class="dp-shell dp-writer-layout">
+          <div class="dp-case-copy dp-writer-copy">
+            <p class="dp-context">{writer.context}<span>{writer.period}</span></p>
+            <h2 id="dp-writer-title">{writer.title}</h2>
+            <p class="dp-scope">{writer.scope}</p>
+            {writer.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            <p class="dp-qualification">{writer.qualification}</p>
+            <div class="dp-case-links">
+              <a href={writer.detail.href} data-ab-goal="project_open" data-ab-target={writer.slug}>{writer.detail.label}</a>
+              <a href={writer.github}>GitHub <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <figure class="dp-writer-figure">
+            <a class="dp-media-link" href={writer.image.src} aria-label="Story Writer 개발 화면 크게 보기">
+              <img src={writer.image.src} width={writer.image.width} height={writer.image.height} alt={writer.image.alt} sizes="(min-width: 1100px) 800px, (min-width: 800px) 62vw, calc(100vw - 44px)" loading="lazy" decoding="async" />
+            </a>
+            <figcaption>{writer.image.caption}</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="dp-dalgyeol dp-case" id="case-dalgyeol" aria-labelledby="dp-dalgyeol-title" data-case="dalgyeol">
+        <div class="dp-shell dp-dalgyeol-layout">
+          <div class="dp-case-copy dp-dalgyeol-copy">
+            <p class="dp-context">{dalgyeol.context}<span>{dalgyeol.period}</span></p>
+            <h2 id="dp-dalgyeol-title">{dalgyeol.title}</h2>
+            <p class="dp-scope">{dalgyeol.scope}</p>
+            {dalgyeol.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            <p class="dp-qualification">{dalgyeol.qualification}</p>
+            <div class="dp-case-links"><a href={dalgyeol.detail.href} data-ab-goal="project_open" data-ab-target={dalgyeol.slug}>{dalgyeol.detail.label}</a></div>
+          </div>
+          <figure class="dp-dalgyeol-figure">
+            <div class="dp-app-stage">
+              <a class="dp-media-link dp-app-crop" href={dalgyeol.image.src} aria-label="달결 개발 중인 홈 화면 전체 보기">
+                <img src={dalgyeol.image.src} width={dalgyeol.image.width} height={dalgyeol.image.height} alt={dalgyeol.image.alt} sizes="(min-width: 800px) 240px, 200px" loading="lazy" decoding="async" />
+              </a>
+            </div>
+            <figcaption>{dalgyeol.image.caption}</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <section class="dp-shell dp-contact" id="contact" aria-labelledby="dp-contact-title">
+        <div>
+          <h2 id="dp-contact-title">{content.contact.title}</h2>
+          <p>{content.contact.description}</p>
+          <a class="dp-email" href={content.contact.href} data-ab-goal="contact_open" data-ab-target="contact">{content.contact.email}</a>
+        </div>
+        <nav class="dp-contact-links" aria-label="이력서와 다른 작업">
+          <a href={content.resume.href} data-ab-goal="resume_open" data-ab-target="resume">{content.resume.label} <span aria-hidden="true">↗</span></a>
+          <a href="/projects/">다른 프로젝트도 보기</a>
+          <a href={content.github}>GitHub <span aria-hidden="true">↗</span></a>
+        </nav>
+      </section>
+    </div>
+  </main>
+
+  <footer class="dp-shell dp-footer">
+    <a href="#dp-top">{content.latinName}</a>
+    <nav aria-label="포트폴리오 화면 비교">
+      <a href="/ab/privacy/">통계·개인정보</a>
+      <a href={`/variants/${otherVariant}/?review=1`}>{otherLabel}</a>
+      <a href="/directions/?review=1">두 방향 비교</a>
+      <a href="/c/?review=1">이전 C</a>
+      <a href="/?review=1">홈</a>
+    </nav>
+  </footer>
+</div>
+
+<script>
+  const arrange = document.querySelector<HTMLButtonElement>("#dp-arrange");
+  const stage = document.querySelector<HTMLElement>("#dp-stage");
+  const artStatus = document.querySelector<HTMLElement>("#dp-art-status");
+  if (arrange && stage) {
+    arrange.hidden = false;
+    arrange.addEventListener("click", () => {
+      const grouped = stage.dataset.layout !== "grouped";
+      stage.dataset.layout = grouped ? "grouped" : "scattered";
+      arrange.setAttribute("aria-pressed", String(grouped));
+      arrange.innerHTML = `${grouped ? "다시 펼쳐놓기" : "블록 모아보기"} <span aria-hidden="true">↗</span>`;
+      if (artStatus) artStatus.textContent = grouped ? "세 블록을 한데 모았습니다." : "세 블록을 다시 펼쳤습니다.";
+    });
+  }
+
+  const image = document.querySelector<HTMLImageElement>("#dp-unreal-image");
+  const play = document.querySelector<HTMLButtonElement>("#dp-unreal-replay");
+  const demoStatus = document.querySelector<HTMLElement>("#dp-demo-status");
+  const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (image && play && demoStatus) {
+    const poster = image.getAttribute("src")!;
+    const stillAlt = image.alt;
+    let playing = false;
+    const restorePoster = () => {
+      playing = false;
+      image.src = poster;
+      image.alt = stillAlt;
+      play.textContent = play.dataset.playLabel!;
+      play.setAttribute("aria-pressed", "false");
+      demoStatus.textContent = "정지 화면으로 돌아왔습니다.";
+    };
+    play.hidden = false;
+    play.addEventListener("click", () => {
+      if (playing) { restorePoster(); return; }
+      playing = true;
+      image.src = play.dataset.gif!;
+      image.alt = play.dataset.gifAlt!;
+      play.textContent = play.dataset.stopLabel!;
+      play.setAttribute("aria-pressed", "true");
+      demoStatus.textContent = "움직이는 데모를 재생합니다. 정지 화면으로 버튼을 누르면 멈춥니다.";
+    });
+    image.addEventListener("error", () => {
+      if (!playing) return;
+      restorePoster();
+      demoStatus.textContent = "데모를 불러오지 못해 정지 화면으로 돌아왔습니다.";
+    });
+    motion.addEventListener("change", (event) => {
+      if (event.matches && playing) restorePoster();
+    });
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden && playing) restorePoster();
+    });
+  }
+</script>

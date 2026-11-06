@@ -1,0 +1,21 @@
+---
+import config from "../../data/portfolio-ab-config.json";
+import "../../styles/ab-support.css";
+const canonical = new URL("/", Astro.site ?? "https://kangnam7654.github.io").href;
+---
+<!doctype html>
+<html lang="ko">
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="robots" content="noindex,nofollow" /><link rel="canonical" href={canonical} /><title>김강남 | 두 포트폴리오의 A/B 입구</title></head>
+<body class="ab-support" data-ab-entry="true">
+<main>
+  <a href="/">기존 포트폴리오</a>
+  <h1>김강남 포트폴리오</h1>
+  <p>타이포그래피와 오브젝트, 두 디자인 중 하나를 보여드립니다. 본문과 프로젝트·이력서 동선은 같습니다.</p>
+  <p>{config.launchEnabled ? "두 디자인 중 하나로 이동합니다. 통계가 연결된 배포에서는 선택을 먼저 물으며, 거절해도 포트폴리오를 볼 수 있습니다." : "공개 A/B 활성화 전 미리보기입니다. 이 환경에서 실제 방문 통계는 수집하지 않습니다."}</p>
+  <nav aria-label="수동 미리보기"><a href="/variants/type/?review=1">A · 타이포그래피 보기</a><a href="/variants/objects/?review=1">B · 오브젝트 보기</a></nav>
+  <p class="ab-support-small">자동 이동이 되지 않거나 JavaScript를 쓰지 않으면 위에서 직접 열 수 있습니다. 수동 미리보기는 실험 통계에서 제외합니다.</p>
+  <footer><a href="/ab/privacy/">통계·개인정보 안내</a><a href="/directions/">두 방향 비교</a></footer>
+</main>
+<script>import "../../lib/portfolio-ab";</script>
+</body>
+</html>
