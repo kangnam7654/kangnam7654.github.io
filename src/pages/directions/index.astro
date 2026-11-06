@@ -10,18 +10,18 @@ const studies = [
 <head>
 <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="robots" content="noindex,nofollow" />
 <link rel="canonical" href={canonical} />
-<title>김강남 | 두 디자인의 A/B 후보 비교</title>
+<title>김강남 | 두 전체 포트폴리오 A/B 비교</title>
 <meta name="description" content="기존 A·B·C를 보존하면서 타이포그래피와 공간 그래픽의 두 시각적 방향을 비교합니다." />
 </head>
 <body>
 <main>
-  <header><a href="/design-review/">이전 A·B·C</a><p>전체 사이트가 아닌, 첫 화면만 비교합니다.</p></header>
+  <header><a href="/design-review/">이전 A·B·C</a><p>같은 본문을 담은 두 전체 포트폴리오입니다.</p></header>
   <h1>둘 다 A/B 후보로.</h1>
-  <p class="intro">타이포그래피와 오브젝트, 두 방향을 함께 유지합니다.<br />현재는 첫 화면 미리보기이며, 실제 방문자 배분이나 통계 수집은 아직 시작하지 않았습니다.</p>
+  <p class="intro">같은 프로젝트·이력서·연락 동선을 두 디자인으로 담았습니다.<br />현재는 전체 페이지 검수용이며, 실제 방문자 통계 수집은 아직 시작하지 않았습니다. <a href="/ab/?review=1">A/B 입구 미리보기</a></p>
   <div class="studies">
     {studies.map(study => <section>
-      <div class="study-heading"><h2>후보 {study.variant}: {study.name}</h2><a class="open" href={`/directions/${study.slug}/`}>전체 화면으로 보기 <span aria-hidden="true">↗</span></a></div>
-      <div class="preview" style={`background:${study.color}`}><iframe src={`/directions/${study.slug}/`} title={`후보 ${study.variant}, ${study.name} 첫 화면 미리보기`} loading="eager" tabindex="-1" inert></iframe></div>
+      <div class="study-heading"><h2>후보 {study.variant}: {study.name}</h2><a class="open" href={`/variants/${study.slug}/?review=1`}>전체 페이지 보기 <span aria-hidden="true">↗</span></a></div>
+      <div class="preview" style={`background:${study.color}`}><iframe src={`/variants/${study.slug}/?review=1`} title={`후보 ${study.variant}, ${study.name} 포트폴리오 미리보기`} loading="eager" tabindex="-1" inert></iframe></div>
       <p class="note">{study.note}</p>
     </section>)}
   </div>
