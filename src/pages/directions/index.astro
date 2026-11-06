@@ -17,7 +17,7 @@ const studies = [
 <main>
   <header><a href="/design-review/">이전 A·B·C</a><p>같은 본문을 담은 두 전체 포트폴리오입니다.</p></header>
   <h1>둘 다 A/B 후보로.</h1>
-  <p class="intro">같은 프로젝트·이력서·연락 동선을 두 디자인으로 담았습니다.<br />현재는 전체 페이지 검수용이며, 실제 방문자 통계 수집은 아직 시작하지 않았습니다. <a href="/ab/?review=1">A/B 입구 미리보기</a></p>
+  <p class="intro">같은 프로젝트·이력서·연락 동선을 두 디자인으로 담았습니다.<br />외부 통계 서비스 없이 두 화면 중 하나로 배정하고, 선택한 디자인만 브라우저에 기억합니다. 아래 직접 보기는 저장된 선택을 바꾸지 않습니다. <a href="/ab/">A/B 입구 열기</a></p>
   <div class="studies">
     {studies.map(study => <section>
       <div class="study-heading"><h2>후보 {study.variant}: {study.name}</h2><a class="open" href={`/variants/${study.slug}/?review=1`}>전체 페이지 보기 <span aria-hidden="true">↗</span></a></div>
@@ -25,7 +25,7 @@ const studies = [
       <p class="note">{study.note}</p>
     </section>)}
   </div>
-  <footer>원본과 이전 시안은 그대로입니다. 공개 배포나 방문자 자동 배분은 하지 않았습니다.</footer>
+  <footer>원본과 이전 시안은 그대로입니다. A/B 분기는 별도 입구에서만 동작하며, 전체 방문 통계·자동 승자 판정·노출 비중 조정은 하지 않습니다.</footer>
 </main>
 </body>
 </html>
