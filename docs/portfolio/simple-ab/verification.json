@@ -1,0 +1,116 @@
+{
+  "mode": "browser_only_variant_delivery",
+  "implementation_base": "55426a5c54fcffb95dc9d8db7749a674f72ebee9",
+  "public_deployment_verified": false,
+  "external_analytics_or_backend": false,
+  "collector": null,
+  "visitor_counters": false,
+  "automatic_winner_or_reweighting": false,
+  "build": {
+    "node": "22.23.4",
+    "html_pages": 71
+  },
+  "browser_contract": {
+    "case_count": 22,
+    "case_names": [
+      "fresh_type",
+      "fresh_objects",
+      "remember_type",
+      "remember_objects",
+      "invalid_saved_value",
+      "storage_read_blocked",
+      "storage_write_blocked",
+      "storage_unavailable",
+      "gpc",
+      "dnt",
+      "crypto_fallback",
+      "legacy_cleanup",
+      "query_not_forwarded",
+      "review",
+      "qa",
+      "forced_review",
+      "invalid_forced_review",
+      "direct_type",
+      "direct_objects",
+      "reset",
+      "reset_blocked",
+      "no_javascript"
+    ],
+    "all_passed": true,
+    "pure_contract": {
+      "boundary_samples": 4,
+      "invalid_samples": 7,
+      "variant_predicates": 5,
+      "all_passed": true
+    }
+  },
+  "entry_ui": {
+    "case_count": 6,
+    "all_passed": true
+  },
+  "full_portfolio": {
+    "viewport_variant_conditions": 38,
+    "all_passed": true,
+    "shared_content_identical": true,
+    "cta_destinations_identical": true
+  },
+  "accessibility": {
+    "audit_count": 10,
+    "violations": 0
+  },
+  "current_base_preservation": {
+    "tracked_count": 192,
+    "intentionally_changed": [
+      "public/experiments/portfolio-directions-v1.json",
+      "src/components/directions/DualPortfolio.astro",
+      "src/data/portfolio-ab-config.json",
+      "src/lib/portfolio-ab.ts",
+      "src/pages/ab/index.astro",
+      "src/pages/ab/privacy.astro",
+      "src/pages/directions/index.astro",
+      "src/pages/variants/[variant].astro",
+      "src/styles/ab-support.css",
+      "tools/check_portfolio_ab_contract.py",
+      "tools/check_portfolio_entry.py"
+    ],
+    "unchanged_count": 181,
+    "html_route_count": 71,
+    "intentionally_changed_html": [
+      "ab/index.html",
+      "ab/privacy/index.html",
+      "directions/index.html",
+      "variants/objects/index.html",
+      "variants/type/index.html"
+    ],
+    "unchanged_html_count": 66
+  },
+  "previous_release_preservation": {
+    "sources": {
+      "count": 173,
+      "changed": [
+        "public/experiments/portfolio-directions-v1.json",
+        "src/pages/directions/index.astro"
+      ]
+    },
+    "html_semantics": {
+      "count": 67,
+      "changed": [
+        "directions/index.html"
+      ]
+    }
+  },
+  "checked_source_sha256": {
+    "public/experiments/portfolio-directions-v1.json": "5266f4d10ecbed638675a36f9a36414c94367b4d0fde5de51c442e19e254f62d",
+    "src/components/directions/DualPortfolio.astro": "fc02994db1a8b763fff3f58ecffe0eb3d772404cff7799ea0748aef30c286c4c",
+    "src/data/portfolio-ab-config.json": "6661648d950859f51bfa879082c0e88acc655c7be249e7c2a048c53350efd2e4",
+    "src/lib/portfolio-ab.ts": "b0ac5dae66291dcb67d084f2fd7bc94dc22fc612f4b0e16f031672f0cff2f6d7",
+    "src/pages/ab/index.astro": "fbf4d1c6e728838f64a4225b400837d788efd799b13c52a6d6f80263ae5fb5af",
+    "src/pages/ab/privacy.astro": "97d9f0a5c6be652e3c0b4d43959f80353882e5589d99b6d5ef19f42433285b0d",
+    "src/pages/directions/index.astro": "ee29d2aed9f80eb42968254602dbdf9c13c74d40cf653f1d9f1f6f491d42b4a0",
+    "src/pages/variants/[variant].astro": "ee536ac829d40d3d65f4059421ffbd33d9724ff8901de7e1b28ba5d1776ead3a",
+    "src/styles/ab-support.css": "cfd533c7f330eb2031faf80fec13f9b69a7095b7ab1cd2c10042388075152e17",
+    "tools/check_portfolio_ab_contract.py": "053901a51f219382a38216a983c58d72b9fc791e012ab76ba2b76e0874268743",
+    "tools/check_portfolio_entry.py": "05eee2686695ab326903b9e410c7655105e15ea7e66f58ab5a3e8b7da8b33556"
+  },
+  "all_checks_passed": true
+}

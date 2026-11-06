@@ -1,44 +1,57 @@
 {
   "experiment": "portfolio-directions-v1",
-  "phase": "full_variants_integrated_live_connection_blocked",
-  "surface_ready": "full_portfolio_local",
-  "variant_labels_apply_only_to_this_experiment": true,
+  "mode": "browser_only_variant_delivery",
+  "phase": "ready_in_source_pending_public_release",
   "production_default": "legacy_original_at_root",
   "original_url": "/",
   "comparison_url": "/directions/",
   "randomized_entry_url": "/ab/",
-  "local_review_entry": "/ab/?review=1",
-  "owner_approved_candidates": ["A", "B"],
+  "manual_review_entry": "/ab/?review=1",
   "variants": {
-    "A": {"id": "type", "name": "타이포그래피", "preview_url": "/directions/type/", "full_url": "/variants/type/", "keep": true},
-    "B": {"id": "objects", "name": "오브젝트", "preview_url": "/directions/objects/", "full_url": "/variants/objects/", "keep": true}
+    "A": {
+      "id": "type",
+      "name": "타이포그래피",
+      "preview_url": "/directions/type/",
+      "full_url": "/variants/type/",
+      "keep": true
+    },
+    "B": {
+      "id": "objects",
+      "name": "오브젝트",
+      "preview_url": "/directions/objects/",
+      "full_url": "/variants/objects/",
+      "keep": true
+    }
   },
-  "automatic_assignment_enabled": false,
+  "routing_enabled_in_build": true,
+  "configured_assignment_weights": {
+    "type": 0.5,
+    "objects": 0.5
+  },
+  "local_preference_storage": {
+    "kind": "localStorage",
+    "key": "portfolio-directions-v1:variant",
+    "values": [
+      "type",
+      "objects"
+    ],
+    "visitor_identifier": false
+  },
   "automatic_promotion_enabled": false,
   "automatic_traffic_reweighting_enabled": false,
-  "active_assignment_weights": null,
-  "cookies_or_visitor_storage_enabled": false,
   "measurement": {
     "collector": null,
-    "prepared_adapter": "posthog_not_connected",
     "network_telemetry_enabled": false,
-    "production_ab_data_available": false,
-    "candidate_primary_metric": "resume opens per eligible consenting exposed tab-session",
-    "candidate_secondary_metrics": ["internal project-detail opens per eligible consenting exposed tab-session", "contact-intent clicks per eligible consenting exposed tab-session"],
-    "excluded_from_project_detail_goal": ["GitHub code links", "archive links", "image enlargement"],
-    "note": "Prepared instrumentation is not a live collector. Contact clicks are not messages sent. Future consent is obtained on the common entry before assignment; only consenting randomized visits enter analysis."
+    "visitor_counters_enabled": false,
+    "production_ab_data_available": false
   },
   "deployment": {
     "state": "pending_public_release",
-    "verified_run": "https://github.com/kangnam7654/kangnam7654.github.io/actions/runs/42147244680",
-    "source_branch_upload": "verified_available"
+    "last_failed_run": "https://github.com/kangnam7654/kangnam7654.github.io/actions/runs/42147244680"
   },
-  "activation_gates": [
-    "Owner review of the completed pages; the accepted first screens and shared public facts are retained",
-    "Resolve GitHub account billing lock and verify exact deployed URLs",
-    "Approve and authorize a real measurement account",
-    "Bind only the public project ingestion token, verify actual probe-event ingestion and the provider retention policy",
-    "Enable launch/measurement flags only after production checks; review consent, exclusions, denominator and observation window",
-    "No automatic winner or traffic reweighting without sufficient evidence"
-  ]
+  "publication_gates": [
+    "Review the completed source before merging; the original home remains unchanged",
+    "Resolve the GitHub deployment gate and verify the exact published URLs"
+  ],
+  "note": "No external analytics account, SDK, collector, recurring report, adaptive allocation or winner selection is required or configured. Build readiness is not public deployment."
 }

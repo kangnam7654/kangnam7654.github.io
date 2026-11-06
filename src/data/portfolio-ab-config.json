@@ -1,16 +1,13 @@
 {
   "experiment": "portfolio-directions-v1",
+  "mode": "browser-only",
+  "routingEnabled": true,
   "entryPath": "/ab/",
-  "publicOrigin": "https://kangnam7654.github.io",
-  "launchEnabled": false,
-  "analyticsEnabled": false,
-  "posthogIngestOrigin": "",
-  "posthogPublicToken": "",
-  "posthogProjectId": null,
-  "variants": {"type": "/variants/type/", "objects": "/variants/objects/"},
+  "storageKey": "portfolio-directions-v1:variant",
+  "variants": {
+    "type": "/variants/type/",
+    "objects": "/variants/objects/"
+  },
   "originalPath": "/",
-  "privacyPath": "/ab/privacy/",
-  "sessionTtlMinutes": 30,
-  "automaticPromotion": false,
-  "automaticReweighting": false
+  "privacyPath": "/ab/privacy/"
 }

@@ -14,7 +14,7 @@ const [unreal, assessment, writer, dalgyeol] = content.cases;
 <a class="ad-skip" href="#dp-main">본문으로 건너뛰기</a>
 <div class:list={["dp-portfolio", `dp-${variant}`]} id="dp-top">
   <header class="ad-header dp-site-header">
-    <a class="ad-wordmark" href="/">{content.latinName}</a>
+    <a class="ad-wordmark" href={`/variants/${variant}/`}>{content.latinName}</a>
     <p class="ad-header-role">{content.role}</p>
     <nav aria-label="작업과 이력서">
       <a href="/projects/">작업</a>
@@ -194,7 +194,7 @@ const [unreal, assessment, writer, dalgyeol] = content.cases;
   <footer class="dp-shell dp-footer">
     <a href="#dp-top">{content.latinName}</a>
     <nav aria-label="포트폴리오 화면 비교">
-      <a href="/ab/privacy/">통계·개인정보</a>
+      <a href="/ab/privacy/">화면 선택·저장 안내</a>
       <a href={`/variants/${otherVariant}/?review=1`}>{otherLabel}</a>
       <a href="/directions/?review=1">두 방향 비교</a>
       <a href="/c/?review=1">이전 C</a>
