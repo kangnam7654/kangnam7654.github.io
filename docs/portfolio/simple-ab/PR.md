@@ -3,7 +3,7 @@
 - Keep the original home and both complete type/objects portfolio variants.
 - `/ab/` assigns either variant with equal probability and remembers only `type` or `objects` in browser localStorage.
 - Remove the prepared provider adapter, event delivery, analytics consent UI, UUIDs and measurement-account activation gates.
-- No external analytics SDK, collector, visitor counter, recurring report, automatic winner or adaptive allocation.
+- No external analytics SDK, collector, visitor counter, visitor/conversion report, automatic winner or adaptive allocation.
 - Manual review/direct links do not replace the remembered random choice. Storage/privacy-signal failures still allow reading; no-JS visitors get manual links.
 - Keep the old verification receipts as historical records; current scope is documented in `docs/portfolio/simple-ab/README.md`.
 
@@ -13,6 +13,15 @@
 - Mobile/desktop entry and storage UI, local links and accessibility checks.
 - Full shared-content portfolio regression checks, real images/PDF, no-JS, keyboard, motion and protected source/routes.
 - Exact counts and tested runtime hashes are recorded in `docs/portfolio/simple-ab/verification.json`.
+
+## Local technical maintenance automation
+
+- Weekly Monday 10:00 Asia/Seoul policy, using the existing local Hermes gateway rather than the blocked Pages deployment runner.
+- Isolated tracked-source snapshot; no build over the active checkout, no changes to its dist/index/dependencies, and no automatic reset of dirty worktrees.
+- Deterministic monitor output skips the agent while source/findings are unchanged. A reproducible technical regression may produce one tested draft fix PR; no auto merge/deploy or design winner.
+- Private durable QA environment/assets and bounded local reports. No external analytics, new account, visitor data or raw conversation uploads.
+- Bootstrap verified: 34 orchestration unit tests and the real Node 22 build plus all three browser QA suites. Source/dist/index preserved. Details: `docs/portfolio/simple-ab/automation-verification.json`.
+- Scheduler registration, actual first fire and delivery are verified separately in the private operational receipt; source readiness is not activation or publication.
 
 ## Release boundary
 
