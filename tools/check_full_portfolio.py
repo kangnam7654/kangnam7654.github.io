@@ -5,6 +5,7 @@ import hashlib
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 import importlib.util
 import json
+import os
 from pathlib import Path
 import threading
 from urllib.parse import urlsplit, unquote
@@ -12,9 +13,9 @@ from importlib import import_module
 sync_playwright = import_module("playwright.sync_api").sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
-SCRATCH = Path('/Users/kangnam/.hermes/cache/scratch/portfolio-dual-full-parent')
+SCRATCH = Path(os.environ.get('PORTFOLIO_FULL_QA_OUT', '/Users/kangnam/.hermes/cache/scratch/portfolio-dual-full-parent'))
 DIST = ROOT / 'dist'
-AXE = Path('/Users/kangnam/.hermes/cache/scratch/portfolio-audit-tools/axe-4.14.0.min.js')
+AXE = Path(os.environ.get('PORTFOLIO_AXE_PATH', '/Users/kangnam/.hermes/cache/scratch/portfolio-audit-tools/axe-4.14.0.min.js'))
 SCREEN = SCRATCH / 'screenshots'
 SCREEN.mkdir(parents=True, exist_ok=True)
 WIDTHS = (320, 359, 360, 375, 390, 650, 651, 768, 799, 800, 1023, 1024, 1099, 1100, 1101, 1440, 1699, 1700, 1701)

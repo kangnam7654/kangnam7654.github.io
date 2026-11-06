@@ -4,6 +4,7 @@ from functools import partial
 from http.server import ThreadingHTTPServer
 from importlib import import_module
 import json
+import os
 from pathlib import Path
 import re
 import threading
@@ -11,7 +12,7 @@ from urllib.parse import unquote, urlsplit
 
 from check_portfolio_ab_contract import CHROME, OUT, Quiet, ROOT
 
-AXE = Path("/Users/kangnam/.hermes/cache/scratch/portfolio-audit-tools/axe-4.14.0.min.js")
+AXE = Path(os.environ.get("PORTFOLIO_AXE_PATH", "/Users/kangnam/.hermes/cache/scratch/portfolio-audit-tools/axe-4.14.0.min.js"))
 
 
 def main():
