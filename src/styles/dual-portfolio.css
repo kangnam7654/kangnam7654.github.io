@@ -67,6 +67,10 @@
 .dp-app-crop{width:240px;max-height:505px;overflow:hidden;background:#191526;border-radius:24px;box-shadow:0 20px 36px rgba(38,35,67,.2)}
 .dp-app-crop img{width:100%;max-width:none}
 .dp-dalgyeol-figure figcaption{max-width:270px;margin-inline:auto;text-align:center}
+.dp-repo-update{border-top:1px solid var(--dp-line);padding-top:22px;font-size:13px;line-height:1.75}
+.dp-repo-update p{max-width:75ch}
+.dp-repo-update a{text-decoration-thickness:1px;text-underline-offset:3px}
+.dp-repo-update a:focus-visible{outline:2px solid currentColor;outline-offset:3px}
 .dp-contact{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;padding-block:103px 90px}
 .dp-contact h2{font-size:clamp(30px,3.5vw,52px);margin-bottom:22px}
 .dp-contact p{font-size:14px}
