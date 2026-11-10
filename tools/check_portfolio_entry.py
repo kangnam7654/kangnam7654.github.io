@@ -25,7 +25,7 @@ def main():
     assert manifest["measurement"] == {"collector": None, "network_telemetry_enabled": False,
                                        "visitor_counters_enabled": False, "production_ab_data_available": False}
     assert manifest["configured_assignment_weights"] == {"type": 0.5, "objects": 0.5}
-    assert manifest["deployment"]["state"] == "pending_public_release"
+    assert manifest["deployment"]["state"] == "release_authorized_pending_verification"
     scripts = set()
     for path in ("ab/index.html", "ab/privacy/index.html", "variants/type/index.html", "variants/objects/index.html"):
         text = (ROOT / "dist" / path).read_text()

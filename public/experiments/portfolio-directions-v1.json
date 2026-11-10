@@ -1,11 +1,11 @@
 {
   "experiment": "portfolio-directions-v1",
   "mode": "browser_only_variant_delivery",
-  "phase": "ready_in_source_pending_public_release",
-  "production_default": "legacy_original_at_root",
-  "original_url": "/",
+  "phase": "owner_authorized_home_release",
+  "production_default": "browser_only_type_objects_assignment",
+  "original_url": "/classic/",
   "comparison_url": "/directions/",
-  "randomized_entry_url": "/ab/",
+  "randomized_entry_url": "/",
   "manual_review_entry": "/ab/?review=1",
   "variants": {
     "A": {
@@ -46,12 +46,12 @@
     "production_ab_data_available": false
   },
   "deployment": {
-    "state": "pending_public_release",
+    "state": "release_authorized_pending_verification",
     "last_failed_run": "https://github.com/kangnam7654/kangnam7654.github.io/actions/runs/42147244680"
   },
   "publication_gates": [
-    "Review the completed source before merging; the original home remains unchanged",
-    "Resolve the GitHub deployment gate and verify the exact published URLs"
+    "Verify the owner-authorized integrated release and preserved /classic/ home",
+    "Verify the exact deployed commit and public URLs; do not change billing or hosting to bypass failures"
   ],
   "note": "No external analytics account, SDK, collector, recurring report, adaptive allocation or winner selection is required or configured. Build readiness is not public deployment."
 }
