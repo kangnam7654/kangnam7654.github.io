@@ -8,6 +8,7 @@
     "type": "/variants/type/",
     "objects": "/variants/objects/"
   },
-  "originalPath": "/",
-  "privacyPath": "/ab/privacy/"
+  "originalPath": "/classic/",
+  "privacyPath": "/ab/privacy/",
+  "homeEntryPath": "/"
 }

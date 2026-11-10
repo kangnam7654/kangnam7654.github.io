@@ -37,11 +37,23 @@ assert spec is not None and spec.loader is not None
 facts = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(facts)
 legacy = json.loads((ROOT / 'docs/portfolio/live-ab/page-baseline.json').read_text())
-legacy_check = {path: facts.PageFacts((DIST/path).read_text()).semantic() == old for path,old in legacy.items()}
+def preserved_facts(path):
+    """Compare the relocated original home, normalizing only its locale aliases."""
+    target = 'classic/index.html' if path == 'index.html' else path
+    observed = facts.PageFacts((DIST/target).read_text()).semantic()
+    if path == 'index.html':
+        aliases = {'/classic/':'/', '/en/classic/':'/en/', '/ja/classic/':'/ja/'}
+        observed['links'] = [aliases.get(link, link) for link in observed['links']]
+        for alias in ('classic/index.html','en/classic/index.html','ja/classic/index.html'):
+            verify((DIST/alias).is_file(), f'missing preserved locale: {alias}')
+    return observed
+legacy_check = {path: preserved_facts(path) == old for path,old in legacy.items()}
 result['existing_semantic_baseline'] = {'count':len(legacy_check),'changed':[p for p,ok in legacy_check.items() if not ok]}
 verify(all(ok or path == 'directions/index.html' for path,ok in legacy_check.items()), 'unexpected old semantic baseline change')
 original = json.loads((ROOT/'docs/portfolio/live-ab/baseline.json').read_text())['tracked_files']
-changed = [f for f,h in original.items() if not (ROOT/f).is_file() or hashlib.sha256((ROOT/f).read_bytes()).hexdigest()!=h]
+def preserved_source(path):
+    return ROOT / ('src/pages/classic.astro' if path == 'src/pages/index.astro' else path)
+changed = [f for f,h in original.items() if not preserved_source(f).is_file() or hashlib.sha256(preserved_source(f).read_bytes()).hexdigest()!=h]
 result['tracked_baseline'] = {'count':len(original),'changed':changed}
 verify(set(changed) <= {'src/pages/directions/index.astro', 'public/experiments/portfolio-directions-v1.json'}, 'unexpected protected source change')
 
@@ -75,7 +87,7 @@ try:
                     verify(page.locator('html').get_attribute('lang')=='ko',f'{variant}: lang')
                     verify(page.locator('body').get_attribute('data-ab-variant')==variant,f'{variant}: body contract')
                     verify(page.locator('link[rel=canonical]').get_attribute('href')=='https://kangnam7654.github.io/',f'{variant}: canonical')
-                    verify('noindex' in page.locator('meta[name=robots]').get_attribute('content'),f'{variant}: noindex')
+                    verify(page.locator('meta[name=robots]').get_attribute('content')=='index,follow',f'{variant}: published indexing policy')
                     verify(page.locator('[data-case]').evaluate_all('(es)=>es.map(e=>e.dataset.case)')==['ue5-mcp','ai-assessment','story-writer','dalgyeol'],f'{variant}: case order')
                     verify(not page.locator('img[src*=ai-assessment-head]').count(),f'{variant}: prohibited image')
                     if width == 375:
