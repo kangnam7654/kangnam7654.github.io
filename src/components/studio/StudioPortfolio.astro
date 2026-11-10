@@ -1,0 +1,270 @@
+---
+import ReviewTools from "./ReviewTools.astro";
+import {
+  getStudioData,
+  studioEmail,
+  studioGithub,
+  studioLocaleLabels,
+  studioLocales,
+  studioResume,
+} from "../../data/studio";
+import type { Locale } from "../../i18n/utils";
+import "../../styles/studio.css";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const { copy, home, resumePage, projectArchive, projects } = getStudioData(locale);
+const [featured, ...otherProjects] = projects;
+const canonical = new URL(home, Astro.site ?? "https://kangnam7654.github.io").href;
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#f5f4ef" />
+    <meta name="description" content={copy.description} />
+    <link rel="canonical" href={canonical} />
+    <title>{copy.title}</title>
+  </head>
+  <body data-variant="studio-v1" id="studio-top">
+    <a class="studio-skip" href="#studio-main">{copy.skip}</a>
+    <svg class="studio-icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <symbol id="studio-arrow" viewBox="0 0 24 24">
+          <path d="M4 12h15m-6-6 6 6-6 6" />
+        </symbol>
+        <symbol id="studio-arrow-diagonal" viewBox="0 0 24 24">
+          <path d="M5 19 19 5M5 5h14v14" />
+        </symbol>
+        <symbol id="studio-asterisk" viewBox="0 0 100 100">
+          <path d="M50 4v92M4 50h92M17.5 17.5l65 65m-65 0 65-65" />
+        </symbol>
+      </defs>
+    </svg>
+
+    <div class="studio-preview-bar">
+      <div class="studio-shell studio-preview-inner">
+        <span><span class="studio-preview-dot" aria-hidden="true"></span>{copy.preview}</span>
+        <a href={home}>{copy.original}<span aria-hidden="true"> ↗</span></a>
+      </div>
+    </div>
+
+    <header class="studio-shell studio-header">
+      <a class="studio-brand" href="#studio-top">
+        <svg class="studio-brand-mark" width="35" height="35" viewBox="0 0 35 35" fill="none" aria-hidden="true">
+          <path d="M2 2h13v13H2zM20 2h13v13H20zM2 20h13v13H2z" fill="currentColor" />
+          <path d="m20 33 13-13M20 20h13v13" stroke="currentColor" stroke-width="3" />
+        </svg>
+        <span><strong>{copy.name}</strong><small>{copy.role}</small></span>
+      </a>
+      <nav class="studio-main-nav" aria-label={copy.nav.label}>
+        <a href="#studio-work">{copy.nav.work}</a>
+        <a href="#studio-practice">{copy.nav.practice}</a>
+        <a href="#studio-contact">{copy.nav.contact}</a>
+      </nav>
+      <nav class="studio-languages" aria-label={copy.languageLabel}>
+        {studioLocales.map((language) => (
+          <a
+            href={`/preview/${language}/`}
+            lang={language}
+            hreflang={language}
+            aria-label={`${language.toUpperCase()} — ${studioLocaleLabels[language]}`}
+            aria-current={locale === language ? "page" : undefined}
+          >
+            {language.toUpperCase()}
+          </a>
+        ))}
+      </nav>
+    </header>
+
+    <main id="studio-main" tabindex="-1">
+      <section class="studio-shell studio-hero" aria-labelledby="studio-hero-title">
+        <div class="studio-hero-copy">
+          <p class="studio-micro studio-hero-eyebrow"><span aria-hidden="true">↳</span> {copy.hero.eyebrow}</p>
+          <h1 id="studio-hero-title" class="studio-hero-title">
+            <span>{copy.hero.title[0]}</span>
+            <span class="studio-hero-title-accent">{copy.hero.title[1]}</span>
+          </h1>
+          <p class="studio-hero-description">{copy.hero.body}</p>
+          <div class="studio-hero-actions">
+            <a class="studio-button studio-button-ink" href="#studio-work">
+              {copy.hero.projects}
+              <svg class="studio-icon studio-icon-down" aria-hidden="true"><use href="#studio-arrow" /></svg>
+            </a>
+            <a
+              class="studio-button studio-button-outline"
+              href={studioResume}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={copy.hero.resumeAccessible}
+              data-studio-action="resume"
+              data-studio-target="resume"
+            >
+              {copy.hero.resume}
+              <svg class="studio-icon" aria-hidden="true"><use href="#studio-arrow-diagonal" /></svg>
+            </a>
+          </div>
+        </div>
+
+        <aside class="studio-hero-note" aria-label={copy.hero.proofLabel}>
+          <figure class="studio-schematic">
+            <div class="studio-schematic-heading studio-micro"><span>MODEL → USE</span><span aria-hidden="true">[ M/U ]</span></div>
+            <svg class="studio-model-sketch" viewBox="0 0 400 164" fill="none" aria-hidden="true">
+              <defs>
+                <pattern id="studio-sketch-grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <path d="M20 0H0v20" stroke="currentColor" stroke-opacity=".09" />
+                </pattern>
+              </defs>
+              <path fill="url(#studio-sketch-grid)" d="M0 0h400v164H0z" />
+              <g stroke="currentColor" stroke-opacity=".5">
+                <path d="M106 34h32l42 48m-74 0h74m-74 48h32l42-48m60 0h53" />
+                <path d="m284 76 9 6-9 6" />
+                <path d="M14 19h92v30H14zM14 67h92v30H14zM14 115h92v30H14z" />
+                <path d="M300 52h84v60h-84z" />
+              </g>
+              <path d="m210 39 43 43-43 43-43-43 43-43Z" fill="var(--studio-lime)" />
+              <path d="M194 96V68l16 17 16-17v28" stroke="var(--studio-ink)" stroke-width="2.5" />
+              <g fill="currentColor" font-family="monospace" font-size="12" text-anchor="middle">
+                <text x="60" y="39">AUDIO</text><text x="60" y="87">VISION</text><text x="60" y="135">LLM</text>
+                <text x="342" y="87" font-size="17">USE</text>
+              </g>
+              <g stroke="var(--studio-lime)"><path d="M387 14h10m-5-5v10M3 154h10m-5-5v10" /></g>
+            </svg>
+            <figcaption><span class="studio-micro">{copy.hero.schematic}</span><span>{copy.hero.schematicCaption}</span></figcaption>
+          </figure>
+          <div class="studio-proof">
+            <p class="studio-micro">{copy.hero.proofLabel}</p>
+            <p class="studio-proof-value"><span>9.6%</span><svg class="studio-icon" aria-hidden="true"><use href="#studio-arrow" /></svg><strong>4.4%</strong></p>
+            <p class="studio-proof-context">{copy.hero.proofContext}</p>
+            <a class="studio-text-link" href={featured.href} data-studio-action="project" data-studio-target={featured.slug}>
+              {copy.hero.proofLink}<svg class="studio-icon" aria-hidden="true"><use href="#studio-arrow-diagonal" /></svg>
+            </a>
+          </div>
+        </aside>
+      </section>
+
+      <section id="studio-work" class="studio-shell studio-work studio-section" aria-labelledby="studio-work-title">
+        <div class="studio-section-heading">
+          <div><p class="studio-micro">{copy.work.eyebrow}</p><h2 id="studio-work-title">{copy.work.title}</h2></div>
+          <p>{copy.work.intro}</p>
+        </div>
+
+        <article class="studio-case studio-case-featured" aria-labelledby="studio-case-ai-assessment">
+          <div class="studio-case-main">
+            <div class="studio-case-topline"><span class="studio-case-number" aria-hidden="true">01</span><span class="studio-stage studio-stage-production">{featured.stage}</span></div>
+            <p class="studio-micro studio-case-category">{featured.category}</p>
+            <h3 id="studio-case-ai-assessment"><a href={featured.href} data-studio-action="project" data-studio-target={featured.slug}>{featured.title}</a></h3>
+            <p class="studio-case-meta"><span>{featured.company}</span><span>{featured.period}</span></p>
+            <p class="studio-case-summary">{featured.summary}</p>
+            <div class="studio-contribution"><h4 class="studio-micro">{copy.work.contribution}</h4><p>{featured.contribution}</p></div>
+            <ul class="studio-tags" aria-label={featured.category}>{featured.tools.map((tool) => <li>{tool}</li>)}</ul>
+            <p class="studio-scope-note"><strong>{copy.work.scope}</strong> {featured.boundary}</p>
+            <div class="studio-case-links">
+              <a class="studio-text-link" href={featured.href} data-studio-action="project" data-studio-target={featured.slug}>{copy.work.readCase}<svg class="studio-icon" aria-hidden="true"><use href="#studio-arrow-diagonal" /></svg></a>
+              {featured.github && <a class="studio-source-link" href={featured.github} target="_blank" rel="noopener noreferrer" data-studio-action="project" data-studio-target={featured.slug}>{copy.work.sourceCode}<span aria-hidden="true"> ↗</span></a>}
+            </div>
+          </div>
+          <div class="studio-evidence-panel">
+            <p class="studio-micro studio-evidence-label"><span class="studio-preview-dot" aria-hidden="true"></span>{copy.work.evidence}</p>
+            <dl class="studio-evidence-list">
+              {featured.metrics?.map((metric) => (
+                <div class="studio-evidence-item">
+                  <dt>{metric.label}</dt>
+                  <dd><strong>{metric.value}</strong><span>{metric.context}</span></dd>
+                </div>
+              ))}
+            </dl>
+            <span class="studio-evidence-signature" aria-hidden="true">CREVERSE / 2024—2025</span>
+          </div>
+        </article>
+
+        <div class="studio-project-grid">
+          {otherProjects.map((project, index) => (
+            <article class="studio-case studio-case-secondary" aria-labelledby={`studio-case-${project.slug}`}>
+              <div class:list={["studio-project-art", { "studio-project-art-gan": project.slug === "face-to-character" }]}>
+                <div class="studio-art-topline studio-micro"><span aria-hidden="true">0{index + 2}</span><span>{project.slug === "ue5-mcp" ? copy.work.mcpDiagram : copy.work.ganDiagram}</span></div>
+                {project.slug === "ue5-mcp" ? (
+                  <div class="studio-mcp-sketch" aria-hidden="true"><span>AI</span><i>↔</i><strong>N:M</strong><i>↔</i><span>UE5</span></div>
+                ) : (
+                  <div class="studio-gan-sketch" aria-hidden="true"><span class="studio-gan-input"><i></i><i></i><i></i><i></i></span><span>→</span><strong>GAN<span>proxy</span></strong><span>→</span><span class="studio-gan-output"><i></i><i></i><i></i></span></div>
+                )}
+                <div class="studio-art-bottomline studio-micro" aria-hidden="true">{project.slug === "ue5-mcp" ? <><span>ASYNC / DYNAMIC TOOLS</span><span>↗</span></> : <><span>IMAGE → PARAMETERS</span><span>↗</span></>}</div>
+              </div>
+              <div class="studio-secondary-content">
+                <span class="studio-stage">{project.stage}</span>
+                <p class="studio-micro studio-case-category">{project.category}</p>
+                <h3 id={`studio-case-${project.slug}`}><a href={project.href} data-studio-action="project" data-studio-target={project.slug}>{project.title}</a></h3>
+                <p class="studio-case-meta"><span>{project.company}</span><span>{project.period}</span></p>
+                <p class="studio-case-summary">{project.summary}</p>
+                <div class="studio-contribution"><h4 class="studio-micro">{copy.work.contribution}</h4><p>{project.contribution}</p></div>
+                <ul class="studio-tags" aria-label={project.category}>{project.tools.map((tool) => <li>{tool}</li>)}</ul>
+                <p class="studio-scope-note"><strong>{copy.work.scope}</strong> {project.boundary}</p>
+                <div class="studio-case-links">
+                  <a class="studio-text-link" href={project.href} data-studio-action="project" data-studio-target={project.slug}>{copy.work.readCase}<svg class="studio-icon" aria-hidden="true"><use href="#studio-arrow-diagonal" /></svg></a>
+                  {project.github && <a class="studio-source-link" href={project.github} target="_blank" rel="noopener noreferrer" data-studio-action="project" data-studio-target={project.slug}>{copy.work.sourceCode}<span aria-hidden="true"> ↗</span></a>}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div class="studio-archive-link"><p>{copy.work.archive}</p><a class="studio-text-link" href={projectArchive}>{copy.work.allProjects}<svg class="studio-icon" aria-hidden="true"><use href="#studio-arrow" /></svg></a></div>
+      </section>
+
+      <section id="studio-practice" class="studio-practice" aria-labelledby="studio-practice-title">
+        <div class="studio-shell studio-practice-grid">
+          <div class="studio-practice-intro">
+            <p class="studio-micro">{copy.practice.eyebrow}</p>
+            <h2 id="studio-practice-title">{copy.practice.title.map((line) => <span>{line}</span>)}</h2>
+            <p class="studio-practice-description">{copy.practice.intro}</p>
+            <div class="studio-person">
+              <img src="/images/profile.jpg" alt={copy.practice.portraitAlt} width="80" height="88" loading="lazy" decoding="async" />
+              <div><strong>{copy.name}</strong><span>{copy.role}</span><a href={resumePage} data-studio-action="resume" data-studio-target="resume">{copy.practice.fullResume}<span aria-hidden="true"> ↗</span></a></div>
+            </div>
+          </div>
+          <ol class="studio-capabilities">
+            {copy.practice.capabilities.map((capability, index) => (
+              <li>
+                <span class="studio-capability-number studio-micro" aria-hidden="true">0{index + 1}</span>
+                <div><h3>{capability.title}</h3><p>{capability.body}</p><ul class="studio-practice-tools">{capability.tools.map((tool) => <li>{tool}</li>)}</ul></div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section id="studio-contact" class="studio-shell studio-contact studio-section" aria-labelledby="studio-contact-title">
+        <p class="studio-micro">{copy.contact.eyebrow}</p>
+        <div class="studio-contact-heading">
+          <h2 id="studio-contact-title">{copy.contact.title.map((line) => <span>{line}</span>)}</h2>
+          <svg class="studio-contact-asterisk" aria-hidden="true"><use href="#studio-asterisk" /></svg>
+        </div>
+        <p class="studio-contact-description">{copy.contact.body}</p>
+        <a class="studio-email-link" href={`mailto:${studioEmail}`} aria-label={`${copy.contact.emailLabel}: ${studioEmail}`} data-studio-action="contact" data-studio-target="email"><span>{studioEmail}</span><svg class="studio-icon" aria-hidden="true"><use href="#studio-arrow-diagonal" /></svg></a>
+        <div class="studio-contact-links">
+          <a class="studio-text-link" href={resumePage} data-studio-action="resume" data-studio-target="resume">{copy.contact.resume}<svg class="studio-icon" aria-hidden="true"><use href="#studio-arrow-diagonal" /></svg></a>
+          <a class="studio-text-link" href={studioGithub} target="_blank" rel="noopener noreferrer">GitHub<svg class="studio-icon" aria-hidden="true"><use href="#studio-arrow-diagonal" /></svg></a>
+          <a class="studio-text-link" href={projectArchive}>{copy.work.allProjects}<svg class="studio-icon" aria-hidden="true"><use href="#studio-arrow-diagonal" /></svg></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="studio-footer">
+      <div class="studio-shell studio-footer-inner">
+        <p><strong>{copy.name}</strong><span>{copy.footer}</span></p>
+        <nav aria-label={copy.compare}>
+          <a href="/design-lab/">{copy.compare}</a>
+          <a href={home}>{copy.original}<span aria-hidden="true"> ↗</span></a>
+          <a href="#studio-top">{copy.contact.backToTop}<span aria-hidden="true"> ↑</span></a>
+        </nav>
+      </div>
+    </footer>
+    <ReviewTools locale={locale} />
+  </body>
+</html>

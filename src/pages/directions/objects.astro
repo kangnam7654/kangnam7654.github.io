@@ -1,0 +1,65 @@
+---
+import "../../styles/art-directions.css";
+const canonical = new URL("/", Astro.site ?? "https://kangnam7654.github.io").href;
+---
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="theme-color" content="#253fc4" />
+    <link rel="canonical" href={canonical} />
+    <link rel="preload" href="/fonts/art-directions/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <title>김강남 | 오브젝트 첫 화면 스터디</title>
+    <meta name="description" content="언리얼 도구의 큐브 모티프를 공간 그래픽으로 해석한 AI 엔지니어 김강남의 첫 화면 스터디." />
+  </head>
+  <body data-study="objects">
+    <a class="ad-skip" href="#objects-main">본문으로 건너뛰기</a>
+    <div class="ad-object-page">
+      <header class="ad-header">
+        <a class="ad-wordmark" href="/">Kangnam Kim</a>
+        <p class="ad-header-role">AI Engineer</p>
+        <nav aria-label="작업과 이력서"><a href="/projects/">작업</a><a href="/kangnam-kim-resume.pdf">이력서</a><a href="mailto:kangnam7653@gmail.com">연락</a></nav>
+      </header>
+      <main class="ad-object-main" id="objects-main" tabindex="-1">
+        <div class="ad-object-copy">
+          <p class="ad-object-hello">안녕하세요, 김강남입니다.</p>
+          <h1><span class="ad-title-role">AI 엔지니어</span>김강남.</h1>
+          <p class="ad-object-description">발표를 평가하는 모델을 배포하고,<br />언리얼 에디터를 자연어로 다루는<br class="ad-desktop-br" /> 도구를 만들었습니다.</p>
+          <a class="ad-object-work" href="/projects/ue5-mcp/">언리얼 MCP 작업 보기 <span aria-hidden="true">↗</span></a>
+          <p class="ad-scope">프로토타입 · 모듈 기여</p>
+        </div>
+        <figure class="ad-object-art">
+          <div class="ad-stage" id="ad-stage" data-layout="scattered" role="img" aria-label="민트색, 살구색, 라벤더색 세 블록으로 만든 공간 그래픽">
+            <div class="ad-floor" aria-hidden="true"></div>
+            <div class="ad-object ad-object-mint" aria-hidden="true"><div class="ad-cube"><i class="ad-face ad-front"></i><i class="ad-face ad-top"></i><i class="ad-face ad-right"></i></div><span class="ad-block-shadow"></span></div>
+            <div class="ad-object ad-object-melon" aria-hidden="true"><div class="ad-cube"><i class="ad-face ad-front"></i><i class="ad-face ad-top"></i><i class="ad-face ad-right"></i></div><span class="ad-block-shadow"></span></div>
+            <div class="ad-object ad-object-lilac" aria-hidden="true"><div class="ad-cube"><i class="ad-face ad-front"></i><i class="ad-face ad-top"></i><i class="ad-face ad-right"></i></div><span class="ad-block-shadow"></span></div>
+            <svg class="ad-art-cursor" viewBox="0 0 68 78" aria-hidden="true"><path d="m5 3 54 39-25 5-13 23Z" fill="#f4f6ff" stroke="#253fc4" stroke-width="4" stroke-linejoin="round" /></svg>
+          </div>
+          <figcaption class="ad-art-tools">
+            <button id="ad-arrange" class="ad-arrange" type="button" aria-controls="ad-stage" hidden>블록 모아보기 <span aria-hidden="true">↗</span></button>
+            <p id="ad-art-status" class="ad-sr-only" aria-live="polite"></p>
+            <p class="ad-art-disclosure">언리얼 작업의 큐브를 재해석한 웹 그래픽.<br />실제 엔진 화면이나 AI 실행 데모는 아닙니다.</p>
+          </figcaption>
+        </figure>
+      </main>
+      <footer class="ad-object-footer"><p>시각적 방향을 보는 첫 화면 스터디</p><nav aria-label="디자인 비교"><a href="/directions/">두 방향 비교</a><a href="/directions/type/">타이포그래피 안</a><a href="/c/">이전 C</a></nav></footer>
+    </div>
+    <script>
+      const arrange = document.querySelector<HTMLButtonElement>("#ad-arrange");
+      const stage = document.querySelector<HTMLElement>("#ad-stage");
+      const status = document.querySelector<HTMLElement>("#ad-art-status");
+      if (arrange && stage) {
+        arrange.hidden = false;
+        arrange.addEventListener("click", () => {
+          const grouped = stage.dataset.layout !== "grouped";
+          stage.dataset.layout = grouped ? "grouped" : "scattered";
+          arrange.innerHTML = `${grouped ? "다시 펼쳐놓기" : "블록 모아보기"} <span aria-hidden="true">↗</span>`;
+          if (status) status.textContent = grouped ? "세 블록을 한데 모았습니다." : "세 블록을 다시 펼쳤습니다.";
+        });
+      }
+    </script>
+  </body>
+</html>

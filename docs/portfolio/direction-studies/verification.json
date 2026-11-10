@@ -1,0 +1,226 @@
+{
+  "files_preserved": 155,
+  "routes_preserved": 64,
+  "new_study_routes": [
+    "/directions/",
+    "/directions/type/",
+    "/directions/objects/"
+  ],
+  "local_targets": 9,
+  "font_bytes": 23888,
+  "browser_cases": [
+    {
+      "route": "/directions/",
+      "width": 320,
+      "overflow": false,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "route": "/directions/type/",
+      "width": 320,
+      "overflow": false,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "route": "/directions/objects/",
+      "width": 320,
+      "overflow": false,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "route": "/directions/",
+      "width": 375,
+      "overflow": false,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "route": "/directions/type/",
+      "width": 375,
+      "overflow": false,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "route": "/directions/objects/",
+      "width": 375,
+      "overflow": false,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "route": "/directions/",
+      "width": 650,
+      "overflow": false,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "route": "/directions/type/",
+      "width": 650,
+      "overflow": false,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "route": "/directions/objects/",
+      "width": 650,
+      "overflow": false,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "route": "/directions/",
+      "width": 651,
+      "overflow": false,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "route": "/directions/type/",
+      "width": 651,
+      "overflow": false,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "route": "/directions/objects/",
+      "width": 651,
+      "overflow": false,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "route": "/directions/",
+      "width": 768,
+      "overflow": false,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "route": "/directions/type/",
+      "width": 768,
+      "overflow": false,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "route": "/directions/objects/",
+      "width": 768,
+      "overflow": false,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "route": "/directions/",
+      "width": 1023,
+      "overflow": false,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "route": "/directions/type/",
+      "width": 1023,
+      "overflow": false,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "route": "/directions/objects/",
+      "width": 1023,
+      "overflow": false,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "route": "/directions/",
+      "width": 1024,
+      "overflow": false,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "route": "/directions/type/",
+      "width": 1024,
+      "overflow": false,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "route": "/directions/objects/",
+      "width": 1024,
+      "overflow": false,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "route": "/directions/",
+      "width": 1440,
+      "overflow": false,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "route": "/directions/type/",
+      "width": 1440,
+      "overflow": false,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "route": "/directions/objects/",
+      "width": 1440,
+      "overflow": false,
+      "page_errors": [],
+      "external_requests": []
+    }
+  ],
+  "axe": [
+    {
+      "route": "/directions/",
+      "width": 375,
+      "violations": []
+    },
+    {
+      "route": "/directions/type/",
+      "width": 375,
+      "violations": []
+    },
+    {
+      "route": "/directions/objects/",
+      "width": 375,
+      "violations": []
+    },
+    {
+      "route": "/directions/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "/directions/type/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "/directions/objects/",
+      "width": 1440,
+      "violations": []
+    }
+  ],
+  "qualitative_approval": "both first-screen directions approved as A/B candidates; full pages and live experiment not yet reviewed",
+  "no_js_core": true,
+  "explicit_keyboard_rearrangement": true,
+  "reduced_motion": true,
+  "browser_case_count": 24,
+  "ab_candidates": {
+    "A": "type",
+    "B": "objects",
+    "both_retained": true,
+    "live_assignment": false,
+    "telemetry": false
+  },
+  "functional_checks_passed": true
+}

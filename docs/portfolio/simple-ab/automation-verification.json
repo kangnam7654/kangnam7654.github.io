@@ -1,0 +1,32 @@
+{
+  "scope": "bootstrap acceptance; scheduled agent execution is verified separately in the private operational receipt",
+  "source_base": "a69031dd0db9ddbe27a4cdf1fc9f3add5d8c7439",
+  "manual_dirty_override_used_for_bootstrap": true,
+  "unit_tests": {
+    "count": 34,
+    "passed": true
+  },
+  "real_isolated_pipeline": {
+    "all_passed": true,
+    "ab_cases": 22,
+    "entry_cases": 6,
+    "full_viewport_conditions": 38,
+    "axe_audits": 10,
+    "axe_violations": 0
+  },
+  "all_child_stages_succeeded": true,
+  "source_and_preview_dist_unchanged": true,
+  "snapshot_removed": true,
+  "public_root_probe": {
+    "html": true,
+    "status": 200
+  },
+  "public_ab_deployment_verified": false,
+  "model_pinned": false,
+  "auto_merge": false,
+  "auto_deploy": false,
+  "analytics_added": false,
+  "runner_sha256": "c5de4d426d608afd0985ec39c62d347a38f133edfabc46d456256f33bdfe59e0",
+  "qa_environment": "Private offline venv containing byte-preserving copies of already installed QA distributions; no package version changes or new downloads",
+  "durable_axe_sha256": "20c09fe157a8a34a30e241aaa1fcdade657734f08ab379ecfbeb7d45cc46e878"
+}

@@ -1,0 +1,58 @@
+---
+const canonical = new URL("/", Astro.site ?? "https://kangnam7654.github.io").href;
+const studies = [
+  {variant:"A",slug:"type",name:"타이포그래피",note:"이름 자체를 그래픽으로. 분홍과 남색의 색면, 큼직한 한글, 작은 실제 작업 화면.",color:"#f4b9d2"},
+  {variant:"B",slug:"objects",name:"오브젝트",note:"도구를 만드는 사람의 공간으로. 짙은 파랑, 세 개의 블록, 눌렀을 때만 반응하는 장면.",color:"#253fc4"}
+];
+---
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="robots" content="noindex,nofollow" />
+<link rel="canonical" href={canonical} />
+<title>김강남 | 두 전체 포트폴리오 A/B 비교</title>
+<meta name="description" content="기존 A·B·C를 보존하면서 타이포그래피와 공간 그래픽의 두 시각적 방향을 비교합니다." />
+</head>
+<body>
+<main>
+  <header><a href="/design-review/">이전 A·B·C</a><p>같은 본문을 담은 두 전체 포트폴리오입니다.</p></header>
+  <h1>둘 다 A/B 후보로.</h1>
+  <p class="intro">같은 프로젝트·이력서·연락 동선을 두 디자인으로 담았습니다.<br />외부 통계 서비스 없이 두 화면 중 하나로 배정하고, 선택한 디자인만 브라우저에 기억합니다. 아래 직접 보기는 저장된 선택을 바꾸지 않습니다. <a href="/ab/">A/B 입구 열기</a></p>
+  <div class="studies">
+    {studies.map(study => <section>
+      <div class="study-heading"><h2>후보 {study.variant}: {study.name}</h2><a class="open" href={`/variants/${study.slug}/?review=1`}>전체 페이지 보기 <span aria-hidden="true">↗</span></a></div>
+      <div class="preview" style={`background:${study.color}`}><iframe src={`/variants/${study.slug}/?review=1`} title={`후보 ${study.variant}, ${study.name} 포트폴리오 미리보기`} loading="eager" tabindex="-1" inert></iframe></div>
+      <p class="note">{study.note}</p>
+    </section>)}
+  </div>
+  <footer>원본과 이전 시안은 그대로입니다. A/B 분기는 별도 입구에서만 동작하며, 전체 방문 통계·자동 승자 판정·노출 비중 조정은 하지 않습니다.</footer>
+</main>
+</body>
+</html>
+<script>
+  document.querySelectorAll<HTMLElement>(".preview").forEach((preview) => {
+    const iframe = preview.querySelector<HTMLIFrameElement>("iframe");
+    if (!iframe) return;
+    new ResizeObserver(() => {
+      const mobile = window.matchMedia("(max-width:650px)").matches;
+      const width = mobile ? 375 : 1400;
+      const height = mobile ? 812 : 900;
+      const scale = preview.clientWidth / width;
+      iframe.style.width = `${width}px`;
+      iframe.style.height = `${height}px`;
+      iframe.style.transform = `scale(${scale})`;
+      preview.style.height = `${height * scale}px`;
+    }).observe(preview);
+  });
+</script>
+<style>
+:global(*){box-sizing:border-box} :global(body){margin:0;background:#f8f9fc;color:#212638;font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif}
+main{max-width:1520px;padding:32px 40px 25px;margin:auto}a{color:inherit;text-underline-offset:4px}a:focus-visible{outline:3px solid #253fc4;outline-offset:5px}
+header{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:12px}header p{margin:0;color:#4d5667}h1{font-size:34px;letter-spacing:-.06em;margin:65px 0 16px;font-weight:650}.intro{font-size:14px;line-height:1.8;color:#4d5667;margin:0}
+.studies{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:36px 0 45px}.study-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 0 14px}h2{font-size:17px;margin:0;font-weight:600}.open{font-size:12px}.open span{margin-left:6px;font-size:18px}.preview{height:405px;overflow:hidden;border-radius:2px;position:relative}.preview iframe{position:absolute;width:1400px;height:900px;border:0;transform:scale(.47);transform-origin:0 0;pointer-events:none}.note{font-size:12px;line-height:1.8;color:#4d5667;margin:14px 0 0;max-width:50ch}footer{font-size:11px;color:#4d5667;line-height:1.7}
+@media(max-width:1450px){.preview{height:350px}.preview iframe{transform:scale(.39)}}
+@media(max-width:1190px){.preview{height:290px}.preview iframe{transform:scale(.32)}}
+@media(max-width:1000px){main{padding:24px}.studies{grid-template-columns:1fr;gap:34px}.preview{height:470px}.preview iframe{transform:scale(.54)}h1{margin-top:45px}}
+@media(max-width:650px){main{padding:22px}header{align-items:flex-start;font-size:10px}header p{max-width:160px;text-align:right;line-height:1.6}h1{font-size:27px;margin-top:42px}.intro{font-size:12px}.intro br{display:none}.studies{margin-top:30px;gap:29px}.preview{height:365px}.preview iframe{width:375px;height:812px;transform:scale(.82)}.note{font-size:11px}.open{font-size:11px}h2{font-size:15px}}
+@media(max-width:360px){.preview{height:340px}.preview iframe{transform:scale(.72)}}
+</style>

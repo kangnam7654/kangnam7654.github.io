@@ -1,0 +1,125 @@
+---
+interface Props { locale?: "ko" | "en" | "ja"; }
+const { locale = "ko" } = Astro.props;
+const copy = {
+  ko: { open: "B안 피드백", title: "어떤 부분을 바꿀까요?", intro: "내용은 외부로 전송되지 않습니다. 복사한 피드백을 대화창에 붙여 주세요.", section: "보고 있는 부분", options: ["전체 인상", "첫 화면", "프로젝트", "소개 / 연락", "모바일"], good: "좋았던 점", change: "바꾸고 싶은 점", copy: "피드백 복사", download: "파일로 저장", close: "닫기", clear: "초안 지우기", copied: "복사했습니다. 대화창에 붙여 주세요.", empty: "좋았던 점이나 바꾸고 싶은 점을 적어 주세요.", fallback: "아래 텍스트를 직접 선택해 복사해 주세요.", saved: "파일로 저장했습니다. 자동 전송은 하지 않았습니다.", cleared: "현재 탭의 초안을 지웠습니다.", limit: "각 항목 최대 2,000자 · 초안은 현재 탭에만 저장됩니다." },
+  en: { open: "Feedback on B", title: "What would you change?", intro: "Nothing is sent to a server. Copy your feedback and paste it into our conversation.", section: "Section", options: ["Overall", "Hero", "Projects", "About / contact", "Mobile"], good: "What works", change: "What to change", copy: "Copy feedback", download: "Save a file", close: "Close", clear: "Clear draft", copied: "Copied. Paste it into our conversation.", empty: "Add something that works or something to change.", fallback: "Select and copy the text below.", saved: "Saved a file. Nothing was sent automatically.", cleared: "Draft cleared for this tab.", limit: "2,000 characters per field · draft stays in this tab only." },
+  ja: { open: "B案のフィードバック", title: "どこを変えましょうか？", intro: "内容はサーバーに送信されません。コピーして会話に貼り付けてください。", section: "対象のセクション", options: ["全体", "最初の画面", "プロジェクト", "紹介・連絡", "モバイル"], good: "良かった点", change: "変えたい点", copy: "フィードバックをコピー", download: "ファイルに保存", close: "閉じる", clear: "下書きを削除", copied: "コピーしました。会話に貼り付けてください。", empty: "良かった点、または変えたい点を入力してください。", fallback: "下のテキストを選択してコピーしてください。", saved: "ファイルに保存しました。自動送信はしていません。", cleared: "このタブの下書きを削除しました。", limit: "各項目2,000文字まで・下書きはこのタブだけに保存されます。" },
+}[locale];
+---
+
+<aside id="studio-review-tools" hidden data-locale={locale} data-copied={copy.copied} data-empty={copy.empty} data-fallback={copy.fallback} data-saved={copy.saved} data-cleared={copy.cleared}>
+  <button id="studio-review-open" type="button" aria-haspopup="dialog" aria-controls="studio-review-dialog">{copy.open} <span aria-hidden="true">↗</span></button>
+  <dialog id="studio-review-dialog" aria-labelledby="studio-review-title" aria-describedby="studio-review-intro">
+    <div class="review-heading"><span>STUDIO / B / REVIEW</span><button type="button" id="studio-review-close" aria-label={copy.close}>×</button></div>
+    <h2 id="studio-review-title">{copy.title}</h2>
+    <p id="studio-review-intro">{copy.intro}</p>
+    <form id="studio-review-form">
+      <label for="studio-review-section">{copy.section}</label>
+      <select id="studio-review-section" name="section">{copy.options.map((option, index) => <option value={String(index)}>{option}</option>)}</select>
+      <label for="studio-review-good">{copy.good}</label>
+      <textarea id="studio-review-good" name="good" rows="3" maxlength="2000"></textarea>
+      <label for="studio-review-change">{copy.change}</label>
+      <textarea id="studio-review-change" name="change" rows="3" maxlength="2000"></textarea>
+      <p class="review-limit">{copy.limit}</p>
+      <div class="review-actions"><button id="studio-review-copy" type="submit">{copy.copy}</button><button id="studio-review-download" type="button">{copy.download}</button></div>
+      <p id="studio-review-status" role="status" aria-live="polite"></p>
+      <textarea id="studio-review-fallback" readonly hidden rows="7" aria-label={copy.copy}></textarea>
+      <button id="studio-review-clear" type="button">{copy.clear}</button>
+    </form>
+  </dialog>
+</aside>
+
+<script>
+  import { installStudioEvents } from "../../lib/studio-events";
+  installStudioEvents();
+  const tools = document.getElementById("studio-review-tools");
+  // The feedback UI is an explicit owner-review mode, never a visitor survey.
+  if (tools && new URLSearchParams(window.location.search).get("review") === "1") {
+    tools.hidden = false;
+    document.querySelectorAll<HTMLAnchorElement>(".studio-languages a").forEach((link) => {
+      const next = new URL(link.href, window.location.href);
+      if (next.origin === window.location.origin && next.pathname.startsWith("/preview/")) {
+        next.searchParams.set("review", "1");
+        link.href = next.pathname + next.search;
+      }
+    });
+    const dialog = document.getElementById("studio-review-dialog") as HTMLDialogElement;
+    const form = document.getElementById("studio-review-form") as HTMLFormElement;
+    const section = document.getElementById("studio-review-section") as HTMLSelectElement;
+    const good = document.getElementById("studio-review-good") as HTMLTextAreaElement;
+    const change = document.getElementById("studio-review-change") as HTMLTextAreaElement;
+    const status = document.getElementById("studio-review-status") as HTMLParagraphElement;
+    const fallback = document.getElementById("studio-review-fallback") as HTMLTextAreaElement;
+    const key = `portfolio-review:studio-v1:${tools.dataset.locale}`;
+    const statusText = (name: string) => { status.textContent = tools.dataset[name] || ""; };
+    try {
+      const draft = JSON.parse(sessionStorage.getItem(key) || "null");
+      if (draft && typeof draft === "object") {
+        if (["0", "1", "2", "3", "4"].includes(draft.section)) section.value = draft.section;
+        if (typeof draft.good === "string") good.value = draft.good.slice(0, 2000);
+        if (typeof draft.change === "string") change.value = draft.change.slice(0, 2000);
+      }
+    } catch { /* Storage can be disabled; feedback still works. */ }
+    const payload = () => ({ variant: "studio-v1", locale: tools.dataset.locale, section: section.value, good: good.value.slice(0, 2000).trim(), change: change.value.slice(0, 2000).trim() });
+    form.addEventListener("input", () => {
+      try { sessionStorage.setItem(key, JSON.stringify(payload())); } catch { /* Optional draft storage. */ }
+    });
+    const feedbackText = () => {
+      const value = payload();
+      return `Portfolio feedback / ${value.variant}\nLanguage: ${value.locale}\nSection: ${section.selectedOptions[0].textContent}\n\nWhat works:\n${value.good}\n\nWhat to change:\n${value.change}`;
+    };
+    const hasFeedback = () => {
+      if (!good.value.trim() && !change.value.trim()) { statusText("empty"); good.focus(); return false; }
+      return form.reportValidity();
+    };
+    document.getElementById("studio-review-open")?.addEventListener("click", () => dialog.showModal());
+    document.getElementById("studio-review-close")?.addEventListener("click", () => dialog.close());
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!hasFeedback()) return;
+      try {
+        await navigator.clipboard.writeText(feedbackText());
+        fallback.hidden = true;
+        statusText("copied");
+      } catch {
+        fallback.value = feedbackText(); fallback.hidden = false; fallback.focus(); fallback.select(); statusText("fallback");
+      }
+    });
+    document.getElementById("studio-review-download")?.addEventListener("click", () => {
+      if (!hasFeedback()) return;
+      const url = URL.createObjectURL(new Blob([JSON.stringify(payload(), null, 2) + "\n"], { type: "application/json;charset=utf-8" }));
+      const anchor = document.createElement("a");
+      anchor.href = url; anchor.download = `portfolio-feedback-studio-v1-${tools.dataset.locale}.json`; anchor.click();
+      window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+      statusText("saved");
+    });
+    document.getElementById("studio-review-clear")?.addEventListener("click", () => {
+      form.reset(); fallback.value = ""; fallback.hidden = true;
+      try { sessionStorage.removeItem(key); } catch { /* Optional draft storage. */ }
+      statusText("cleared");
+    });
+  }
+</script>
+
+<style>
+  #studio-review-tools[hidden], textarea[hidden] { display: none !important; }
+  #studio-review-open { position: fixed; right: 24px; bottom: 24px; z-index: 60; border: 1px solid #1e2622; border-radius: 99px; padding: 13px 18px; background: #d7ef91; color: #1e2622; font: 600 13px/1.3 system-ui, sans-serif; cursor: pointer; box-shadow: 0 4px 20px #1e26221a; }
+  #studio-review-open span { margin-left: 14px; }
+  dialog { width: min(560px, calc(100vw - 32px)); box-sizing: border-box; max-height: calc(100dvh - 40px); padding: 28px; border: 1px solid #c7c9bd; border-radius: 18px; background: #f8f7f2; color: #1e2622; font-family: system-ui, sans-serif; overflow: auto; }
+  dialog::backdrop { background: #13201888; backdrop-filter: blur(4px); }
+  .review-heading { display: flex; align-items: center; justify-content: space-between; font: 11px/1.4 monospace; letter-spacing: .08em; }
+  #studio-review-close { width: 44px; height: 44px; border: 0; background: transparent; font-size: 26px; color: inherit; cursor: pointer; }
+  h2 { margin: 12px 0; font-size: 26px; letter-spacing: -.04em; }
+  #studio-review-intro, .review-limit { font-size: 13px; line-height: 1.7; color: #596253; }
+  label { display: block; margin: 18px 0 7px; font-size: 13px; font-weight: 600; }
+  select, textarea { box-sizing: border-box; width: 100%; border: 1px solid #b7bdac; background: #fffefa; color: #1e2622; border-radius: 7px; padding: 11px; font: inherit; font-size: 14px; }
+  textarea { resize: vertical; min-height: 84px; }
+  .review-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+  .review-actions button { padding: 12px 16px; background: #1e2622; color: #fff; border: 1px solid #1e2622; border-radius: 8px; font: 600 13px/1.3 system-ui, sans-serif; cursor: pointer; min-height: 44px; }
+  #studio-review-download { background: transparent; color: #1e2622; }
+  #studio-review-status { min-height: 20px; font-size: 13px; line-height: 1.6; }
+  #studio-review-clear { background: transparent; border: 0; color: #596253; text-decoration: underline; font: 13px/1.5 system-ui, sans-serif; padding: 8px 0; min-height: 44px; cursor: pointer; }
+  :is(button, select, textarea):focus-visible { outline: 3px solid #496519; outline-offset: 3px; }
+  @media (max-width: 480px) { dialog { padding: 20px; } #studio-review-open { right: 16px; bottom: 16px; } }
+</style>

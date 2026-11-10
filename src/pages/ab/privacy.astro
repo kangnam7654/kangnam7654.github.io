@@ -1,0 +1,28 @@
+---
+import "../../styles/ab-support.css";
+const canonical = new URL("/", Astro.site ?? "https://kangnam7654.github.io").href;
+---
+<!doctype html>
+<html lang="ko">
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="robots" content="noindex,nofollow" /><link rel="canonical" href={canonical} /><title>화면 선택·브라우저 저장 안내 | 김강남</title></head>
+<body class="ab-support" data-ab-privacy="true">
+<main>
+<a href="/">기존 포트폴리오</a>
+<h1>화면 선택과 브라우저 저장</h1>
+<p><strong>외부 분석 서비스나 통계 수집기를 사용하지 않습니다.</strong></p>
+<h2>두 디자인은 어떻게 보이나요?</h2>
+<p>A/B 입구에서 타이포그래피와 오브젝트 중 하나로 무작위 이동합니다. 처음 배정 확률은 같지만, 실제 누적 방문 수가 정확히 같아지는 방식은 아닙니다. 원본 페이지와 두 디자인의 직접 보기 링크도 그대로 남아 있습니다.</p>
+<h2>브라우저에 무엇을 저장하나요?</h2>
+<p>localStorage에 선택한 디자인 이름인 <code>type</code> 또는 <code>objects</code>만 보관합니다. 방문자 식별자·시간 기록·클릭 이력은 만들지 않고, 이 값을 통계 서버로 보내지 않습니다. 이 A/B 기능은 쿠키를 사용하지 않습니다.</p>
+<p>선택은 직접 지우거나 브라우저의 사이트 데이터를 삭제할 때까지 유지됩니다. 저장소가 차단됐거나 Global Privacy Control 또는 Do Not Track 거절 신호가 있으면 선택을 저장하지 않으므로, 다음 방문에 다시 배정될 수 있습니다. 직접 보기·검토용 링크는 저장된 선택을 바꾸지 않습니다.</p>
+<button type="button" id="ab-reset-choice" hidden>이 브라우저의 디자인 선택 지우기</button>
+<p id="ab-privacy-status" aria-live="polite">선택을 지워도 포트폴리오와 이력서를 볼 수 있습니다.</p>
+<noscript><p>JavaScript를 쓰지 않으면 브라우저의 사이트 데이터 설정에서 저장된 선택을 지울 수 있습니다.</p></noscript>
+<h2>무엇을 측정하지 않나요?</h2>
+<p>디자인별 전체 방문 수·이력서 열기·프로젝트 열기·연락 클릭을 집계하지 않습니다. 자동 승자 판정이나 노출 비중 조정도 하지 않습니다. 따라서 이 기능은 두 화면을 나눠 보여주는 방식이며, 통계적 우열을 판정하는 분석 도구는 아닙니다.</p>
+<p class="ab-support-small">이 안내는 A/B 코드의 동작에 관한 것입니다. 사이트 파일 요청이나 사용자가 직접 여는 외부 링크의 처리까지 없어진다는 뜻은 아닙니다.</p>
+<footer><a href="/ab/">A/B 입구</a><a href="/variants/type/?review=1">타이포그래피</a><a href="/variants/objects/?review=1">오브젝트</a></footer>
+</main>
+<script>import "../../lib/portfolio-ab";</script>
+</body>
+</html>

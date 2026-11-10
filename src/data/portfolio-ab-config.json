@@ -1,0 +1,14 @@
+{
+  "experiment": "portfolio-directions-v1",
+  "mode": "browser-only",
+  "routingEnabled": true,
+  "entryPath": "/ab/",
+  "storageKey": "portfolio-directions-v1:variant",
+  "variants": {
+    "type": "/variants/type/",
+    "objects": "/variants/objects/"
+  },
+  "originalPath": "/classic/",
+  "privacyPath": "/ab/privacy/",
+  "homeEntryPath": "/"
+}
