@@ -142,4 +142,31 @@
 @media(max-width:359px){
 .dp-shell,.dp-site-header{width:calc(100% - 34px)}.dp-type-hero-content{padding-top:45px}.dp-hero-foot p{font-size:9px}.dp-case h2{font-size:29px}.dp-writer h2{font-size:45px}.dp-dalgyeol h2{font-size:76px}.dp-context span{display:block;margin-left:0}.dp-case-copy{font-size:14px}.dp-intro h2{font-size:27px}.dp-contact h2{font-size:28px}.dp-email{font-size:21px}.dp-objects .ad-object-copy{column-gap:12px}.dp-portfolio .ad-object-description{font-size:10px}
 }
+/* The work index reads like a contents page rather than a row of tiny links.
+   Keep the case title and real evidence louder than navigation or decoration. */
+.dp-contents{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 30px;margin-top:34px;font-size:14px;line-height:1.4}
+.dp-contents a{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:52px;border-top:1px solid var(--dp-line);color:inherit;text-decoration:none}
+.dp-contents a span{font-size:16px;line-height:1;flex:none}
+.dp-contents a:hover{text-decoration:underline;text-underline-offset:4px}
+.dp-contents a:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+/* Scope is part of the reading order, not a footnote to the large headings. */
+.dp-case-copy .dp-scope{font-size:clamp(15px,1.22vw,18px);line-height:1.55;padding-bottom:15px;border-bottom:1px solid currentColor}
+/* The objects study gives the actual Unreal screen the stage; below it,
+   keep the prototype disclosure alongside one readable narrative column. */
+.dp-objects .dp-unreal-copy{display:grid;grid-template-columns:minmax(190px,.48fr) minmax(0,1fr);column-gap:clamp(35px,6vw,100px);row-gap:18px;max-width:1160px;margin-inline:auto}
+.dp-objects .dp-unreal-copy .dp-scope{grid-column:1;grid-row:1/span 3;max-width:260px;font-size:clamp(18px,2vw,27px);line-height:1.5;color:#bde8d9;margin:0}
+.dp-objects .dp-unreal-copy>p:not(.dp-scope){grid-column:2;max-width:660px;margin:0;line-height:1.85}
+.dp-objects .dp-unreal-copy .dp-case-links{grid-column:2;margin-top:4px}
+.dp-type .dp-writer-figure{border-bottom-width:3px;padding-bottom:10px}
+@media(max-width:799px){
+  .dp-objects .dp-unreal-copy{display:block;max-width:650px}
+  .dp-objects .dp-unreal-copy .dp-scope{font-size:17px;max-width:none;margin-bottom:22px}
+  .dp-objects .dp-unreal-copy>p:not(.dp-scope)+p{margin-top:19px}
+  .dp-objects .dp-unreal-copy .dp-case-links{margin-top:29px}
+}
+@media(max-width:650px){
+  .dp-contents{gap:0 18px;margin-top:27px;font-size:13px}
+  .dp-contents a{min-height:50px}
+  .dp-case-copy .dp-scope,.dp-objects .dp-unreal-copy .dp-scope{font-size:14px;line-height:1.6;padding-bottom:12px}
+}
 @media(prefers-reduced-motion:reduce){.dp-portfolio *,.dp-portfolio *::before,.dp-portfolio *::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
