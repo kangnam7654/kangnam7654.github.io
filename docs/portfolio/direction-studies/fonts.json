@@ -1,0 +1,24 @@
+[
+  {
+    "family": "Black Han Sans",
+    "text_subset": "김강남",
+    "css_source": "https://fonts.googleapis.com/css2?family=Black+Han+Sans&text=%EA%B9%80%EA%B0%95%EB%82%A8&display=swap",
+    "woff2_source": "https://fonts.gstatic.com/l/font?kit=ea8Aad44WunzF9a-dL6toA8r8nqQIXKkHsvrRZNbqBD-1ISTkJ13U0L-SlySZ4ld446XEKUUEeOoNpd9aMXOhgtAxQaJHTy3xuuPnACyA_Ry&skey=10d56f3563364219&v=v24",
+    "local_file": "public/fonts/art-directions/black-han-name.woff2",
+    "bytes": 940,
+    "sha256": "65744eb32ad92b0eee6792246f92f0c507b7e590c26ed08892c7ad4e66bd9018",
+    "license_source": "https://raw.githubusercontent.com/google/fonts/main/ofl/blackhansans/OFL.txt",
+    "runtime_external_requests": false
+  },
+  {
+    "family": "Bricolage Grotesque:opsz,wght@12..96,400..800",
+    "text_subset": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz .&",
+    "css_source": "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque%3Aopsz%2Cwght%4012..96%2C400..800&text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz+.%26&display=swap",
+    "woff2_source": "https://fonts.gstatic.com/l/font?kit=3y9K6as8bTXq_nANBjzKo3IeZx8z6up5BeSl9D4dj_x9PpZBMmGKKHb0VRl-rtWn0ybjQDCq63IRKMRH8J3uuJxX5LBdQIpOYUqZCQ-VtrFT4_cFO-x7N7imixQMpHPJf-fOwQ&skey=7f69194495102d00&v=v9",
+    "local_file": "public/fonts/art-directions/bricolage-latin.woff2",
+    "bytes": 22948,
+    "sha256": "13e648953637ec2865164cb7372a10c316efc9efa19f8bcb443fde8df7490e2c",
+    "license_source": "https://raw.githubusercontent.com/google/fonts/main/ofl/bricolagegrotesque/OFL.txt",
+    "runtime_external_requests": false
+  }
+]

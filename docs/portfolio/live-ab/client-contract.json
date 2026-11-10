@@ -1,0 +1,49 @@
+{
+  "fixture_only": true,
+  "no_requests_reached_posthog": true,
+  "provider_ingestion_verified": false,
+  "cases": [
+    {
+      "case": "allow_type",
+      "passed": true,
+      "intercepted_requests": 4
+    },
+    {
+      "case": "allow_objects",
+      "passed": true,
+      "intercepted_requests": 4
+    },
+    {
+      "case": "deny",
+      "passed": true,
+      "intercepted_requests": 0
+    },
+    {
+      "case": "gpc",
+      "passed": true,
+      "intercepted_requests": 0
+    },
+    {
+      "case": "dnt",
+      "passed": true,
+      "intercepted_requests": 0
+    },
+    {
+      "case": "storage_blocked",
+      "passed": true,
+      "intercepted_requests": 0
+    },
+    {
+      "case": "review",
+      "passed": true,
+      "intercepted_requests": 0
+    },
+    {
+      "case": "unassigned_direct",
+      "passed": true,
+      "intercepted_requests": 0
+    }
+  ],
+  "case_count": 8,
+  "all_passed": true
+}

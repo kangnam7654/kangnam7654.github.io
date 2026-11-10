@@ -1,0 +1,64 @@
+---
+const variants = [
+  { code: "A", title: "지금의 포트폴리오", state: "현재 기본 페이지", text: "기존 레이아웃, 경력과 프로젝트 페이지를 그대로 유지합니다.", href: "/", action: "원본 A 보기", className: "original" },
+  { code: "B", title: "Studio / 새 디자인", state: "피드백을 받는 미리보기", text: "핵심 기여와 프로젝트를 먼저 보여주는 편집형 레이아웃입니다.", href: "/preview/ko/?review=1", action: "B안 보고 피드백 남기기", className: "studio" },
+];
+---
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="description" content="김강남 포트폴리오의 원본 A와 새 디자인 B 비교. 원본은 유지하며 피드백으로 개선합니다." />
+    <title>Design Lab — 김강남 포트폴리오</title>
+    <link rel="icon" href="/favicon.svg" />
+  </head>
+  <body>
+    <a class="skip" href="#main">본문으로</a>
+    <header><a class="brand" href="/">KANGNAM KIM <span>/ DESIGN LAB</span></a><a class="back" href="/">원본으로 <span aria-hidden="true">↗</span></a></header>
+    <main id="main">
+      <p class="eyebrow">PORTFOLIO / EXPERIMENT 001</p>
+      <h1>바꾸되,<br />덮어쓰지 않습니다.</h1>
+      <p class="lede">새 디자인은 먼저 별도 페이지에서 살펴봅니다.<br />좋았던 점과 불편한 점을 모아 다음 버전으로 이어갑니다.</p>
+      <section class="variants" aria-label="포트폴리오 디자인 비교">
+        {variants.map((variant) => <article class={variant.className}>
+          <div class="card-top"><span class="code">{variant.code}</span><span class="state">{variant.state}</span></div>
+          <h2>{variant.title}</h2><p>{variant.text}</p>
+          <a class="button" href={variant.href}>{variant.action}<span aria-hidden="true">↗</span></a>
+        </article>)}
+      </section>
+      <section class="notes" aria-labelledby="status-title"><p class="eyebrow">CURRENT STATUS</p><h2 id="status-title">아직 승자는 없습니다.</h2><p>현재는 <strong>시안 비교 단계</strong>입니다. 원본이 계속 기본 페이지이고, 방문자를 무작위로 나누거나 새 디자인으로 자동 이동시키지 않습니다.</p><p>방문 통계는 연결하지 않았습니다. 실제 A/B 실험은 두 버전의 노출과 이력서·프로젝트·연락 클릭을 같은 기준으로 측정할 수 있을 때 시작합니다. 방문자 수나 합격률을 만들어 표시하지 않습니다.</p><div class="language"><span>B안 언어</span><a href="/preview/ko/?review=1" lang="ko">한국어</a><a href="/preview/en/?review=1" lang="en">English</a><a href="/preview/ja/?review=1" lang="ja">日本語</a></div></section>
+      <section class="feedback"><span class="eyebrow">FEEDBACK LOOP</span><h2>“좋은데, 여기는 이렇게.”</h2><p>B안에서 피드백 버튼을 누르거나, 이 대화에 바로 적어 주세요.<br />피드백은 자동 공개되지 않으며, 기존 페이지를 지우지 않고 다음 안에 반영합니다.</p></section>
+    </main>
+    <footer><span>KANGNAM KIM / DESIGN LAB</span><a href="/">Original portfolio ↗</a></footer>
+  </body>
+</html>
+<style>
+  :global(*) { box-sizing: border-box; } :global(html) { background: #f5f4ef; color: #1e2622; }
+  :global(body) { margin: 0; font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; }
+  :global(a) { color: inherit; text-decoration: none; } :global(a:focus-visible) { outline: 3px solid #537322; outline-offset: 6px; }
+  .skip { position: absolute; transform: translateY(-200%); padding: 12px 20px; background: #d7ef91; z-index: 5; } .skip:focus { transform: none; }
+  header, footer { max-width: 1200px; padding: 26px 36px; margin: auto; display: flex; justify-content: space-between; gap: 18px; align-items: center; }
+  .brand { font-size: 13px; font-weight: 750; letter-spacing: -.015em; } .brand span { color: #596253; font-weight: 400; margin-left: 8px; }
+  .back { font-size: 13px; border-bottom: 1px solid #859079; } .back span { margin-left: 14px; }
+  main { max-width: 1200px; margin: auto; padding: 68px 36px 96px; }
+  .eyebrow { font: 11px/1.5 ui-monospace, monospace; letter-spacing: .16em; color: #596253; }
+  h1 { font-size: clamp(46px, 7vw, 82px); line-height: 1.16; letter-spacing: -.065em; font-weight: 650; margin: 24px 0 26px; }
+  .lede { font-size: 18px; line-height: 1.85; color: #596253; }
+  .variants { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 52px 0 80px; }
+  article { padding: 32px; border: 1px solid #ccd0c2; border-radius: 16px; display: flex; flex-direction: column; min-height: 340px; }
+  .studio { background: #1e2622; color: #f5f4ef; border-color: #1e2622; }
+  .card-top { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 30px; }
+  .code { font: 38px/1 ui-serif, Georgia, serif; } .state { font-size: 12px; color: #596253; } .studio .state { color: #d7ef91; }
+  h2 { font-size: 28px; line-height: 1.4; letter-spacing: -.045em; margin: 0 0 14px; }
+  article p { font-size: 15px; color: #596253; margin: 0 0 30px; } .studio p { color: #ccd2c8; }
+  .button { display: flex; align-items: center; justify-content: space-between; gap: 18px; width: 100%; margin-top: auto; padding: 14px 18px; border: 1px solid #a5ad99; border-radius: 7px; font-size: 14px; font-weight: 600; }
+  .studio .button { background: #d7ef91; color: #1e2622; border-color: #d7ef91; }
+  .button:hover { box-shadow: 0 3px 0 #8a957a; transform: translateY(-1px); }
+  .notes { border-top: 1px solid #ccd0c2; padding-top: 30px; max-width: 740px; } .notes p:not(.eyebrow) { color: #596253; font-size: 15px; }
+  .language { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; margin-top: 26px; font-size: 13px; } .language span { color: #596253; } .language a { padding: 8px 0; border-bottom: 1px solid #859079; }
+  .feedback { margin-top: 70px; padding: 36px; border-radius: 12px; background: #e8eddb; } .feedback h2 { margin-top: 12px; } .feedback p { color: #596253; font-size: 15px; }
+  footer { border-top: 1px solid #ccd0c2; font: 11px/1.6 ui-monospace, monospace; color: #596253; }
+  @media (max-width: 680px) { header, footer { padding: 22px; flex-wrap: wrap; } .brand span { display: block; margin-left: 0; font-size: 10px; } main { padding: 42px 22px 60px; } .variants { grid-template-columns: 1fr; gap: 18px; margin: 36px 0 50px; } article { min-height: 300px; padding: 25px; } .feedback { padding: 25px; } .lede { font-size: 16px; } .language { gap: 18px; } }
+  @media (prefers-reduced-motion: reduce) { .button:hover { transform: none; } }
+</style>
