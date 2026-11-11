@@ -125,7 +125,11 @@ const [unreal, assessment, writer, dalgyeol] = content.cases;
             <h2 id="dp-assessment-title">{assessment.title}</h2>
             <p class="dp-scope">{assessment.scope}</p>
             {assessment.paragraphs.map((paragraph) => <p>{paragraph.split(/(오류율\(WER\)을)/).map((part) => part === "오류율(WER)을" ? <span class="dp-keep-together">{part}</span> : part)}</p>)}
-            <div class="dp-case-links"><a href={assessment.detail.href} data-ab-goal="project_open" data-ab-target={assessment.slug}>{assessment.detail.label}</a></div>
+            <p class="dp-qualification">{assessment.qualification}</p>
+            <div class="dp-case-links">
+              <a href={assessment.detail.href} data-ab-goal="project_open" data-ab-target={assessment.slug}>{assessment.detail.label}</a>
+              <a href={assessment.evidence.href}>{assessment.evidence.label} <span aria-hidden="true">↗</span></a>
+            </div>
           </div>
           <figure class="dp-assessment-figure">
             <img src={assessment.image.src} width={assessment.image.width} height={assessment.image.height} alt={assessment.image.alt} sizes="(min-width: 1100px) 480px, (min-width: 800px) 40vw, calc(100vw - 44px)" loading="lazy" decoding="async" />

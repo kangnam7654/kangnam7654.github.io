@@ -13,6 +13,7 @@ interface PortfolioCase {
   paragraphs: readonly string[];
   qualification?: string;
   detail: { href: string; label: string };
+  evidence?: { href: string; label: string };
   github?: string;
   image: {
     src: string;
@@ -97,7 +98,9 @@ export const dualPortfolio = {
         "학생의 영어 발표를 자동으로 평가하는 프로젝트였습니다. 월 약 3만 명 학생의 발표 평가에 쓰이는 Azure ML 추론 파이프라인에서 배포·운영 모듈을 맡았습니다.",
         "음성 인식은 비원어민 어린이의 발화에 맞춰야 했습니다. Parakeet을 파인튜닝해 단어 오류율(WER)을 9.6%에서 4.4%로 낮췄고, MediaPipe를 이용한 시선·자세 평가 모델도 개발했습니다.",
       ],
+      qualification: "아래 ASR 결과는 AI Hub 데이터의 별도 공개 실험으로, 위 회사 프로젝트의 WER과는 다른 결과입니다. 개선·악화된 전사를 함께 보여 줍니다.",
       detail: { href: "/projects/ai-assessment/", label: "배포와 모델 개발 자세히" },
+      evidence: { href: "https://github.com/kangnam7654/english_assessment_systems/blob/main/child_speech_recognition/README.md#results", label: "별도 ASR 실험 결과" },
       image: {
         src: "/images/notebook/assessment-test.webp",
         width: 980,
