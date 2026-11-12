@@ -109,6 +109,7 @@ const [unreal, assessment, writer, dalgyeol] = content.cases;
             <div class="dp-case-copy dp-unreal-copy">
               <p class="dp-scope">{unreal.scope}</p>
               {unreal.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+              {unreal.codeUpdate && <p>{unreal.codeUpdate.text} <a href={unreal.codeUpdate.href}>{unreal.codeUpdate.label}</a></p>}
               <div class="dp-case-links">
                 <a href={unreal.detail.href} data-ab-goal="project_open" data-ab-target={unreal.slug}>{unreal.detail.label}</a>
                 <a href={unreal.github}>코드 보기 <span aria-hidden="true">↗</span></a>
