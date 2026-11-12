@@ -12,6 +12,7 @@ interface PortfolioCase {
   scope: string;
   paragraphs: readonly string[];
   qualification?: string;
+  codeUpdate?: { text: string; href: string; label: string };
   detail: { href: string; label: string };
   github?: string;
   image: {
@@ -77,6 +78,11 @@ export const dualPortfolio = {
         "자연어로 오브젝트를 만들고, 수정하고, 삭제할 수 있는 MCP 플러그인입니다. AI의 도구 호출을 언리얼 엔진의 작업으로 연결했습니다.",
         "비동기 처리와 다대다 연결, 실행 중 도구를 등록하는 구조를 맡았습니다. 구현 범위는 프로토타입 단계의 연결 모듈입니다.",
       ],
+      codeUpdate: {
+        text: "현재 공개 코드의 Python 연결 모듈은 응답이 끊긴 편집 명령을 자동 재전송하지 않고 실행 결과를 미확정으로 돌려줍니다. 로컬 TCP 테스트로 확인했으며 실제 언리얼 에디터에서는 검증하지 않았습니다.",
+        href: "https://github.com/kangnam7654/kangnam-unreal-mcp/blob/2bb6faf6fb9aab150e3e1335cc104f40ad10068c/KN_MCP/Python/README.md#command-delivery",
+        label: "전송 처리와 확인 범위",
+      },
       detail: { href: "/projects/ue5-mcp/", label: "구현 내용과 다른 데모" },
       github: unreal.github,
       image: {
