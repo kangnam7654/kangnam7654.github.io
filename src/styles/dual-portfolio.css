@@ -69,6 +69,7 @@
 .dp-dalgyeol-figure figcaption{max-width:270px;margin-inline:auto;text-align:center}
 .dp-repo-update{border-top:1px solid var(--dp-line);padding-top:22px;font-size:13px;line-height:1.75}
 .dp-repo-update p{max-width:75ch}
+.dp-repo-update p+p{margin-top:17px}
 .dp-repo-update a{text-decoration-thickness:1px;text-underline-offset:3px}
 .dp-repo-update a:focus-visible{outline:2px solid currentColor;outline-offset:3px}
 .dp-contact{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;padding-block:103px 90px}
