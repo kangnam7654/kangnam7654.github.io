@@ -19,7 +19,7 @@ AXE = Path(os.environ.get('PORTFOLIO_AXE_PATH', '/Users/kangnam/.hermes/cache/sc
 SCREEN = SCRATCH / 'screenshots'
 SCREEN.mkdir(parents=True, exist_ok=True)
 WIDTHS = (320, 359, 360, 375, 390, 650, 651, 768, 799, 800, 1023, 1024, 1099, 1100, 1101, 1440, 1699, 1700, 1701)
-ALLOWED = {'resume','ue5-mcp','ai-assessment','story-writer','dalgyeol','contact'}
+ALLOWED = {'ue5-mcp','ai-assessment','story-writer','dalgyeol','contact'}
 
 class Quiet(SimpleHTTPRequestHandler):
     def log_message(self, format, *args):
@@ -105,7 +105,7 @@ try:
                             if target.is_dir(): target/='index.html'
                             verify(target.is_file(),f'{variant}: missing local link {href}')
                             targets.append(href)
-                        verify(all(g['target'] in ALLOWED and g['goal'] in ('resume_open','project_open','contact_open') for g in goals[variant]),f'{variant}: goals allowlist')
+                        verify(all(g['target'] in ALLOWED and g['goal'] in ('project_open','contact_open') for g in goals[variant]),f'{variant}: goals allowlist')
                         result.setdefault('local_link_targets',{})[variant]=sorted(set(targets))
                         verify(all('review=1' in a for a in page.locator('.dp-footer nav a').evaluate_all("es=>es.map(e=>e.getAttribute('href'))") if '/ab/privacy/' not in a),f'{variant}: review preservation')
                     page.keyboard.press('Tab')
@@ -158,7 +158,7 @@ try:
                 ctx=browser.new_context(viewport={'width':375,'height':844},java_script_enabled=False,reduced_motion='reduce')
                 page=ctx.new_page()
                 page.goto(base+f'/variants/{variant}/?review=1',wait_until='load')
-                verify(page.locator('a[data-ab-goal=resume_open]').first.is_visible(),f'{variant}: no-JS resume')
+                verify(page.locator('a[data-ab-goal=resume_open]').count()==0,f'{variant}: no-JS resume link withdrawn')
                 verify(page.locator('a[data-ab-goal=contact_open]').first.is_visible(),f'{variant}: no-JS contact')
                 verify(page.locator('a[data-ab-target=ue5-mcp]').first.is_visible(),f'{variant}: no-JS work')
                 verify(page.locator('#dp-unreal-replay').is_hidden(),f'{variant}: no-JS replay hidden')
@@ -203,9 +203,9 @@ try:
             page.locator('.dp-footer a[href*="/variants/type/"]').click()
             verify(page.locator('body').get_attribute('data-ab-variant')=='type' and 'review=1' in page.url,'Review cross-variant navigation')
             result['interactions']={'keyboard_arrange':True,'explicit_gif_load_stop':True,'motion_change_stops_gif':motion_stopped,'no_js_core':True,'review_navigation':True,'no_js_network_calls_by_worker':True}
-            pdf = page.request.get(base+'/kangnam-kim-resume.pdf')
-            result['resume_pdf'] = {'status':pdf.status,'has_pdf_magic':pdf.body().startswith(b'%PDF')}
-            verify(pdf.status==200 and pdf.body().startswith(b'%PDF'),'Resume PDF delivery')
+            # The outdated public resume PDF was withdrawn on 2026-11-26.
+            verify(not (DIST/'kangnam-kim-resume.pdf').exists(),'Withdrawn resume PDF is not published')
+            result['resume_pdf'] = {'withdrawn': not (DIST/'kangnam-kim-resume.pdf').exists()}
             ctx.close()
         finally:
             browser.close()

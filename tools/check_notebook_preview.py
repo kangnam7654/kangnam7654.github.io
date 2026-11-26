@@ -6,6 +6,7 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 import importlib
 import importlib.util
 import json
+import os
 from pathlib import Path
 import threading
 from urllib.parse import unquote, urlsplit
@@ -41,7 +42,8 @@ def main():
     facts = facts_module.PageFacts(html)
     assert facts.lang == "ko" and "noindex" in (facts.robots or "")
     assert len(facts.headings) == 1 and len(facts.ids) == len(set(facts.ids))
-    assert "테르텐" not in " ".join(facts.text) and "Teruten" not in " ".join(facts.text)
+    page_text = " ".join(facts.text)
+    assert not facts_module.private_terms_present(page_text), "private product name in page text"
     assert not any("ai-assessment-head" in (img["src"] or "") for img in facts.images)
     assert all(img["alt"] is not None for img in facts.images)
     checked_targets = set()
@@ -62,7 +64,7 @@ def main():
     thread = threading.Thread(target=server.serve_forever, daemon=True)
     thread.start()
     base = "http://127.0.0.1:%s" % server.server_port
-    axe = Path("/Users/kangnam/.hermes/cache/scratch/portfolio-audit-tools/axe-4.14.0.min.js")
+    axe = Path(os.environ.get("PORTFOLIO_AXE_PATH", "/Users/kangnam/.hermes/cache/scratch/portfolio-audit-tools/axe-4.14.0.min.js"))
     assert axe.is_file(), "Use a verified local axe-core file"
     sync_playwright = importlib.import_module("playwright.sync_api").sync_playwright
     try:
@@ -87,7 +89,7 @@ def main():
                         assert image.evaluate("im => im.complete && im.naturalWidth > 0"), image.get_attribute("src")
                     assert not [u for u in requests if not u.startswith(base)], requests
                     assert not [u for u in requests if urlsplit(u).path.endswith(".gif")], "Do not load animated demos before an explicit action"
-                    assert page.locator('a[href="/kangnam-kim-resume.pdf"]').count() >= 1
+                    assert page.locator('a[href="/kangnam-kim-resume.pdf"]').count() == 0  # resume PDF withdrawn 2026-11-26
                     assert page.locator('a[href="mailto:kangnam7653@gmail.com"]').count() >= 1
                     assert page.locator('a[href="/preview/ko/"]').count() + page.locator('a[href="/preview/ko/?review=1"]').count() >= 1
                     if width in (375, 1440):
@@ -125,7 +127,7 @@ def main():
                 page.goto(base + "/c/", wait_until="load")
                 assert page.locator("h1").inner_text().strip()
                 assert page.locator("img").count() >= 2
-                assert page.locator('a[href="/kangnam-kim-resume.pdf"]').count() >= 1
+                assert page.locator('a[href="/kangnam-kim-resume.pdf"]').count() == 0  # resume PDF withdrawn 2026-11-26
                 result["no_js_core_content"] = True
                 context.close()
             finally:

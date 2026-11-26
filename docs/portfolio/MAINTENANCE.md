@@ -56,19 +56,26 @@ hooks, not collected analytics. A is intentionally not instrumented yet.
 
 - Treat the bilingual candidate profile in the separate job-seeking workspace as
   the factual authority, with repository CLAUDE.md and public project sources.
-- Publish already-approved public career facts only in this preview. Do not add
-  Teruten, private security-validation metrics, salary, address or birth details.
-  Public-employer/current-tenure updates require a disclosure decision, not inference
-  from an old resume or a request to improve UI.
+- Publish already-approved public career facts only. Since the owner's 2026-11-26
+  decision, Teruten may be shown: company, division, AI team lead role (manager and
+  developer, team of 4), tenure from 2026.10, leading development of a screen-capture
+  prevention security product and introducing the team's development process.
+  Never publish the product's own name, customer names, internal metrics,
+  private security-validation metrics, salary, address or birth details.
+  Other public-employer/current-tenure updates require a disclosure decision, not
+  inference from an old resume or a request to improve UI.
 - Distinguish production contributions, prototype work and side projects. The
   30K monthly learners belong to the assessment inference pipeline, not LangGraph
   agents. WER 9.6% → 4.4% is speech tuning; 98.77% is validation F1, not live accuracy.
-- Unreal MCP is prototype-grade module contribution. Face-to-Character is a PoC;
+- Unreal MCP is prototype-grade module contribution taken as far as an internal demo.
+  Do not link the `kangnam-unreal-mcp` or `unreal-mcp` repositories. Face-to-Character is a PoC;
   game-engine integration was not completed. Do not invent shipped outcomes.
 - Never use a student-face image in a new card. `ai-assessment-head.png` is explicitly
   flagged by repository guidance; retained legacy assets do not authorize reuse.
-- Keep new case-study presentation linked to existing project details and public
-  resume. Do not overwrite submitted documents or generate another resume silently.
+- Keep new case-study presentation linked to existing project details. The outdated
+  public resume PDF and its `/resume/` pages were withdrawn on 2026-11-26; do not
+  re-add a resume file unless the owner supplies a reviewed one. Do not overwrite
+  submitted documents or generate another resume silently.
 
 ## QA and release
 
@@ -87,7 +94,7 @@ recorded in `studio-v1/baseline.json`. Before publication:
    verifies the other 106 originals unchanged. Never weaken the check to ignore
    unreviewed changes or silently replace the original baseline.
 4. Inspect B visually in all three languages, desktop and mobile; verify keyboard
-   navigation, reduced motion, form labels, no horizontal overflow and project/PDF links.
+   navigation, reduced motion, form labels, no horizontal overflow and project links.
 5. Review all final public text and metric qualifiers. Check feedback copy, local
    drafts, JSON download and permission-denial fallback. Do not collect test events.
 6. Push only this feature branch, review its exact diff, and deploy additively.
@@ -115,3 +122,30 @@ change, preserving legacy routes. Never expose a development server publicly.
 No recurring schedule is active. Ongoing autonomous publication or traffic changes
 are not implied by the preview; future maintenance must consume actual feedback or
 measured evidence and retain the original/rollback path.
+
+## Content correction and baseline re-record (2026-11-26)
+
+Owner-approved on 2026-11-26. Repository history was rewritten to remove private
+resume data (birth year, address, salary, resignation reasons and the old resume
+documents); recorded commit IDs were remapped to the rewritten commits.
+
+- Career timeline (ko/en/ja): Teruten added as the current role; Rye&Catchers
+  shown as 2026.05 ~ 2026.09; the security anomaly-detection page is past tense.
+- Unreal MCP is described as reaching an internal demo; all links to the
+  `kangnam-unreal-mcp` repository were removed.
+- The matching platform is described as participation in planning (data
+  collection and analysis).
+- The outdated public resume PDF, its preview image, the `/resume/` pages
+  (ko/en/ja) and every link to them were removed. No replacement resume was added.
+- Department names corrected to the candidate profile: 메타월드개발실 and
+  서비스사업본부. Unused `src/data/resume.ts` no longer holds private fields.
+
+The preservation baselines (`*/baseline.json`, `page-baseline.json`,
+`legacy-page-semantics.json`, `mobile-navigation-20261105/baseline.json`) were
+re-recorded for exactly the files and routes changed above, the removed routes,
+and the home page change from the already merged 2026-11-10 home release
+(`src/pages/index.astro`, `index.html`), which earlier checks had not yet
+recorded. Studio-v1 accepted navigation overrides and the live-ab directions
+allowance are unchanged. Earlier baseline bytes remain in Git history. Checks
+write their reports into these folders; restore those report files after a QA
+run instead of committing machine-local paths.

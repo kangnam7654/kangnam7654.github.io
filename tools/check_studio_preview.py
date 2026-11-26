@@ -61,6 +61,26 @@ class PageFacts(HTMLParser):
         return {"text": self.text, "links": self.links, "images": self.images, "lang": self.lang}
 
 
+# Private product names, stored only as SHA-256 of the lowercase term so the
+# public repository does not spell them out. Owner decision 2026-11-26.
+PRIVATE_TERM_HASHES = frozenset({
+    "447601ebb47a20e20e9b977f67e5d67d1383d7375af6c441d3a476411edcaac5",
+    "e41134478005804c550ab8aa2a9d927452be9432f6e362d21af2675251428470",
+})
+PRIVATE_TERM_LENGTHS = (3, 7)
+
+
+def private_terms_present(text):
+    """Return True when page text contains a private product name."""
+    lowered = text.lower()
+    for size in PRIVATE_TERM_LENGTHS:
+        for start in range(len(lowered) - size + 1):
+            chunk = lowered[start:start + size]
+            if hashlib.sha256(chunk.encode()).hexdigest() in PRIVATE_TERM_HASHES:
+                return True
+    return False
+
+
 def digest(path):
     """Return a file's SHA-256 digest."""
     return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -116,12 +136,8 @@ def browser_checks(root, axe_file):
                             assert not violations, violations
                         results["pages"].append({"lang": lang, "width": width, "status": response.status, "overflow": overflow, "errors": list(errors)})
                     assert any(e["event"] == "preview_view" for e in page.evaluate("window.__portfolioEvents"))
-                    resume = page.locator('a[data-studio-action="resume"]').first
-                    assert resume.count() == 1
-                    # Observe the real click event without navigating to an external PDF.
-                    resume.evaluate("a=>a.addEventListener('click',e=>e.preventDefault())")
-                    resume.click()
-                    assert any(e["event"] == "resume_open" for e in page.evaluate("window.__portfolioEvents"))
+                    # The outdated public resume PDF was withdrawn on 2026-11-26.
+                    assert page.locator('a[data-studio-action="resume"]').count() == 0
                     context.close()
 
                 context = browser.new_context(viewport={"width": 375, "height": 812}, reduced_motion="reduce")
@@ -167,8 +183,8 @@ def browser_checks(root, axe_file):
                 page.goto(base + "/preview/en/", wait_until="load")
                 assert page.locator("h1").inner_text().strip()
                 assert page.locator('a[data-studio-action="project"]').count() >= 3
-                assert page.locator('a[data-studio-action="resume"]').count() >= 1
-                results["javascript_disabled"] = {"headline": True, "project_links": True, "resume_link": True}
+                assert page.locator('a[data-studio-action="resume"]').count() == 0
+                results["javascript_disabled"] = {"headline": True, "project_links": True, "resume_link_withdrawn": True}
                 context.close()
                 context = browser.new_context(viewport={"width": 375, "height": 812})
                 page = context.new_page()
@@ -240,7 +256,8 @@ def main():
         assert len(facts.ids) == len(set(facts.ids)), (lang, "duplicate ids")
         assert not any("ai-assessment-head.png" in (img["src"] or "") for img in facts.images)
         assert all(img["alt"] is not None for img in facts.images)
-        assert "테르텐" not in " ".join(facts.text) and "Teruten" not in " ".join(facts.text)
+        page_text = " ".join(facts.text)
+        assert not private_terms_present(page_text), (lang, "private product name in page text")
         for href in facts.links:
             url = urlsplit(href)
             if url.scheme or not url.path.startswith("/"):
@@ -251,9 +268,8 @@ def main():
             assert target.is_file(), (lang, href)
             checked_links.add(url.path)
         pages.append(name)
-    pdf = root / "dist/kangnam-kim-resume.pdf"
-    assert pdf.read_bytes().startswith(b"%PDF-")
-    result = {"base_commit": baseline["base_commit"], "original_tracked_files_checked": len(unchanged), "unchanged_original_tracked_files": sum(original_unchanged.values()), "accepted_maintenance_files_verified": maintenance_checks, "legacy_pages_semantically_unchanged": len(legacy_checks), "preview_pages_checked": pages, "unique_internal_targets_checked": len(checked_links), "original_default_preserved": True, "live_ab_running": False, "private_employer_not_added": True}
+    assert not (root / "dist/kangnam-kim-resume.pdf").exists(), "withdrawn resume PDF must not be published"
+    result = {"base_commit": baseline["base_commit"], "original_tracked_files_checked": len(unchanged), "unchanged_original_tracked_files": sum(original_unchanged.values()), "accepted_maintenance_files_verified": maintenance_checks, "legacy_pages_semantically_unchanged": len(legacy_checks), "preview_pages_checked": pages, "unique_internal_targets_checked": len(checked_links), "original_default_preserved": True, "live_ab_running": False, "private_product_names_absent": True}
     if args.browser:
         result["browser"] = browser_checks(root, args.axe)
     result["accepted"] = True

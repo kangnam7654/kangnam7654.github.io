@@ -47,7 +47,8 @@ def main():
         facts = facts_module.PageFacts(html)
         assert len(facts.headings) == 1 and facts.lang == "ko"
         assert "noindex" in (facts.robots or "")
-        assert "Teruten" not in " ".join(facts.text) and "테르텐" not in " ".join(facts.text)
+        page_text = " ".join(facts.text)
+        assert not facts_module.private_terms_present(page_text), "private product name in page text"
         assert not any("ai-assessment-head" in (im["src"] or "") for im in facts.images)
         for href in facts.links:
             url = urlsplit(href)
@@ -111,7 +112,7 @@ def main():
                             assert page.evaluate("document.activeElement.classList.contains('ad-skip')")
                             page.keyboard.press("Enter")
                             assert page.evaluate("document.activeElement.id.endsWith('-main')")
-                            assert page.locator('a[href="/kangnam-kim-resume.pdf"]').is_visible()
+                            assert page.locator('a[href="/kangnam-kim-resume.pdf"]').count() == 0  # resume PDF withdrawn 2026-11-26
                             assert page.evaluate("document.fonts.check('25px BricolageStudy', 'Kangnam Kim')")
                         if route.endswith("/type/"):
                             assert page.evaluate("document.fonts.check('140px NameBlock','김강남')")
@@ -140,7 +141,7 @@ def main():
                     page = context.new_page()
                     page.goto(base + route, wait_until="load")
                     assert page.locator("h1").inner_text().strip()
-                    assert page.locator('a[href="/kangnam-kim-resume.pdf"]').is_visible()
+                    assert page.locator('a[href="/kangnam-kim-resume.pdf"]').count() == 0
                     if route.endswith("/objects/"):
                         assert page.locator("#ad-arrange").is_hidden()
                         assert page.locator(".ad-object").count() == 3

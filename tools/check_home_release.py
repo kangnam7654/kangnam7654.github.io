@@ -62,7 +62,7 @@ def main():
                 assert response.status == 200 and page.url == base+'/'
                 assert page.locator('body').get_attribute('data-ab-variant') == 'type'
                 assert page.locator('[data-case]').count() == 4
-                assert page.locator('a[data-ab-goal=resume_open]').first.is_visible()
+                assert page.locator('a[data-ab-goal=resume_open]').count() == 0  # resume PDF withdrawn 2026-11-26
                 assert page.locator('a[href="/classic/?review=1"]').count() == 1
                 for path in ['/classic/','/en/classic/','/ja/classic/','/en/','/ja/']:
                     assert page.request.get(base+path).status == 200, path

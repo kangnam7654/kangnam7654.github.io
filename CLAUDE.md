@@ -46,7 +46,7 @@ assets/
 ## 회사 프로젝트 (8개)
 | 프로젝트 | 회사 | GitHub | 비고 |
 |---------|------|--------|------|
-| UE5 MCP 플러그인 | 위메이드 넥스트 | kangnam-unreal-mcp | 데모 GIF 4개 |
+| UE5 MCP 플러그인 | 위메이드 넥스트 | - (링크 없음, 사내 시연까지) | 데모 GIF 4개 |
 | AI 자동평가 시스템 | 크레버스 | Multi-Agent-English-Assessment-System | 아키텍처/시퀀스 다이어그램, 발표태도 데모 |
 | Face-to-Character | 메타버스월드 | face_to_parameter | PoC, 변환 예시 3종 |
 | 모션 트래킹 | 메타버스월드 | - | DLL 변환 통신 방식 |
