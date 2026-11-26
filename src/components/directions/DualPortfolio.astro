@@ -16,10 +16,9 @@ const [unreal, assessment, writer, dalgyeol] = content.cases;
   <header class="ad-header dp-site-header">
     <a class="ad-wordmark" href={`/variants/${variant}/`}>{content.latinName}</a>
     <p class="ad-header-role">{content.role}</p>
-    <nav aria-label="작업과 이력서">
+    <nav aria-label="작업과 연락">
       <a href="/projects/">작업</a>
       <a href="/en/" lang="en" aria-label="EN — English portfolio">EN</a>
-      <a href={content.resume.href} data-ab-goal="resume_open" data-ab-target="resume">이력서</a>
       <a href={content.contact.href} data-ab-goal="contact_open" data-ab-target="contact">연락</a>
     </nav>
   </header>
@@ -111,7 +110,6 @@ const [unreal, assessment, writer, dalgyeol] = content.cases;
               {unreal.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
               <div class="dp-case-links">
                 <a href={unreal.detail.href} data-ab-goal="project_open" data-ab-target={unreal.slug}>{unreal.detail.label}</a>
-                <a href={unreal.github}>코드 보기 <span aria-hidden="true">↗</span></a>
               </div>
             </div>
           </div>
@@ -187,8 +185,7 @@ const [unreal, assessment, writer, dalgyeol] = content.cases;
           <p>{content.contact.description}</p>
           <a class="dp-email" href={content.contact.href} data-ab-goal="contact_open" data-ab-target="contact">{content.contact.email}</a>
         </div>
-        <nav class="dp-contact-links" aria-label="이력서와 다른 작업">
-          <a href={content.resume.href} data-ab-goal="resume_open" data-ab-target="resume">{content.resume.label} <span aria-hidden="true">↗</span></a>
+        <nav class="dp-contact-links" aria-label="다른 작업">
           <a href="/projects/">다른 프로젝트도 보기</a>
           <a href={content.github}>GitHub <span aria-hidden="true">↗</span></a>
         </nav>

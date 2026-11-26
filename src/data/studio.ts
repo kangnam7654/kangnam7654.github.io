@@ -14,7 +14,6 @@ export const studioLocaleLabels: Record<Locale, string> = {
 };
 export const studioEmail = "kangnam7653@gmail.com";
 export const studioGithub = "https://github.com/kangnam7654";
-export const studioResume = "/kangnam-kim-resume.pdf";
 export const studioSlugs = ["ai-assessment", "ue5-mcp", "face-to-character"] as const;
 export type StudioSlug = (typeof studioSlugs)[number];
 
@@ -410,7 +409,6 @@ export function getStudioData(locale: Locale) {
   return {
     copy: copy[locale],
     home: localePath("/", locale),
-    resumePage: localePath("/resume/", locale),
     projectArchive: localePath("/projects/", locale),
     projects: studioSlugs.map((slug) => {
       const publicProject = getProjectData(slug, locale);

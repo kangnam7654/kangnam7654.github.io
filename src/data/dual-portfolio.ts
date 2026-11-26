@@ -33,7 +33,6 @@ export const dualPortfolio = {
   name: "김강남",
   latinName: "Kangnam Kim",
   role: "AI Engineer",
-  resume: { href: "/kangnam-kim-resume.pdf", label: "이력서 PDF" },
   contact: {
     href: "mailto:kangnam7653@gmail.com",
     email: "kangnam7653@gmail.com",
@@ -72,13 +71,12 @@ export const dualPortfolio = {
       title: "언리얼 에디터를 자연어로 다루기",
       context: unreal.company,
       period: unreal.period,
-      scope: "프로토타입 모듈 기여",
+      scope: "프로토타입 모듈 기여 · 사내 시연까지",
       paragraphs: [
         "자연어로 오브젝트를 만들고, 수정하고, 삭제할 수 있는 MCP 플러그인입니다. AI의 도구 호출을 언리얼 엔진의 작업으로 연결했습니다.",
         "비동기 처리와 다대다 연결, 실행 중 도구를 등록하는 구조를 맡았습니다. 구현 범위는 프로토타입 단계의 연결 모듈입니다.",
       ],
       detail: { href: "/projects/ue5-mcp/", label: "구현 내용과 다른 데모" },
-      github: unreal.github,
       image: {
         src: "/images/notebook/ue5-spawn-poster.webp",
         width: 960,

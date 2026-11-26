@@ -6,7 +6,6 @@ import {
   studioGithub,
   studioLocaleLabels,
   studioLocales,
-  studioResume,
 } from "../../data/studio";
 import type { Locale } from "../../i18n/utils";
 import "../../styles/studio.css";
@@ -16,7 +15,7 @@ interface Props {
 }
 
 const { locale } = Astro.props;
-const { copy, home, resumePage, projectArchive, projects } = getStudioData(locale);
+const { copy, home, projectArchive, projects } = getStudioData(locale);
 const [featured, ...otherProjects] = projects;
 const canonical = new URL(home, Astro.site ?? "https://kangnam7654.github.io").href;
 ---
@@ -97,18 +96,6 @@ const canonical = new URL(home, Astro.site ?? "https://kangnam7654.github.io").h
             <a class="studio-button studio-button-ink" href="#studio-work">
               {copy.hero.projects}
               <svg class="studio-icon studio-icon-down" aria-hidden="true"><use href="#studio-arrow" /></svg>
-            </a>
-            <a
-              class="studio-button studio-button-outline"
-              href={studioResume}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={copy.hero.resumeAccessible}
-              data-studio-action="resume"
-              data-studio-target="resume"
-            >
-              {copy.hero.resume}
-              <svg class="studio-icon" aria-hidden="true"><use href="#studio-arrow-diagonal" /></svg>
             </a>
           </div>
         </div>
@@ -225,7 +212,7 @@ const canonical = new URL(home, Astro.site ?? "https://kangnam7654.github.io").h
             <p class="studio-practice-description">{copy.practice.intro}</p>
             <div class="studio-person">
               <img src="/images/profile.jpg" alt={copy.practice.portraitAlt} width="80" height="88" loading="lazy" decoding="async" />
-              <div><strong>{copy.name}</strong><span>{copy.role}</span><a href={resumePage} data-studio-action="resume" data-studio-target="resume">{copy.practice.fullResume}<span aria-hidden="true"> ↗</span></a></div>
+              <div><strong>{copy.name}</strong><span>{copy.role}</span></div>
             </div>
           </div>
           <ol class="studio-capabilities">
@@ -248,7 +235,6 @@ const canonical = new URL(home, Astro.site ?? "https://kangnam7654.github.io").h
         <p class="studio-contact-description">{copy.contact.body}</p>
         <a class="studio-email-link" href={`mailto:${studioEmail}`} aria-label={`${copy.contact.emailLabel}: ${studioEmail}`} data-studio-action="contact" data-studio-target="email"><span>{studioEmail}</span><svg class="studio-icon" aria-hidden="true"><use href="#studio-arrow-diagonal" /></svg></a>
         <div class="studio-contact-links">
-          <a class="studio-text-link" href={resumePage} data-studio-action="resume" data-studio-target="resume">{copy.contact.resume}<svg class="studio-icon" aria-hidden="true"><use href="#studio-arrow-diagonal" /></svg></a>
           <a class="studio-text-link" href={studioGithub} target="_blank" rel="noopener noreferrer">GitHub<svg class="studio-icon" aria-hidden="true"><use href="#studio-arrow-diagonal" /></svg></a>
           <a class="studio-text-link" href={projectArchive}>{copy.work.allProjects}<svg class="studio-icon" aria-hidden="true"><use href="#studio-arrow-diagonal" /></svg></a>
         </div>
