@@ -1,6 +1,6 @@
 {
   "scope": "bootstrap acceptance; scheduled agent execution is verified separately in the private operational receipt",
-  "source_base": "a69031dd0db9ddbe27a4cdf1fc9f3add5d8c7439",
+  "source_base": "cec22c19e6e374a7d019790750ce7f3ba0952552",
   "manual_dirty_override_used_for_bootstrap": true,
   "unit_tests": {
     "count": 34,

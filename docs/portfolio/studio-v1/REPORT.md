@@ -42,7 +42,7 @@ QA: `verification.json`, `pre-integration-verification.json`, and the sibling
 Original-A maintenance PR:
 https://github.com/kangnam7654/kangnam7654.github.io/pull/1
 
-Merged commit: `cd63d50eebdb07bfbb391c20330fcd76d3e458d2`.
+Merged commit: `13862890ee286560aa18a30ba38a8dfb983a09f3`.
 GitHub Pages run:
 https://github.com/kangnam7654/kangnam7654.github.io/actions/runs/42047230929
 

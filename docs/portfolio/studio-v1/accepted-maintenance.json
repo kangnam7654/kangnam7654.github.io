@@ -1,5 +1,5 @@
 {
-  "commit": "cd63d50eebdb07bfbb391c20330fcd76d3e458d2",
+  "commit": "13862890ee286560aa18a30ba38a8dfb983a09f3",
   "source_pr": "https://github.com/kangnam7654/kangnam7654.github.io/pull/1",
   "reason": "Independently tested original-A navigation/contrast maintenance, not B design edits",
   "expected_overrides": {

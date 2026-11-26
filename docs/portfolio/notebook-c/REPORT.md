@@ -55,7 +55,7 @@ WebP files are intentionally force-added, not the entire source-image directory.
 
 ## Preservation and publication
 
-The base is `39aaaca143e3ccf14933dbbb386437e7b293f416`, the preserved B branch.
+The base is `106297e4e6e06d0fe6da021158fefe1a4bb94e38`, the preserved B branch.
 C uses new files, new assets and a new route; it does not replace A, B or their
 comparison page. No global config, package manifest/lockfile or production home
 was changed.
