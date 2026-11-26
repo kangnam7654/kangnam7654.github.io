@@ -46,11 +46,10 @@ const projectsData: Record<Locale, Project[]> = {
     {
       title: "Unreal Engine MCP 플러그인",
       description:
-        "언리얼 엔진 오브젝트를 자연어로 CRUD하는 MCP 서버. 비동기 처리, N:M 연결, 동적 툴 등록을 설계",
+        "언리얼 엔진 오브젝트를 자연어로 CRUD하는 MCP 서버(사내 시연까지). 비동기 처리, N:M 연결, 동적 툴 등록을 설계",
       tags: ["MCP", "Unreal Engine", "C++"],
       company: "위메이드 넥스트",
       href: "/projects/ue5-mcp",
-      github: "https://github.com/kangnam7654/kangnam-unreal-mcp",
       thumbnail: "/images/projects/ue5-mcp-spawn.gif",
     },
     {
@@ -147,7 +146,7 @@ const projectsData: Record<Locale, Project[]> = {
     {
       title: "중소기업 매칭 플랫폼",
       description:
-        "무역 데이터를 수집·가공·분석하여 중소기업 간 매칭을 지원하는 플랫폼 기획 및 데이터 파이프라인 구축",
+        "무역 데이터 기반 중소기업 매칭 플랫폼 기획 참여(데이터 수집·가공·분석)",
       tags: ["Data Analysis", "Planning"],
       company: "가이온",
       href: "/projects/matching-platform",
@@ -175,11 +174,10 @@ const projectsData: Record<Locale, Project[]> = {
     {
       title: "Unreal Engine MCP Plugin",
       description:
-        "MCP server for natural-language CRUD of Unreal Engine objects, with asynchronous processing, many-to-many connectivity, and dynamic tool registration",
+        "MCP server for natural-language CRUD of Unreal Engine objects (taken to an internal demo), with asynchronous processing, many-to-many connectivity, and dynamic tool registration",
       tags: ["MCP", "Unreal Engine", "C++"],
       company: "Wemade Next",
       href: "/projects/ue5-mcp",
-      github: "https://github.com/kangnam7654/kangnam-unreal-mcp",
       thumbnail: "/images/projects/ue5-mcp-spawn.gif",
     },
     {
@@ -276,7 +274,7 @@ const projectsData: Record<Locale, Project[]> = {
     {
       title: "SME Matching Platform",
       description:
-        "Platform planning and data pipeline for matching SMEs using collected and processed trade data",
+        "Participated in planning a trade-data-based SME matching platform (data collection, processing, and analysis)",
       tags: ["Data Analysis", "Planning"],
       company: "Gaion",
       href: "/projects/matching-platform",
@@ -304,11 +302,10 @@ const projectsData: Record<Locale, Project[]> = {
     {
       title: "Unreal Engine MCPプラグイン",
       description:
-        "Unreal Engineのオブジェクトを自然言語でCRUD操作するMCPサーバー。非同期処理、N:M接続、ツールの動的登録を設計",
+        "Unreal Engineのオブジェクトを自然言語でCRUD操作するMCPサーバー（社内デモまで）。非同期処理、N:M接続、ツールの動的登録を設計",
       tags: ["MCP", "Unreal Engine", "C++"],
       company: "Wemade Next",
       href: "/projects/ue5-mcp",
-      github: "https://github.com/kangnam7654/kangnam-unreal-mcp",
       thumbnail: "/images/projects/ue5-mcp-spawn.gif",
     },
     {
@@ -405,7 +402,7 @@ const projectsData: Record<Locale, Project[]> = {
     {
       title: "中小企業マッチングプラットフォーム",
       description:
-        "貿易データを収集・加工・分析して中小企業間のマッチングを支援するプラットフォーム企画およびデータパイプライン構築",
+        "貿易データに基づく中小企業マッチングプラットフォームの企画参加（データ収集・加工・分析）",
       tags: ["Data Analysis", "Planning"],
       company: "ガイオン",
       href: "/projects/matching-platform",

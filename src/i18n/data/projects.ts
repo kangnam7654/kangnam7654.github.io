@@ -38,9 +38,8 @@ const projectsData: Record<string, Record<Locale, ProjectData>> = {
       period: "2026.02 ~ 2026.05",
       role: "AI 엔지니어",
       tags: ["MCP", "Unreal Engine", "AI Integration", "C++"],
-      github: "https://github.com/kangnam7654/kangnam-unreal-mcp",
       contentHtml: `<h2>개요</h2>
-<p>언리얼 엔진에서 자연어로 오브젝트를 CRUD할 수 있는 플러그인 형태의 MCP(Model Context Protocol)를 구현했습니다. 비동기 처리, N:M 연결, 동적 툴 등록을 설계해 AI와 게임 엔진의 연동 인터페이스를 구축했습니다.</p>
+<p>언리얼 엔진에서 자연어로 오브젝트를 CRUD할 수 있는 플러그인 형태의 MCP(Model Context Protocol)를 구현했습니다. 비동기 처리, N:M 연결, 동적 툴 등록을 설계해 AI와 게임 엔진의 연동 인터페이스를 구축했습니다. 사내 시연 단계까지 진행한 프로토타입입니다.</p>
 <h2>데모</h2>
 <div class="demo-item"><span class="demo-label">액터 스폰</span><img src="/images/projects/ue5-mcp-spawn.gif" alt="MCP로 액터 스폰" loading="lazy" /></div>
 <div class="demo-item"><span class="demo-label">머티리얼 제어</span><img src="/images/projects/ue5-mcp-sphere.gif" alt="메탈릭 구체 생성 및 머티리얼 제어" loading="lazy" /></div>
@@ -57,9 +56,8 @@ const projectsData: Record<string, Record<Locale, ProjectData>> = {
       period: "Feb 2026 - May 2026",
       role: "AI Engineer",
       tags: ["MCP", "Unreal Engine", "AI Integration", "C++"],
-      github: "https://github.com/kangnam7654/kangnam-unreal-mcp",
       contentHtml: `<h2>Overview</h2>
-<p>Built a plugin-based MCP (Model Context Protocol) for natural-language CRUD operations on Unreal Engine objects. Designed asynchronous processing, many-to-many connectivity, and dynamic tool registration for an interface between AI and the game engine.</p>
+<p>Built a plugin-based MCP (Model Context Protocol) for natural-language CRUD operations on Unreal Engine objects. Designed asynchronous processing, many-to-many connectivity, and dynamic tool registration for an interface between AI and the game engine. The work is a prototype taken as far as an internal demo.</p>
 <h2>Demo</h2>
 <div class="demo-item"><span class="demo-label">Actor Spawning</span><img src="/images/projects/ue5-mcp-spawn.gif" alt="Spawning actors via MCP" loading="lazy" /></div>
 <div class="demo-item"><span class="demo-label">Material Control</span><img src="/images/projects/ue5-mcp-sphere.gif" alt="Creating metallic sphere and controlling materials" loading="lazy" /></div>
@@ -76,9 +74,8 @@ const projectsData: Record<string, Record<Locale, ProjectData>> = {
       period: "2026.02 ~ 2026.05",
       role: "AIエンジニア",
       tags: ["MCP", "Unreal Engine", "AI Integration", "C++"],
-      github: "https://github.com/kangnam7654/kangnam-unreal-mcp",
       contentHtml: `<h2>概要</h2>
-<p>Unreal Engineのオブジェクトを自然言語でCRUD操作できるプラグイン形式のMCP（Model Context Protocol）を実装しました。非同期処理、N:M接続、ツールの動的登録を設計し、AIとゲームエンジンの連携インターフェースを構築しました。</p>
+<p>Unreal Engineのオブジェクトを自然言語でCRUD操作できるプラグイン形式のMCP（Model Context Protocol）を実装しました。非同期処理、N:M接続、ツールの動的登録を設計し、AIとゲームエンジンの連携インターフェースを構築しました。社内デモ段階まで進めたプロトタイプです。</p>
 <h2>デモ</h2>
 <div class="demo-item"><span class="demo-label">アクタースポーン</span><img src="/images/projects/ue5-mcp-spawn.gif" alt="MCPによるアクタースポーン" loading="lazy" /></div>
 <div class="demo-item"><span class="demo-label">マテリアル制御</span><img src="/images/projects/ue5-mcp-sphere.gif" alt="メタリック球体の生成とマテリアル制御" loading="lazy" /></div>
@@ -158,45 +155,45 @@ const projectsData: Record<string, Record<Locale, ProjectData>> = {
     ko: {
       title: "보안 이상 탐지 시스템",
       company: "라이앤캐처스",
-      period: "2026.05 ~ 현재",
+      period: "2026.05 ~ 2026.09",
       role: "AI 연구 엔지니어",
       tags: ["Security", "Anomaly Detection", "LSTM", "VAE"],
       contentHtml: `<h2>개요</h2>
-<p>악성 사용자 행동과 PE 파일을 우선 격리하기 위한 딥러닝 이상 탐지 시스템을 개발하고 있습니다. 현재 학습과 검증 단계이며, 실제 운영 데이터가 제한적인 상황을 고려해 정상 데이터 중심의 탐지 방식을 적용했습니다.</p>
+<p>악성 사용자 행동과 PE 파일을 우선 격리하기 위한 딥러닝 이상 탐지 시스템을 학습·검증했습니다. 실제 운영 데이터가 제한적인 상황을 고려해 정상 데이터 중심의 탐지 방식을 적용했습니다.</p>
 <h2>접근 방식</h2>
 <ul><li><strong>CERT 사용자 행동 데이터</strong>: LSTM의 likelihood 기반 점수(NLL)로 행동 패턴의 이상도를 측정</li><li><strong>BODMAS PE 파일 데이터</strong>: VAE reconstruction error와 uncertainty quantification을 결합해 이상도를 측정</li><li><strong>평가 구성</strong>: 학습·검증은 정상 데이터만 사용하고, 테스트는 정상·악성 데이터를 함께 사용해 AUC와 운영점 후보를 검토</li></ul>
 <h2>운영 관점</h2>
-<p>이 모델은 최종 판정보다 1차 격리를 위한 모델입니다. 정상 데이터를 과도하게 탐지하면 사람이 검토해야 할 대상이 급증하므로 FPR과 운영 비용의 trade-off를 우선 고려했습니다. 이후 정밀 탐지 단계와 각 조직의 위험 허용도에 맞춰 threshold를 조정할 수 있도록 설계하고 있습니다.</p>
+<p>이 모델은 최종 판정보다 1차 격리를 위한 모델로 개발했습니다. 정상 데이터를 과도하게 탐지하면 사람이 검토해야 할 대상이 급증하므로 FPR과 운영 비용의 trade-off를 우선 고려했습니다.</p>
 <h2>기술 스택</h2>
 <ul><li><strong>Models</strong>: LSTM, VAE</li><li><strong>Methods</strong>: Likelihood, Reconstruction Error, Uncertainty Quantification, ROC-AUC</li><li><strong>Data</strong>: CERT insider-threat behavior data, BODMAS PE-file data</li></ul>`,
     },
     en: {
       title: "Security Anomaly Detection Systems",
       company: "Rye&Catchers",
-      period: "May 2026 - Present",
+      period: "May 2026 - Sep 2026",
       role: "AI Research Engineer",
       tags: ["Security", "Anomaly Detection", "LSTM", "VAE"],
       contentHtml: `<h2>Overview</h2>
-<p>Developing deep-learning anomaly-detection systems to triage malicious user behavior and PE files. The work is currently in training and validation, using normal-data-centered approaches because representative operational attack data is limited.</p>
+<p>Trained and validated deep-learning anomaly-detection systems to triage malicious user behavior and PE files, using normal-data-centered approaches because representative operational attack data was limited.</p>
 <h2>Approach</h2>
 <ul><li><strong>CERT user-behavior data</strong>: measure behavioral anomaly with an LSTM likelihood-based score (NLL)</li><li><strong>BODMAS PE-file data</strong>: combine VAE reconstruction error with uncertainty quantification</li><li><strong>Evaluation setup</strong>: train and validate on benign-only data, then inspect AUC and candidate operating points on a benign-plus-malicious test set</li></ul>
 <h2>Operational Framing</h2>
-<p>The model is intended for first-stage quarantine rather than final adjudication. False positives can sharply increase human review load, so threshold selection considers the trade-off between FPR and operating cost. The threshold can then be calibrated to a downstream precision model and each organization&apos;s risk tolerance.</p>
+<p>The model was developed for first-stage quarantine rather than final adjudication. False positives can sharply increase human review load, so threshold selection considered the trade-off between FPR and operating cost.</p>
 <h2>Tech Stack</h2>
 <ul><li><strong>Models</strong>: LSTM, VAE</li><li><strong>Methods</strong>: Likelihood, Reconstruction Error, Uncertainty Quantification, ROC-AUC</li><li><strong>Data</strong>: CERT insider-threat behavior data, BODMAS PE-file data</li></ul>`,
     },
     ja: {
       title: "セキュリティ異常検知システム",
       company: "ライアンドキャッチャーズ",
-      period: "2026.05 ~ 現在",
+      period: "2026.05 ~ 2026.09",
       role: "AIリサーチエンジニア",
       tags: ["Security", "Anomaly Detection", "LSTM", "VAE"],
       contentHtml: `<h2>概要</h2>
-<p>悪意あるユーザー行動とPEファイルを優先的に隔離するためのディープラーニング異常検知システムを開発しています。現在は学習・検証段階であり、実運用の攻撃データが限られることを考慮して正常データ中心の検知方式を採用しています。</p>
+<p>悪意あるユーザー行動とPEファイルを優先的に隔離するためのディープラーニング異常検知システムを学習・検証しました。実運用の攻撃データが限られることを考慮し、正常データ中心の検知方式を採用しました。</p>
 <h2>アプローチ</h2>
 <ul><li><strong>CERTユーザー行動データ</strong>: LSTMのlikelihoodベースのスコア（NLL）で行動パターンの異常度を測定</li><li><strong>BODMAS PEファイルデータ</strong>: VAEのreconstruction errorとuncertainty quantificationを組み合わせて異常度を測定</li><li><strong>評価構成</strong>: 学習・検証は正常データのみを使用し、テストでは正常・悪意あるデータを併用してAUCと運用点候補を検討</li></ul>
 <h2>運用上の考え方</h2>
-<p>このモデルは最終判定ではなく、一次隔離のためのモデルです。正常データを過度に検知すると人手レビューが急増するため、FPRと運用コストのtrade-offを優先して考慮しています。後段の精密モデルと各組織のリスク許容度に合わせてthresholdを調整できるように設計しています。</p>
+<p>このモデルは最終判定ではなく、一次隔離のためのモデルとして開発しました。正常データを過度に検知すると人手レビューが急増するため、FPRと運用コストのtrade-offを優先して考慮しました。</p>
 <h2>技術スタック</h2>
 <ul><li><strong>Models</strong>: LSTM, VAE</li><li><strong>Methods</strong>: Likelihood, Reconstruction Error, Uncertainty Quantification, ROC-AUC</li><li><strong>Data</strong>: CERT insider-threat behavior data, BODMAS PE-file data</li></ul>`,
     },
@@ -438,11 +435,11 @@ const projectsData: Record<string, Record<Locale, ProjectData>> = {
       role: "데이터사이언티스트",
       tags: ["Data Analysis", "Planning", "Trade Data"],
       contentHtml: `<h2>개요</h2>
-<p>무역 데이터를 수집·가공·분석하여 중소기업 간 매칭을 지원하는 플랫폼을 기획하고, 데이터 파이프라인을 구축했습니다.</p>
+<p>무역 데이터 기반 중소기업 매칭 플랫폼 기획에 참여해 데이터 수집·가공·분석을 맡았습니다.</p>
 <h2>주요 성과</h2>
-<ul><li><strong>[데이터 바우처]</strong> 정부 지원 프로젝트 데이터 수집 및 가공</li><li>무역 데이터 수집, 가공 및 분석 파이프라인 구축</li><li>중소기업 매칭 플랫폼 기획 및 데이터 모델 설계</li></ul>
+<ul><li><strong>[데이터 바우처]</strong> 정부 지원 프로젝트 데이터 수집 및 가공</li><li>무역 데이터 수집, 가공 및 분석</li><li>중소기업 매칭 플랫폼 기획 참여(데이터 수집·분석)</li></ul>
 <h2>기술 스택</h2>
-<ul><li><strong>Data</strong>: Pandas, NumPy</li><li><strong>Visualization</strong>: Matplotlib, Seaborn</li><li><strong>Planning</strong>: 플랫폼 기획, 데이터 모델링</li></ul>`,
+<ul><li><strong>Data</strong>: Pandas, NumPy</li><li><strong>Visualization</strong>: Matplotlib, Seaborn</li><li><strong>Planning</strong>: 플랫폼 기획 참여</li></ul>`,
     },
     en: {
       title: "SME Matching Platform",
@@ -451,11 +448,11 @@ const projectsData: Record<string, Record<Locale, ProjectData>> = {
       role: "Data Scientist",
       tags: ["Data Analysis", "Planning", "Trade Data"],
       contentHtml: `<h2>Overview</h2>
-<p>Planned a platform to support matching between small and medium enterprises by collecting, processing, and analyzing trade data, and built the data pipeline.</p>
+<p>Participated in planning a trade-data-based SME matching platform, handling data collection, processing, and analysis.</p>
 <h2>Key Achievements</h2>
-<ul><li><strong>[Data Voucher]</strong> Government-funded project data collection and processing</li><li>Built a trade data collection, processing, and analysis pipeline</li><li>Planned the SME matching platform and designed the data model</li></ul>
+<ul><li><strong>[Data Voucher]</strong> Government-funded project data collection and processing</li><li>Trade data collection, processing, and analysis</li><li>Participated in planning the SME matching platform (data collection and analysis)</li></ul>
 <h2>Tech Stack</h2>
-<ul><li><strong>Data</strong>: Pandas, NumPy</li><li><strong>Visualization</strong>: Matplotlib, Seaborn</li><li><strong>Planning</strong>: Platform planning, Data modeling</li></ul>`,
+<ul><li><strong>Data</strong>: Pandas, NumPy</li><li><strong>Visualization</strong>: Matplotlib, Seaborn</li><li><strong>Planning</strong>: Participation in platform planning</li></ul>`,
     },
     ja: {
       title: "中小企業マッチングプラットフォーム",
@@ -464,11 +461,11 @@ const projectsData: Record<string, Record<Locale, ProjectData>> = {
       role: "データサイエンティスト",
       tags: ["Data Analysis", "Planning", "Trade Data"],
       contentHtml: `<h2>概要</h2>
-<p>貿易データを収集・加工・分析し、中小企業間のマッチングを支援するプラットフォームを企画し、データパイプラインを構築しました。</p>
+<p>貿易データに基づく中小企業マッチングプラットフォームの企画に参加し、データ収集・加工・分析を担当しました。</p>
 <h2>主要成果</h2>
-<ul><li><strong>[データバウチャー]</strong> 政府支援プロジェクトのデータ収集及び加工</li><li>貿易データ収集、加工及び分析パイプライン構築</li><li>中小企業マッチングプラットフォーム企画及びデータモデル設計</li></ul>
+<ul><li><strong>[データバウチャー]</strong> 政府支援プロジェクトのデータ収集及び加工</li><li>貿易データの収集、加工及び分析</li><li>中小企業マッチングプラットフォームの企画参加（データ収集・分析）</li></ul>
 <h2>技術スタック</h2>
-<ul><li><strong>Data</strong>: Pandas, NumPy</li><li><strong>Visualization</strong>: Matplotlib, Seaborn</li><li><strong>Planning</strong>: プラットフォーム企画、データモデリング</li></ul>`,
+<ul><li><strong>Data</strong>: Pandas, NumPy</li><li><strong>Visualization</strong>: Matplotlib, Seaborn</li><li><strong>Planning</strong>: プラットフォーム企画への参加</li></ul>`,
     },
   },
 

@@ -4,10 +4,7 @@
 export const profile = {
   name: "김강남",
   title: "AI Engineer",
-  birth: "",
-  address: "",
   portfolio: "kangnam7654.github.io",
-  salary: { current: "", desired: "내규에 따름, 협의" },
 };
 
 export const summary = [
@@ -33,7 +30,6 @@ export interface CareerEntry {
   team: string;
   period: string;
   location: string;
-  reason?: string;
   project?: string;
   highlights: string[];
 }
@@ -43,7 +39,7 @@ export const career: CareerEntry[] = [
     company: "위메이드넥스트",
     role: "AI 엔지니어",
     team: "미르5프로그램실, 서버팀",
-    period: "2026.02 – 현재",
+    period: "2026.02 – 2026.05",
     location: "판교",
     project: "미르5",
     highlights: [
@@ -57,7 +53,6 @@ export const career: CareerEntry[] = [
     team: "Nesto CV 본부, AI Biz 팀",
     period: "2024.04 – 2025.06",
     location: "서울",
-    reason: "",
     project: "AI 자동평가 시스템",
     highlights: [
       "[MLOps] Azure ML Endpoint와 Blob Storage를 활용해 실시간 추론 파이프라인을 설계·배포하여, 월간 약 3만 명 학생의 발표 평가에 사용되는 자동 평가 서비스를 운영",
@@ -71,10 +66,9 @@ export const career: CareerEntry[] = [
   {
     company: "메타버스월드 (넷마블 F&C)",
     role: "AI 연구 엔지니어",
-    team: "개발 1실, 메타월드 개발 파트",
+    team: "메타월드개발실",
     period: "2022.10 – 2024.01",
     location: "서울",
-    reason: "",
     project: "그랜드크로스: 메타월드",
     highlights: [
       "[Vision] 사용자 얼굴 이미지를 기반으로 게임 아바타를 생성하는 Face-to-Character 프로토타입을 연구 논문을 분석·참조하여 설계·구현 (PoC)",
@@ -87,7 +81,6 @@ export const career: CareerEntry[] = [
     team: "CTO실",
     period: "2021.06 – 2022.04",
     location: "서울",
-    reason: "",
     highlights: [
       "[Recommender System] 제품 설명 문서를 BERT로 임베딩하고 내적 유사도 기반 콘텐츠 추천 시스템(CBF)을 구현",
       "[Vision] 해상 레이더 영상 내 선박·장애물 탐지를 위해 YOLOv5를 파인튜닝",
@@ -97,10 +90,9 @@ export const career: CareerEntry[] = [
   {
     company: "주식회사 가이온",
     role: "데이터사이언티스트",
-    team: "서비스사업부",
+    team: "서비스사업본부",
     period: "2020.08 – 2021.05",
     location: "서울",
-    reason: "",
     highlights: [
       "[Data] 정부지원 프로젝트(데이터 바우처) 데이터 분석을 위한 데이터 수집, 가공",
       "[Planning] 무역 데이터를 이용한 중소기업 매칭 플랫폼 기획 및 데이터 수집·가공·분석",
@@ -112,7 +104,7 @@ export const education = [
   {
     school: "서강대학교 AI·SW 대학원",
     major: "데이터사이언스·인공지능",
-    period: "2023.03 – 2026.02 졸업",
+    period: "2023.02 – 2026.02 졸업",
     location: "서울",
     details: [
       "성적 우수 장학금 1회 (2023년 가을)",

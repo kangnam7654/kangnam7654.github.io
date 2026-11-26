@@ -13,7 +13,7 @@ export const experiences: Experience[] = [
     company: "위메이드넥스트",
     team: "미르5프로그램실, 서버팀",
     role: "AI 엔지니어",
-    period: "2026.02 ~ 현재",
+    period: "2026.02 ~ 2026.05",
     location: "판교",
     project: "미르5",
     highlights: [
@@ -39,7 +39,7 @@ export const experiences: Experience[] = [
   },
   {
     company: "메타버스월드 (넷마블 F&C)",
-    team: "개발 1실, 메타월드 개발 파트",
+    team: "메타월드개발실",
     role: "AI 연구 엔지니어",
     period: "2022.10 ~ 2024.01",
     location: "서울",
@@ -64,7 +64,7 @@ export const experiences: Experience[] = [
   },
   {
     company: "주식회사 가이온",
-    team: "서비스사업부",
+    team: "서비스사업본부",
     role: "데이터사이언티스트",
     period: "2020.08 ~ 2021.05",
     location: "서울",

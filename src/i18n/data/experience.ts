@@ -13,10 +13,22 @@ export interface Experience {
 const experienceData: Record<Locale, Experience[]> = {
   ko: [
     {
+      company: "테르텐",
+      team: "기술개발본부",
+      role: "인공지능팀장 (관리·개발 겸임, 팀 4명)",
+      period: "2026.10 ~ 현재",
+      location: "",
+      project: "화면 촬영 방지 보안 제품",
+      highlights: [
+        "[Lead] 화면 촬영 방지 보안 제품의 개발을 리드하고, 탐지 AI·인증 모듈의 개발과 안정화를 담당",
+        "[Process] 팀 개발 프로세스 도입: GitLab MR 리뷰·CI, Jenkins 빌드, Jira 2주 스프린트",
+      ],
+    },
+    {
       company: "라이앤캐처스",
-      team: "AI 연구팀",
+      team: "IITP 과제 PM 겸임",
       role: "AI 연구 엔지니어",
-      period: "2026.05 ~ 현재",
+      period: "2026.05 ~ 2026.09",
       location: "서울",
       project: "보안 이상 탐지 시스템",
       highlights: [
@@ -32,7 +44,7 @@ const experienceData: Record<Locale, Experience[]> = {
       location: "판교",
       project: "미르5",
       highlights: [
-        "[Unreal MCP] 언리얼 엔진에서 자연어로 오브젝트를 CRUD할 수 있는 MCP 서버를 구현하고, 비동기 처리 설계와 N:M 연결 구조, 툴 동적 등록 등 확장 가능한 아키텍처를 설계",
+        "[Unreal MCP] 언리얼 엔진에서 자연어로 오브젝트를 CRUD할 수 있는 MCP 서버를 사내 시연 단계까지 구현하고, 비동기 처리 설계와 N:M 연결 구조, 툴 동적 등록 등 확장 가능한 아키텍처를 설계",
         "[MCP Client] API Key 없이 구독 기반 모델(Codex, GitHub Copilot 등)을 활용해 채팅 및 MCP 연동이 가능한 경량 클라이언트를 제작",
       ],
     },
@@ -54,7 +66,7 @@ const experienceData: Record<Locale, Experience[]> = {
     },
     {
       company: "메타버스월드 (넷마블 F&C)",
-      team: "개발 1실, 메타월드 개발 파트",
+      team: "메타월드개발실",
       role: "AI 연구 엔지니어",
       period: "2022.10 ~ 2024.01",
       location: "서울",
@@ -80,28 +92,40 @@ const experienceData: Record<Locale, Experience[]> = {
     },
     {
       company: "주식회사 가이온",
-      team: "서비스사업부",
+      team: "서비스사업본부",
       role: "데이터사이언티스트",
       period: "2020.08 ~ 2021.05",
       location: "서울",
       project: "",
       highlights: [
         "[Data] 정부지원 프로젝트(데이터 바우처) 데이터 분석을 위한 데이터 수집, 가공",
-        "[Planning] 무역 데이터를 이용한 중소기업 매칭 플랫폼 기획 및 데이터 수집·가공·분석",
+        "[Planning] 무역 데이터 기반 중소기업 매칭 플랫폼 기획에 데이터 수집·가공·분석으로 참여",
       ],
     },
   ],
   en: [
     {
+      company: "Teruten",
+      team: "Technology Development Division",
+      role: "AI Team Lead (manager and hands-on developer, team of 4)",
+      period: "Oct 2026 - Present",
+      location: "",
+      project: "Screen-capture prevention security product",
+      highlights: [
+        "[Lead] Lead development of a screen-capture prevention security product, including development and stabilization of its detection AI and authentication modules",
+        "[Process] Introduced the team's development process: GitLab MR review and CI, Jenkins builds, and two-week Jira sprints",
+      ],
+    },
+    {
       company: "Rye&Catchers",
-      team: "AI Research Team",
+      team: "IITP project PM (concurrent)",
       role: "AI Research Engineer",
-      period: "May 2026 - Present",
+      period: "May 2026 - Sep 2026",
       location: "Seoul",
       project: "Security Anomaly Detection Systems",
       highlights: [
-        "[Security] Train and validate deep-learning anomaly-detection systems for first-stage quarantine of malicious behavior and PE files",
-        "[Anomaly Detection] Apply LSTM likelihood-based scoring (NLL) to CERT user-behavior data and VAE reconstruction error with uncertainty quantification to BODMAS PE-file data",
+        "[Security] Trained and validated deep-learning anomaly-detection systems for first-stage quarantine of malicious behavior and PE files",
+        "[Anomaly Detection] Applied LSTM likelihood-based scoring (NLL) to CERT user-behavior data and VAE reconstruction error with uncertainty quantification to BODMAS PE-file data",
       ],
     },
     {
@@ -112,7 +136,7 @@ const experienceData: Record<Locale, Experience[]> = {
       location: "Pangyo",
       project: "MIR5",
       highlights: [
-        "[Unreal MCP] Built an MCP server enabling natural language CRUD operations on objects in Unreal Engine, designing a scalable architecture with async processing, N:M connection structure, and dynamic tool registration",
+        "[Unreal MCP] Built an MCP server, taken to an internal demo, enabling natural language CRUD operations on objects in Unreal Engine, designing a scalable architecture with async processing, N:M connection structure, and dynamic tool registration",
         "[MCP Client] Developed a lightweight client supporting chat and MCP integration using subscription-based models (Codex, GitHub Copilot, etc.) without API keys",
       ],
     },
@@ -134,7 +158,7 @@ const experienceData: Record<Locale, Experience[]> = {
     },
     {
       company: "Metaverse World (Netmarble F&C)",
-      team: "Dev Division 1, MetaWorld Dev Part",
+      team: "MetaWorld Development Office",
       role: "AI Research Engineer",
       period: "2022.10 ~ 2024.01",
       location: "Seoul",
@@ -167,16 +191,28 @@ const experienceData: Record<Locale, Experience[]> = {
       project: "",
       highlights: [
         "[Data] Data collection and processing for government-funded project (Data Voucher) analytics",
-        "[Planning] Planning and data collection/processing/analysis for an SME matching platform using trade data",
+        "[Planning] Participated in planning an SME matching platform based on trade data, contributing data collection, processing, and analysis",
       ],
     },
   ],
   ja: [
     {
+      company: "Teruten",
+      team: "技術開発本部",
+      role: "AIチーム長（管理・開発兼任、チーム4名）",
+      period: "2026.10 ~ 現在",
+      location: "",
+      project: "画面撮影防止セキュリティ製品",
+      highlights: [
+        "[Lead] 画面撮影防止セキュリティ製品の開発をリードし、検知AI・認証モジュールの開発と安定化を担当",
+        "[Process] チームの開発プロセスを導入：GitLab MRレビュー・CI、Jenkinsビルド、Jiraの2週間スプリント",
+      ],
+    },
+    {
       company: "ライアンドキャッチャーズ",
-      team: "AIリサーチチーム",
+      team: "IITP課題PM兼任",
       role: "AIリサーチエンジニア",
-      period: "2026.05 ~ 現在",
+      period: "2026.05 ~ 2026.09",
       location: "ソウル",
       project: "セキュリティ異常検知システム",
       highlights: [
@@ -192,7 +228,7 @@ const experienceData: Record<Locale, Experience[]> = {
       location: "板橋",
       project: "MIR5",
       highlights: [
-        "[Unreal MCP] Unreal Engineで自然言語によるオブジェクトのCRUDが可能なMCPサーバーを実装し、非同期処理設計とN:M接続構造、ツール動的登録などスケーラブルなアーキテクチャを設計",
+        "[Unreal MCP] Unreal Engineで自然言語によるオブジェクトのCRUDが可能なMCPサーバーを社内デモ段階まで実装し、非同期処理設計とN:M接続構造、ツール動的登録などスケーラブルなアーキテクチャを設計",
         "[MCP Client] APIキー不要でサブスクリプションベースのモデル（Codex、GitHub Copilotなど）を活用したチャット・MCP連携が可能な軽量クライアントを開発",
       ],
     },
@@ -214,7 +250,7 @@ const experienceData: Record<Locale, Experience[]> = {
     },
     {
       company: "メタバースワールド（ネットマーブルF&C）",
-      team: "開発1室、メタワールド開発パート",
+      team: "メタワールド開発室",
       role: "AI研究エンジニア",
       period: "2022.10 ~ 2024.01",
       location: "ソウル",
@@ -240,14 +276,14 @@ const experienceData: Record<Locale, Experience[]> = {
     },
     {
       company: "株式会社ガイオン",
-      team: "サービス事業部",
+      team: "サービス事業本部",
       role: "データサイエンティスト",
       period: "2020.08 ~ 2021.05",
       location: "ソウル",
       project: "",
       highlights: [
         "[Data] 政府支援プロジェクト（データバウチャー）のデータ分析のためのデータ収集・加工",
-        "[Planning] 貿易データを用いた中小企業マッチングプラットフォームの企画およびデータ収集・加工・分析",
+        "[Planning] 貿易データに基づく中小企業マッチングプラットフォームの企画に、データ収集・加工・分析で参加",
       ],
     },
   ],
